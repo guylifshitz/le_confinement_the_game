@@ -5,9 +5,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	print("Franproix")
-	print(body.name)
-
 	if body.get_name() == "main_characterKinematic":
 		body.add_groceries()
 		

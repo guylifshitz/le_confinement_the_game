@@ -1,9 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var fps_label = get_node('fps')
 
 var score = 0
 var damage = 100
@@ -34,3 +32,5 @@ func _process(delta):
 	$score.text = str(int(score))
 	$damage.text = str(int(damage))
 	update()
+
+	fps_label.set_text(str(Engine.get_frames_per_second()))

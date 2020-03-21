@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://images/zombies-trans.png" type="Texture" id=1]
+[ext_resource path="res://enemy.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -17,11 +18,12 @@ tracks/0/keys = {
 "values": [ 1, 2, 12 ]
 }
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 5.79908
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.14316, 7.89514 )
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 462.031, 163.125 )
+script = ExtResource( 2 )
 
 [node name="enemySprite" type="Sprite" parent="."]
 position = Vector2( 0.863251, -17.7318 )
@@ -36,5 +38,5 @@ playback_speed = 4.0
 anims/down = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.731018, 1.56723 )
+position = Vector2( 1.15692, -0.988175 )
 shape = SubResource( 2 )

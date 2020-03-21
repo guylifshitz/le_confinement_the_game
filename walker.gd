@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const MOTION_SPEED = 200 # Pixels/second.
+const RUN_MOTION_SPEED = 600 # Pixels/second.
 #const MOTION_SPEED = 600
 
 var nearest_enemy_glob
@@ -15,7 +16,7 @@ func _ready():
 	circle_tween.start()
 	remove_groceries()
 	remove_drugs()
-	
+
 func toggle_groceries():
 	var groceries = self.find_node("groceries")
 	if groceries.is_visible_in_tree():
@@ -53,7 +54,14 @@ func _physics_process(_delta):
 	motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	motion.y *= 0.5
-	motion = motion.normalized() * MOTION_SPEED
+	
+	if Input.is_action_pressed("run"):
+		motion = motion.normalized() * RUN_MOTION_SPEED
+		$main_char_node/main_character/AnimationPlayer.playback_speed = 4
+	else:
+		motion = motion.normalized() * MOTION_SPEED
+		$main_char_node/main_character/AnimationPlayer.playback_speed = 2
+
 	if Input.is_action_pressed("move_left"):
 		$main_char_node/main_character/AnimationPlayer.play("left")
 	elif Input.is_action_pressed("move_right"):
@@ -66,6 +74,7 @@ func _physics_process(_delta):
 		$main_char_node/main_character/AnimationPlayer.play("idle")
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
+	
 
 func get_closest():
 	var enemies = get_tree().get_nodes_in_group("enemies")
@@ -77,4 +86,4 @@ func get_closest():
 				nearest_enemy = enemy
 		
 		nearest_enemy_glob = nearest_enemy;
-		print("Nearest", nearest_enemy.global_position.distance_to(self.global_position))
+

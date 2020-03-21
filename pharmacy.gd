@@ -7,8 +7,6 @@ func _ready():
 
 
 func _on_pharmacy_body_entered(body):
-	print(body.name)
-
 	if body.get_name() == "main_characterKinematic":
 		body.add_drugs()
 		
