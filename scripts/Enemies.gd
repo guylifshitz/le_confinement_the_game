@@ -16,16 +16,11 @@ func spawn():
 
 		var new_path = enemy_path.duplicate()
 		var new_path_follow = PathFollow2D.new()
+		new_path_follow.loop = true
 		new_path_follow.add_child(new_enemy)
 		new_path.add_child(new_path_follow)
 		new_path_follow.rotate = false
-		new_path_follow.unit_offset = 0
+		new_path_follow.offset = 0
 		add_child(new_path)
 
-		var tween = Tween.new()	
-		new_path.add_child(tween)
-#		tween.interpolate_property(new_path_follow, "unit_offset",0,1,10,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		tween.interpolate_property(new_path_follow, "unit_offset",0,1,0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		tween.start()
-
-		yield(utils_custom.create_timer(1), "timeout")
+		yield(utils_custom.create_timer(2), "timeout")

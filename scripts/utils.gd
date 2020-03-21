@@ -19,6 +19,17 @@ func create_timer(wait_time):
 	return timer
 	pass
 
+func create_timer_2(wait_time, obj, callback_name):
+	var timer = Timer.new()
+	timer.set_wait_time(wait_time)
+	timer.set_one_shot(true)
+	timer.connect("timeout", timer, "queue_free")
+	timer.connect("timeout", obj, callback_name)
+	add_child(timer)
+	timer.start()
+	return timer
+	pass
+
 func choose(choises):
 	randomize()
 	var rand_index = randi() % choises.size()
