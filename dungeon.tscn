@@ -1,20 +1,17 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://images/random/circle.png" type="Texture" id=2]
+[ext_resource path="res://main_characterKinematic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://scripts/walker.gd" type="Script" id=4]
-[ext_resource path="res://images/girl.png" type="Texture" id=5]
+[ext_resource path="res://first_good_tilemap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Enemies.gd" type="Script" id=6]
 [ext_resource path="res://game.gd" type="Script" id=7]
 [ext_resource path="res://images/random/icons/franxprix2.png" type="Texture" id=8]
-[ext_resource path="res://images/random/icons/groceries.png" type="Texture" id=9]
 [ext_resource path="res://scripts/gocerystore.gd" type="Script" id=10]
 [ext_resource path="res://images/random/icons/home.png" type="Texture" id=11]
 [ext_resource path="res://scripts/home-script.gd" type="Script" id=12]
 [ext_resource path="res://images/random/icons/pharmacy.png" type="Texture" id=13]
 [ext_resource path="res://scripts/pharmacy.gd" type="Script" id=14]
-[ext_resource path="res://images/random/icons/drugs.png" type="Texture" id=15]
 [ext_resource path="res://scripts/interface.gd" type="Script" id=16]
 [ext_resource path="res://images/random/icons/health.png" type="Texture" id=17]
 [ext_resource path="res://images/random/icons/score.png" type="Texture" id=18]
@@ -43,88 +40,13 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 407.57, -51.6427, 0, 0, 0, 0, 576.545, 157.94, 0, 0, 0, 0, 279.855, 290.893, 0, 0, 0, 0, 322.36, 328.08, 0, 0, 0, 0, 398.015, 378.942, 0, 0, 0, 0, 254.047, 479.94, 0, 0, 0, 0, 395.077, 377.473, 0, 0, 0, 0, 596.194, 213.61, 0, 0, 0, 0, 366.963, -96.8339 )
 }
 
-[sub_resource type="Animation" id=6]
-length = 0.8
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.602617, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 12, 15, 15 ]
-}
-
-[sub_resource type="Animation" id=7]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=8]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.796451 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 8, 11 ]
-}
-
-[sub_resource type="Animation" id=9]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 4, 7 ]
-}
-
-[sub_resource type="Animation" id=10]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.00886587, 0.797929 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 16, 19 ]
-}
-
-[sub_resource type="RectangleShape2D" id=11]
-
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 265.461, 164.816 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 311.623, 215.354 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 252.448, 239.34 )
 
 [node name="Game" type="Node2D"]
@@ -138,12 +60,13 @@ cell_size = Vector2( 128, 64 )
 cell_tile_origin = 1
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( -917493, 0, 0, -917492, 0, 0, -917491, 0, 0, -917490, 0, 0, -851957, 0, 0, -851956, 0, 0, -851955, 0, 0, -851954, 0, 0, -786421, 0, 0, -786420, 1, 0, -786419, 0, -1200553578, -786418, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, -1200553578, -720882, 0, 0, -655349, 0, 0, -655348, 1, 0, -655347, 0, -1200553578, -655346, 0, 0, -589813, 0, 0, -589812, 1, 0, -589811, 0, -1200553578, -589810, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 1, -1200553578, -524274, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, -1200553578, -458738, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, -1200553578, -393202, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 1, 0, -327672, 1, 0, -327671, 1, 0, -327670, 1, 0, -327669, 1, 0, -327668, 1, 0, -327667, 0, -1200553578, -327666, 0, 0, -262142, 1, 0, -262141, 0, 0, -262140, 1, 0, -262139, 1, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, -1200553578, -262133, 0, -1200553578, -262132, 0, -1200553578, -262131, 0, -1200553578, -262130, 0, 0, -196606, 0, 0, -196605, 1, 0, -196604, 1, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 1, 0, -131066, 1, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 1, 0, -65528, 0, 0, -65527, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 1, 0, 8, 0, 0, 9, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, -1200553578, 65544, 0, -1200553578, 65545, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, -1200553578, 131080, 0, -1200553578, 131081, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0 )
+tile_data = PoolIntArray( -917493, 0, 0, -917492, 0, 0, -917491, 0, 0, -917490, 0, 0, -851957, 0, 0, -851956, 0, 0, -851955, 0, 0, -851954, 0, 0, -786421, 0, 0, -786420, 1, 0, -786419, 0, -1200553578, -786418, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, -1200553578, -720882, 0, 0, -655349, 0, 0, -655348, 1, 0, -655347, 0, -1200553578, -655346, 0, 0, -589813, 0, 0, -589812, 1, 0, -589811, 0, -1200553578, -589810, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 1, -1200553578, -524274, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, -1200553578, -458738, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, -1200553578, -393202, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 1, 0, -327672, 1, 0, -327671, 1, 0, -327670, 1, 0, -327669, 1, 0, -327668, 1, 0, -327667, 0, -1200553578, -327666, 0, 0, -262142, 1, 0, -262141, 0, 0, -262140, 1, 0, -262139, 1, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, -1200553578, -262133, 0, -1200553578, -262132, 0, -1200553578, -262131, 0, -1200553578, -262130, 0, 0, -196606, 0, 0, -196605, 1, 0, -196604, 1, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 1, 0, -131066, 1, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 1, 0, -65528, 0, 0, -65527, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 1, 0, 8, 0, 0, 9, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, -1200553578, 65544, 0, -1200553578, 65545, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, -1200553578, 131080, 0, -1200553578, 131081, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0 )
 
 [node name="navigation" type="Navigation2D" parent="."]
 position = Vector2( 0, 2 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="navigation"]
+position = Vector2( 320.437, -80.726 )
 navpoly = SubResource( 1 )
 
 [node name="Walls" type="TileMap" parent="navigation"]
@@ -231,48 +154,7 @@ rotation = 0.516052
 [node name="path2" type="Path2D" parent="navigation/Walls/Enemies/EnemyPaths"]
 curve = SubResource( 5 )
 
-[node name="main_characterKinematic" type="KinematicBody2D" parent="navigation/Walls"]
-position = Vector2( 781.759, 34.8229 )
-script = ExtResource( 4 )
-
-[node name="main_char_node" type="Node2D" parent="navigation/Walls/main_characterKinematic"]
-
-[node name="main_character" type="Sprite" parent="navigation/Walls/main_characterKinematic/main_char_node"]
-position = Vector2( -0.372681, -18.3152 )
-texture = ExtResource( 5 )
-vframes = 5
-hframes = 4
-frame = 12
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="navigation/Walls/main_characterKinematic/main_char_node/main_character"]
-playback_speed = 4.0
-anims/down = SubResource( 6 )
-anims/idle = SubResource( 7 )
-anims/left = SubResource( 8 )
-anims/right = SubResource( 9 )
-anims/up = SubResource( 10 )
-
-[node name="circle" type="Sprite" parent="navigation/Walls/main_characterKinematic/main_char_node"]
-position = Vector2( -0.372681, -18.3152 )
-scale = Vector2( 0.14111, 0.14111 )
-texture = ExtResource( 2 )
-
-[node name="groceries" type="Sprite" parent="navigation/Walls/main_characterKinematic/main_char_node"]
-position = Vector2( 0.497437, -66.2536 )
-scale = Vector2( 0.0715417, 0.0715417 )
-texture = ExtResource( 9 )
-
-[node name="drugs" type="Sprite" parent="navigation/Walls/main_characterKinematic/main_char_node"]
-position = Vector2( 2.63306, -63.1027 )
-scale = Vector2( 0.0651113, 0.0651113 )
-texture = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="navigation/Walls/main_characterKinematic"]
-shape = SubResource( 11 )
-
-[node name="Camera2D" type="Camera2D" parent="navigation/Walls/main_characterKinematic"]
-position = Vector2( -0.621399, -4.11151 )
-current = true
+[node name="main_characterKinematic" parent="navigation/Walls" instance=ExtResource( 2 )]
 
 [node name="home" type="Area2D" parent="navigation/Walls"]
 position = Vector2( 1035.69, -0.76947 )
@@ -286,7 +168,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="navigation/Walls/home"]
 position = Vector2( -145.103, 93.8899 )
-shape = SubResource( 12 )
+shape = SubResource( 6 )
 
 [node name="franprix" type="Area2D" parent="navigation/Walls"]
 position = Vector2( 265.501, 418.191 )
@@ -298,7 +180,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="navigation/Walls/franprix"]
 position = Vector2( -3.99156, 130.886 )
-shape = SubResource( 13 )
+shape = SubResource( 7 )
 
 [node name="pharmacy" type="Area2D" parent="navigation/Walls"]
 position = Vector2( 380.754, 71.1667 )
@@ -312,7 +194,9 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="navigation/Walls/pharmacy"]
 visible = false
 position = Vector2( -2.95618, 5.07495 )
-shape = SubResource( 14 )
+shape = SubResource( 8 )
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
 [connection signal="body_entered" from="navigation/Walls/home" to="navigation/Walls/home" method="_on_home_body_entered"]
 [connection signal="body_entered" from="navigation/Walls/franprix" to="navigation/Walls/Enemies" method="_on_franprix_body_entered"]
 [connection signal="body_entered" from="navigation/Walls/franprix" to="navigation/Walls/franprix" method="_on_Area2D_body_entered"]
