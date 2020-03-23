@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pharmacy.png-15259996295365525cfdcde679488566.stex"
+path="res://.import/pharmacy.png-3d9a7b20d853b641cecee56bae54c7d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/pharmacy.png"
-dest_files=[ "res://.import/pharmacy.png-15259996295365525cfdcde679488566.stex" ]
+source_file="res://images/goals/pharmacy.png"
+dest_files=[ "res://.import/pharmacy.png-3d9a7b20d853b641cecee56bae54c7d4.stex" ]
 
 [params]
 

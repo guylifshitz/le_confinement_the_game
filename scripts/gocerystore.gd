@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 
-func _on_Area2D_body_entered(body):
-	if body.get_name() == "main_characterKinematic":
+func _on_grocery_body_entered(body):
+	if body.get_name() == "player":
 		body.add_groceries()
 		

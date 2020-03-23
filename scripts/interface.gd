@@ -2,22 +2,21 @@ extends Node2D
 
 
 onready var fps_label = get_node('fps')
+onready var player = get_tree().get_root().get_node("game/elements/player")
 
 var score = 0
 var damage = 100
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func _process(delta):
-	var main_char = self.get_parent().get_parent().get_parent().find_node("main_characterKinematic")
-	if main_char.nearest_enemy_glob:
-		var nearest_distance = main_char.nearest_enemy_glob.global_position.distance_to(main_char.global_position)
+	if player.nearest_enemy_glob:
+		var nearest_distance = player.nearest_enemy_glob.global_position.distance_to(player.global_position)
 	
-		var sprite = main_char.find_node("main_char_node").find_node("main_character")
-		var circle = main_char.find_node("main_char_node").find_node("circle")
+		var sprite = player.find_node("main_char_node").find_node("main_character")
+		var circle = player.find_node("main_char_node").find_node("circle")
 		
 		score += nearest_distance / 100
 		if nearest_distance < 100:
@@ -34,3 +33,6 @@ func _process(delta):
 	update()
 
 	fps_label.set_text(str(Engine.get_frames_per_second()))
+
+
+	update()

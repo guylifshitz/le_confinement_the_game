@@ -6,10 +6,6 @@
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
 
-
-
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 12
 outline_color = Color( 0, 0.25098, 1, 1 )

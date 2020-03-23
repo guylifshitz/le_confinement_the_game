@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/carrefour.png-e7e25e014898a10b97973bef753bf291.stex"
+path="res://.import/carroussel.png-bb22309821bc08c8eb2202f8c0900c38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/carrefour.png"
-dest_files=[ "res://.import/carrefour.png-e7e25e014898a10b97973bef753bf291.stex" ]
+source_file="res://images/landmarks/carroussel.png"
+dest_files=[ "res://.import/carroussel.png-bb22309821bc08c8eb2202f8c0900c38.stex" ]
 
 [params]
 

@@ -18,12 +18,12 @@ var conversations = [["Hey!", "How are you?"],
 var conv_number = 0
 var conv_page = 0
 onready var dialog_box = get_node("speech").get_node("text")
-
-onready var main_char = get_parent().get_parent().get_parent().get_parent().get_node("main_characterKinematic")
+onready var test = get_tree()
+onready var test2 = get_tree().get_root()
+onready var player = get_tree().get_root().get_node("game/elements/player")
 
 func _ready():
-	navigation = get_parent().get_parent().get_parent().get_parent().get_parent()
-
+	navigation = get_parent().get_parent().get_parent().get_parent()
 
 	dialog_box.get_parent().hide()
 
@@ -40,7 +40,7 @@ func _process(delta):
 		find_node("spot").global_position = following_player_start_position
 
 	if follows_player:
-		var dir = (main_char.global_position - self.global_position).normalized()
+		var dir = (player.global_position - self.global_position).normalized()
 		self.move_and_collide(dir * MOVE_SPEED * delta)
 #		find_node("enemySprite").modulate = Color(0.2,0.2,0.2)
 	else:
@@ -53,7 +53,7 @@ func _process(delta):
 	
 
 func _on_social_distance_area_body_entered(body):
-	if body.get_name() == "main_characterKinematic" and is_social:
+	if body.get_name() == "player" and is_social:
 		follows_player = true
 		
 		if simple_path.size() == 0:
@@ -75,7 +75,7 @@ func dialog_next_page():
 		utils_custom.create_timer_2(dialog_box.text.length() * 0.1, self, "dialog_next_page")
 		
 func _on_social_distance_area_body_exited(body):
-	if body.get_name() == "main_characterKinematic" and is_social:
+	if body.get_name() == "player" and is_social:
 		follows_player = false
 		simple_path = navigation.get_simple_path(global_position, following_player_start_position)
 	

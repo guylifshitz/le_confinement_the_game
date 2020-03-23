@@ -5,7 +5,7 @@ func _ready():
 
 
 func _on_home_body_entered(body):
-	if body.get_name() == "main_characterKinematic":
+	if body.get_name() == "player":
 		body.remove_groceries()
 		body.remove_drugs()
 		

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/franxprix2.png-7beae54f1747f03650b6cd80655f71ef.stex"
+path="res://.import/tree-trans.png-6c6ada9f1955ded9c805995a208367e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/franxprix2.png"
-dest_files=[ "res://.import/franxprix2.png-7beae54f1747f03650b6cd80655f71ef.stex" ]
+source_file="res://images/scenery/tree-trans.png"
+dest_files=[ "res://.import/tree-trans.png-6c6ada9f1955ded9c805995a208367e7.stex" ]
 
 [params]
 

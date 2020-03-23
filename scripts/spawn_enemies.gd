@@ -1,8 +1,8 @@
-extends Node
+extends Node2D
 
-onready var enemy_paths = $EnemyPaths.get_children()
+onready var enemy_paths = self.get_children()
 onready var enemy = $Enemy
-onready var new_enemy_base = load("res://Enemy.tscn")
+onready var new_enemy_base = load("res://prefab/Enemy.tscn")
 
 func _ready():
 	spawn()
@@ -23,4 +23,4 @@ func spawn():
 		new_path_follow.offset = 0
 		add_child(new_path)
 
-		yield(utils_custom.create_timer(2), "timeout")
+		yield(utils_custom.create_timer(1), "timeout")

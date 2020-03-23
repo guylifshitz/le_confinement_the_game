@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/home.png-952acea5cf6f5c55701c0b9d91a42ef3.stex"
+path="res://.import/monop3-trans.png-3e7118ce47e971959e9a6667cbd63d76.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/home.png"
-dest_files=[ "res://.import/home.png-952acea5cf6f5c55701c0b9d91a42ef3.stex" ]
+source_file="res://images/goals/monop3-trans.png"
+dest_files=[ "res://.import/monop3-trans.png-3e7118ce47e971959e9a6667cbd63d76.stex" ]
 
 [params]
 

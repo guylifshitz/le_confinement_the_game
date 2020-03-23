@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/interface.gd" type="Script" id=2]
+[ext_resource path="res://images/interface/health.png" type="Texture" id=3]
+[ext_resource path="res://images/interface/score.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="interface" type="Node2D"]
+scale = Vector2( 0.9978, 1.00303 )
+script = ExtResource( 2 )
+
+[node name="score" type="RichTextLabel" parent="."]
+margin_left = 875.148
+margin_top = 43.2774
+margin_right = 997.148
+margin_bottom = 77.2774
+rect_pivot_offset = Vector2( -212.199, -129.885 )
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fps" type="RichTextLabel" parent="."]
+margin_left = 852.708
+margin_top = 3.4364
+margin_right = 1004.71
+margin_bottom = 37.4364
+rect_pivot_offset = Vector2( -212.199, -129.885 )
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damage" type="RichTextLabel" parent="."]
+margin_left = 874.728
+margin_top = 97.3634
+margin_right = 1007.73
+margin_bottom = 147.363
+rect_pivot_offset = Vector2( -208.199, -154.885 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="Sprite" parent="."]
+position = Vector2( 576.337, -125.592 )
+scale = Vector2( 0.18065, 0.18065 )
+texture = ExtResource( 3 )
+offset = Vector2( 1421.1, 1320.08 )
+
+[node name="score2" type="Sprite" parent="."]
+position = Vector2( 548.188, -145.785 )
+scale = Vector2( 0.0569034, 0.0569034 )
+texture = ExtResource( 4 )
+offset = Vector2( 5016.41, 3605.05 )

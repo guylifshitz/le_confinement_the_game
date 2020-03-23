@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 const MOTION_SPEED = 200 # Pixels/second.
-const RUN_MOTION_SPEED = 600 # Pixels/second.
+#const RUN_MOTION_SPEED = 600 # Pixels/second.
+const RUN_MOTION_SPEED = 1200 # Pixels/second.
 #const MOTION_SPEED = 600
 
 var nearest_enemy_glob
