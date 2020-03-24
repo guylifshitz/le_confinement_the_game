@@ -6,6 +6,7 @@ onready var stores = $elements/goals/
 
 var score = 0
 var damage = 100
+var game_settings = load_json()
 
 func _ready():
 	player.items_needed = ["toilet_paper", "bread", "drugs"]	
@@ -15,8 +16,22 @@ func _ready():
 	stores.find_node("la_suprette").get_child(0).store_has_items = []
 	stores.find_node("pharmacy_1").get_child(0).store_has_items = ["drugs"]
 	stores.find_node("pharmacy_2").get_child(0).store_has_items = ["drugs"]
-	pass
+	print(game_settings["enemies"]["count"])
 
+func load_json():
+	var file = File.new()
+	file.open("res://jsons/game_settings.json", file.READ)
+	var json_text = file.get_as_text()
+	file.close()
+	var result_json = JSON.parse(json_text)
+	
+	if result_json.error == OK:
+		return result_json.result
+	else:  # If parse has errors
+		print("Error: ", result_json.error)
+		print("Error Line: ", result_json.error_line)
+		print("Error String: ", result_json.error_string)
+		return
 
 func _process(delta):
 	if player.nearest_enemy_glob:
@@ -43,17 +58,17 @@ func _process(delta):
 			sprite.modulate = Color(1,1,1)
 			circle.modulate = Color(0,0,0)
 #	var temp = get_tree().get_root().get_node("game/interface/score")
-	$CanvasLayer/interface/score.bbcode_text = "[right]" + str(int(score))
-	#get_tree().get_root().get_node("game/CanvasLayer/interface/damage").text = str(int(damage))
-	#get_tree().get_root().get_node("game/CanvasLayer/health-red").shape
-	#print($"CanvasLayer/health-red".gradient.set_offset(1, 1))
-	var health_bar = $"CanvasLayer/health-red"
-	var health_bar_bg = $"CanvasLayer/health-bg"
+	$interface/interface/score.bbcode_text = "[right]" + str(int(score))
+	#get_tree().get_root().get_node("game/interface/interface/damage").text = str(int(damage))
+	#get_tree().get_root().get_node("game/interface/health-red").shape
+	#print($"interface/health-red".gradient.set_offset(1, 1))
+	var health_bar = $"interface/health-red"
+	var health_bar_bg = $"interface/health-bg"
 	var start_pos = health_bar.points[0]
 	var end_pos = health_bar_bg.points[1]
 	end_pos = lerp(start_pos, end_pos, max(damage/100, 0))
 	health_bar.points[1] = end_pos
 	update()
 
-	get_tree().get_root().get_node("game/CanvasLayer/interface/fps").set_text(str(Engine.get_frames_per_second()))
+	get_tree().get_root().get_node("game/interface/interface/fps").set_text(str(Engine.get_frames_per_second()))
 

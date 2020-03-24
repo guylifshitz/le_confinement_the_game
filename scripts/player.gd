@@ -3,6 +3,7 @@ extends KinematicBody2D
 const MOTION_SPEED = 300 # Pixels/second.
 #const RUN_MOTION_SPEED = 600 # Pixels/second.
 const RUN_MOTION_SPEED = 600 # Pixels/second.
+const RUN_MOTION_SPEED_FAST = 1200 # Pixels/second.
 #const MOTION_SPEED = 600
 
 var nearest_enemy_glob
@@ -11,6 +12,7 @@ var path = PoolVector2Array() setget set_path
 
 var items_needed = []
 var items_holding = []
+var has_attestation = false
 
 func _ready():
 	set_process(true)
@@ -64,6 +66,9 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("run"):
 		motion = motion.normalized() * RUN_MOTION_SPEED
 		$main_char_node/main_character/AnimationPlayer.playback_speed = 4
+	elif Input.is_action_pressed("run_fast"):
+		motion = motion.normalized() * RUN_MOTION_SPEED_FAST
+		$main_char_node/main_character/AnimationPlayer.playback_speed = 8
 	else:
 		motion = motion.normalized() * MOTION_SPEED
 		$main_char_node/main_character/AnimationPlayer.playback_speed = 2
@@ -118,3 +123,12 @@ func set_path(value):
 	if value.size() == 0:
 		return
 	set_process(true)
+
+
+func acquired_attestation():
+	var root = get_tree().get_root()
+	var attestation_slot = get_node("/root/game/interface/attestation_slot")
+	var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
+	attestation_slot.visible = false
+	attestation_slot_full.visible = true
+	has_attestation = true

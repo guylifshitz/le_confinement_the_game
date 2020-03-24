@@ -1,0 +1,8 @@
+{
+  "enemies": {
+    "count": 10
+  },
+  "police": {
+    "count": 10
+  }
+}

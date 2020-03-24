@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/landmarks/opera3d-small.png" type="Texture" id=1]
+
+[node name="opera" type="YSort"]
+position = Vector2( -30.8347, -7.77823 )
+rotation = -2.32831e-10
+
+[node name="opera-tras" type="Sprite" parent="."]
+position = Vector2( 2836.88, 564.936 )
+scale = Vector2( 1.37416, 1.37416 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 2760.57, 551.74 )
+rotation = -1.2686e-10
+scale = Vector2( 0.229417, 0.229417 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 4.63672, 2.8617 )
+polygon = PoolVector2Array( -1602.23, 570.478, -1282.59, 621.724, -1019.47, 724.649, -692.322, 951.296, -378.8, 1035.17, 1010.7, 363.883, 1355.48, 136.959, 1400.33, -218.656, 653.208, -825.563, -1477.1, 145.79 )
