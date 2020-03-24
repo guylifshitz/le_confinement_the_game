@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
-const MOTION_SPEED = 200 # Pixels/second.
+const MOTION_SPEED = 300 # Pixels/second.
 #const RUN_MOTION_SPEED = 600 # Pixels/second.
-const RUN_MOTION_SPEED = 1200 # Pixels/second.
+const RUN_MOTION_SPEED = 600 # Pixels/second.
 #const MOTION_SPEED = 600
 
 var nearest_enemy_glob
 
 var path = PoolVector2Array() setget set_path
+
+var items_needed = []
+var items_holding = []
 
 func _ready():
 	set_process(true)

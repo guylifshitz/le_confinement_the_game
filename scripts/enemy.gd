@@ -7,7 +7,7 @@ var following_player_start_position
 var navigation
 
 # PARAMS
-var knows_player_percentage = 100
+var knows_player_percentage = 10
 var MOVE_SPEED = 100
 
 # conversation

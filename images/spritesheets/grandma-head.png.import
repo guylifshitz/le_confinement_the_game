@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drugs.png-24a466a15e4e48c1ab4846b08fb76d65.stex"
+path="res://.import/grandma-head.png-12cd3ee29918860359d825134ee67052.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/drugs.png"
-dest_files=[ "res://.import/drugs.png-24a466a15e4e48c1ab4846b08fb76d65.stex" ]
+source_file="res://images/spritesheets/grandma-head.png"
+dest_files=[ "res://.import/grandma-head.png-12cd3ee29918860359d825134ee67052.stex" ]
 
 [params]
 
