@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/menu/pv-cartoon-2.png" type="Texture" id=1]
+[ext_resource path="res://scripts/dead-police.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="pv-cartoon-2" type="Sprite" parent="."]
+position = Vector2( 746.539, 399.252 )
+texture = ExtResource( 1 )

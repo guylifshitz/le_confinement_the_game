@@ -11,8 +11,11 @@ var nearest_enemy_glob
 var path = PoolVector2Array() setget set_path
 
 var items_needed = []
+var items_bonus = []
 var items_holding = []
+var items_holding_bonus = []
 var has_attestation = false
+var has_attestation_time
 
 func _ready():
 	set_process(true)
@@ -126,9 +129,48 @@ func set_path(value):
 
 
 func acquired_attestation():
-	var root = get_tree().get_root()
+
+	if has_attestation == false:
+		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
+
+	has_attestation = true
+	has_attestation_time = 5
+	
+	var attestation_timer = get_node("/root/game/interface/attestation_timer")
+	
+	attestation_timer.get_node("timer_label").text = str(has_attestation_time)
+	attestation_timer.show()
+
 	var attestation_slot = get_node("/root/game/interface/attestation_slot")
 	var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
-	attestation_slot.visible = false
-	attestation_slot_full.visible = true
-	has_attestation = true
+	attestation_slot.hide()
+	attestation_slot_full.show()
+
+	
+
+func decrement_attestation_timer():
+	var attestation_timer_label = get_node("/root/game/interface/attestation_timer/timer_label")
+	has_attestation_time = has_attestation_time - 1
+	attestation_timer_label.text = str(has_attestation_time)
+	
+	if has_attestation_time < 0:
+		has_attestation = false
+		var attestation_slot = get_node("/root/game/interface/attestation_slot")
+		var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
+		var attestation_timer = get_node("/root/game/interface/attestation_timer")
+
+		attestation_slot.show()
+		attestation_slot_full.hide()
+		attestation_timer.hide()
+
+		has_attestation_time = 5
+	else:
+		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
+
+
+
+
+
+
+
+

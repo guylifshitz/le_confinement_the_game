@@ -7,8 +7,9 @@ var following_player_start_position
 var navigation
 
 # PARAMS
-var knows_player_percentage = 10
+#var knows_player_percentage = 10
 var MOVE_SPEED = 100
+onready var game_settings = get_tree().get_root().get_node("game").game_settings
 
 # conversation
 var conversations = [["Hey!", "How are you?"],
@@ -29,15 +30,12 @@ func _ready():
 
 	conv_number = randi() % conversations.size()
 
-	if randi() % 100 > (100 - knows_player_percentage):
+	if randi() % 100 > (100 - game_settings["enemies"].knows_player_percentage):
 		is_social = true
 	else:
 		dialog_box.get_parent().queue_free()
 
 func _process(delta):
-
-	if following_player_start_position:
-		find_node("spot").global_position = following_player_start_position
 
 	if follows_player:
 		var dir = (player.global_position - self.global_position).normalized()
@@ -69,7 +67,8 @@ func start_conversation():
 func dialog_next_page():
 	conv_page = conv_page + 1
 	if conv_page  >= conversations[conv_number].size():
-		dialog_box.get_parent().hide()
+		conv_page = 0
+		#dialog_box.get_parent().hide()
 	else:
 		dialog_box.set_text(conversations[conv_number][conv_page])
 		utils_custom.create_timer_2(dialog_box.text.length() * 0.1, self, "dialog_next_page")
@@ -78,7 +77,8 @@ func _on_social_distance_area_body_exited(body):
 	if body.get_name() == "player" and is_social:
 		follows_player = false
 		simple_path = navigation.get_simple_path(global_position, following_player_start_position)
-	
+		dialog_box.get_parent().hide()
+		
 func move_along_path(distance):
 	if distance == 0:
 		return

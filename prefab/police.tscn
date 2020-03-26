@@ -1,18 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=1]
 [ext_resource path="res://scripts/police.gd" type="Script" id=2]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
 [ext_resource path="res://images/interface/attestation.png" type="Texture" id=5]
+[ext_resource path="res://images/interface/smiley copy.png" type="Texture" id=6]
+[ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 298.055
+
+[sub_resource type="DynamicFont" id=2]
 size = 150
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -28,52 +33,87 @@ tracks/0/keys = {
 "values": [ 0, 3, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 347.342, 329.484 )
-
 [sub_resource type="CircleShape2D" id=4]
+radius = 992.555
+
+[sub_resource type="CircleShape2D" id=5]
 radius = 2488.66
 
-[node name="police" type="Node2D"]
+[node name="police" type="KinematicBody2D"]
 position = Vector2( 786.788, -420.03 )
 rotation = 0.00281142
 scale = Vector2( 0.0665812, 0.0665812 )
 script = ExtResource( 2 )
 
-[node name="dialogbox" type="Sprite" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.17871, 419.583 )
+rotation = -2.32831e-10
+shape = SubResource( 1 )
+
+[node name="dialogbox_wants_attestation" type="Sprite" parent="."]
 visible = false
 position = Vector2( 576.097, -539.246 )
 rotation = -0.00127298
 scale = Vector2( 1.89871, 1.94178 )
 texture = ExtResource( 4 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="dialogbox"]
+[node name="wants_attestation" type="Node2D" parent="dialogbox_wants_attestation"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogbox_wants_attestation/wants_attestation"]
 anchor_left = 4.27246e-06
 anchor_top = 0.00242615
 anchor_right = 4.27246e-06
 anchor_bottom = 0.00242615
-margin_left = 106.838
-margin_top = -161.242
-margin_right = 230.838
-margin_bottom = 46.7578
+margin_left = 106.842
+margin_top = -159.301
+margin_right = 230.842
+margin_bottom = 48.6985
 rect_scale = Vector2( 1.69929, 1.69929 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 text = "?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="attestation2" type="Sprite" parent="dialogbox"]
+[node name="attestation2" type="Sprite" parent="dialogbox_wants_attestation/wants_attestation"]
 modulate = Color( 1, 0.913725, 0, 1 )
 position = Vector2( -23.3184, -42.0747 )
+rotation = 1.32081e-10
 scale = Vector2( 3.52558, 3.52558 )
 texture = ExtResource( 5 )
 
-[node name="attestation" type="Sprite" parent="dialogbox"]
+[node name="attestation" type="Sprite" parent="dialogbox_wants_attestation/wants_attestation"]
 position = Vector2( -30.8608, -43.864 )
 scale = Vector2( 2.94436, 2.94436 )
 texture = ExtResource( 5 )
+
+[node name="dialogbox_is_happy" type="Sprite" parent="."]
+visible = false
+position = Vector2( 576.097, -539.246 )
+rotation = -0.00127298
+scale = Vector2( 1.89871, 1.94178 )
+texture = ExtResource( 4 )
+
+[node name="is_happy" type="Node2D" parent="dialogbox_is_happy"]
+
+[node name="smiley copy" type="Sprite" parent="dialogbox_is_happy/is_happy"]
+position = Vector2( -44.6562, -46.9082 )
+rotation = 0.00124474
+scale = Vector2( 0.817535, 0.799401 )
+texture = ExtResource( 6 )
+
+[node name="dialogbox_is_angry" type="Sprite" parent="."]
+visible = false
+position = Vector2( 576.097, -539.246 )
+rotation = -0.00127298
+scale = Vector2( 1.89871, 1.94178 )
+texture = ExtResource( 4 )
+
+[node name="angryemoji" type="Sprite" parent="dialogbox_is_angry"]
+position = Vector2( -41.0569, -55.9579 )
+scale = Vector2( 1.11864, 1.11864 )
+texture = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.0126953, 11.6367 )
@@ -81,22 +121,21 @@ scale = Vector2( 22, 22 )
 texture = ExtResource( 1 )
 vframes = 4
 hframes = 4
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/walk = SubResource( 2 )
+anims/walk = SubResource( 3 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="control_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
 position = Vector2( -34.6397, 398.984 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="show_dialog" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="show_dialog"]
-position = Vector2( -40.416, 399 )
-shape = SubResource( 4 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_police_body_entered"]
+position = Vector2( 128.041, 421.542 )
+shape = SubResource( 5 )
+[connection signal="body_entered" from="control_area" to="." method="_on_police_body_entered"]
 [connection signal="body_entered" from="show_dialog" to="." method="_on_show_dialog_body_entered"]
 [connection signal="body_exited" from="show_dialog" to="." method="_on_show_dialog_body_exited"]

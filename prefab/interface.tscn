@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/interface.gd" type="Script" id=2]
 [ext_resource path="res://images/interface/health.png" type="Texture" id=3]
-[ext_resource path="res://images/interface/score.png" type="Texture" id=4]
+[ext_resource path="res://images/interface/ruler.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
 [node name="interface" type="Node2D"]
@@ -14,10 +17,10 @@ scale = Vector2( 0.9978, 1.00303 )
 script = ExtResource( 2 )
 
 [node name="score" type="RichTextLabel" parent="."]
-margin_left = 646.0
-margin_top = 43.0
-margin_right = 914.0
-margin_bottom = 86.0
+margin_left = 655.02
+margin_top = 0.129897
+margin_right = 923.02
+margin_bottom = 43.1299
 rect_pivot_offset = Vector2( -212.199, -129.885 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -31,24 +34,25 @@ __meta__ = {
 }
 
 [node name="fps" type="RichTextLabel" parent="."]
-margin_left = 852.708
+margin_left = 863.732
 margin_top = 3.4364
-margin_right = 1004.71
+margin_right = 1015.73
 margin_bottom = 37.4364
+rect_scale = Vector2( 1.37038, 0.969959 )
 rect_pivot_offset = Vector2( -212.199, -129.885 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "60"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="health" type="Sprite" parent="."]
-position = Vector2( 695.159, -125.592 )
+position = Vector2( 706.183, -125.592 )
 scale = Vector2( 0.18065, 0.18065 )
 texture = ExtResource( 3 )
 offset = Vector2( 1421.1, 1320.08 )
 
-[node name="score2" type="Sprite" parent="."]
-position = Vector2( 663.237, -145.785 )
-scale = Vector2( 0.0569034, 0.0569034 )
+[node name="ruler" type="Sprite" parent="."]
+position = Vector2( 964.699, 57.6403 )
+scale = Vector2( 0.329963, 0.329963 )
 texture = ExtResource( 4 )
-offset = Vector2( 5016.41, 3605.05 )

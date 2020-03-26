@@ -15,6 +15,8 @@ func spawn():
 	#while true:
 	print(get_tree().get_root().get_node("game").game_settings)
 	
+	seed(1)
+	
 	var spawn_count
 	var node_to_clone
 	if enemy_type == "police":
