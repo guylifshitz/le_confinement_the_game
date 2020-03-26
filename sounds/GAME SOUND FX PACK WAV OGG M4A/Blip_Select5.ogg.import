@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blip_Select5.ogg-37c893af48fbeeed6a99433f5152bc20.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Blip_Select5.ogg"
+dest_files=[ "res://.import/Blip_Select5.ogg-37c893af48fbeeed6a99433f5152bc20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

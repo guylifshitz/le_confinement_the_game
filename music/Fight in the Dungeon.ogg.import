@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fight in the Dungeon.ogg-1ab1bbc6caf6c2756a4397324d340db9.oggstr"
+
+[deps]
+
+source_file="res://music/Fight in the Dungeon.ogg"
+dest_files=[ "res://.import/Fight in the Dungeon.ogg-1ab1bbc6caf6c2756a4397324d340db9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

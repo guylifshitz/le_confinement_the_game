@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Powerup4.ogg-df6ebfa8a3bbba7493046580a8eb1a89.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Powerup4.ogg"
+dest_files=[ "res://.import/Powerup4.ogg-df6ebfa8a3bbba7493046580a8eb1a89.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

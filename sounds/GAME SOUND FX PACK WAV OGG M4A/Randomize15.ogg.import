@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Randomize15.ogg-e1a4db8e303ff51175535301eeb0870f.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Randomize15.ogg"
+dest_files=[ "res://.import/Randomize15.ogg-e1a4db8e303ff51175535301eeb0870f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

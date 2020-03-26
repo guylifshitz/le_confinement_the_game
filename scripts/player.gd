@@ -8,14 +8,18 @@ const RUN_MOTION_SPEED_FAST = 1200 # Pixels/second.
 
 var nearest_enemy_glob
 
-var path = PoolVector2Array() setget set_path
-
 var items_needed = []
 var items_bonus = []
 var items_holding = []
 var items_holding_bonus = []
 var has_attestation = false
 var has_attestation_time
+
+var can_move = true
+
+onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
+onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
+
 
 func _ready():
 	set_process(true)
@@ -66,32 +70,29 @@ func _physics_process(_delta):
 	motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	motion.y *= 0.5
 	
-	if Input.is_action_pressed("run"):
-		motion = motion.normalized() * RUN_MOTION_SPEED
-		$main_char_node/main_character/AnimationPlayer.playback_speed = 4
-	elif Input.is_action_pressed("run_fast"):
-		motion = motion.normalized() * RUN_MOTION_SPEED_FAST
-		$main_char_node/main_character/AnimationPlayer.playback_speed = 8
-	else:
-		motion = motion.normalized() * MOTION_SPEED
-		$main_char_node/main_character/AnimationPlayer.playback_speed = 2
-
-	if Input.is_action_pressed("move_left"):
-		$main_char_node/main_character/AnimationPlayer.play("left")
-	elif Input.is_action_pressed("move_right"):
-		$main_char_node/main_character/AnimationPlayer.play("right")
-	elif Input.is_action_pressed("move_up"):
-		$main_char_node/main_character/AnimationPlayer.play("up")
-	elif Input.is_action_pressed("move_down"):
-		$main_char_node/main_character/AnimationPlayer.play("down")
-	else:
-		$main_char_node/main_character/AnimationPlayer.play("idle")
-	#warning-ignore:return_value_discarded
-	move_and_slide(motion)
+	if can_move:
+		if Input.is_action_pressed("run"):
+			motion = motion.normalized() * RUN_MOTION_SPEED
+			$main_char_node/main_character/AnimationPlayer.playback_speed = 4
+		elif Input.is_action_pressed("run_fast"):
+			motion = motion.normalized() * RUN_MOTION_SPEED_FAST
+			$main_char_node/main_character/AnimationPlayer.playback_speed = 8
+		else:
+			motion = motion.normalized() * MOTION_SPEED
+			$main_char_node/main_character/AnimationPlayer.playback_speed = 2
 	
-	# TEST PATH HERE
-	var move_distance = MOTION_SPEED * _delta
-	move_along_path(move_distance)
+		if Input.is_action_pressed("move_left"):
+			$main_char_node/main_character/AnimationPlayer.play("left")
+		elif Input.is_action_pressed("move_right"):
+			$main_char_node/main_character/AnimationPlayer.play("right")
+		elif Input.is_action_pressed("move_up"):
+			$main_char_node/main_character/AnimationPlayer.play("up")
+		elif Input.is_action_pressed("move_down"):
+			$main_char_node/main_character/AnimationPlayer.play("down")
+		else:
+			$main_char_node/main_character/AnimationPlayer.play("idle")
+		move_and_slide(motion)
+		
 	
 func get_closest():
 	var enemies = get_tree().get_nodes_in_group("enemies")
@@ -104,29 +105,6 @@ func get_closest():
 		
 		nearest_enemy_glob = nearest_enemy;
 
-func move_along_path(distance):
-	if path.size() > 0:
-		global_position = path[-1]
-#	var start_point = global_position
-#	for i in range(path.size()):
-#		var distance_to_next = start_point.distance_to(path[0])
-#		if distance <= distance_to_next and distance >= 0.0:
-#			global_position = start_point.linear_interpolate(path[0], distance/distance_to_next)
-#			break
-#		elif distance < 0.0:
-#			global_position = path[0]
-#			set_process(false)
-#			break
-#		distance -= distance_to_next
-#		start_point = path[0]
-#		path.remove(0)
-
-func set_path(value):
-	path = value
-	if value.size() == 0:
-		return
-	set_process(true)
-
 
 func acquired_attestation():
 
@@ -134,7 +112,7 @@ func acquired_attestation():
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	has_attestation = true
-	has_attestation_time = 5
+	has_attestation_time = 2
 	
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
 	
@@ -164,6 +142,10 @@ func decrement_attestation_timer():
 		attestation_timer.hide()
 
 		has_attestation_time = 5
+		
+		main_music.stream_paused = false
+		star_music.stream_paused = true
+				
 	else:
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 

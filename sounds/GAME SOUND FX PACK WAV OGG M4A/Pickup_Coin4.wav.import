@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pickup_Coin4.wav-eac6d4f81fe0978890ff839c81774c0b.sample"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Pickup_Coin4.wav"
+dest_files=[ "res://.import/Pickup_Coin4.wav-eac6d4f81fe0978890ff839c81774c0b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

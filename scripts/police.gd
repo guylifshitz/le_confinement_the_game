@@ -4,6 +4,10 @@ var MOVE_SPEED = 100
 
 onready var player = get_tree().get_root().get_node("game/elements/player")
 
+onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
+onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
+onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
+
 # Navigation stuff
 var follows_player = false
 var wants_to_control = true
@@ -46,10 +50,15 @@ func _on_police_body_entered(body):
 			$dialogbox_is_happy.hide()
 			$dialogbox_wants_attestation.hide()
 			$dialogbox_is_angry.show()
-			utils_custom.create_timer_2(1, self, "kill_player")
+			player.can_move = false
+
+			music_main.stop()
+			music_star.stop()
+			sound_lost.play()
+
+			utils_custom.create_timer_2(2, self, "kill_player")
 
 func kill_player():
-	pass
 	get_tree().change_scene("res://dead-police.tscn")
 
 func set_wants_to_control():
@@ -65,8 +74,6 @@ func _on_show_dialog_body_entered(body):
 			
 		else:
 			$dialogbox_is_happy.show()
-
-
 
 
 func _on_show_dialog_body_exited(body):

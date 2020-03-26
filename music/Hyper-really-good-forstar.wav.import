@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hyper-really-good-forstar.wav-34f1a0cd0e914d9ca3be826e3a919b64.sample"
+
+[deps]
+
+source_file="res://music/Hyper-really-good-forstar.wav"
+dest_files=[ "res://.import/Hyper-really-good-forstar.wav-34f1a0cd0e914d9ca3be826e3a919b64.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

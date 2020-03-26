@@ -4,6 +4,13 @@ onready var player = get_tree().get_root().get_node("game/elements/player")
 onready var nearest_enemy_line = get_tree().get_root().get_node("game/nearest_enemy_line/")
 onready var stores = $elements/goals/
 
+
+onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
+onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
+onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
+onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
+
+
 var score = 0
 var damage = 100
 var game_settings = load_json()
@@ -84,9 +91,19 @@ func _process(delta):
 	var end_pos = health_bar_bg.points[0]
 	end_pos = lerp(start_pos, end_pos, max(damage/100, 0))
 	health_bar.points[0] = end_pos
-
+	
+	if damage < 0:
+		if player.can_move:
+			player.can_move = false
+			music_main.stop()
+			music_star.stop()
+			sound_lost.play()
+			sound_cough.play()
+			utils_custom.create_timer_2(2, self, "kill_player")
 
 	update()
 
 	get_tree().get_root().get_node("game/interface/interface/fps").set_text("FPS:"+str(Engine.get_frames_per_second()))
 
+func kill_player():
+	get_tree().change_scene("res://lose-sick.tscn")

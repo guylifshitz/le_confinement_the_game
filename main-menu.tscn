@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://images/menu/tv-wide.png" type="Texture" id=4]
 [ext_resource path="res://main-menu.gd" type="Script" id=5]
 [ext_resource path="res://grandma.gd" type="Script" id=6]
+[ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=7]
+[ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
+[ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=10]
+[ext_resource path="res://start_game.gd" type="Script" id=11]
+[ext_resource path="res://images/menu/apartment.jpg" type="Texture" id=12]
+[ext_resource path="res://images/interface/nextarrow.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -24,18 +31,27 @@ tracks/0/keys = {
 "values": [ -10.0, 10.0, -10.0 ]
 }
 
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 8 )
+
 [node name="menu" type="Node2D"]
 script = ExtResource( 5 )
+
+[node name="apartment" type="Sprite" parent="."]
+position = Vector2( 490.724, 272.918 )
+scale = Vector2( 1.58982, 1.38982 )
+texture = ExtResource( 12 )
 
 [node name="grandma" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
 [node name="grandma-body-small" type="Sprite" parent="grandma"]
-position = Vector2( 180.883, 432.721 )
+position = Vector2( 192.411, 370.468 )
 texture = ExtResource( 2 )
 
 [node name="grandma-head-small" type="Sprite" parent="grandma"]
-position = Vector2( 191.556, 316.918 )
+position = Vector2( 202.911, 254.665 )
 rotation = -0.174533
 texture = ExtResource( 1 )
 
@@ -43,12 +59,62 @@ texture = ExtResource( 1 )
 anims/head-movement = SubResource( 1 )
 
 [node name="macron-cartoon" type="Sprite" parent="."]
-position = Vector2( 670.894, 289.895 )
-scale = Vector2( 0.647164, 0.647164 )
+position = Vector2( 729.939, 331.628 )
+scale = Vector2( 0.290387, 0.292149 )
 texture = ExtResource( 3 )
 
 [node name="tv-wide" type="Sprite" parent="."]
-position = Vector2( 768.909, 186.673 )
+position = Vector2( 763.347, 296.825 )
 rotation = -0.00773652
-scale = Vector2( 0.749735, 0.749735 )
+scale = Vector2( 0.306909, 0.311166 )
 texture = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="dialogbox" type="Sprite" parent="."]
+position = Vector2( 411.148, 178.224 )
+texture = ExtResource( 9 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 158.024
+margin_top = 39.3476
+margin_right = 635.024
+margin_bottom = 220.348
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = -0.00269775
+anchor_top = 0.00269775
+anchor_right = -0.00269775
+anchor_bottom = 0.00269775
+margin_left = -73.5649
+margin_top = -107.103
+margin_right = 961.435
+margin_bottom = 624.897
+action_mode = 0
+flat = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Sprite" parent="."]
+position = Vector2( 836.315, 151.534 )
+texture = ExtResource( 10 )
+
+[node name="nextarrow" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0, 0.847059, 1 )
+position = Vector2( 839.984, 152.356 )
+scale = Vector2( 0.243173, 0.243173 )
+texture = ExtResource( 13 )
+[connection signal="button_down" from="Button" to="Button" method="_on_Button_button_down"]

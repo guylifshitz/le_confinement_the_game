@@ -6,8 +6,12 @@ onready var holding_drugs = load("res://prefab/holding_drugs.tscn")
 onready var holding_flower = load("res://prefab/holding_flower.tscn")
 onready var holding_toilet_paper = load("res://prefab/holding_toilet_paper.tscn")
 
+onready var pickedup_sound = get_tree().get_root().get_node("game/audio/picked_up")
+onready var empty_store_sound = get_tree().get_root().get_node("game/audio/empty_store")
+
 var store_has_items = []
 export var health = 1
+var store_visited = false
 
 func _ready():
 	pass
@@ -29,10 +33,9 @@ func _on_grocery_body_entered(body):
 						holding_slot.add_child(holding_toilet_paper.instance())
 					elif item == "drugs":
 						holding_slot.add_child(holding_drugs.instance())
-		
+					pickedup_sound.play()
+
 		for item in body.items_bonus:
-			print(item)
-			print(store_has_items)
 			if store_has_items.find(item) != -1:
 				found_item = true
 				if  body.items_holding_bonus.find(item) == -1:
@@ -41,8 +44,12 @@ func _on_grocery_body_entered(body):
 					body.items_holding.append(item)
 					if item == "flower":
 						flower_slot.add_child(holding_flower.instance())
+					pickedup_sound.play()
 
 		if found_item == false:
-			var x_store = store_x.instance()
-			x_store.position = Vector2(0, 0)
-			add_child(x_store)
+			if store_visited == false:
+				store_visited = true
+				var x_store = store_x.instance()
+				x_store.position = Vector2(0, 0)
+				add_child(x_store)
+				empty_store_sound.play()

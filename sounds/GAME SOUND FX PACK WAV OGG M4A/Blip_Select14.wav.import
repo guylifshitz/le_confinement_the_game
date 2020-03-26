@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Blip_Select14.wav-e367c9e08eeacc5037cd4c5ecb81547d.sample"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Blip_Select14.wav"
+dest_files=[ "res://.import/Blip_Select14.wav-e367c9e08eeacc5037cd4c5ecb81547d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

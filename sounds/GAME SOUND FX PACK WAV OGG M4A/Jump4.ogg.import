@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Jump4.ogg-75928b38e7f1cee14c09e883a1bb6683.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Jump4.ogg"
+dest_files=[ "res://.import/Jump4.ogg-75928b38e7f1cee14c09e883a1bb6683.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

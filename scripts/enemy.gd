@@ -9,6 +9,7 @@ var navigation
 # PARAMS
 #var knows_player_percentage = 10
 var MOVE_SPEED = 100
+var SPEECH_SPEED = 0.4
 onready var game_settings = get_tree().get_root().get_node("game").game_settings
 
 # conversation
@@ -62,7 +63,7 @@ func start_conversation():
 	conv_page = 0
 	dialog_box.set_text(conversations[conv_number][conv_page])
 	dialog_box.get_parent().show()
-	utils_custom.create_timer_2(dialog_box.text.length() * 0.1, self, "dialog_next_page")
+	utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
 
 func dialog_next_page():
 	conv_page = conv_page + 1
@@ -71,7 +72,7 @@ func dialog_next_page():
 		#dialog_box.get_parent().hide()
 	else:
 		dialog_box.set_text(conversations[conv_number][conv_page])
-		utils_custom.create_timer_2(dialog_box.text.length() * 0.1, self, "dialog_next_page")
+		utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
 		
 func _on_social_distance_area_body_exited(body):
 	if body.get_name() == "player" and is_social:

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Laser_Shoot19.ogg-b3e689dc67f544d41271aada6883478e.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Laser_Shoot19.ogg"
+dest_files=[ "res://.import/Laser_Shoot19.ogg-b3e689dc67f544d41271aada6883478e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

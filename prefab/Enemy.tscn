@@ -37,6 +37,7 @@ script = ExtResource( 2 )
 [node name="speech" type="Node2D" parent="."]
 position = Vector2( 0.863251, -17.7318 )
 rotation = 0.00540832
+scale = Vector2( 1.25911, 1.25911 )
 
 [node name="bubble" type="Sprite" parent="speech"]
 position = Vector2( 32.8267, -32.1776 )

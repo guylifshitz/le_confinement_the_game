@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Explosion20.ogg-fffb91a273da3e2c50374514369d0872.oggstr"
+
+[deps]
+
+source_file="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Explosion20.ogg"
+dest_files=[ "res://.import/Explosion20.ogg-fffb91a273da3e2c50374514369d0872.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
