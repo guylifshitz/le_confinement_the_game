@@ -69,6 +69,10 @@ func set_wants_to_control():
 func _on_show_dialog_body_entered(body):
 	if body.name == "player":
 		if wants_to_control:
+			if randf() > 0.5:
+				$audio/question.play()
+			else:
+				$audio/question_2.play()
 			$dialogbox_wants_attestation.show()
 			follows_player = true
 			if simple_path.size() == 0:

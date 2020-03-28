@@ -18,6 +18,7 @@ var has_attestation_time
 var can_move = true
 var running = false
 var running_recovering = false
+var should_play_bump = true
 
 onready var game_settings = get_tree().get_root().get_node("game").game_settings
 onready var STAMINA_MAX_AMOUNT =  game_settings["player"]["stamina_max_amount"]
@@ -29,6 +30,8 @@ var stamina
 
 onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
 onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
+onready var sound_attestation = get_tree().get_root().get_node("game/audio/pickup_attestation")
+onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
 
 func _ready():
@@ -122,7 +125,17 @@ func _physics_process(_delta):
 		else:
 			$main_char_node/main_character/AnimationPlayer.play("idle")
 		move_and_slide(motion)
-		
+		if should_play_bump:
+			if get_slide_count() != 0 :
+				for i in range (0,get_slide_count()) :
+					if get_slide_collision(i).collider.get_name() == "Enemy":
+						if should_play_bump:
+							sound_bumps.get_child(randi()%sound_bumps.get_child_count()).play()
+							utils_custom.create_timer_2(1,self,"set_should_play_bump")
+							should_play_bump = false
+
+func set_should_play_bump():
+	should_play_bump = true
 
 func stop_running():
 	running = false 
@@ -146,12 +159,12 @@ func get_closest():
 
 
 func acquired_attestation():
-
+	sound_attestation.play()
 	if has_attestation == false:
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	has_attestation = true
-	has_attestation_time = 3	
+	has_attestation_time = game_settings["police"]["attestation_length"]
 	
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
 	

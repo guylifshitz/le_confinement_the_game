@@ -41,7 +41,7 @@ func _on_grocery_body_entered(body):
 				if  body.items_holding_bonus.find(item) == -1:
 					var holding_slot = body.find_node("holding_items").get_child(body.items_holding.size())
 					var flower_slot = body.find_node("holding_items").find_node("flower_slot")
-					body.items_holding.append(item)
+					body.items_holding_bonus.append(item)
 					if item == "flower":
 						flower_slot.add_child(holding_flower.instance())
 					pickedup_sound.play()

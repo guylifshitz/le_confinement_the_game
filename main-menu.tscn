@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
 [ext_resource path="res://images/menu/macron-cartoon.jpg" type="Texture" id=3]
 [ext_resource path="res://images/menu/tv-wide.png" type="Texture" id=4]
-[ext_resource path="res://main-menu.gd" type="Script" id=5]
-[ext_resource path="res://grandma.gd" type="Script" id=6]
+[ext_resource path="res://scripts/main-menu.gd" type="Script" id=5]
+[ext_resource path="res://scripts/grandma.gd" type="Script" id=6]
 [ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
@@ -13,13 +13,15 @@
 [ext_resource path="res://images/interface/skip.png" type="Texture" id=11]
 [ext_resource path="res://images/menu/apartment.jpg" type="Texture" id=12]
 [ext_resource path="res://prefab/click_button.tscn" type="PackedScene" id=13]
-[ext_resource path="res://health-bar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=15]
 [ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=16]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=17]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=18]
 [ext_resource path="res://images/interface/attestation.png" type="Texture" id=19]
 [ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=20]
+[ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=21]
+[ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -82,10 +84,6 @@ position = Vector2( 763.347, 296.825 )
 rotation = -0.00773652
 scale = Vector2( 0.306909, 0.311166 )
 texture = ExtResource( 4 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
 
 [node name="dialogbox" type="Sprite" parent="."]
 position = Vector2( 411.148, 178.224 )
@@ -165,6 +163,23 @@ __meta__ = {
 }
 
 [node name="click_button" parent="." instance=ExtResource( 13 )]
+
+[node name="audio" type="Node2D" parent="."]
+position = Vector2( 763.347, 296.825 )
+rotation = -0.00773652
+scale = Vector2( 0.306909, 0.311166 )
+
+[node name="pop" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 21 )
+bus = "sound_effects"
+
+[node name="music" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "music"
+
+[node name="audio-icon" parent="." instance=ExtResource( 22 )]
+scale = Vector2( 1, 1.00358 )
 
 [node name="icons" type="Node2D" parent="."]
 position = Vector2( 280.4, 17.6656 )

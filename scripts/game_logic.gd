@@ -4,7 +4,7 @@ onready var player = get_tree().get_root().get_node("game/elements/player")
 onready var nearest_enemy_line = get_tree().get_root().get_node("game/nearest_enemy_line/")
 onready var stores = $elements/goals/
 
-
+		
 onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
 #onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
@@ -119,3 +119,8 @@ func _process(delta):
 
 func kill_player():
 	get_tree().change_scene("res://lose-sick.tscn")
+
+func win_game():
+	global.score = score
+	global.bonus_items_recovered = player.items_holding_bonus
+	get_tree().change_scene("res://win-screen.tscn")

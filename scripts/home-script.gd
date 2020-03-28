@@ -1,5 +1,7 @@
 extends Area2D
 
+onready var game = get_tree().get_root().get_node("game")
+
 func _ready():
 	pass
 
@@ -13,7 +15,7 @@ func _on_home_body_entered(body):
 #			delete_children(holding_slot)
 #		body.items_holding = []
 		if body.items_holding.size() == body.items_needed.size():
-			get_tree().change_scene("res://win-screen.tscn")
+			game.win_game()
 
 static func delete_children(node):
 	for n in node.get_children():

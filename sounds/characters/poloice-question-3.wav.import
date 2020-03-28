@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/poloice-question-3.wav-822217fea4bdf494c2177047bd0a8b88.sample"
+
+[deps]
+
+source_file="res://sounds/characters/poloice-question-3.wav"
+dest_files=[ "res://.import/poloice-question-3.wav-822217fea4bdf494c2177047bd0a8b88.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

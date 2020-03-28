@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jingles_NES13.wav-aa01a7f3f4abe725e1ccc02df1a8e918.sample"
+
+[deps]
+
+source_file="res://sounds/bad/jingles_NES13.wav"
+dest_files=[ "res://.import/jingles_NES13.wav-aa01a7f3f4abe725e1ccc02df1a8e918.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

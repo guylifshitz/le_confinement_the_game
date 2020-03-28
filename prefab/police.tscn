@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
+[ext_resource path="res://sounds/characters/police-question.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/police.gd" type="Script" id=2]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
@@ -7,6 +8,7 @@
 [ext_resource path="res://images/interface/smiley copy.png" type="Texture" id=6]
 [ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=7]
 [ext_resource path="res://images/spritesheets/policeman-full.png" type="Texture" id=8]
+[ext_resource path="res://sounds/characters/police-question2.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 298.055
@@ -17,52 +19,52 @@ outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 992.555
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 radius = 2488.66
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
 region = Rect2( 34, 0, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
 region = Rect2( 68, 0, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
 region = Rect2( 102, 0, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 216, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 8 )
 region = Rect2( 34, 216, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 8 )
 region = Rect2( 68, 216, 34, 54 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 8 )
 region = Rect2( 102, 216, 34, 54 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "no_mask",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "mask",
 "speed": 5.0
@@ -148,21 +150,30 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
 position = Vector2( -34.6397, 398.984 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="show_dialog" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="show_dialog"]
 position = Vector2( 128.041, 421.542 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -3.3418, 3.36084 )
 scale = Vector2( 24.2327, 24.2327 )
-frames = SubResource( 14 )
+frames = SubResource( 13 )
 animation = "no_mask"
-frame = 2
+frame = 3
 playing = true
+
+[node name="audio" type="Node2D" parent="."]
+
+[node name="question" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 9 )
+volume_db = -5.0
+
+[node name="question_2" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 1 )
 [connection signal="body_entered" from="control_area" to="." method="_on_police_body_entered"]
 [connection signal="body_entered" from="show_dialog" to="." method="_on_show_dialog_body_entered"]
 [connection signal="body_exited" from="show_dialog" to="." method="_on_show_dialog_body_exited"]

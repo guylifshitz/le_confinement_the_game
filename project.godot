@@ -25,6 +25,7 @@ run/main_scene="res://main-menu.tscn"
 [autoload]
 
 utils_custom="*res://scripts/utils.gd"
+global="*res://scripts/global.gd"
 
 [display]
 

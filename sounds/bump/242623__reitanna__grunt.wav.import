@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/242623__reitanna__grunt.wav-4a0bfbafa1075eb8af2fee6db451c63b.sample"
+
+[deps]
+
+source_file="res://sounds/bump/242623__reitanna__grunt.wav"
+dest_files=[ "res://.import/242623__reitanna__grunt.wav-4a0bfbafa1075eb8af2fee6db451c63b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

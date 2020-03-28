@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/main_characterKinematic.tscn" type="PackedScene" id=2]
@@ -45,11 +45,18 @@
 [ext_resource path="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Randomize2.ogg" type="AudioStream" id=43]
 [ext_resource path="res://sounds/8-Bit Sound Library/Wav/Collect_Point_00.wav" type="AudioStream" id=44]
 [ext_resource path="res://sounds/8-Bit Sound Library/Wav/Shoot_01.wav" type="AudioStream" id=45]
-[ext_resource path="res://sounds/jingles_NES13.wav" type="AudioStream" id=46]
-[ext_resource path="res://health-bar.tscn" type="PackedScene" id=47]
+[ext_resource path="res://sounds/bad/jingles_NES13.wav" type="AudioStream" id=46]
+[ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=47]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=48]
 [ext_resource path="res://prefab/npc-1.tres" type="SpriteFrames" id=49]
 [ext_resource path="res://prefab/stamina-bar.tscn" type="PackedScene" id=50]
+[ext_resource path="res://sounds/bump/Hit_02.wav" type="AudioStream" id=51]
+[ext_resource path="res://sounds/pickup/SFX_Pickup_41.wav" type="AudioStream" id=52]
+[ext_resource path="res://sounds/bump/242622__reitanna__grunt2.wav" type="AudioStream" id=53]
+[ext_resource path="res://sounds/bump/Open_01.wav" type="AudioStream" id=54]
+[ext_resource path="res://sounds/bump/242623__reitanna__grunt.wav" type="AudioStream" id=55]
+[ext_resource path="res://images/interface/score.png" type="Texture" id=56]
+[ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=57]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49696, 15.3129 )
@@ -1775,13 +1782,18 @@ curve = SubResource( 24 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
+[node name="sttar" type="Sprite" parent="interface"]
+position = Vector2( 962.748, 191.104 )
+scale = Vector2( 0.0537509, 0.0537509 )
+texture = ExtResource( 56 )
+
 [node name="score_label" type="RichTextLabel" parent="interface"]
 anchor_left = -0.000299215
 anchor_right = -0.000299215
-margin_left = 846.846
-margin_top = 10.7554
-margin_right = 933.846
-margin_bottom = 55.7554
+margin_left = 841.846
+margin_top = 175.755
+margin_right = 928.846
+margin_bottom = 220.755
 custom_fonts/normal_font = SubResource( 25 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -1794,13 +1806,13 @@ __meta__ = {
 }
 
 [node name="health_bar" parent="interface" instance=ExtResource( 47 )]
-position = Vector2( 652.288, -87.4678 )
+position = Vector2( 652.288, -119.468 )
 
 [node name="distance_bar" parent="interface" instance=ExtResource( 48 )]
-position = Vector2( 649.109, -34.3689 )
+position = Vector2( 649.109, -66.3689 )
 
 [node name="stamina_bar" parent="interface" instance=ExtResource( 50 )]
-position = Vector2( 649.367, 18.1486 )
+position = Vector2( 649.367, -13.8514 )
 
 [node name="interface" parent="interface" instance=ExtResource( 21 )]
 visible = false
@@ -1902,6 +1914,9 @@ rotation = -4.53298e-09
 scale = Vector2( 0.128058, 0.128058 )
 texture = ExtResource( 32 )
 
+[node name="audio-icon" parent="interface" instance=ExtResource( 57 )]
+position = Vector2( 0, 0.227074 )
+
 [node name="nearest_enemy_line" type="Line2D" parent="."]
 position = Vector2( 2.15753, 0.719177 )
 points = PoolVector2Array( -109.459, -154.082, -75.5136, -113.808, 67.0137, 69.52, 132.905, 153.008 )
@@ -1946,24 +1961,58 @@ stream = ExtResource( 41 )
 volume_db = 10.0
 autoplay = true
 stream_paused = true
+bus = "music"
 
 [node name="main_music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 42 )
 autoplay = true
+bus = "music"
 
 [node name="bad" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 43 )
+bus = "sound_effects"
 
 [node name="picked_up" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 44 )
 volume_db = 10.0
+bus = "sound_effects"
 
 [node name="empty_store" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 45 )
 volume_db = 5.0
+bus = "sound_effects"
 
 [node name="lost" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 46 )
+bus = "sound_effects"
+
+[node name="pickup_attestation" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 52 )
+volume_db = -5.0
+bus = "sound_effects"
+
+[node name="bumps" type="Node2D" parent="audio"]
+position = Vector2( 0.459473, 0 )
+
+[node name="bump" type="AudioStreamPlayer" parent="audio/bumps"]
+stream = ExtResource( 51 )
+volume_db = -10.0
+bus = "sound_effects"
+
+[node name="bump2" type="AudioStreamPlayer" parent="audio/bumps"]
+stream = ExtResource( 55 )
+volume_db = -10.0
+bus = "sound_effects"
+
+[node name="bump4" type="AudioStreamPlayer" parent="audio/bumps"]
+stream = ExtResource( 53 )
+volume_db = -10.0
+bus = "sound_effects"
+
+[node name="bump3" type="AudioStreamPlayer" parent="audio/bumps"]
+stream = ExtResource( 54 )
+volume_db = -10.0
+bus = "sound_effects"
 [connection signal="body_entered" from="elements/goals/monoprix/monoprix_node/grocery" to="elements/goals/monoprix/monoprix_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/carrefour/carrefour_node/grocery" to="elements/goals/carrefour/carrefour_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/la_suprette/la_superette_node/grocery" to="elements/goals/la_suprette/la_superette_node" method="_on_grocery_body_entered"]
