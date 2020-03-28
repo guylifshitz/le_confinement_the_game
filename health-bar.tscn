@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/interface/health.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.953125, 0.294128, 0.294128, 1, 0.566406, 0.0915053, 0.0915053, 1 )
+
+[node name="health-bar" type="Node2D"]
+
+[node name="health-bg" type="Line2D" parent="."]
+points = PoolVector2Array( 119.536, 150, 267.019, 150 )
+width = 40.0
+default_color = Color( 0, 0, 0, 0.870588 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="health-bar" type="Line2D" parent="."]
+position = Vector2( -0.10498, 1.427 )
+points = PoolVector2Array( 119.536, 150, 267.019, 150 )
+width = 30.0
+default_color = Color( 1, 0, 0, 0.870588 )
+gradient = SubResource( 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="health-icon" type="Sprite" parent="."]
+position = Vector2( 309.58, 151.508 )
+scale = Vector2( 0.181939, 0.181939 )
+texture = ExtResource( 1 )

@@ -112,7 +112,7 @@ func acquired_attestation():
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	has_attestation = true
-	has_attestation_time = 2
+	has_attestation_time = 3
 	
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
 	

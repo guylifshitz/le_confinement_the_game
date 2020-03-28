@@ -1,0 +1,20 @@
+{
+  "english": [
+    " Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+    " Scarey times, I know.... \n\n But we need         !!!",
+    " There are shortages, you will need to try many stores to find each item.",
+    " Nothing will stop French burercuracy, not even a global pandemic. \n\n You need to fill out a form to leave the house.",
+    " Unfortunately, we don't have paper to write the form on. \n\n You'll have to find paper outside.",
+    " Avoid the police if you don't have the form! \n\n Remember, the form is only valid a short time.",
+    " Most importantly, don't forget!!! \n\n You need to keep your distance from the other people.",
+    " Otherwise you might become contagious and bring home the disease.",
+    " This bar will tell you how far you are from people.",
+    " This bar will tell you how exposed you have been.",
+    " Do you still remember how to walk? Just use the arrow keys. \n\n You can run for a short time using the shift key."
+  ],
+  "show_items_list_text_index": 1,
+  "show_distance_bar_text_index": 8,
+  "show_attestation_text_index": 4,
+  "show_police_text_index": 5,
+  "show_health_bar_text_index": 9,
+}

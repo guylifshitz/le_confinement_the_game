@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://images/spritesheets/zombies-trans.png" type="Texture" id=1]
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
+[ext_resource path="res://prefab/npc-1.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://images/spritesheets/npc/boy-1.png" type="Texture" id=6]
+[ext_resource path="res://images/spritesheets/npc/girl3.png" type="Texture" id=7]
+[ext_resource path="res://images/spritesheets/npc/man-bald-2.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -29,6 +33,77 @@ extents = Vector2( 8.14316, 7.89514 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 144.605
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 6 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 8 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 8 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 462.031, 163.125 )
@@ -58,6 +133,7 @@ __meta__ = {
 }
 
 [node name="enemySprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1.15692, -17.4431 )
 rotation = 0.00540832
 texture = ExtResource( 1 )
@@ -79,5 +155,51 @@ visible = false
 [node name="shape" type="CollisionShape2D" parent="social_distance_area"]
 position = Vector2( -3.05176e-05, 0.242386 )
 shape = SubResource( 4 )
+
+[node name="characters" type="Node2D" parent="."]
+
+[node name="boy-red-pants" type="AnimatedSprite" parent="characters"]
+visible = false
+position = Vector2( -0.813721, -23.1895 )
+scale = Vector2( 1.36749, 1.36749 )
+frames = SubResource( 8 )
+animation = "down"
+frame = 1
+playing = true
+
+[node name="girl-1" type="AnimatedSprite" parent="characters"]
+visible = false
+position = Vector2( -0.813721, -23.1895 )
+scale = Vector2( 1.36749, 1.36749 )
+frames = ExtResource( 3 )
+animation = "down"
+frame = 2
+playing = true
+
+[node name="man-bald2" type="AnimatedSprite" parent="characters"]
+visible = false
+position = Vector2( -3.96664, -26.1391 )
+scale = Vector2( 1.72856, 1.72856 )
+frames = SubResource( 16 )
+animation = "down"
+frame = 2
+playing = true
+
+[node name="afro-boy" type="AnimatedSprite" parent="characters"]
+visible = false
+position = Vector2( -1.96664, -26.1391 )
+scale = Vector2( 1.32886, 1.72856 )
+frames = SubResource( 20 )
+animation = "down"
+frame = 1
+playing = true
+
+[node name="women1" type="AnimatedSprite" parent="characters"]
+position = Vector2( -1.96664, -26.1391 )
+scale = Vector2( 1.32886, 1.72856 )
+frames = SubResource( 21 )
+animation = "s"
+frame = 2
+playing = true
 [connection signal="body_entered" from="social_distance_area" to="." method="_on_social_distance_area_body_entered"]
 [connection signal="body_exited" from="social_distance_area" to="." method="_on_social_distance_area_body_exited"]

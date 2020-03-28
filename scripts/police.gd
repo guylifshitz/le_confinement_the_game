@@ -59,7 +59,7 @@ func _on_police_body_entered(body):
 			utils_custom.create_timer_2(2, self, "kill_player")
 
 func kill_player():
-	get_tree().change_scene("res://dead-police.tscn")
+	get_tree().change_scene("res://lose-police.tscn")
 
 func set_wants_to_control():
 	wants_to_control = true

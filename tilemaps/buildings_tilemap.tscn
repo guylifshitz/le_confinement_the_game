@@ -3,10 +3,10 @@
 [ext_resource path="res://images/tilesets/paris-fixed.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 440, 0, 220, 438, 440, 438, 550, 438, 660, 0, 440 )
+points = PoolVector2Array( 0, 438.344, 212.995, 315.652, 438, 437.382, 438, 550, 438, 660, 0, 438.97 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 219, 550, 3.05176e-05, 660, 3.05176e-05, 440, 219, 550 )
+points = PoolVector2Array( 219, 538.515, 3.05176e-05, 660, 0, 437.382, 219, 536.907 )
 
 [sub_resource type="TileSet" id=3]
 5/name = "paris-fixed.png 5"

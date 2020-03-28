@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2_police_Walk_000.png-e84030ad856b02d83c5aad237b538e5d.stex"
+path="res://.import/girl3.png-1e0604df2bb74655555ae3f39db702ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/2_police_Walk_000.png"
-dest_files=[ "res://.import/2_police_Walk_000.png-e84030ad856b02d83c5aad237b538e5d.stex" ]
+source_file="res://images/spritesheets/npc/girl3.png"
+dest_files=[ "res://.import/girl3.png-1e0604df2bb74655555ae3f39db702ad.stex" ]
 
 [params]
 

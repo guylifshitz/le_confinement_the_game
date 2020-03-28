@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -9,10 +9,17 @@
 [ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
-[ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=10]
-[ext_resource path="res://start_game.gd" type="Script" id=11]
+[ext_resource path="res://images/interface/skip3bg.png" type="Texture" id=10]
+[ext_resource path="res://images/interface/skip.png" type="Texture" id=11]
 [ext_resource path="res://images/menu/apartment.jpg" type="Texture" id=12]
-[ext_resource path="res://images/interface/nextarrow.png" type="Texture" id=13]
+[ext_resource path="res://prefab/click_button.tscn" type="PackedScene" id=13]
+[ext_resource path="res://health-bar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=15]
+[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=16]
+[ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=18]
+[ext_resource path="res://images/interface/attestation.png" type="Texture" id=19]
+[ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -33,6 +40,13 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=2]
 size = 33
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 font_data = ExtResource( 8 )
 
 [node name="menu" type="Node2D"]
@@ -77,7 +91,7 @@ autoplay = true
 position = Vector2( 411.148, 178.224 )
 texture = ExtResource( 9 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="grandma_dialog" type="RichTextLabel" parent="."]
 anchor_top = 0.00132736
 anchor_bottom = 0.00132736
 margin_left = 158.024
@@ -92,29 +106,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="scroll_faster" type="Button" parent="."]
 anchor_left = -0.00269775
 anchor_top = 0.00269775
 anchor_right = -0.00269775
 anchor_bottom = 0.00269775
 margin_left = -73.5649
-margin_top = -107.103
+margin_top = -106.382
 margin_right = 961.435
-margin_bottom = 624.897
+margin_bottom = 625.618
 action_mode = 0
 flat = true
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Sprite" parent="."]
-position = Vector2( 836.315, 151.534 )
+[node name="skip_button" type="Node2D" parent="."]
+position = Vector2( 749.954, 88.9999 )
+
+[node name="skip3bg" type="Sprite" parent="skip_button"]
+visible = false
+modulate = Color( 0.372549, 0.294118, 0.294118, 1 )
+position = Vector2( 147.61, 432.748 )
+scale = Vector2( 0.218103, 0.218103 )
 texture = ExtResource( 10 )
 
-[node name="nextarrow" type="Sprite" parent="."]
-modulate = Color( 0.858824, 0, 0.847059, 1 )
-position = Vector2( 839.984, 152.356 )
-scale = Vector2( 0.243173, 0.243173 )
-texture = ExtResource( 13 )
-[connection signal="button_down" from="Button" to="Button" method="_on_Button_button_down"]
+[node name="skip" type="Sprite" parent="skip_button"]
+visible = false
+modulate = Color( 0.992157, 0.709804, 0.270588, 1 )
+position = Vector2( 146.729, 432.185 )
+scale = Vector2( 0.175366, 0.175366 )
+texture = ExtResource( 11 )
+
+[node name="skip-text" type="RichTextLabel" parent="skip_button"]
+margin_left = -165.149
+margin_top = 391.045
+margin_right = 308.851
+margin_bottom = 492.045
+custom_fonts/normal_font = SubResource( 3 )
+text = "SKIP>>>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skip_dialog" type="Button" parent="skip_button"]
+anchor_left = -0.00269775
+anchor_top = 0.00269775
+anchor_right = -0.00269775
+anchor_bottom = 0.00269775
+margin_left = -136.954
+margin_top = 345.0
+margin_right = 238.046
+margin_bottom = 494.0
+action_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="click_button" parent="." instance=ExtResource( 13 )]
+
+[node name="icons" type="Node2D" parent="."]
+position = Vector2( 280.4, 17.6656 )
+
+[node name="health_bar" parent="icons" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( -55.9095, 6.21217 )
+
+[node name="distance_bar" parent="icons" instance=ExtResource( 17 )]
+visible = false
+position = Vector2( -55.5515, 5.67231 )
+
+[node name="groceries" type="Node2D" parent="icons"]
+visible = false
+position = Vector2( 145.309, 127.665 )
+scale = Vector2( 0.695001, 0.695001 )
+
+[node name="baguette" type="Sprite" parent="icons/groceries"]
+scale = Vector2( 0.268183, 0.268183 )
+texture = ExtResource( 18 )
+
+[node name="drugs" type="Sprite" parent="icons/groceries"]
+position = Vector2( 144.448, -2.10902 )
+scale = Vector2( 0.112089, 0.112089 )
+texture = ExtResource( 15 )
+
+[node name="tp" type="Sprite" parent="icons/groceries"]
+position = Vector2( 71.8132, -0.639877 )
+scale = Vector2( 0.32535, 0.32535 )
+texture = ExtResource( 16 )
+
+[node name="attestation" type="Sprite" parent="icons"]
+position = Vector2( 367.681, 118.286 )
+texture = ExtResource( 19 )
+
+[node name="policeman" type="Sprite" parent="icons"]
+position = Vector2( 368.206, 110.965 )
+scale = Vector2( 1.60179, 1.60179 )
+texture = ExtResource( 20 )
+vframes = 4
+hframes = 4
+[connection signal="button_down" from="scroll_faster" to="." method="text_clicked"]
+[connection signal="button_down" from="skip_button/skip_dialog" to="." method="go_to_next_scene"]

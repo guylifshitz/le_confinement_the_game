@@ -6,14 +6,14 @@ onready var stores = $elements/goals/
 
 
 onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
-onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
+#onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
 
 
 var score = 0
 var damage = 100
-var game_settings = load_json()
+var game_settings = load_json_game()
 var score_increment_speed = 10
 var score_max_distance = 200
 
@@ -28,7 +28,7 @@ func _ready():
 	stores.find_node("pharmacy_2").get_child(0).store_has_items = ["drugs"]
 	stores.find_node("flower_market").get_child(0).store_has_items = ["flower"]
 
-func load_json():
+func load_json_game():
 	var file = File.new()
 	file.open("res://jsons/game_settings.json", file.READ)
 	var json_text = file.get_as_text()
@@ -72,8 +72,8 @@ func _process(delta):
 			sprite.modulate = Color(1,1,1)
 			circle.modulate = Color(0,0,0)
 
-		var distance_bar = $"interface/distance-bar"
-		var distance_bar_bg = $"interface/distance-bg"
+		var distance_bar = $"interface/distance_bar/distance-bar"
+		var distance_bar_bg = $"interface/distance_bar/distance-bg"
 		var start_pos_dist = distance_bar.points[1]
 		var end_pos_dist = distance_bar_bg.points[0]
 		end_pos_dist = lerp(start_pos_dist, end_pos_dist, score_ratio)
@@ -85,8 +85,8 @@ func _process(delta):
 	#get_tree().get_root().get_node("game/interface/health-red").shape
 	#print($"interface/health-red".gradient.set_offset(1, 1))
 
-	var health_bar = $"interface/health-bar"
-	var health_bar_bg = $"interface/health-bg"
+	var health_bar = $"interface/health_bar/health-bar"
+	var health_bar_bg = $"interface/health_bar/health-bg"
 	var start_pos = health_bar.points[1]
 	var end_pos = health_bar_bg.points[0]
 	end_pos = lerp(start_pos, end_pos, max(damage/100, 0))
@@ -98,7 +98,7 @@ func _process(delta):
 			music_main.stop()
 			music_star.stop()
 			sound_lost.play()
-			sound_cough.play()
+			#sound_cough.play()
 			utils_custom.create_timer_2(2, self, "kill_player")
 
 	update()

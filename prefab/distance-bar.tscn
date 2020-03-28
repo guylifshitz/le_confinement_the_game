@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/interface/ruler.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 0.130737, 0.984375, 1, 0, 0.800781, 0.519257, 1 )
+
+[node name="distance-bar2" type="Node2D"]
+
+[node name="distance-bg" type="Line2D" parent="."]
+points = PoolVector2Array( 119.536, 150, 267.019, 150 )
+width = 40.0
+default_color = Color( 0, 0, 0, 0.870588 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="distance-bar" type="Line2D" parent="."]
+points = PoolVector2Array( 119.536, 150, 157.592, 150, 267.019, 150 )
+width = 30.0
+default_color = Color( 1, 0, 0, 0.870588 )
+gradient = SubResource( 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="ruler" type="Sprite" parent="."]
+position = Vector2( 317.086, 147.499 )
+scale = Vector2( 0.362577, 0.362577 )
+texture = ExtResource( 1 )
