@@ -92,6 +92,13 @@ func _process(delta):
 	end_pos = lerp(start_pos, end_pos, max(damage/100, 0))
 	health_bar.points[0] = end_pos
 	
+	var stamina_bar = $"interface/stamina_bar/stamina-bar"
+	var stamina_bar_bg = $"interface/stamina_bar/stamina-bg"
+	var start_pos_stamina = stamina_bar.points[1]
+	var end_pos_stamina = stamina_bar_bg.points[0]
+	end_pos_stamina = lerp(start_pos_stamina, end_pos_stamina, max(player.stamina/player.STAMINA_MAX_AMOUNT, 0))
+	stamina_bar.points[0] = end_pos_stamina
+	
 	if damage < 0:
 		if player.can_move:
 			player.can_move = false

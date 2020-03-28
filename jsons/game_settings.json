@@ -1,9 +1,9 @@
 {
   "enemies": {
-    "count": 30,
+    "count": 3,
     "knows_player_percentage": 20
   },
   "police": {
-    "count": 5
+    "count": 1
   }
 }

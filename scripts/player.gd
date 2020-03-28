@@ -16,6 +16,13 @@ var has_attestation = false
 var has_attestation_time
 
 var can_move = true
+var running = false
+var running_recovering = false
+var STAMINA_MAX_AMOUNT =  1
+var STAMINA_RECOVER_SPEED = 0.5
+var STAMINA_DEPLETION_SPEED = 2
+var STAMINA_RECOVERY_TIME = 2
+var stamina = STAMINA_MAX_AMOUNT
 
 onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
 onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
@@ -71,9 +78,24 @@ func _physics_process(_delta):
 	motion.y *= 0.5
 	
 	if can_move:
-		if Input.is_action_pressed("run"):
+		
+		print(stamina)
+
+		if running == false and running_recovering == false:
+			stamina += abs(_delta * STAMINA_RECOVER_SPEED)
+			stamina = min(stamina, STAMINA_MAX_AMOUNT)
+
+		if Input.is_action_just_released("run"):
+			running = false
+
+		if Input.is_action_just_pressed("run") and running == false and running_recovering == false:
+			running = true
+		if Input.is_action_pressed("run") and running == true:
 			motion = motion.normalized() * RUN_MOTION_SPEED
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 4
+			stamina -= abs(_delta * STAMINA_DEPLETION_SPEED)
+			if stamina < 0:
+				stop_running()
 		elif Input.is_action_pressed("run_fast"):
 			motion = motion.normalized() * RUN_MOTION_SPEED_FAST
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 8
@@ -93,7 +115,16 @@ func _physics_process(_delta):
 			$main_char_node/main_character/AnimationPlayer.play("idle")
 		move_and_slide(motion)
 		
-	
+
+func stop_running():
+	running = false 
+	running_recovering = true
+	utils_custom.create_timer_2(STAMINA_RECOVERY_TIME, self, "can_run_again")
+		
+func can_run_again():
+	running_recovering = false
+	stamina = 0.01
+
 func get_closest():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	if enemies.size() > 0:
@@ -112,7 +143,7 @@ func acquired_attestation():
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	has_attestation = true
-	has_attestation_time = 3
+	has_attestation_time = 3	
 	
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
 	

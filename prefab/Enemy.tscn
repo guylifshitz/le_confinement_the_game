@@ -164,7 +164,6 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = SubResource( 8 )
 animation = "down"
-frame = 1
 playing = true
 
 [node name="girl-1" type="AnimatedSprite" parent="characters"]
@@ -182,7 +181,7 @@ position = Vector2( -3.96664, -26.1391 )
 scale = Vector2( 1.72856, 1.72856 )
 frames = SubResource( 16 )
 animation = "down"
-frame = 2
+frame = 1
 playing = true
 
 [node name="afro-boy" type="AnimatedSprite" parent="characters"]
