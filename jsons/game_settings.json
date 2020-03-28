@@ -1,9 +1,14 @@
 {
+  "player":
+  {
+    "max_health": 1000,
+    "stamina_max_amount": 10000,
+  },
   "enemies": {
-    "count": 3,
-    "knows_player_percentage": 20
+    "count": 30,
+    "knows_player_percentage": 100
   },
   "police": {
-    "count": 1
+    "count": 10
   }
 }

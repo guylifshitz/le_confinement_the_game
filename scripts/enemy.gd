@@ -20,7 +20,11 @@ var conversations = [["Hey!", "How are you?"],
 					["Salut!", "Ça fait un bail.", "On fait la bise?"],
 					["Bonsoir Madame.", "*cough*"],
 					["Bonsoir", "*cough*"],
-					["Une clope?"]]
+					["Une clope?"],
+					["Psst...", "tu cherches", "un masque?", "J'en vends"],
+					["Psst...", "tu cherches", "un masque?", "J'en vends"],
+					["Psst...", "tu cherches", "un masque?", "J'en vends"],
+				]
 
 var kid_conversations =  [["Wanna play?"], ["Got candy?"]]
 var conversation
@@ -52,7 +56,7 @@ func _ready():
 	if character_number < 2:
 		conversation = kid_conversations[randi() % kid_conversations.size()]
 	else:
-		conversation = conversations[randi() % kid_conversations.size()]
+		conversation = conversations[randi() % conversations.size()]
 	
 func _process(delta):
 

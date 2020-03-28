@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/main_characterKinematic.tscn" type="PackedScene" id=2]
@@ -814,18 +814,23 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1922.32, -549.914, 0, 0, 0, 0, 1838.3, -478.167, 0, 0, 0, 0, 1203.43, -93.0153, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1593.21, -403.749, 0, 0, 0, 0, 1768.37, -440.663, 0, 0, 0, 0, 1922.32, -549.914 )
 }
 
-[sub_resource type="ShaderMaterial" id=25]
+[sub_resource type="DynamicFont" id=25]
+size = 28
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 33 )
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="ShaderMaterial" id=26]
+
+[sub_resource type="DynamicFont" id=27]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 8.3756, 31.7769 )
 
 [node name="game" type="Node2D"]
@@ -1770,16 +1775,35 @@ curve = SubResource( 24 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
+[node name="score_label" type="RichTextLabel" parent="interface"]
+anchor_left = -0.000299215
+anchor_right = -0.000299215
+margin_left = 846.846
+margin_top = 10.7554
+margin_right = 933.846
+margin_bottom = 55.7554
+custom_fonts/normal_font = SubResource( 25 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+bbcode_enabled = true
+bbcode_text = "[right] s123"
+text = " s123"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="health_bar" parent="interface" instance=ExtResource( 47 )]
-position = Vector2( 651.875, -37.2893 )
+position = Vector2( 652.288, -87.4678 )
 
 [node name="distance_bar" parent="interface" instance=ExtResource( 48 )]
-position = Vector2( 651.793, -88.6773 )
+position = Vector2( 649.109, -34.3689 )
 
 [node name="stamina_bar" parent="interface" instance=ExtResource( 50 )]
 position = Vector2( 649.367, 18.1486 )
 
 [node name="interface" parent="interface" instance=ExtResource( 21 )]
+visible = false
 position = Vector2( -0.0436401, 1.04749 )
 rotation = -1.16415e-10
 scale = Vector2( 1, 1 )
@@ -1838,14 +1862,14 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 25 )
+material = SubResource( 26 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 25 )
+material = SubResource( 26 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
@@ -1865,7 +1889,7 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 27 )
 text = "32"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1891,23 +1915,23 @@ end_cap_mode = 2
 [node name="market" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 361.606, 294.011 )
 rotation = -0.555015
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="seine" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 2600.15, 1034.86 )
 rotation = -0.555015
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="small-road" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 1927.31, -332.633 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 28 )
+shape = SubResource( 29 )
 
 [node name="boy-black-red" type="AnimatedSprite" parent="."]
 position = Vector2( 724.062, -294.077 )

@@ -8,6 +8,7 @@ var TEXT_SCROLL_SPEED = 0.01
 
 func _ready():
 	next_page()
+	#get_tree().change_scene("res://lose-sick.tscn")
 
 func scroll_text():
 	show_icons()

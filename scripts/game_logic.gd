@@ -11,9 +11,11 @@ onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
 
 
-var score = 0
-var damage = 100
 var game_settings = load_json_game()
+
+var score = 100
+var damage = game_settings["player"]["max_health"]
+
 var score_increment_speed = 10
 var score_max_distance = 200
 
@@ -60,9 +62,10 @@ func _process(delta):
 		var circle = player.find_node("main_char_node").find_node("circle")
 		
 		var score_ratio = min(pow(nearest_distance/score_max_distance, 2), 1)
-		var score_delta =  score_ratio * score_increment_speed * delta
+		var score_delta =  (1-score_ratio) * score_increment_speed * delta
 		
-		score += score_delta
+		score -= max(score_delta, 0)
+		
 		if nearest_distance < 100:
 			var damage_intensity = (100-nearest_distance) / 100
 			damage -= pow(damage_intensity, 2)
@@ -80,7 +83,9 @@ func _process(delta):
 		distance_bar.points[0] = end_pos_dist
 
 #	var temp = get_tree().get_root().get_node("game/interface/score")
-	$interface/interface/score.bbcode_text = "[right]" + str(int(score))
+	#$interface/interface/score.bbcode_text = "[right]" + str(int(damage)) + ": Bonus"
+	$interface/score_label.bbcode_text = "[right]" + str(int(score))
+
 	#get_tree().get_root().get_node("game/interface/interface/damage").text = str(int(damage))
 	#get_tree().get_root().get_node("game/interface/health-red").shape
 	#print($"interface/health-red".gradient.set_offset(1, 1))
@@ -89,7 +94,7 @@ func _process(delta):
 	var health_bar_bg = $"interface/health_bar/health-bg"
 	var start_pos = health_bar.points[1]
 	var end_pos = health_bar_bg.points[0]
-	end_pos = lerp(start_pos, end_pos, max(damage/100, 0))
+	end_pos = lerp(start_pos, end_pos, max(damage/game_settings["player"]["max_health"], 0))
 	health_bar.points[0] = end_pos
 	
 	var stamina_bar = $"interface/stamina_bar/stamina-bar"
