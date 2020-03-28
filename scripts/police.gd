@@ -16,8 +16,10 @@ var following_player_start_position
 var navigation
 
 func _ready():
-	$Sprite/AnimationPlayer.play("walk")
-	$Sprite/AnimationPlayer.playback_speed = 1
+	if randf() > 0.6:
+		$AnimatedSprite.play("no_mask")
+	else:
+		$AnimatedSprite.play("mask")
 	
 	navigation = get_parent().get_parent().get_parent().get_parent()
 

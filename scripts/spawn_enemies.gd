@@ -12,15 +12,13 @@ func _ready():
 	spawn()
 
 func spawn():
-	#while true:
-	print(get_tree().get_root().get_node("game").game_settings)
-	
+
 	seed(1)
 	
 	var spawn_count
 	var node_to_clone
 	if enemy_type == "police":
-		spawn_count =game_settings["police"]["count"]
+		spawn_count = game_settings["police"]["count"]
 		node_to_clone = new_police_base
 	else:
 		spawn_count = game_settings["enemies"]["count"]
@@ -43,5 +41,3 @@ func spawn():
 		new_path_follow.rotate = false
 		new_path_follow.offset = randi() % 1000000
 		add_child(new_path)
-
-		#yield(utils_custom.create_timer(0.1), "timeout")
