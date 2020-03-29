@@ -1963,6 +1963,7 @@ playing = true
 
 [node name="win" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 58 )
+bus = "sound_effects"
 
 [node name="star_music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 41 )
