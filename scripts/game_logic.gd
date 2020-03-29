@@ -6,6 +6,7 @@ onready var stores = $elements/goals/
 
 		
 onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
+onready var sound_win = get_tree().get_root().get_node("game/audio/win")
 #onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
@@ -121,6 +122,15 @@ func kill_player():
 	get_tree().change_scene("res://lose-sick.tscn")
 
 func win_game():
+	if player.can_move:
+		player.can_move = false
+		music_main.stop()
+		music_star.stop()
+		sound_win.play()
+		utils_custom.create_timer_2(2, self, "show_win_screen")
+
+func show_win_screen():
 	global.score = score
 	global.bonus_items_recovered = player.items_holding_bonus
 	get_tree().change_scene("res://win-screen.tscn")
+	

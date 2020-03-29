@@ -17,8 +17,8 @@ func _on_home_body_entered(body):
 		if body.items_holding.size() == body.items_needed.size():
 			game.win_game()
 
-static func delete_children(node):
-	for n in node.get_children():
-		node.remove_child(n)
-		n.queue_free()
-
+#static func delete_children(node):
+#	for n in node.get_children():
+#		node.remove_child(n)
+#		n.queue_free()
+#

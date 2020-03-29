@@ -4,11 +4,11 @@
     "stamina_max_amount": 10000
   },
   "enemies": {
-    "count": 0,
+    "count": 10,
     "knows_player_percentage": 100
   },
   "police": {
-    "count": 50,
+    "count": 5,
     "attestation_length": 10
   }
 }

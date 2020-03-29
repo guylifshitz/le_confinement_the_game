@@ -10,7 +10,7 @@ func _ready():
 	# global.score = 100
 	# global.bonus_items_recovered = ["flower"]
 #	# get_tree().change_scene("res://win-screen.tscn")
-	get_tree().change_scene("res://level_bastille.tscn")
+	# get_tree().change_scene("res://level_bastille.tscn")
 	next_page()
 	
 	#get_tree().change_scene("res://lose-sick.tscn")

@@ -6,7 +6,6 @@
 [ext_resource path="res://images/menu/tv-wide.png" type="Texture" id=4]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=5]
 [ext_resource path="res://scripts/win-screen.gd" type="Script" id=6]
-[ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=10]
@@ -15,6 +14,7 @@
 [ext_resource path="res://images/menu/macron-cartoon.jpg" type="Texture" id=13]
 [ext_resource path="res://prefab/click_button.tscn" type="PackedScene" id=14]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=15]
+[ext_resource path="res://sounds/win-good/270319__littlerobotsoundfactory__jingle-win-01.wav" type="AudioStream" id=16]
 [ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=17]
 [ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=18]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=19]
@@ -157,12 +157,12 @@ position = Vector2( 763.347, 296.825 )
 rotation = -0.00773652
 scale = Vector2( 0.306909, 0.311166 )
 
+[node name="music2" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 16 )
+autoplay = true
+
 [node name="pop" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 5 )
-
-[node name="music" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource( 7 )
-autoplay = true
 
 [node name="icons" type="Node2D" parent="."]
 position = Vector2( 280.4, 17.6656 )
