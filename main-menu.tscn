@@ -77,22 +77,26 @@ texture = ExtResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="grandma/grandma-head-small"]
 anims/head-movement = SubResource( 1 )
 
-[node name="macron-cartoon" type="Sprite" parent="."]
+[node name="tv" type="Node2D" parent="."]
+
+[node name="macron-cartoon" type="Sprite" parent="tv"]
 position = Vector2( 729.939, 331.628 )
 scale = Vector2( 0.290387, 0.292149 )
 texture = ExtResource( 3 )
 
-[node name="tv-wide" type="Sprite" parent="."]
+[node name="tv-wide" type="Sprite" parent="tv"]
 position = Vector2( 763.347, 296.825 )
 rotation = -0.00773652
 scale = Vector2( 0.306909, 0.311166 )
 texture = ExtResource( 4 )
 
-[node name="dialogbox" type="Sprite" parent="."]
+[node name="dialog" type="Node2D" parent="."]
+
+[node name="dialogbox" type="Sprite" parent="dialog"]
 position = Vector2( 411.148, 178.224 )
 texture = ExtResource( 9 )
 
-[node name="grandma_dialog" type="RichTextLabel" parent="."]
+[node name="grandma_dialog" type="RichTextLabel" parent="dialog"]
 anchor_top = 0.00132736
 anchor_bottom = 0.00132736
 margin_left = 158.024
@@ -106,6 +110,47 @@ scroll_following = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="icons" type="Node2D" parent="dialog"]
+position = Vector2( 280.4, 17.6656 )
+
+[node name="health_bar" parent="dialog/icons" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( -55.9095, 6.21217 )
+
+[node name="distance_bar" parent="dialog/icons" instance=ExtResource( 17 )]
+visible = false
+position = Vector2( -55.5515, 5.67231 )
+
+[node name="groceries" type="Node2D" parent="dialog/icons"]
+visible = false
+position = Vector2( 145.309, 127.665 )
+scale = Vector2( 0.695001, 0.695001 )
+
+[node name="baguette" type="Sprite" parent="dialog/icons/groceries"]
+scale = Vector2( 0.268183, 0.268183 )
+texture = ExtResource( 18 )
+
+[node name="drugs" type="Sprite" parent="dialog/icons/groceries"]
+position = Vector2( 144.448, -2.10902 )
+scale = Vector2( 0.112089, 0.112089 )
+texture = ExtResource( 15 )
+
+[node name="tp" type="Sprite" parent="dialog/icons/groceries"]
+position = Vector2( 71.8132, -0.639877 )
+scale = Vector2( 0.32535, 0.32535 )
+texture = ExtResource( 16 )
+
+[node name="attestation" type="Sprite" parent="dialog/icons"]
+position = Vector2( 367.681, 118.286 )
+texture = ExtResource( 19 )
+
+[node name="policeman" type="Sprite" parent="dialog/icons"]
+position = Vector2( 368.206, 110.965 )
+scale = Vector2( 1.60179, 1.60179 )
+texture = ExtResource( 20 )
+vframes = 4
+hframes = 4
 
 [node name="scroll_faster" type="Button" parent="."]
 anchor_left = -0.00269775
@@ -182,50 +227,11 @@ stream = ExtResource( 7 )
 autoplay = true
 bus = "music"
 
-[node name="fullscreen_icon" parent="." instance=ExtResource( 23 )]
+[node name="icon_settings" type="Node2D" parent="."]
 
-[node name="audio-icon" parent="." instance=ExtResource( 22 )]
+[node name="fullscreen_icon" parent="icon_settings" instance=ExtResource( 23 )]
+
+[node name="audio-icon" parent="icon_settings" instance=ExtResource( 22 )]
 scale = Vector2( 1, 1.00358 )
-
-[node name="icons" type="Node2D" parent="."]
-position = Vector2( 280.4, 17.6656 )
-
-[node name="health_bar" parent="icons" instance=ExtResource( 14 )]
-visible = false
-position = Vector2( -55.9095, 6.21217 )
-
-[node name="distance_bar" parent="icons" instance=ExtResource( 17 )]
-visible = false
-position = Vector2( -55.5515, 5.67231 )
-
-[node name="groceries" type="Node2D" parent="icons"]
-visible = false
-position = Vector2( 145.309, 127.665 )
-scale = Vector2( 0.695001, 0.695001 )
-
-[node name="baguette" type="Sprite" parent="icons/groceries"]
-scale = Vector2( 0.268183, 0.268183 )
-texture = ExtResource( 18 )
-
-[node name="drugs" type="Sprite" parent="icons/groceries"]
-position = Vector2( 144.448, -2.10902 )
-scale = Vector2( 0.112089, 0.112089 )
-texture = ExtResource( 15 )
-
-[node name="tp" type="Sprite" parent="icons/groceries"]
-position = Vector2( 71.8132, -0.639877 )
-scale = Vector2( 0.32535, 0.32535 )
-texture = ExtResource( 16 )
-
-[node name="attestation" type="Sprite" parent="icons"]
-position = Vector2( 367.681, 118.286 )
-texture = ExtResource( 19 )
-
-[node name="policeman" type="Sprite" parent="icons"]
-position = Vector2( 368.206, 110.965 )
-scale = Vector2( 1.60179, 1.60179 )
-texture = ExtResource( 20 )
-vframes = 4
-hframes = 4
 [connection signal="button_down" from="scroll_faster" to="." method="text_clicked"]
 [connection signal="button_down" from="skip_button/skip_dialog" to="." method="go_to_next_scene"]

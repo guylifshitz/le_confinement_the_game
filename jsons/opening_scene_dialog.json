@@ -17,4 +17,5 @@
   "show_attestation_text_index": 4,
   "show_police_text_index": 5,
   "show_health_bar_text_index": 9,
+  "TEXT_SCROLL_SPEED": 0.01,
 }

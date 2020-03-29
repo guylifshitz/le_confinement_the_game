@@ -72,3 +72,19 @@ func _get_view_size():
 	return get_tree().get_root().get_visible_rect().size
 	pass
 
+## ADDED ##
+func load_json(json_path):
+	var file = File.new()
+	file.open(json_path, file.READ)
+	var json_text = file.get_as_text()
+	file.close()
+	var result_json = JSON.parse(json_text)
+	
+	if result_json.error == OK:
+		return result_json.result
+	else:  # If parse has errors
+		print("Error: ", result_json.error)
+		print("Error Line: ", result_json.error_line)
+		print("Error String: ", result_json.error_string)
+		return
+		
