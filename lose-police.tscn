@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://music/Jingle_Lose_00.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/lose_police.gd" type="Script" id=2]
 [ext_resource path="res://images/menu/pv-cartoon-2.png" type="Texture" id=3]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/continue_button.tscn" type="PackedScene" id=6]
 
+[sub_resource type="StyleBoxEmpty" id=1]
 
-
-[node name="Node2D" type="Node2D"]
+[node name="lose_police" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="pv-cartoon-2" type="Sprite" parent="."]
@@ -20,6 +21,22 @@ stream = ExtResource( 1 )
 autoplay = true
 bus = "music"
 
-[node name="audio-icon" parent="." instance=ExtResource( 4 )]
+[node name="continue_button" parent="." instance=ExtResource( 6 )]
+modulate = Color( 0.458824, 0.458824, 0.458824, 1 )
 
-[node name="fullscreen_icon" parent="." instance=ExtResource( 5 )]
+[node name="Button" type="Button" parent="continue_button"]
+margin_left = -5.0
+margin_right = 1384.0
+margin_bottom = 585.0
+custom_styles/focus = SubResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Node2D" parent="."]
+
+[node name="audio-icon" parent="settings" instance=ExtResource( 4 )]
+
+[node name="fullscreen_icon" parent="settings" instance=ExtResource( 5 )]
+[connection signal="button_down" from="continue_button/Button" to="." method="_on_continue_button_down"]

@@ -1,6 +1,6 @@
 {
   "debug": true,
-  "general": { "show_nearest_enemy_line": true },
+  "general": { "show_nearest_enemy_line": false },
   "level_1": {
     "attestation_duration": 10,
     "starting_bonus_score": 200,
@@ -40,7 +40,7 @@
     "conversations_kid": [["Wanna play?"], ["Got candy?"]]
   },
   "police": {
-    "count": 5,
+    "count": 15,
     "move_speed": 100,
   }
 }

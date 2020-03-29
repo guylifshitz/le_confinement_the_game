@@ -39,6 +39,7 @@ func scroll_text():
 
 func show_page_icons():
 	$dialog/icons/groceries.hide()
+	$dialog/icons/distance_circle.hide()
 	$dialog/icons/distance_bar.hide()
 	$dialog/icons/health_bar.hide()
 	$dialog/icons/attestation.hide()
@@ -48,6 +49,7 @@ func show_page_icons():
 		if dialog_settings["show_items_list_text_index"] == dialog_chunk:
 			$dialog/icons/groceries.show()
 		if dialog_settings["show_distance_bar_text_index"] == dialog_chunk:
+			$dialog/icons/distance_circle.show()
 			$dialog/icons/distance_bar.show()
 		if dialog_settings["show_health_bar_text_index"] == dialog_chunk:
 			$dialog/icons/health_bar.show()

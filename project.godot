@@ -16,11 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Confinement"
-config/description="This demo shows a traditional isometric view with depth sorting.
+config/description="This demo shows 		a traditional isometric view with depth sorting.
 
 A character can move around the level and will also slide around objects,
 as well as be occluded when standing in front or behind them."
-run/main_scene="res://main-menu.tscn"
+run/main_scene="res://title_screen2.tscn"
 
 [autoload]
 
@@ -100,4 +100,5 @@ use_pixel_snap=true
 
 [rendering]
 
+vram_compression/import_etc=true
 environment/default_clear_color=Color( 0.0784314, 0.105882, 0.145098, 1 )

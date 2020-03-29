@@ -7,29 +7,28 @@ var accepts_input
 func _ready():
 	update_text()
 
-	randomize()
-	if randf() > 0.5:
-		$glass_text_box/grandma_sick_text.show()
-		$grandma.show()
-		$girl.hide()
-		$glass_text_box/girl_sick_text.hide()
-	else:
-		$glass_text_box/grandma_sick_text.hide()
-		$grandma.hide()
-		$girl.show()
-		$glass_text_box/girl_sick_text.show()
+#	randomize()
+#	if randf() > 0.5:
+	$glass_text_box/grandma_sick_text.show()
+	$grandma.show()
+	$girl.hide()
+	$glass_text_box/girl_sick_text.hide()
+#	else:
+#	$glass_text_box/grandma_sick_text.hide()
+#	$grandma.hide()
+#	$girl.show()
+#	$glass_text_box/girl_sick_text.show()
 
 	accepts_input = false
 	utils_custom.create_timer_2(3, self, "accept_input")
 
 
 func accept_input():
-	$continue_button/continue_label.modulate = Color(1,1,1)
+	$continue_button.modulate = Color(1,1,1)
 	accepts_input = true
 	
 func update_text():
 	if dialog_chunk == dialog_chunks.size():
-		#utils_custom.create_timer_2(1, self, "change_scene")
 		pass
 	else:
 		$dialog/dialog_text.text = dialog_chunks[dialog_chunk]
