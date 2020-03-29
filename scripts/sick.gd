@@ -9,21 +9,22 @@ func _ready():
 
 	randomize()
 	if randf() > 0.5:
-		$"grandma-sick-text".show()
+		$glass_text_box/grandma_sick_text.show()
 		$grandma.show()
 		$girl.hide()
-		$"girl-sick-text".hide()
+		$glass_text_box/girl_sick_text.hide()
 	else:
-		$"grandma-sick-text".hide()
+		$glass_text_box/grandma_sick_text.hide()
 		$grandma.hide()
 		$girl.show()
-		$"girl-sick-text".show()
+		$glass_text_box/girl_sick_text.show()
 
 	accepts_input = false
 	utils_custom.create_timer_2(3, self, "accept_input")
 
 
 func accept_input():
+	$continue_button/continue_label.modulate = Color(1,1,1)
 	accepts_input = true
 	
 func update_text():
@@ -31,7 +32,7 @@ func update_text():
 		#utils_custom.create_timer_2(1, self, "change_scene")
 		pass
 	else:
-		$RichTextLabel.text = dialog_chunks[dialog_chunk]
+		$dialog/dialog_text.text = dialog_chunks[dialog_chunk]
 		utils_custom.create_timer_2(1, self, "update_text")
 	dialog_chunk += 1
 
