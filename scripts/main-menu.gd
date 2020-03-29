@@ -9,8 +9,8 @@ var TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])
 func _ready():
 	# DEBUG: skip to the scene that we are testing
 	# get_tree().change_scene("res://win-screen.tscn")
-	get_tree().change_scene("res://level_bastille.tscn")
-	# get_tree().change_scene("res://lose-sick.tscn")
+	# get_tree().change_scene("res://level_bastille.tscn")
+	get_tree().change_scene("res://lose-sick.tscn")
 	next_page()
 
 func next_page():

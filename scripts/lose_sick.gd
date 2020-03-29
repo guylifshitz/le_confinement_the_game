@@ -48,3 +48,7 @@ func player_clicked():
 	
 func change_scene():
 	get_tree().change_scene("res://level_bastille.tscn")
+
+func _on_continue_button_down():
+	if accepts_input:
+		change_scene()
