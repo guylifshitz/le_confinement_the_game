@@ -45,10 +45,10 @@ func _process(delta):
 			var damage_intensity = (100-nearest_distance) / 100
 			damage -= pow(damage_intensity, damage_decrement_exponent)
 			sprite_sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
-			circle.modulate = Color(damage_intensity,0,0)
+			circle.modulate = Color(damage_intensity,0,0, max(damage_intensity, 0.15))
 		else:
 			sprite_sprite.modulate = Color(1,1,1)
-			circle.modulate = Color(0,0,0)
+			circle.modulate = Color(0,0,0, 0.15)
 
 		update_bar($interface/distance_bar, score_ratio)
 		$interface/score_label.bbcode_text = "[right]" + str(int(score))

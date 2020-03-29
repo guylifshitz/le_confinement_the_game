@@ -10,7 +10,8 @@ func _ready():
 	# DEBUG: skip to the scene that we are testing
 	# get_tree().change_scene("res://win-screen.tscn")
 	# get_tree().change_scene("res://level_bastille.tscn")
-	get_tree().change_scene("res://lose-sick.tscn")
+	# get_tree().change_scene("res://lose-sick.tscn")
+	# get_tree().change_scene("res://lose-police.tscn")
 	next_page()
 
 func next_page():

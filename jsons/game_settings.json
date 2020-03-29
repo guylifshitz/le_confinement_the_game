@@ -15,7 +15,7 @@
       { "store": "la_suprette", "has_items": [] },
       { "store": "pharmacy_1", "has_items": ["drugs"] },
       { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["bread"] }
+      { "store": "flower_market", "has_items": ["flower"] }
     ]
   },
   "player": {

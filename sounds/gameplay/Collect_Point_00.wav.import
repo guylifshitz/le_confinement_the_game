@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Collect_Point_00.wav-4b1eb61f12203dc3901b54554f8ebb43.sample"
+
+[deps]
+
+source_file="res://sounds/gameplay/Collect_Point_00.wav"
+dest_files=[ "res://.import/Collect_Point_00.wav-4b1eb61f12203dc3901b54554f8ebb43.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

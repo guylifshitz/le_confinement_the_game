@@ -41,9 +41,9 @@
 [ext_resource path="res://images/interface/flower.png" type="Texture" id=40]
 [ext_resource path="res://music/Hyper-really-good-forstar.wav" type="AudioStream" id=41]
 [ext_resource path="res://music/Fight in the Dungeon.ogg" type="AudioStream" id=42]
-[ext_resource path="res://sounds/GAME SOUND FX PACK WAV OGG M4A/Randomize2.wav" type="AudioStream" id=43]
-[ext_resource path="res://sounds/8-Bit Sound Library/Wav/Collect_Point_00.wav" type="AudioStream" id=44]
-[ext_resource path="res://sounds/8-Bit Sound Library/Wav/Shoot_01.wav" type="AudioStream" id=45]
+[ext_resource path="res://sounds/gameplay/Randomize2.wav" type="AudioStream" id=43]
+[ext_resource path="res://sounds/gameplay/Collect_Point_00.wav" type="AudioStream" id=44]
+[ext_resource path="res://sounds/gameplay/Shoot_01.wav" type="AudioStream" id=45]
 [ext_resource path="res://sounds/bad/jingles_NES13.wav" type="AudioStream" id=46]
 [ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=47]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=48]
@@ -55,7 +55,7 @@
 [ext_resource path="res://sounds/bump/242623__reitanna__grunt.wav" type="AudioStream" id=55]
 [ext_resource path="res://images/interface/score.png" type="Texture" id=56]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=57]
-[ext_resource path="res://sounds/win-good/495005__evretro__win-video-game-sound.wav" type="AudioStream" id=58]
+[ext_resource path="res://sounds/win/495005__evretro__win-video-game-sound.wav" type="AudioStream" id=58]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=59]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=60]
 [ext_resource path="res://images/interface/white-circle.png" type="Texture" id=61]
@@ -868,6 +868,7 @@ position = Vector2( 0.00079958, 0.71449 )
 rotation = -3.49246e-10
 
 [node name="monoprix" type="YSort" parent="elements/goals"]
+position = Vector2( -10.8793, 14.2672 )
 rotation = -1.16415e-10
 
 [node name="monoprix_node" type="YSort" parent="elements/goals/monoprix"]
@@ -881,6 +882,7 @@ texture = ExtResource( 11 )
 [node name="grocery" type="Area2D" parent="elements/goals/monoprix/monoprix_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/monoprix_node/grocery"]
+position = Vector2( 0.000610352, 0.548546 )
 shape = SubResource( 3 )
 
 [node name="carrefour" type="YSort" parent="elements/goals"]
@@ -1136,7 +1138,7 @@ rotation = -4.65661e-10
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="elements/enemy_paths"]
 visible = false
-position = Vector2( 3.59755, 1.45424 )
+position = Vector2( 3.59968, 3.35905 )
 navpoly = SubResource( 8 )
 
 [node name="spawn_zombies" type="Node2D" parent="elements/enemy_paths"]
@@ -1498,7 +1500,7 @@ position = Vector2( 0.00113467, 1.01392 )
 rotation = 1.45519e-10
 scale = Vector2( 0.4, 0.4 )
 cell_size = Vector2( 220, 110 )
-tile_data = PoolIntArray( -2621410, 536870917, 0, -2490338, 536870918, 0, -2424804, 5, 0, -2424802, 6, 0, -2359283, 536870917, 0, -2293734, 536870917, 0, -2228211, 536870917, 0, -2162675, 536870917, 0, -2162662, 536870918, 0, -2162661, 5, 0, -2097110, 7, 0, -2031603, 536870918, 0, -2031574, 536870917, 0, -1900539, 5, 0, -1900537, 6, 0, -1900531, 536870917, 0, -1900502, 536870918, 0, -1835004, 536870917, 0, -1769459, 536870918, 0, -1769430, 536870917, 0, -1769404, 536870917, 0, -1703932, 536870918, 0, -1703920, 5, 0, -1703918, 6, 0, -1703916, 5, 0, -1703914, 6, 0, -1703912, 5, 0, -1703910, 6, 0, -1703908, 5, 0, -1703906, 6, 0, -1703904, 5, 0, -1638387, 536870917, 0, -1638358, 536870918, 0, -1638332, 536870918, 0, -1572860, 536870917, 0, -1507315, 536870918, 0, -1507260, 536870917, 0, -1441788, 536870918, 0, -1376243, 536870917, 0, -1376188, 536870918, 0, -1310716, 536870917, 0, -1310707, 536870918, 0, -1245171, 536870917, 0, -1245116, 536870917, 0, -1114044, 536870918, 0, -982972, 536870917, 0, -851900, 536870918, 0, -720883, 2, 0, -720877, 5, 0, -720875, 6, 0, -720874, 5, 0, -720872, 6, 0, -720870, 5, 0, -720868, 6, 0, -720866, 5, 0, -720864, 6, 0, -589827, 5, 0, -589825, 6, 0, -655359, 5, 0, -655357, 6, 0, -655355, 5, 0, -655353, 6, 0, -655351, 5, 0, -655349, 5, 0, -589805, 536870917, 0, -524287, 2, 0, -458733, 536870918, 0, -393198, 2, 0, -327661, 536870917, 0, -196589, 536870918, 0, 589835, 5, 0, 589837, 6, 0, 589839, 5, 0, 589841, 6, 0, 589843, 5, 0, 589845, 6, 0, 589847, 5, 0, 589849, 6, 0, 589851, 5, 0, 589853, 6, 0, 589855, 5, 0, 589857, 6, 0, 1048621, 5, 0, 1048623, 6, 0, 1048625, 5, 0, 1048627, 6, 0, 1048629, 5, 0, 1048631, 6, 0, 1048633, 5, 0, 1048635, 6, 0, 1048637, 5, 0, 1048639, 6, 0, 1048641, 5, 0, 1048643, 6, 0, 1048645, 5, 0, 1179693, 536870917, 0, 1310765, 536870918, 0, 1441837, 536870917, 0, 1572909, 536870918, 0 )
+tile_data = PoolIntArray( -2621410, 536870917, 0, -2490338, 536870918, 0, -2424804, 5, 0, -2424802, 6, 0, -2359283, 536870917, 0, -2293734, 536870917, 0, -2228211, 536870917, 0, -2162675, 536870917, 0, -2162662, 536870918, 0, -2162661, 5, 0, -2097110, 7, 0, -2031603, 536870918, 0, -2031574, 536870917, 0, -1900539, 5, 0, -1900537, 6, 0, -1900531, 536870917, 0, -1900502, 536870918, 0, -1835004, 536870917, 0, -1769459, 536870918, 0, -1769430, 536870917, 0, -1769404, 536870917, 0, -1703932, 536870918, 0, -1703920, 5, 0, -1703918, 6, 0, -1703916, 5, 0, -1703914, 6, 0, -1703912, 5, 0, -1703910, 6, 0, -1703908, 5, 0, -1703906, 6, 0, -1703904, 5, 0, -1638387, 536870917, 0, -1638358, 536870918, 0, -1638332, 536870918, 0, -1572860, 536870917, 0, -1507315, 536870918, 0, -1507260, 536870917, 0, -1441788, 536870918, 0, -1376243, 536870917, 0, -1376188, 536870918, 0, -1310716, 536870917, 0, -1310707, 536870917, 0, -1245116, 536870917, 0, -1114044, 536870918, 0, -982972, 536870917, 0, -851900, 536870918, 0, -720883, 2, 0, -720877, 5, 0, -720875, 6, 0, -720874, 5, 0, -720872, 6, 0, -720870, 5, 0, -720868, 6, 0, -720866, 5, 0, -720864, 6, 0, -589827, 5, 0, -589825, 6, 0, -655359, 5, 0, -655357, 6, 0, -655355, 5, 0, -655353, 6, 0, -655351, 5, 0, -655349, 5, 0, -589805, 536870917, 0, -524287, 2, 0, -458733, 536870918, 0, -393198, 2, 0, -327661, 536870917, 0, -196589, 536870918, 0, 589835, 5, 0, 589837, 6, 0, 589839, 5, 0, 589841, 6, 0, 589843, 5, 0, 589845, 6, 0, 589847, 5, 0, 589849, 6, 0, 589851, 5, 0, 589853, 6, 0, 589855, 5, 0, 589857, 6, 0, 1048621, 5, 0, 1048623, 6, 0, 1048625, 5, 0, 1048627, 6, 0, 1048629, 5, 0, 1048631, 6, 0, 1048633, 5, 0, 1048635, 6, 0, 1048637, 5, 0, 1048639, 6, 0, 1048641, 5, 0, 1048643, 6, 0, 1048645, 5, 0, 1179693, 536870917, 0, 1310765, 536870918, 0, 1441837, 536870917, 0, 1572909, 536870918, 0 )
 
 [node name="markets" type="YSort" parent="elements/scene"]
 position = Vector2( -0.00113467, -1.01392 )

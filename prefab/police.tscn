@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://sounds/characters/police-question.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/characters/police-question_1.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/police.gd" type="Script" id=2]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=7]
 [ext_resource path="res://images/spritesheets/policeman-full.png" type="Texture" id=8]
 [ext_resource path="res://sounds/characters/police-question2.wav" type="AudioStream" id=9]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 298.055
