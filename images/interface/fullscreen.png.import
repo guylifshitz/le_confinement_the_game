@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/girl3.png-1e0604df2bb74655555ae3f39db702ad.stex"
+path="res://.import/fullscreen.png-94f531818eb10db5100b3e3889db5b01.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/spritesheets/npc/girl3.png"
-dest_files=[ "res://.import/girl3.png-1e0604df2bb74655555ae3f39db702ad.stex" ]
+source_file="res://images/interface/fullscreen.png"
+dest_files=[ "res://.import/fullscreen.png-94f531818eb10db5100b3e3889db5b01.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

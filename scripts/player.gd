@@ -33,6 +33,7 @@ onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
 onready var sound_attestation = get_tree().get_root().get_node("game/audio/pickup_attestation")
 onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
+var motion = Vector2(0,0)
 
 func _ready():
 	set_process(true)
@@ -76,14 +77,18 @@ func add_drugs():
 func remove_drugs():
 	var drugs = self.find_node("drugs")
 	drugs.hide()
-	
+
+func _input(event):
+	if event is InputEventScreenDrag:
+		motion.x = (event.position.x - get_viewport_rect().size.x/2) / get_viewport_rect().size.x
+		motion.y = (event.position.y - get_viewport_rect().size.y/2) / get_viewport_rect().size.y / 2
+	else:
+		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		motion.y *= 0.5
+
 func _physics_process(_delta):
 	get_closest()
-	
-	var motion = Vector2()
-	motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	motion.y *= 0.5
 	
 	if can_move:
 		
@@ -113,13 +118,13 @@ func _physics_process(_delta):
 		if motion.x == 0 and motion.y == 0:
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 0
 
-		if Input.is_action_pressed("move_left"):
+		if motion.x < 0:
 			$main_char_node/main_character/AnimationPlayer.play("left")
-		elif Input.is_action_pressed("move_right"):
+		elif motion.x > 0:
 			$main_char_node/main_character/AnimationPlayer.play("right")
-		elif Input.is_action_pressed("move_up"):
+		elif motion.y < 0:
 			$main_char_node/main_character/AnimationPlayer.play("up")
-		elif Input.is_action_pressed("move_down"):
+		elif motion.y > 0:
 			$main_char_node/main_character/AnimationPlayer.play("down")
 		else:
 			$main_char_node/main_character/AnimationPlayer.play("idle")

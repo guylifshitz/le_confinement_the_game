@@ -133,4 +133,3 @@ func show_win_screen():
 	global.score = score
 	global.bonus_items_recovered = player.items_holding_bonus
 	get_tree().change_scene("res://win-screen.tscn")
-	

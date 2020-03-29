@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=30 format=2]
 
+[ext_resource path="res://images/spritesheets/npc/mask.png" type="Texture" id=1]
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
 [ext_resource path="res://prefab/npc-1.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=4]
@@ -8,6 +9,7 @@
 [ext_resource path="res://images/spritesheets/npc/girl3.png" type="Texture" id=7]
 [ext_resource path="res://images/spritesheets/npc/man-bald-2.png" type="Texture" id=8]
 [ext_resource path="res://sounds/bump/262279__dirtjm__grunts-male(1).wav" type="AudioStream" id=9]
+[ext_resource path="res://images/spritesheets/npc/afro.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -60,24 +62,41 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 7 )
 region = Rect2( 40, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 7 )
 region = Rect2( 80, 0, 40, 40 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
@@ -130,6 +149,10 @@ animation = "down"
 frame = 1
 playing = true
 
+[node name="mask" type="Sprite" parent="characters/boy-red-pants"]
+position = Vector2( 1.0818, 6.66724 )
+texture = ExtResource( 1 )
+
 [node name="girl-1" type="AnimatedSprite" parent="characters"]
 visible = false
 position = Vector2( -0.813721, -23.1895 )
@@ -137,6 +160,10 @@ scale = Vector2( 1.36749, 1.36749 )
 frames = ExtResource( 3 )
 animation = "down"
 playing = true
+
+[node name="mask" type="Sprite" parent="characters/girl-1"]
+position = Vector2( 1.50181, 6.66724 )
+texture = ExtResource( 1 )
 
 [node name="man-bald2" type="AnimatedSprite" parent="characters"]
 visible = false
@@ -147,7 +174,12 @@ animation = "down"
 frame = 2
 playing = true
 
-[node name="afro-boy" type="AnimatedSprite" parent="characters"]
+[node name="mask" type="Sprite" parent="characters/man-bald2"]
+position = Vector2( 0.852351, 7.31322 )
+scale = Vector2( 1.03254, 0.752877 )
+texture = ExtResource( 1 )
+
+[node name="woman" type="AnimatedSprite" parent="characters"]
 visible = false
 position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
@@ -155,6 +187,25 @@ frames = SubResource( 15 )
 animation = "down"
 frame = 2
 playing = true
+
+[node name="mask" type="Sprite" parent="characters/woman"]
+position = Vector2( 1.2785, 6.69021 )
+scale = Vector2( 0.9217, 0.752877 )
+texture = ExtResource( 1 )
+
+[node name="afro-boy" type="AnimatedSprite" parent="characters"]
+visible = false
+position = Vector2( -1.96664, -26.1391 )
+scale = Vector2( 1.32886, 1.72856 )
+frames = SubResource( 22 )
+animation = "down"
+frame = 1
+playing = true
+
+[node name="mask" type="Sprite" parent="characters/afro-boy"]
+position = Vector2( 0.640975, 7.21299 )
+scale = Vector2( 1.012, 0.752877 )
+texture = ExtResource( 1 )
 
 [node name="audio" type="Node2D" parent="."]
 

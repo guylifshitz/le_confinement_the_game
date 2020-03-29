@@ -57,6 +57,11 @@ func _ready():
 
 	var character_number = randi()%characters.size()
 	characters[character_number].show()
+	if randf() > 0.5:
+		characters[character_number].get_node("mask").hide()
+	else:
+		characters[character_number].get_node("mask").show()
+
 	if character_number < 2:
 		conversation = kid_conversations[randi() % kid_conversations.size()]
 	else:

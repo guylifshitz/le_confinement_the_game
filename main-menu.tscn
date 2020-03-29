@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=20]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=21]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -44,7 +45,9 @@ tracks/0/keys = {
 size = 33
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
 size = 90
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
@@ -113,6 +116,7 @@ margin_left = -73.5649
 margin_top = -106.382
 margin_right = 961.435
 margin_bottom = 625.618
+custom_styles/focus = SubResource( 3 )
 action_mode = 0
 flat = true
 __meta__ = {
@@ -141,7 +145,7 @@ margin_left = -165.149
 margin_top = 391.045
 margin_right = 308.851
 margin_bottom = 492.045
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 text = "SKIP>>>"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,6 +181,8 @@ bus = "sound_effects"
 stream = ExtResource( 7 )
 autoplay = true
 bus = "music"
+
+[node name="fullscreen_icon" parent="." instance=ExtResource( 23 )]
 
 [node name="audio-icon" parent="." instance=ExtResource( 22 )]
 scale = Vector2( 1, 1.00358 )
