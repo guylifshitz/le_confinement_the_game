@@ -5,16 +5,16 @@
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0, 0.130737, 0.984375, 1, 0, 0.800781, 0.519257, 1 )
 
-[node name="distance-bar2" type="Node2D"]
+[node name="distance_bar" type="Node2D"]
 
-[node name="distance-bg" type="Line2D" parent="."]
+[node name="bg" type="Line2D" parent="."]
 points = PoolVector2Array( 119.536, 150, 267.019, 150 )
 width = 40.0
 default_color = Color( 0, 0, 0, 0.870588 )
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="distance-bar" type="Line2D" parent="."]
+[node name="bar" type="Line2D" parent="."]
 position = Vector2( -0.206436, -0.206436 )
 points = PoolVector2Array( 119.536, 150, 267.019, 150 )
 width = 30.0

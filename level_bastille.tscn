@@ -1,7 +1,7 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
-[ext_resource path="res://prefab/main_characterKinematic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://images/landmarks/bastille-trans.png" type="Texture" id=3]
 [ext_resource path="res://images/tilesets/econU_tiles.png" type="Texture" id=4]
 [ext_resource path="res://images/goals/carrefour.png" type="Texture" id=5]
@@ -20,7 +20,6 @@
 [ext_resource path="res://images/goals/boulangerie.png" type="Texture" id=18]
 [ext_resource path="res://scripts/spawn_enemies.gd" type="Script" id=19]
 [ext_resource path="res://scripts/game_logic.gd" type="Script" id=20]
-[ext_resource path="res://prefab/interface.tscn" type="PackedScene" id=21]
 [ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=22]
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=23]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=24]
@@ -48,7 +47,6 @@
 [ext_resource path="res://sounds/bad/jingles_NES13.wav" type="AudioStream" id=46]
 [ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=47]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=48]
-[ext_resource path="res://prefab/npc-1.tres" type="SpriteFrames" id=49]
 [ext_resource path="res://prefab/stamina-bar.tscn" type="PackedScene" id=50]
 [ext_resource path="res://sounds/bump/Hit_02.wav" type="AudioStream" id=51]
 [ext_resource path="res://sounds/pickup/SFX_Pickup_41.wav" type="AudioStream" id=52]
@@ -747,83 +745,83 @@ points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49
 31/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 101.546, 57.7512 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 84.2341, 39.1379 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 54.3187, 39.6317 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.7091, 28.6291 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 40.6436, 31.2152 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 71.6025, 43.6268 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 68.7866, 48.2061 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 64.8289, 44.0911 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 43.0076, 28.6318 )
-
-[sub_resource type="CapsuleShape2D" id=12]
-radius = 18.021
-height = 21.4161
-
-[sub_resource type="CircleShape2D" id=13]
-radius = 127.314
-
-[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 47.298, 38.6593 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 150.01, 100.014 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 85.3008, 47.2509 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 28.0989, 31.9371 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 26.4536, 20.7494 )
 
-[sub_resource type="NavigationPolygon" id=19]
+[sub_resource type="NavigationPolygon" id=8]
 vertices = PoolVector2Array( 1449.35, -1441.69, 4891.81, 662.369, 1382.01, 2120.22, -869.962, 330.214 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662.369, 1449.35, -1441.69 ) ]
 
-[sub_resource type="Curve2D" id=20]
+[sub_resource type="Curve2D" id=9]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1396.21, -806.443, 0, 0, 0, 0, 755.671, -462.416, 0, 0, 0, 0, 1077.23, -114.605, 0, 0, 0, 0, 1887.97, -540.611, 0, 0, 0, 0, 1396.21, -806.443 )
 }
 
-[sub_resource type="Curve2D" id=21]
+[sub_resource type="Curve2D" id=10]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1308.78, 23.0505, 0, 0, 0, 0, 614.555, 375.262, 0, 0, 0, 0, 1709.19, 1007.44, 0, 0, 0, 0, 1802.33, 1211.28, 0, 0, 0, 0, 2163.19, 1187.54, 0, 0, 0, 0, 2264.21, 473.976, 0, 0, 0, 0, 1308.78, 23.0505 )
 }
 
-[sub_resource type="Curve2D" id=22]
+[sub_resource type="Curve2D" id=11]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2168.18, -216.759, 0, 0, 0, 0, 2031.63, -309.338, 0, 0, 0, 0, 2115.86, -235.47, 0, 0, 0, 0, 2051.09, -184.471, 0, 0, 0, 0, 2765.35, 145.897, 0, 0, 0, 0, 2820.89, 202.083, 0, 0, 0, 0, 2330.85, 444.368, 0, 0, 0, 0, 1090.25, -92.3774, 0, 0, 0, 0, 1879.95, -520.48, 0, 0, 0, 0, 1781.2, -491.687, 0, 0, 0, 0, 1435.87, -749.528, 0, 0, 0, 0, 728.581, -368.649, 0, 0, 0, 0, 1387.37, 61.2921, 0, 0, 0, 0, 607.12, 439.507, 0, 0, 0, 0, 1145.21, 790.832, 0, 0, 0, 0, 1824.86, 1167.07, 0, 0, 0, 0, 2121.58, 1020.79, 0, 0, 0, 0, 1872.44, 806.718, 0, 0, 0, 0, 3052.09, 161.125, 0, 0, 0, 0, 2925.72, 226.302, 0, 0, 0, 0, 2863.63, 70.0467, 0, 0, 0, 0, 2168.18, -216.759 )
 }
 
-[sub_resource type="Curve2D" id=23]
+[sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 790.424, 380.258, 0, 0, 0, 0, 1566.83, 767.395, 0, 0, 0, 0, 2056.06, 494.259, 0, 0, 0, 0, 1057.55, -96.159, 0, 0, 0, 0, 1085.88, -165.466, 0, 0, 0, 0, 1788.65, -541.211, 0, 0, 0, 0, 1446.85, -705.075, 0, 0, 0, 0, 776.992, -292.47, 0, 0, 0, 0, 1180.72, 34.1535, 0, 0, 0, 0, 672.708, 302.55, 0, 0, 0, 0, 790.424, 380.258 )
 }
 
-[sub_resource type="Curve2D" id=24]
+[sub_resource type="Curve2D" id=13]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1922.32, -549.914, 0, 0, 0, 0, 1838.3, -478.167, 0, 0, 0, 0, 1203.43, -93.0153, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1593.21, -403.749, 0, 0, 0, 0, 1768.37, -440.663, 0, 0, 0, 0, 1922.32, -549.914 )
 }
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 101.546, 57.7512 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 84.2341, 39.1379 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 54.3187, 39.6317 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 32.7091, 28.6291 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 40.6436, 31.2152 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 71.6025, 43.6268 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 68.7866, 48.2061 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 64.8289, 44.0911 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 43.0076, 28.6318 )
+
+[sub_resource type="CapsuleShape2D" id=23]
+radius = 18.021
+height = 21.4161
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 127.314
 
 [sub_resource type="DynamicFont" id=25]
 size = 28
@@ -861,585 +859,13 @@ tile_data = PoolIntArray( -1900534, 536870918, 0, -1900533, 1, 0, -1900532, 1, 0
 rotation = 0.00113466
 scale = Vector2( 0.999992, 0.986271 )
 
-[node name="trees" type="YSort" parent="elements"]
-rotation = -0.00115045
-scale = Vector2( 1.00001, 1.01392 )
-
-[node name="tree-box" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1669.81, 724.904 )
-
-[node name="tree-box2" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1772.21, 685.167 )
-
-[node name="tree-box3" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2035, 935.923 )
-
-[node name="tree-box4" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1755.7, 939.971 )
-
-[node name="tree-box5" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1728.71, 1114.03 )
-
-[node name="tree-box13" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1918.16, 1316.97 )
-
-[node name="tree-box20" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1980.14, 1345.14 )
-
-[node name="tree-box21" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2047.74, 1378.94 )
-
-[node name="tree-box22" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2122.4, 1414.16 )
-
-[node name="tree-box26" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1964.64, 1278.94 )
-
-[node name="tree-box25" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2024.79, 1307.11 )
-
-[node name="tree-box24" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2094.23, 1340.91 )
-
-[node name="tree-box23" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2168.88, 1377.54 )
-
-[node name="tree-box14" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 391.78, 363.877 )
-
-[node name="tree-box51" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 325.231, 331.121 )
-
-[node name="tree-box57" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 453.882, 389.804 )
-
-[node name="tree-box56" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 521.36, 423.195 )
-
-[node name="tree-box54" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 437.841, 325.888 )
-
-[node name="tree-box55" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 371.292, 293.844 )
-
-[node name="tree-box53" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 498.952, 351.774 )
-
-[node name="tree-box52" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 567.85, 385.584 )
-
-[node name="tree-box65" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2195.35, 1463.6 )
-
-[node name="tree-box64" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2257.32, 1491.35 )
-
-[node name="tree-box63" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2324.93, 1525.15 )
-
-[node name="tree-box62" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2399.58, 1560.37 )
-
-[node name="tree-box61" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2241.83, 1425.15 )
-
-[node name="tree-box60" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2302.39, 1453.32 )
-
-[node name="tree-box59" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2371.41, 1487.12 )
-
-[node name="tree-box58" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2446.06, 1523.75 )
-
-[node name="tree-box34" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2286.1, 1119.28 )
-
-[node name="tree-box33" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2348.07, 1147.45 )
-
-[node name="tree-box32" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2415.68, 1181.26 )
-
-[node name="tree-box31" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2490.33, 1216.47 )
-
-[node name="tree-box30" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2332.58, 1081.25 )
-
-[node name="tree-box29" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2393.15, 1109.42 )
-
-[node name="tree-box28" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2462.16, 1143.23 )
-
-[node name="tree-box27" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2536.81, 1179.85 )
-
-[node name="tree-box73" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2558.2, 1261.43 )
-
-[node name="tree-box72" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2620.18, 1289.6 )
-
-[node name="tree-box71" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2687.79, 1323.41 )
-
-[node name="tree-box70" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2762.44, 1358.62 )
-
-[node name="tree-box69" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2604.69, 1223.4 )
-
-[node name="tree-box68" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2665.25, 1251.57 )
-
-[node name="tree-box67" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2734.27, 1285.38 )
-
-[node name="tree-box66" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2808.92, 1322 )
-
-[node name="tree-box81" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2832.34, 1405.61 )
-
-[node name="tree-box80" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2894.32, 1433.78 )
-
-[node name="tree-box79" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2961.92, 1467.59 )
-
-[node name="tree-box78" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3036.58, 1502.8 )
-
-[node name="tree-box77" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2878.82, 1367.58 )
-
-[node name="tree-box76" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2939.39, 1395.75 )
-
-[node name="tree-box75" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3008.41, 1429.55 )
-
-[node name="tree-box74" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3083.06, 1466.18 )
-
-[node name="tree-box89" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2465.8, 1606.65 )
-
-[node name="tree-box88" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2527.77, 1634.82 )
-
-[node name="tree-box87" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2595.38, 1668.62 )
-
-[node name="tree-box86" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2670.03, 1703.84 )
-
-[node name="tree-box85" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2512.28, 1568.62 )
-
-[node name="tree-box84" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2572.85, 1596.79 )
-
-[node name="tree-box83" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2641.86, 1630.59 )
-
-[node name="tree-box82" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2716.51, 1667.21 )
-
-[node name="tree-box42" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3267.48, 1189 )
-
-[node name="tree-box41" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3329.46, 1217.17 )
-
-[node name="tree-box40" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3397.07, 1250.97 )
-
-[node name="tree-box39" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3471.72, 1286.18 )
-
-[node name="tree-box38" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3313.97, 1150.97 )
-
-[node name="tree-box37" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3374.53, 1179.14 )
-
-[node name="tree-box36" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3443.55, 1212.94 )
-
-[node name="tree-box35" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3518.2, 1249.56 )
-
-[node name="tree-box50" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3267.48, 1189 )
-
-[node name="tree-box49" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3329.46, 1217.17 )
-
-[node name="tree-box48" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3397.07, 1250.97 )
-
-[node name="tree-box47" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3471.72, 1286.18 )
-
-[node name="tree-box46" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3313.97, 1150.97 )
-
-[node name="tree-box45" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3374.53, 1179.14 )
-
-[node name="tree-box44" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3443.55, 1212.94 )
-
-[node name="tree-box43" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3518.2, 1249.56 )
-
-[node name="tree-box15" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2750.84, 930.397 )
-
-[node name="tree-box90" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2898.04, 858.711 )
-
-[node name="tree-box91" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2923.76, 936.963 )
-
-[node name="tree-box92" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3012.41, 840.106 )
-
-[node name="tree-box95" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3036.88, 670.583 )
-
-[node name="tree-box94" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3062.6, 748.835 )
-
-[node name="tree-box93" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3151.25, 651.978 )
-
-[node name="tree-box98" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3248.15, 607.203 )
-
-[node name="tree-box97" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3273.87, 685.454 )
-
-[node name="tree-box96" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 3362.52, 588.598 )
-
-[node name="tree-box16" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2524.79, 852.269 )
-
-[node name="tree-box17" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2387.55, 795.511 )
-
-[node name="tree-box100" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2276.92, 718.486 )
-
-[node name="tree-box99" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2582.99, 861.239 )
-
-[node name="tree-box18" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 1218.69, 914.669 )
-
-[node name="tree-box19" parent="elements/trees" instance=ExtResource( 8 )]
-position = Vector2( 2115.97, 531.143 )
-
-[node name="opera" parent="elements" instance=ExtResource( 6 )]
-
-[node name="upper_buildings" parent="elements" instance=ExtResource( 1 )]
-position = Vector2( 0, 0 )
-scale = Vector2( 0.4, 0.4 )
-cell_size = Vector2( 220, 110 )
-tile_data = PoolIntArray( -2621418, 5, 0, -2621416, 6, 0, -2621414, 5, 0, -2621412, 5, 0, -2490346, 536870917, 0, -2293762, 5, 0, -2359296, 6, 0, -2359294, 5, 0, -2359292, 6, 0, -2359290, 5, 0, -2359288, 6, 0, -2359286, 5, 0, -2359284, 6, 0, -2359274, 536870918, 0, -2162692, 536870917, 0, -2228202, 536870917, 0, -2162660, 5, 0, -2162658, 6, 0, -2162656, 5, 0, -2162654, 6, 0, -2162652, 5, 0, -2162650, 6, 0, -2162648, 5, 0, -2162646, 6, 0, -2031620, 536870918, 0, -2097136, 5, 0, -2097134, 5, 0, -2097132, 5, 0, -1900548, 536870917, 0, -1769476, 536870918, 0, -1835001, 536870917, 0, -1638404, 536870917, 0, -1703929, 536870918, 0, -1703902, 536870917, 0, -1638393, 536870917, 0, -1507332, 536870918, 0, -1572830, 536870918, 0, -1507321, 536870918, 0, -1376260, 536870917, 0, -1441785, 536870917, 0, -1441758, 536870917, 0, -1245188, 536870918, 0, -1310713, 536870917, 0, -1310686, 536870917, 0, -1114116, 536870917, 0, -1179644, 5, 0, -1179643, 5, 0, -1179635, 5, 0, -1179633, 6, 0, -1179632, 5, 0, -1179630, 6, 0, -1179628, 5, 0, -1179626, 6, 0, -1179624, 5, 0, -1179622, 6, 0, -1179620, 5, 0, -1179618, 6, 0, -1179616, 5, 0, -983044, 536870918, 0, -851972, 536870917, 0, -720900, 536870917, 0, -720887, 2, 0, -720883, 2, 0, -720863, 536870917, 0, -589828, 536870918, 0, -655347, 536870917, 0, -655327, 536870917, 0, -524287, 2, 0, -524275, 536870917, 0, -524255, 536870918, 0, -393203, 536870918, 0, -393198, 2, 0, -393183, 536870917, 0, -262131, 536870917, 0, -262111, 536870917, 0, -131061, 5, 0, -131053, 5, 0, -131051, 6, 0, -131049, 5, 0, -131047, 6, 0, -131045, 5, 0, -131043, 6, 0, -131041, 5, 0, 589857, 536870917, 0, 720929, 536870917, 0, 852001, 536870918, 0, 983073, 536870917, 0, 1114145, 536870918, 0, 1245217, 536870917, 0, 1376289, 536870918, 0 )
-
-[node name="lower_buildings" parent="elements" instance=ExtResource( 1 )]
-modulate = Color( 1, 1, 1, 0.576471 )
-position = Vector2( 0.00113467, 1.01392 )
-scale = Vector2( 0.4, 0.4 )
-cell_size = Vector2( 220, 110 )
-tile_data = PoolIntArray( -2621410, 536870917, 0, -2490338, 536870918, 0, -2424804, 5, 0, -2424802, 6, 0, -2359283, 536870917, 0, -2293734, 536870917, 0, -2228211, 536870917, 0, -2162675, 536870917, 0, -2162662, 536870918, 0, -2162661, 5, 0, -2097110, 7, 0, -2031603, 536870918, 0, -2031574, 536870917, 0, -1900539, 5, 0, -1900537, 6, 0, -1900531, 536870917, 0, -1900502, 536870918, 0, -1835004, 536870917, 0, -1769459, 536870918, 0, -1769430, 536870917, 0, -1769404, 536870917, 0, -1703932, 536870918, 0, -1703920, 5, 0, -1703918, 6, 0, -1703916, 5, 0, -1703914, 6, 0, -1703912, 5, 0, -1703910, 6, 0, -1703908, 5, 0, -1703906, 6, 0, -1703904, 5, 0, -1638387, 536870917, 0, -1638358, 536870918, 0, -1638332, 536870918, 0, -1572860, 536870917, 0, -1507315, 536870918, 0, -1507260, 536870917, 0, -1441788, 536870918, 0, -1376243, 536870917, 0, -1376188, 536870918, 0, -1310716, 536870917, 0, -1310707, 536870918, 0, -1245171, 536870917, 0, -1245116, 536870917, 0, -1114044, 536870918, 0, -982972, 536870917, 0, -851900, 536870918, 0, -720883, 2, 0, -720877, 5, 0, -720875, 6, 0, -720874, 5, 0, -720872, 6, 0, -720870, 5, 0, -720868, 6, 0, -720866, 5, 0, -720864, 6, 0, -589827, 5, 0, -589825, 6, 0, -655359, 5, 0, -655357, 6, 0, -655355, 5, 0, -655353, 6, 0, -655351, 5, 0, -655349, 5, 0, -589805, 536870917, 0, -524287, 2, 0, -458733, 536870918, 0, -393198, 2, 0, -327661, 536870917, 0, -196589, 536870918, 0, 589835, 5, 0, 589837, 6, 0, 589839, 5, 0, 589841, 6, 0, 589843, 5, 0, 589845, 6, 0, 589847, 5, 0, 589849, 6, 0, 589851, 5, 0, 589853, 6, 0, 589855, 5, 0, 589857, 6, 0, 1048621, 5, 0, 1048623, 6, 0, 1048625, 5, 0, 1048627, 6, 0, 1048629, 5, 0, 1048631, 6, 0, 1048633, 5, 0, 1048635, 6, 0, 1048637, 5, 0, 1048639, 6, 0, 1048641, 5, 0, 1048643, 6, 0, 1048645, 5, 0, 1179693, 536870917, 0, 1310765, 536870918, 0, 1441837, 536870917, 0, 1572909, 536870918, 0 )
-
-[node name="markets" type="YSort" parent="elements"]
-position = Vector2( -0.00113467, -1.01392 )
-rotation = -7.27596e-11
-scale = Vector2( 0.4, 0.4 )
-
-[node name="market1" type="Sprite" parent="elements/markets"]
-position = Vector2( 1657.33, 1027.57 )
-rotation = -3.14044
-scale = Vector2( 1.41968, -1.43943 )
-texture = ExtResource( 10 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/markets/market1"]
-rotation = 3.14046
-scale = Vector2( 0.704386, -0.694721 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market1/StaticBody2D"]
-position = Vector2( -11.2947, 56.2013 )
-rotation = 0.523599
-shape = SubResource( 3 )
-
-[node name="market3" type="Sprite" parent="elements/markets"]
-position = Vector2( 2206.14, 1283.59 )
-rotation = -3.14044
-scale = Vector2( 1.41968, -1.43943 )
-texture = ExtResource( 10 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/markets/market3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market3/Area2D"]
-position = Vector2( -10.1455, 52.7846 )
-rotation = -0.523599
-shape = SubResource( 4 )
-
-[node name="market5" type="Sprite" parent="elements/markets"]
-position = Vector2( 1929.65, 1124.08 )
-rotation = -3.14044
-scale = Vector2( 1.55713, -1.5788 )
-texture = ExtResource( 35 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/markets/market5"]
-position = Vector2( 0.420898, -0.418945 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market5/Area2D"]
-position = Vector2( -5.47559, 45.2761 )
-rotation = -0.523599
-shape = SubResource( 5 )
-
-[node name="market6" type="Sprite" parent="elements/markets"]
-position = Vector2( 1446.62, 1205.5 )
-rotation = -0.00115045
-scale = Vector2( 1.3442, 1.3629 )
-texture = ExtResource( 37 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/markets/market6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market6/Area2D"]
-shape = SubResource( 6 )
-
-[node name="market14" type="Sprite" parent="elements/markets"]
-position = Vector2( 2406.36, 1664.28 )
-rotation = -0.00115045
-scale = Vector2( 1.08603, 1.10114 )
-texture = ExtResource( 37 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/markets/market14"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market14/Area2D"]
-position = Vector2( -16.8594, -12.6445 )
-shape = SubResource( 7 )
-
-[node name="market15" type="Sprite" parent="elements/markets"]
-position = Vector2( 2052.22, 1490.36 )
-rotation = -0.00115045
-scale = Vector2( 0.864952, 0.876985 )
-texture = ExtResource( 39 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/markets/market15"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market15/Area2D"]
-position = Vector2( -2.26782, 20.4124 )
-shape = SubResource( 8 )
-
-[node name="market16" type="Sprite" parent="elements/markets"]
-position = Vector2( 2679.93, 1800.75 )
-rotation = -0.00115045
-scale = Vector2( 0.826369, 0.834887 )
-texture = ExtResource( 39 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/markets/market16"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market16/StaticBody2D"]
-position = Vector2( -1.58276, 20.6477 )
-shape = SubResource( 9 )
-
-[node name="market7" type="Sprite" parent="elements/markets"]
-position = Vector2( 2310.74, 1336.78 )
-rotation = -3.14044
-scale = Vector2( 1.31246, -1.33072 )
-texture = ExtResource( 34 )
-
-[node name="market11" type="Sprite" parent="elements/markets"]
-position = Vector2( 2551.31, 1463.31 )
-rotation = -3.14044
-scale = Vector2( 1.41968, -1.43943 )
-texture = ExtResource( 10 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/markets/market11"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market11/StaticBody2D"]
-position = Vector2( 3.67261, 34.9796 )
-rotation = -0.523599
-shape = SubResource( 10 )
-
-[node name="market8" type="Sprite" parent="elements/markets"]
-position = Vector2( 1850.97, 1401.38 )
-rotation = 3.14044
-scale = Vector2( 1.52158, -1.54274 )
-texture = ExtResource( 36 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/markets/market8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/markets/market8/StaticBody2D"]
-position = Vector2( 10.8401, 0.928162 )
-shape = SubResource( 11 )
-
-[node name="market13" type="Sprite" parent="elements/markets"]
-position = Vector2( 1776.13, 1383.41 )
-rotation = 3.14044
-scale = Vector2( 1.52158, -1.54274 )
-texture = ExtResource( 38 )
-
-[node name="market12" type="Sprite" parent="elements/markets"]
-position = Vector2( 2376.95, 1644.5 )
-rotation = 3.14044
-scale = Vector2( 1.52158, -1.54274 )
-texture = ExtResource( 36 )
-
-[node name="flower" type="Sprite" parent="elements/markets"]
-position = Vector2( 2761.79, 1637.11 )
-rotation = 3.14044
-scale = Vector2( 0.300983, -0.305171 )
-texture = ExtResource( 40 )
-
-[node name="flower2" type="Sprite" parent="elements/markets"]
-position = Vector2( 2778.75, 1653.05 )
-rotation = 3.14044
-scale = Vector2( -0.3, -0.305 )
-texture = ExtResource( 40 )
-
-[node name="market9" type="Sprite" parent="elements/markets"]
-position = Vector2( 2929.87, 1651.54 )
-rotation = -3.14044
-scale = Vector2( 1.52158, -1.54274 )
-texture = ExtResource( 34 )
-
-[node name="bastille-trans" type="Sprite" parent="elements"]
-position = Vector2( 1844.58, 1036.3 )
-scale = Vector2( 2.47338, 2.47338 )
-texture = ExtResource( 3 )
-offset = Vector2( 0, -38.44 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/bastille-trans"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/bastille-trans/StaticBody2D"]
-position = Vector2( 2.05194, 8.16479 )
-rotation = 1.5708
-shape = SubResource( 12 )
-
-[node name="tilemaps" type="Node2D" parent="elements"]
-
-[node name="barriers" type="YSort" parent="elements"]
-position = Vector2( -1.16665, 1.18545 )
-rotation = -0.00115045
-scale = Vector2( 1.00001, 1.01392 )
-
-[node name="barrier" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1622, 1170.92 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier10" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2406.71, 1023.46 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier11" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2489.18, 986.201 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier12" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2567.47, 946.262 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier13" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2646.29, 903.243 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier14" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2703.83, 863.136 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier5" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1706.24, 1184.8 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier6" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1778.99, 1229.31 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier7" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1857.67, 1266.83 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier16" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 986.636, 1190.11 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier19" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 829.447, 1071.06 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier15" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1064.82, 1218.35 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier8" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1144.5, 1256.17 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier18" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 832.835, 1109.37 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier17" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 910.749, 1145.69 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier9" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2710.95, 803.872 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier22" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2712.12, 838.308 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier20" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2647.28, 763.149 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier21" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 2587.7, 723.12 )
-scale = Vector2( -0.443047, 0.476961 )
-
-[node name="barrier2" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1545.44, 1206.88 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier3" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1462.44, 1235.47 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="barrier4" parent="elements/barriers" instance=ExtResource( 7 )]
-position = Vector2( 1389.82, 1275.78 )
-scale = Vector2( 0.476961, 0.476961 )
-
-[node name="carroussel" type="Sprite" parent="elements"]
-position = Vector2( 1232.88, 764.654 )
-rotation = -0.00115045
-scale = Vector2( 0.37872, 0.383989 )
-texture = ExtResource( 9 )
-offset = Vector2( 0, -85.366 )
-
-[node name="Area2D" type="StaticBody2D" parent="elements/carroussel"]
-position = Vector2( 4.11304, -23.4973 )
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="elements/carroussel/Area2D"]
-position = Vector2( 2.95288, 8.85962 )
-scale = Vector2( 1, 0.612 )
-shape = SubResource( 13 )
+[node name="player" parent="elements" instance=ExtResource( 2 )]
+position = Vector2( 595.909, -320.655 )
+rotation = -3.49246e-10
 
 [node name="goals" type="YSort" parent="elements"]
 position = Vector2( 0.00079958, 0.71449 )
-rotation = -2.32831e-10
+rotation = -3.49246e-10
 
 [node name="monoprix" type="YSort" parent="elements/goals"]
 rotation = -1.16415e-10
@@ -1455,7 +881,7 @@ texture = ExtResource( 11 )
 [node name="grocery" type="Area2D" parent="elements/goals/monoprix/monoprix_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/monoprix_node/grocery"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="carrefour" type="YSort" parent="elements/goals"]
 position = Vector2( 83.9814, -14.8504 )
@@ -1472,7 +898,7 @@ texture = ExtResource( 5 )
 [node name="grocery" type="Area2D" parent="elements/goals/carrefour/carrefour_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/carrefour/carrefour_node/grocery"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="la_suprette" type="YSort" parent="elements/goals"]
 position = Vector2( 515.465, -472.944 )
@@ -1489,7 +915,7 @@ texture = ExtResource( 12 )
 [node name="grocery" type="Area2D" parent="elements/goals/la_suprette/la_superette_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/la_suprette/la_superette_node/grocery"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="boulangerie" type="YSort" parent="elements/goals"]
 rotation = -1.16415e-10
@@ -1506,7 +932,7 @@ texture = ExtResource( 18 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/boulangerie/boulangerie_node/grocery"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="pharmacy_1" type="YSort" parent="elements/goals"]
 position = Vector2( 40.9028, -25.1202 )
@@ -1524,7 +950,7 @@ texture = ExtResource( 13 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_1/pharma_1_node/area"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="pharmacy_2" type="YSort" parent="elements/goals"]
 rotation = -1.16415e-10
@@ -1542,7 +968,7 @@ position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_2/pharma_2_node/area"]
 position = Vector2( -13.2434, 17.07 )
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="flower_market" type="YSort" parent="elements/goals"]
 rotation = -3.49246e-10
@@ -1561,14 +987,14 @@ rotation = 0.00226946
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/Area2D"]
 position = Vector2( -21.7745, 32.2886 )
 rotation = -0.523599
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="elements/goals/flower_market/flower_market"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/StaticBody2D"]
 position = Vector2( -36.0358, 54.1382 )
 rotation = -0.523599
-shape = SubResource( 16 )
+shape = SubResource( 5 )
 
 [node name="home" type="Sprite" parent="elements/goals"]
 position = Vector2( 597.638, -455.365 )
@@ -1577,12 +1003,13 @@ scale = Vector2( 0.582681, 0.582681 )
 texture = ExtResource( 14 )
 
 [node name="Area2D" type="Area2D" parent="elements/goals/home"]
+position = Vector2( -13.7219, 6.97614 )
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/home/Area2D"]
-position = Vector2( -1.40479, -1.42096 )
+position = Vector2( 1.73572, 27.0154 )
 scale = Vector2( 4.83172, 3.62153 )
-shape = SubResource( 17 )
+shape = SubResource( 6 )
 
 [node name="attestation" type="Node2D" parent="elements/goals"]
 position = Vector2( 943.55, -252.906 )
@@ -1599,7 +1026,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation3" type="Node2D" parent="elements/goals"]
 position = Vector2( 2823.62, 164.383 )
@@ -1616,7 +1043,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation3/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation4" type="Node2D" parent="elements/goals"]
 position = Vector2( 1589.13, 752.241 )
@@ -1633,7 +1060,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation4/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation5" type="Node2D" parent="elements/goals"]
 position = Vector2( 738.936, 294.178 )
@@ -1650,7 +1077,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation5/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation2" type="Node2D" parent="elements/goals"]
 position = Vector2( 897.746, -492.399 )
@@ -1667,7 +1094,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation2/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation6" type="Node2D" parent="elements/goals"]
 position = Vector2( 1107.74, -576.202 )
@@ -1684,7 +1111,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation6/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="attestation7" type="Node2D" parent="elements/goals"]
 position = Vector2( 1256.95, -653.771 )
@@ -1701,36 +1128,16 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation7/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 18 )
-
-[node name="police-cars" type="YSort" parent="elements"]
-position = Vector2( 364.646, 397.831 )
-rotation = -0.00115045
-scale = Vector2( 0.565005, 0.572865 )
-
-[node name="police-car-flipped" parent="elements/police-cars" instance=ExtResource( 31 )]
-position = Vector2( -1.18567, 6.10352e-05 )
-
-[node name="police-car-flipped2" parent="elements/police-cars" instance=ExtResource( 31 )]
-position = Vector2( 374.66, -96.0355 )
-
-[node name="police-car" parent="elements/police-cars" instance=ExtResource( 30 )]
-
-[node name="police-car2" parent="elements/police-cars" instance=ExtResource( 30 )]
-position = Vector2( -101.127, 83.4623 )
-
-[node name="player" parent="elements" instance=ExtResource( 2 )]
-position = Vector2( 595.909, -320.655 )
-rotation = -1.16415e-10
+shape = SubResource( 7 )
 
 [node name="enemy_paths" type="Navigation2D" parent="elements"]
-position = Vector2( -1.97906e-09, -1.04308e-07 )
-rotation = -3.49246e-10
+position = Vector2( -1.97906e-09, -1.19209e-07 )
+rotation = -4.65661e-10
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="elements/enemy_paths"]
 visible = false
 position = Vector2( 3.59755, 1.45424 )
-navpoly = SubResource( 19 )
+navpoly = SubResource( 8 )
 
 [node name="spawn_zombies" type="Node2D" parent="elements/enemy_paths"]
 rotation = 2.32831e-10
@@ -1741,23 +1148,23 @@ enemy_type = "zombie"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 20 )
+curve = SubResource( 9 )
 
 [node name="Path2D2" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 21 )
+curve = SubResource( 10 )
 
 [node name="Path2D" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 22 )
+curve = SubResource( 11 )
 
 [node name="Path2D4" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 23 )
+curve = SubResource( 12 )
 
 [node name="Path2D5" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 24 )
+curve = SubResource( 13 )
 
 [node name="spawn_police" type="Node2D" parent="elements/enemy_paths"]
 rotation = 2.32831e-10
@@ -1768,29 +1175,645 @@ enemy_type = "police"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 20 )
+curve = SubResource( 9 )
 
 [node name="Path2D2" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 21 )
+curve = SubResource( 10 )
 
 [node name="Path2D" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 22 )
+curve = SubResource( 11 )
 
 [node name="Path2D4" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 23 )
+curve = SubResource( 12 )
 
 [node name="Path2D5" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 24 )
+curve = SubResource( 13 )
 
 [node name="enemies_holder" type="YSort" parent="elements"]
+rotation = -1.16415e-10
+
+[node name="scene" type="YSort" parent="elements"]
+rotation = -2.32831e-10
+
+[node name="trees" type="YSort" parent="elements/scene"]
+rotation = -0.00115045
+scale = Vector2( 1.00001, 1.01392 )
+
+[node name="tree-box" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1669.81, 724.904 )
+
+[node name="tree-box2" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1772.21, 685.167 )
+
+[node name="tree-box3" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2035, 935.923 )
+
+[node name="tree-box4" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1755.7, 939.971 )
+
+[node name="tree-box5" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1728.71, 1114.03 )
+
+[node name="tree-box13" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1918.16, 1316.97 )
+
+[node name="tree-box20" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1980.14, 1345.14 )
+
+[node name="tree-box21" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2047.74, 1378.94 )
+
+[node name="tree-box22" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2122.4, 1414.16 )
+
+[node name="tree-box26" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1964.64, 1278.94 )
+
+[node name="tree-box25" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2024.79, 1307.11 )
+
+[node name="tree-box24" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2094.23, 1340.91 )
+
+[node name="tree-box23" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2168.88, 1377.54 )
+
+[node name="tree-box14" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 391.78, 363.877 )
+
+[node name="tree-box51" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 325.231, 331.121 )
+
+[node name="tree-box57" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 453.882, 389.804 )
+
+[node name="tree-box56" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 521.36, 423.195 )
+
+[node name="tree-box54" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 437.841, 325.888 )
+
+[node name="tree-box55" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 371.292, 293.844 )
+
+[node name="tree-box53" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 498.952, 351.774 )
+
+[node name="tree-box52" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 567.85, 385.584 )
+
+[node name="tree-box65" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2195.35, 1463.6 )
+
+[node name="tree-box64" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2257.32, 1491.35 )
+
+[node name="tree-box63" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2324.93, 1525.15 )
+
+[node name="tree-box62" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2399.58, 1560.37 )
+
+[node name="tree-box61" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2241.83, 1425.15 )
+
+[node name="tree-box60" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2302.39, 1453.32 )
+
+[node name="tree-box59" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2371.41, 1487.12 )
+
+[node name="tree-box58" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2446.06, 1523.75 )
+
+[node name="tree-box34" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2286.1, 1119.28 )
+
+[node name="tree-box33" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2348.07, 1147.45 )
+
+[node name="tree-box32" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2415.68, 1181.26 )
+
+[node name="tree-box31" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2490.33, 1216.47 )
+
+[node name="tree-box30" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2332.58, 1081.25 )
+
+[node name="tree-box29" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2393.15, 1109.42 )
+
+[node name="tree-box28" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2462.16, 1143.23 )
+
+[node name="tree-box27" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2536.81, 1179.85 )
+
+[node name="tree-box73" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2558.2, 1261.43 )
+
+[node name="tree-box72" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2620.18, 1289.6 )
+
+[node name="tree-box71" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2687.79, 1323.41 )
+
+[node name="tree-box70" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2762.44, 1358.62 )
+
+[node name="tree-box69" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2604.69, 1223.4 )
+
+[node name="tree-box68" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2665.25, 1251.57 )
+
+[node name="tree-box67" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2734.27, 1285.38 )
+
+[node name="tree-box66" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2808.92, 1322 )
+
+[node name="tree-box81" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2832.34, 1405.61 )
+
+[node name="tree-box80" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2894.32, 1433.78 )
+
+[node name="tree-box79" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2961.92, 1467.59 )
+
+[node name="tree-box78" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3036.58, 1502.8 )
+
+[node name="tree-box77" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2878.82, 1367.58 )
+
+[node name="tree-box76" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2939.39, 1395.75 )
+
+[node name="tree-box75" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3008.41, 1429.55 )
+
+[node name="tree-box74" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3083.06, 1466.18 )
+
+[node name="tree-box89" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2465.8, 1606.65 )
+
+[node name="tree-box88" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2527.77, 1634.82 )
+
+[node name="tree-box87" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2595.38, 1668.62 )
+
+[node name="tree-box86" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2670.03, 1703.84 )
+
+[node name="tree-box85" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2512.28, 1568.62 )
+
+[node name="tree-box84" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2572.85, 1596.79 )
+
+[node name="tree-box83" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2641.86, 1630.59 )
+
+[node name="tree-box82" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2716.51, 1667.21 )
+
+[node name="tree-box42" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3267.48, 1189 )
+
+[node name="tree-box41" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3329.46, 1217.17 )
+
+[node name="tree-box40" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3397.07, 1250.97 )
+
+[node name="tree-box39" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3471.72, 1286.18 )
+
+[node name="tree-box38" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3313.97, 1150.97 )
+
+[node name="tree-box37" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3374.53, 1179.14 )
+
+[node name="tree-box36" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3443.55, 1212.94 )
+
+[node name="tree-box35" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3518.2, 1249.56 )
+
+[node name="tree-box50" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3267.48, 1189 )
+
+[node name="tree-box49" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3329.46, 1217.17 )
+
+[node name="tree-box48" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3397.07, 1250.97 )
+
+[node name="tree-box47" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3471.72, 1286.18 )
+
+[node name="tree-box46" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3313.97, 1150.97 )
+
+[node name="tree-box45" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3374.53, 1179.14 )
+
+[node name="tree-box44" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3443.55, 1212.94 )
+
+[node name="tree-box43" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3518.2, 1249.56 )
+
+[node name="tree-box15" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2750.84, 930.397 )
+
+[node name="tree-box90" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2898.04, 858.711 )
+
+[node name="tree-box91" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2923.76, 936.963 )
+
+[node name="tree-box92" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3012.41, 840.106 )
+
+[node name="tree-box95" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3036.88, 670.583 )
+
+[node name="tree-box94" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3062.6, 748.835 )
+
+[node name="tree-box93" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3151.25, 651.978 )
+
+[node name="tree-box98" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3248.15, 607.203 )
+
+[node name="tree-box97" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3273.87, 685.454 )
+
+[node name="tree-box96" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 3362.52, 588.598 )
+
+[node name="tree-box16" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2524.79, 852.269 )
+
+[node name="tree-box17" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2387.55, 795.511 )
+
+[node name="tree-box100" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2276.92, 718.486 )
+
+[node name="tree-box99" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2582.99, 861.239 )
+
+[node name="tree-box18" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 1218.69, 914.669 )
+
+[node name="tree-box19" parent="elements/scene/trees" instance=ExtResource( 8 )]
+position = Vector2( 2115.97, 531.143 )
+
+[node name="opera" parent="elements/scene" instance=ExtResource( 6 )]
+position = Vector2( -29.8347, -7.77938 )
+
+[node name="upper_buildings" parent="elements/scene" instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+rotation = 1.45519e-10
+scale = Vector2( 0.4, 0.4 )
+cell_size = Vector2( 220, 110 )
+tile_data = PoolIntArray( -2621418, 5, 0, -2621416, 6, 0, -2621414, 5, 0, -2621412, 5, 0, -2490346, 536870917, 0, -2293762, 5, 0, -2359296, 6, 0, -2359294, 5, 0, -2359292, 6, 0, -2359290, 5, 0, -2359288, 6, 0, -2359286, 5, 0, -2359284, 6, 0, -2359274, 536870918, 0, -2162692, 536870917, 0, -2228202, 536870917, 0, -2162660, 5, 0, -2162658, 6, 0, -2162656, 5, 0, -2162654, 6, 0, -2162652, 5, 0, -2162650, 6, 0, -2162648, 5, 0, -2162646, 6, 0, -2031620, 536870918, 0, -2097136, 5, 0, -2097134, 5, 0, -2097132, 5, 0, -1900548, 536870917, 0, -1769476, 536870918, 0, -1835001, 536870917, 0, -1638404, 536870917, 0, -1703929, 536870918, 0, -1703902, 536870917, 0, -1638393, 536870917, 0, -1507332, 536870918, 0, -1572830, 536870918, 0, -1507321, 536870918, 0, -1376260, 536870917, 0, -1441785, 536870917, 0, -1441758, 536870917, 0, -1245188, 536870918, 0, -1310713, 536870917, 0, -1310686, 536870917, 0, -1114116, 536870917, 0, -1179644, 5, 0, -1179643, 5, 0, -1179635, 5, 0, -1179633, 6, 0, -1179632, 5, 0, -1179630, 6, 0, -1179628, 5, 0, -1179626, 6, 0, -1179624, 5, 0, -1179622, 6, 0, -1179620, 5, 0, -1179618, 6, 0, -1179616, 5, 0, -983044, 536870918, 0, -851972, 536870917, 0, -720900, 536870917, 0, -720887, 2, 0, -720883, 2, 0, -720863, 536870917, 0, -589828, 536870918, 0, -655347, 536870917, 0, -655327, 536870917, 0, -524287, 2, 0, -524275, 536870917, 0, -524255, 536870918, 0, -393203, 536870918, 0, -393198, 2, 0, -393183, 536870917, 0, -262131, 536870917, 0, -262111, 536870917, 0, -131061, 5, 0, -131053, 5, 0, -131051, 6, 0, -131049, 5, 0, -131047, 6, 0, -131045, 5, 0, -131043, 6, 0, -131041, 5, 0, 589857, 536870917, 0, 720929, 536870917, 0, 852001, 536870918, 0, 983073, 536870917, 0, 1114145, 536870918, 0, 1245217, 536870917, 0, 1376289, 536870918, 0 )
+
+[node name="lower_buildings" parent="elements/scene" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.576471 )
+position = Vector2( 0.00113467, 1.01392 )
+rotation = 1.45519e-10
+scale = Vector2( 0.4, 0.4 )
+cell_size = Vector2( 220, 110 )
+tile_data = PoolIntArray( -2621410, 536870917, 0, -2490338, 536870918, 0, -2424804, 5, 0, -2424802, 6, 0, -2359283, 536870917, 0, -2293734, 536870917, 0, -2228211, 536870917, 0, -2162675, 536870917, 0, -2162662, 536870918, 0, -2162661, 5, 0, -2097110, 7, 0, -2031603, 536870918, 0, -2031574, 536870917, 0, -1900539, 5, 0, -1900537, 6, 0, -1900531, 536870917, 0, -1900502, 536870918, 0, -1835004, 536870917, 0, -1769459, 536870918, 0, -1769430, 536870917, 0, -1769404, 536870917, 0, -1703932, 536870918, 0, -1703920, 5, 0, -1703918, 6, 0, -1703916, 5, 0, -1703914, 6, 0, -1703912, 5, 0, -1703910, 6, 0, -1703908, 5, 0, -1703906, 6, 0, -1703904, 5, 0, -1638387, 536870917, 0, -1638358, 536870918, 0, -1638332, 536870918, 0, -1572860, 536870917, 0, -1507315, 536870918, 0, -1507260, 536870917, 0, -1441788, 536870918, 0, -1376243, 536870917, 0, -1376188, 536870918, 0, -1310716, 536870917, 0, -1310707, 536870918, 0, -1245171, 536870917, 0, -1245116, 536870917, 0, -1114044, 536870918, 0, -982972, 536870917, 0, -851900, 536870918, 0, -720883, 2, 0, -720877, 5, 0, -720875, 6, 0, -720874, 5, 0, -720872, 6, 0, -720870, 5, 0, -720868, 6, 0, -720866, 5, 0, -720864, 6, 0, -589827, 5, 0, -589825, 6, 0, -655359, 5, 0, -655357, 6, 0, -655355, 5, 0, -655353, 6, 0, -655351, 5, 0, -655349, 5, 0, -589805, 536870917, 0, -524287, 2, 0, -458733, 536870918, 0, -393198, 2, 0, -327661, 536870917, 0, -196589, 536870918, 0, 589835, 5, 0, 589837, 6, 0, 589839, 5, 0, 589841, 6, 0, 589843, 5, 0, 589845, 6, 0, 589847, 5, 0, 589849, 6, 0, 589851, 5, 0, 589853, 6, 0, 589855, 5, 0, 589857, 6, 0, 1048621, 5, 0, 1048623, 6, 0, 1048625, 5, 0, 1048627, 6, 0, 1048629, 5, 0, 1048631, 6, 0, 1048633, 5, 0, 1048635, 6, 0, 1048637, 5, 0, 1048639, 6, 0, 1048641, 5, 0, 1048643, 6, 0, 1048645, 5, 0, 1179693, 536870917, 0, 1310765, 536870918, 0, 1441837, 536870917, 0, 1572909, 536870918, 0 )
+
+[node name="markets" type="YSort" parent="elements/scene"]
+position = Vector2( -0.00113467, -1.01392 )
+rotation = 7.27596e-11
+scale = Vector2( 0.4, 0.4 )
+
+[node name="market1" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 1657.33, 1027.57 )
+rotation = -3.14044
+scale = Vector2( 1.41968, -1.43943 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/scene/markets/market1"]
+rotation = 3.14046
+scale = Vector2( 0.704386, -0.694721 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market1/StaticBody2D"]
+position = Vector2( -11.2947, 56.2013 )
+rotation = 0.523599
+shape = SubResource( 14 )
+
+[node name="market3" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2206.14, 1283.59 )
+rotation = -3.14044
+scale = Vector2( 1.41968, -1.43943 )
+texture = ExtResource( 10 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market3/Area2D"]
+position = Vector2( -10.1455, 52.7846 )
+rotation = -0.523599
+shape = SubResource( 15 )
+
+[node name="market5" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 1929.65, 1124.08 )
+rotation = -3.14044
+scale = Vector2( 1.55713, -1.5788 )
+texture = ExtResource( 35 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market5"]
+position = Vector2( 0.420898, -0.418945 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market5/Area2D"]
+position = Vector2( -5.47559, 45.2761 )
+rotation = -0.523599
+shape = SubResource( 16 )
+
+[node name="market6" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 1446.62, 1205.5 )
+rotation = -0.00115045
+scale = Vector2( 1.3442, 1.3629 )
+texture = ExtResource( 37 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market6/Area2D"]
+shape = SubResource( 17 )
+
+[node name="market14" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2406.36, 1664.28 )
+rotation = -0.00115045
+scale = Vector2( 1.08603, 1.10114 )
+texture = ExtResource( 37 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market14/Area2D"]
+position = Vector2( -16.8594, -12.6445 )
+shape = SubResource( 18 )
+
+[node name="market15" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2052.22, 1490.36 )
+rotation = -0.00115045
+scale = Vector2( 0.864952, 0.876985 )
+texture = ExtResource( 39 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market15/Area2D"]
+position = Vector2( -2.26782, 20.4124 )
+shape = SubResource( 19 )
+
+[node name="market16" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2679.93, 1800.75 )
+rotation = -0.00115045
+scale = Vector2( 0.826369, 0.834887 )
+texture = ExtResource( 39 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/scene/markets/market16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market16/StaticBody2D"]
+position = Vector2( -1.58276, 20.6477 )
+shape = SubResource( 20 )
+
+[node name="market7" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2310.74, 1336.78 )
+rotation = -3.14044
+scale = Vector2( 1.31246, -1.33072 )
+texture = ExtResource( 34 )
+
+[node name="market11" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2551.31, 1463.31 )
+rotation = -3.14044
+scale = Vector2( 1.41968, -1.43943 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/scene/markets/market11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market11/StaticBody2D"]
+position = Vector2( 3.67261, 34.9796 )
+rotation = -0.523599
+shape = SubResource( 21 )
+
+[node name="market8" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 1850.97, 1401.38 )
+rotation = 3.14044
+scale = Vector2( 1.52158, -1.54274 )
+texture = ExtResource( 36 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/scene/markets/market8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market8/StaticBody2D"]
+position = Vector2( 10.8401, 0.928162 )
+shape = SubResource( 22 )
+
+[node name="market13" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 1776.13, 1383.41 )
+rotation = 3.14044
+scale = Vector2( 1.52158, -1.54274 )
+texture = ExtResource( 38 )
+
+[node name="market12" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2376.95, 1644.5 )
+rotation = 3.14044
+scale = Vector2( 1.52158, -1.54274 )
+texture = ExtResource( 36 )
+
+[node name="flower" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2761.79, 1637.11 )
+rotation = 3.14044
+scale = Vector2( 0.300983, -0.305171 )
+texture = ExtResource( 40 )
+
+[node name="flower2" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2778.75, 1653.05 )
+rotation = 3.14044
+scale = Vector2( -0.3, -0.305 )
+texture = ExtResource( 40 )
+
+[node name="market9" type="Sprite" parent="elements/scene/markets"]
+position = Vector2( 2929.87, 1651.54 )
+rotation = -3.14044
+scale = Vector2( 1.52158, -1.54274 )
+texture = ExtResource( 34 )
+
+[node name="bastille-trans" type="Sprite" parent="elements/scene"]
+position = Vector2( 1844.58, 1036.3 )
+rotation = 2.82404e-10
+scale = Vector2( 2.47338, 2.47338 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -38.44 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/scene/bastille-trans"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/bastille-trans/StaticBody2D"]
+position = Vector2( 2.05194, 8.16479 )
+rotation = 1.5708
+shape = SubResource( 23 )
+
+[node name="barriers" type="YSort" parent="elements/scene"]
+position = Vector2( -1.16665, 1.18545 )
+rotation = -0.00115045
+scale = Vector2( 1.00001, 1.01392 )
+
+[node name="barrier" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1622, 1170.92 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier10" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2406.71, 1023.46 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier11" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2489.18, 986.201 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier12" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2567.47, 946.262 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier13" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2646.29, 903.243 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier14" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2703.83, 863.136 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier5" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1706.24, 1184.8 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier6" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1778.99, 1229.31 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier7" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1857.67, 1266.83 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier16" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 986.636, 1190.11 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier19" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 829.447, 1071.06 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier15" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1064.82, 1218.35 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier8" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1144.5, 1256.17 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier18" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 832.835, 1109.37 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier17" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 910.749, 1145.69 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier9" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2710.95, 803.872 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier22" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2712.12, 838.308 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier20" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2647.28, 763.149 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier21" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 2587.7, 723.12 )
+scale = Vector2( -0.443047, 0.476961 )
+
+[node name="barrier2" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1545.44, 1206.88 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier3" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1462.44, 1235.47 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="barrier4" parent="elements/scene/barriers" instance=ExtResource( 7 )]
+position = Vector2( 1389.82, 1275.78 )
+scale = Vector2( 0.476961, 0.476961 )
+
+[node name="police-cars" type="YSort" parent="elements/scene"]
+position = Vector2( 364.646, 397.831 )
+rotation = -0.00115045
+scale = Vector2( 0.565005, 0.572865 )
+
+[node name="police-car-flipped" parent="elements/scene/police-cars" instance=ExtResource( 31 )]
+position = Vector2( -1.18567, 6.10352e-05 )
+
+[node name="police-car-flipped2" parent="elements/scene/police-cars" instance=ExtResource( 31 )]
+position = Vector2( 374.66, -96.0355 )
+
+[node name="police-car" parent="elements/scene/police-cars" instance=ExtResource( 30 )]
+
+[node name="police-car2" parent="elements/scene/police-cars" instance=ExtResource( 30 )]
+position = Vector2( -101.127, 83.4623 )
+
+[node name="carroussel" type="Sprite" parent="elements/scene"]
+position = Vector2( 1232.88, 764.654 )
+rotation = -0.00115045
+scale = Vector2( 0.37872, 0.383989 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -85.366 )
+
+[node name="Area2D" type="StaticBody2D" parent="elements/scene/carroussel"]
+position = Vector2( 4.11304, -23.4973 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="elements/scene/carroussel/Area2D"]
+position = Vector2( 2.95288, 8.85962 )
+scale = Vector2( 1, 0.612 )
+shape = SubResource( 24 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
-[node name="sttar" type="Sprite" parent="interface"]
+[node name="fps" type="RichTextLabel" parent="interface"]
+anchor_left = -0.000299215
+anchor_right = -0.000299215
+margin_left = 4.3064
+margin_top = 7.0
+margin_right = 124.306
+margin_bottom = 61.0
+custom_fonts/normal_font = SubResource( 25 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+bbcode_enabled = true
+bbcode_text = "[right] s123"
+text = " s123"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_points_star" type="Sprite" parent="interface"]
 position = Vector2( 962.748, 191.104 )
 scale = Vector2( 0.0537509, 0.0537509 )
 texture = ExtResource( 56 )
@@ -1821,13 +1844,6 @@ position = Vector2( 649.109, -66.3689 )
 
 [node name="stamina_bar" parent="interface" instance=ExtResource( 50 )]
 position = Vector2( 649.367, -13.8514 )
-
-[node name="interface" parent="interface" instance=ExtResource( 21 )]
-visible = false
-position = Vector2( -0.0436401, 1.04749 )
-rotation = -1.16415e-10
-scale = Vector2( 1, 1 )
-script = null
 
 [node name="grandma" type="Node2D" parent="interface"]
 position = Vector2( 107.852, 104.354 )
@@ -1893,7 +1909,7 @@ material = SubResource( 26 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
-[node name="attestation_slot" type="Sprite" parent="interface"]
+[node name="attestation_slot_empty" type="Sprite" parent="interface"]
 modulate = Color( 1, 1, 1, 0.690196 )
 position = Vector2( 893.979, 534 )
 rotation = 0.00113466
@@ -1929,6 +1945,7 @@ position = Vector2( -0.366425, 0.366425 )
 position = Vector2( 0, 0.227074 )
 
 [node name="running-icon" type="Node2D" parent="interface"]
+visible = false
 position = Vector2( 49.6015, 486.658 )
 scale = Vector2( 0.502218, 0.502218 )
 
@@ -1942,16 +1959,20 @@ texture = ExtResource( 60 )
 
 [node name="Button" type="Button" parent="interface/running-icon"]
 margin_left = -64.4129
-margin_top = -102.912
+margin_top = -108.886
 margin_right = 104.587
-margin_bottom = 42.0884
+margin_bottom = 36.1149
 rect_scale = Vector2( 1.08023, 1.25931 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="settings" type="Node2D" parent="interface"]
+position = Vector2( -0.366394, 0.36644 )
+
 [node name="nearest_enemy_line" type="Line2D" parent="."]
+visible = false
 position = Vector2( 2.15753, 0.719177 )
 points = PoolVector2Array( -109.459, -154.082, -75.5136, -113.808, 67.0137, 69.52, 132.905, 153.008 )
 width = 13.548
@@ -1981,12 +2002,6 @@ position = Vector2( 1927.31, -332.633 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
 shape = SubResource( 29 )
-
-[node name="boy-black-red" type="AnimatedSprite" parent="."]
-position = Vector2( 724.062, -294.077 )
-scale = Vector2( 1.51931, 1.51931 )
-frames = ExtResource( 49 )
-playing = true
 
 [node name="audio" type="Node2D" parent="."]
 

@@ -7,119 +7,95 @@ onready var stores = $elements/goals/
 		
 onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
 onready var sound_win = get_tree().get_root().get_node("game/audio/win")
-#onready var sound_cough = get_tree().get_root().get_node("game/audio/cough")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
 
 
-var game_settings = load_json_game()
+var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 
-var score = 100
+var score = game_settings["level_1"]["starting_bonus_score"]
 var damage = game_settings["player"]["max_health"]
 
 var score_increment_speed = 10
 var score_max_distance = 200
+var damage_decrement_exponent = game_settings["level_1"]["damage_decrement_exponent"]
+var score_decrement_exponent  = game_settings["level_1"]["score_decrement_exponent"]
 
 func _ready():
-	player.items_needed = ["toilet_paper", "bread", "drugs"]	
-	player.items_bonus = ["flower"]
-	stores.find_node("monoprix").get_child(0).store_has_items = []
-	stores.find_node("carrefour").get_child(0).store_has_items = ["toilet_paper"]
-	stores.find_node("boulangerie").get_child(0).store_has_items = ["bread"]
-	stores.find_node("la_suprette").get_child(0).store_has_items = []
-	stores.find_node("pharmacy_1").get_child(0).store_has_items = ["drugs"]
-	stores.find_node("pharmacy_2").get_child(0).store_has_items = ["drugs"]
-	stores.find_node("flower_market").get_child(0).store_has_items = ["flower"]
+	player.items_needed = game_settings["level_1"]["items_needed"]
+	player.items_bonus = game_settings["level_1"]["items_bonus"]
+	for store_settings in game_settings["level_1"]["store_items"]:
+		stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
 
-func load_json_game():
-	var file = File.new()
-	file.open("res://jsons/game_settings.json", file.READ)
-	var json_text = file.get_as_text()
-	file.close()
-	var result_json = JSON.parse(json_text)
-	
-	if result_json.error == OK:
-		return result_json.result
-	else:  # If parse has errors
-		print("Error: ", result_json.error)
-		print("Error Line: ", result_json.error_line)
-		print("Error String: ", result_json.error_string)
-		return
+	if not game_settings["debug"]:
+		get_tree().get_root().get_node("game/interface/fps").hide()
 
 func _process(delta):
-	if player.nearest_enemy_glob:
-		var nearest_distance = player.nearest_enemy_glob.global_position.distance_to(player.global_position)
+	if player.nearest_enemy:
+		var sprite_sprite = player.get_node("main_char_node/main_character")
+		var circle = player.get_node("main_char_node/circle")
 
-		nearest_enemy_line.points = [player.global_position, player.nearest_enemy_glob.global_position]
-		nearest_enemy_line.default_color = Color(1-(nearest_distance/3/100),0,0, max(1-(nearest_distance/3/100), 0))
-		if nearest_distance < 500:
-			# nearest_enemy_line.show()
-			pass
-		else:
-			nearest_enemy_line.hide()
-	
+		var nearest_distance = player.nearest_enemy.global_position.distance_to(player.global_position)
 
-		var sprite = player.find_node("main_char_node").find_node("main_character")
-		var circle = player.find_node("main_char_node").find_node("circle")
-		
-		var score_ratio = min(pow(nearest_distance/score_max_distance, 2), 1)
+		var score_ratio = min(pow(nearest_distance/score_max_distance, score_decrement_exponent), 1)
 		var score_delta =  (1-score_ratio) * score_increment_speed * delta
-		
 		score -= max(score_delta, 0)
-		
+
 		if nearest_distance < 100:
 			var damage_intensity = (100-nearest_distance) / 100
-			damage -= pow(damage_intensity, 2)
-			sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
+			damage -= pow(damage_intensity, damage_decrement_exponent)
+			sprite_sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
 			circle.modulate = Color(damage_intensity,0,0)
 		else:
-			sprite.modulate = Color(1,1,1)
+			sprite_sprite.modulate = Color(1,1,1)
 			circle.modulate = Color(0,0,0)
 
-		var distance_bar = $"interface/distance_bar/distance-bar"
-		var distance_bar_bg = $"interface/distance_bar/distance-bg"
-		var start_pos_dist = distance_bar.points[1]
-		var end_pos_dist = distance_bar_bg.points[0]
-		end_pos_dist = lerp(start_pos_dist, end_pos_dist, score_ratio)
-		distance_bar.points[0] = end_pos_dist
+		update_bar($interface/distance_bar, score_ratio)
+		$interface/score_label.bbcode_text = "[right]" + str(int(score))
+		update_bar($interface/health_bar, max(damage/game_settings["player"]["max_health"], 0))
+		check_player_death()
+		draw_nearest_line(nearest_distance)
 
-#	var temp = get_tree().get_root().get_node("game/interface/score")
-	#$interface/interface/score.bbcode_text = "[right]" + str(int(damage)) + ": Bonus"
-	$interface/score_label.bbcode_text = "[right]" + str(int(score))
+	update_bar($interface/stamina_bar, max(player.stamina/player.STAMINA_MAX_AMOUNT, 0))
 
-	#get_tree().get_root().get_node("game/interface/interface/damage").text = str(int(damage))
-	#get_tree().get_root().get_node("game/interface/health-red").shape
-	#print($"interface/health-red".gradient.set_offset(1, 1))
+	if game_settings["debug"]:
+		get_tree().get_root().get_node("game/interface/fps").set_text("FPS:"+str(Engine.get_frames_per_second()))
 
-	var health_bar = $"interface/health_bar/health-bar"
-	var health_bar_bg = $"interface/health_bar/health-bg"
-	var start_pos = health_bar.points[1]
-	var end_pos = health_bar_bg.points[0]
-	end_pos = lerp(start_pos, end_pos, max(damage/game_settings["player"]["max_health"], 0))
-	health_bar.points[0] = end_pos
-	
-	var stamina_bar = $"interface/stamina_bar/stamina-bar"
-	var stamina_bar_bg = $"interface/stamina_bar/stamina-bg"
-	var start_pos_stamina = stamina_bar.points[1]
-	var end_pos_stamina = stamina_bar_bg.points[0]
-	end_pos_stamina = lerp(start_pos_stamina, end_pos_stamina, max(player.stamina/player.STAMINA_MAX_AMOUNT, 0))
-	stamina_bar.points[0] = end_pos_stamina
-	
+
+func check_player_death():
 	if damage < 0:
 		if player.can_move:
+			# TOOD: add an animation here
 			player.can_move = false
 			music_main.stop()
 			music_star.stop()
 			sound_lost.play()
-			#sound_cough.play()
-			utils_custom.create_timer_2(2, self, "kill_player")
+			utils_custom.create_timer_2(2, self, "player_dead")
 
-	update()
 
-	get_tree().get_root().get_node("game/interface/interface/fps").set_text("FPS:"+str(Engine.get_frames_per_second()))
-
-func kill_player():
+func player_dead():
 	get_tree().change_scene("res://lose-sick.tscn")
+
+
+func draw_nearest_line(nearest_distance):
+	if game_settings["general"]["show_nearest_enemy_line"]:
+		nearest_enemy_line.points = [player.global_position, player.nearest_enemy.global_position]
+		nearest_enemy_line.default_color = Color(1-(nearest_distance/3/100),0,0, max(1-(nearest_distance/3/100), 0))
+		if nearest_distance < 500:
+			nearest_enemy_line.show()
+			pass
+		else:
+			nearest_enemy_line.hide()
+
+
+func update_bar(bar_prefab, value):
+	var bar = bar_prefab.get_node("bar")
+	var bg = bar_prefab.get_node("bg")
+	var start_pos = bar.points[1]
+	var end_pos = bg.points[0]
+	end_pos = lerp(start_pos, end_pos, value)
+	bar.points[0] = end_pos
+
 
 func win_game():
 	if player.can_move:
@@ -128,6 +104,7 @@ func win_game():
 		music_star.stop()
 		sound_win.play()
 		utils_custom.create_timer_2(2, self, "show_win_screen")
+
 
 func show_win_screen():
 	global.score = score

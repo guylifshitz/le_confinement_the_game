@@ -14,6 +14,6 @@ func _process(delta):
 	update()
 	
 func _draw():
-	var main_char = self.get_parent().find_node("main_characterKinematic")
-	if main_char.nearest_enemy_glob:
-		draw_line(main_char.global_position, main_char.nearest_enemy_glob.global_position, Color(255, 0, 0), 1)
+	var main_char = self.get_parent().find_node("player")
+	if main_char.nearest_enemy:
+		draw_line(main_char.global_position, main_char.nearest_enemy.global_position, Color(255, 0, 0), 1)

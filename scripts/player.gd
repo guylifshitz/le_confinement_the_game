@@ -1,12 +1,17 @@
 extends KinematicBody2D
 
-const MOTION_SPEED = 300 # Pixels/second.
-#const RUN_MOTION_SPEED = 600 # Pixels/second.
-const RUN_MOTION_SPEED = 600 # Pixels/second.
-const RUN_MOTION_SPEED_FAST = 1200 # Pixels/second.
-#const MOTION_SPEED = 600
+var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
+var player_settings = game_settings["player"]
 
-var nearest_enemy_glob
+
+var MOTION_SPEED = player_settings["walk_speed"]
+var RUN_MOTION_SPEED = player_settings["run_speed"]
+var RUN_MOTION_SPEED_FAST = player_settings["debug_run_speed"]
+var can_move = true
+var running = false
+var running_recovering = false
+
+var nearest_enemy
 
 var items_needed = []
 var items_bonus = []
@@ -15,68 +20,34 @@ var items_holding_bonus = []
 var has_attestation = false
 var has_attestation_time
 
-var can_move = true
-var running = false
-var running_recovering = false
-var should_play_bump = true
+var should_play_bump_sound = true
 
-onready var game_settings = get_tree().get_root().get_node("game").game_settings
-onready var STAMINA_MAX_AMOUNT =  game_settings["player"]["stamina_max_amount"]
+var STAMINA_MAX_AMOUNT =  player_settings["stamina_max_amount"]
 
 var STAMINA_RECOVER_SPEED = 0.5
 var STAMINA_DEPLETION_SPEED = 2
 var STAMINA_RECOVERY_TIME = 2
-var stamina 
+var stamina = STAMINA_MAX_AMOUNT
 
 onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
 onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
-onready var sound_attestation = get_tree().get_root().get_node("game/audio/pickup_attestation")
+onready var sound_acquired_attestation = get_tree().get_root().get_node("game/audio/pickup_attestation")
 onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
 var motion = Vector2(0,0)
 
 func _ready():
 	set_process(true)
+	animate_distance_circle()
+
+
+func animate_distance_circle():
 	var circle_tween = Tween.new()
 	add_child(circle_tween)
-
-	stamina = STAMINA_MAX_AMOUNT
-
 	circle_tween.interpolate_property($main_char_node/circle, "rotation_degrees", 0,360,6,circle_tween.TRANS_LINEAR, circle_tween.EASE_IN_OUT)
 	circle_tween.set_repeat(true)
 	circle_tween.start()
-	remove_groceries()
-	remove_drugs()
 
-func toggle_groceries():
-	var groceries = self.find_node("groceries")
-	if groceries.is_visible_in_tree():
-		groceries.hide()
-	else:
-		groceries.show()
-	
-func add_groceries():
-	var groceries = self.find_node("groceries")
-	groceries.show()
-	
-func remove_groceries():
-	var groceries = self.find_node("groceries")
-	groceries.hide()
-	
-func toggle_drugs():
-	var drugs = self.find_node("drugs")
-	if drugs.is_visible_in_tree():
-		drugs.hide()
-	else:
-		drugs.show()
-	
-func add_drugs():
-	var drugs = self.find_node("drugs")
-	drugs.show()
-	
-func remove_drugs():
-	var drugs = self.find_node("drugs")
-	drugs.hide()
 
 func _input(event):
 	if event is InputEventScreenDrag:
@@ -88,10 +59,7 @@ func _input(event):
 		motion.y *= 0.5
 
 func _physics_process(_delta):
-	get_closest()
-	
 	if can_move:
-		
 		if running == false and running_recovering == false:
 			stamina += abs(_delta * STAMINA_RECOVER_SPEED)
 			stamina = min(stamina, STAMINA_MAX_AMOUNT)
@@ -108,79 +76,87 @@ func _physics_process(_delta):
 				stamina -= abs(_delta * STAMINA_DEPLETION_SPEED)
 				if stamina < 0:
 					stop_running()
-		elif Input.is_action_pressed("run_fast"):
+		elif Input.is_action_pressed("run_fast") and game_settings["debug"]:
 			motion = motion.normalized() * RUN_MOTION_SPEED_FAST
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 8
 		else:
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 2
 			motion = motion.normalized() * MOTION_SPEED
 
-		if motion.x == 0 and motion.y == 0:
-			$main_char_node/main_character/AnimationPlayer.playback_speed = 0
-
-		if motion.x < 0:
-			$main_char_node/main_character/AnimationPlayer.play("left")
-		elif motion.x > 0:
-			$main_char_node/main_character/AnimationPlayer.play("right")
-		elif motion.y < 0:
-			$main_char_node/main_character/AnimationPlayer.play("up")
-		elif motion.y > 0:
-			$main_char_node/main_character/AnimationPlayer.play("down")
-		else:
-			$main_char_node/main_character/AnimationPlayer.play("idle")
 		move_and_slide(motion)
-		if should_play_bump:
-			if get_slide_count() != 0 :
-				for i in range (0,get_slide_count()) :
-					if get_slide_collision(i).collider.get_name() == "Enemy":
-						if should_play_bump:
-							sound_bumps.get_child(randi()%sound_bumps.get_child_count()).play()
-							utils_custom.create_timer_2(1,self,"set_should_play_bump")
-							should_play_bump = false
 
-func set_should_play_bump():
-	should_play_bump = true
+		set_animation_by_motion_direction()
+		play_bump_sound()
+
+		set_nearest_enemy()
+
 
 func stop_running():
 	running = false 
 	running_recovering = true
 	utils_custom.create_timer_2(STAMINA_RECOVERY_TIME, self, "can_run_again")
-		
+	
+
 func can_run_again():
 	running_recovering = false
 	stamina = 0.01
 
-func get_closest():
+		
+func set_animation_by_motion_direction():
+	if motion.x == 0 and motion.y == 0:
+		$main_char_node/main_character/AnimationPlayer.playback_speed = 0
+	elif motion.x < 0:
+		$main_char_node/main_character/AnimationPlayer.play("left")
+	elif motion.x > 0:
+		$main_char_node/main_character/AnimationPlayer.play("right")
+	elif motion.y < 0:
+		$main_char_node/main_character/AnimationPlayer.play("up")
+	elif motion.y > 0:
+		$main_char_node/main_character/AnimationPlayer.play("down")
+
+
+func play_bump_sound():
+	if should_play_bump_sound:
+		if get_slide_count() != 0 :
+			for i in range (0,get_slide_count()) :
+				if get_slide_collision(i).collider.get_name() == "Enemy":
+					if should_play_bump_sound:
+						sound_bumps.get_child(randi()%sound_bumps.get_child_count()).play()
+						utils_custom.create_timer_2(1,self,"set_should_play_bump_sound")
+						should_play_bump_sound = false
+
+
+func set_should_play_bump_sound():
+	should_play_bump_sound = true
+
+
+func set_nearest_enemy():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	if enemies.size() > 0:
-		var nearest_enemy = enemies[0]
-	#
+		nearest_enemy = enemies[0]
+
 		for enemy in enemies:
 			if enemy.global_position.distance_to(self.global_position) < nearest_enemy.global_position.distance_to(self.global_position):
 				nearest_enemy = enemy
-		
-		nearest_enemy_glob = nearest_enemy;
-
+	
 
 func acquired_attestation():
-	sound_attestation.play()
+	sound_acquired_attestation.play()
+
 	if has_attestation == false:
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	has_attestation = true
-	has_attestation_time = game_settings["police"]["attestation_length"]
 	
+	has_attestation_time = game_settings["level_1"]["attestation_duration"]
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
-	
+	var attestation_slot_empty = get_node("/root/game/interface/attestation_slot_empty")
+	var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
 	attestation_timer.get_node("timer_label").text = str(has_attestation_time)
 	attestation_timer.show()
-
-	var attestation_slot = get_node("/root/game/interface/attestation_slot")
-	var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
-	attestation_slot.hide()
+	attestation_slot_empty.hide()
 	attestation_slot_full.show()
 
-	
 
 func decrement_attestation_timer():
 	var attestation_timer_label = get_node("/root/game/interface/attestation_timer/timer_label")
@@ -189,16 +165,14 @@ func decrement_attestation_timer():
 	
 	if has_attestation_time < 0:
 		has_attestation = false
-		var attestation_slot = get_node("/root/game/interface/attestation_slot")
+		
+		var attestation_slot_empty = get_node("/root/game/interface/attestation_slot_empty")
 		var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
 		var attestation_timer = get_node("/root/game/interface/attestation_timer")
-
-		attestation_slot.show()
+		attestation_slot_empty.show()
 		attestation_slot_full.hide()
 		attestation_timer.hide()
 
-		has_attestation_time = 5
-		
 		main_music.stream_paused = false
 		star_music.stream_paused = true
 				

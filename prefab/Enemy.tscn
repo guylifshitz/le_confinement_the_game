@@ -62,41 +62,41 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 7 )
 region = Rect2( 40, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 7 )
 region = Rect2( 80, 0, 40, 40 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 10 )
 region = Rect2( 40, 0, 40, 40 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 10 )
 region = Rect2( 80, 0, 40, 40 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
@@ -146,7 +146,7 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = SubResource( 7 )
 animation = "down"
-frame = 1
+frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/boy-red-pants"]
@@ -159,6 +159,7 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = ExtResource( 3 )
 animation = "down"
+frame = 1
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/girl-1"]
@@ -171,7 +172,6 @@ position = Vector2( -3.96664, -26.1391 )
 scale = Vector2( 1.72856, 1.72856 )
 frames = SubResource( 11 )
 animation = "down"
-frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/man-bald2"]
@@ -185,7 +185,6 @@ position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
 frames = SubResource( 15 )
 animation = "down"
-frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/woman"]
@@ -197,9 +196,9 @@ texture = ExtResource( 1 )
 visible = false
 position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
-frames = SubResource( 22 )
+frames = SubResource( 19 )
 animation = "down"
-frame = 1
+frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/afro-boy"]

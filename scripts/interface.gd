@@ -12,8 +12,8 @@ func _ready():
 
 
 func _process(delta):
-	if player.nearest_enemy_glob:
-		var nearest_distance = player.nearest_enemy_glob.global_position.distance_to(player.global_position)
+	if player.nearest_enemy:
+		var nearest_distance = player.nearest_enemy.global_position.distance_to(player.global_position)
 	
 		var sprite = player.find_node("main_char_node").find_node("main_character")
 		var circle = player.find_node("main_char_node").find_node("circle")

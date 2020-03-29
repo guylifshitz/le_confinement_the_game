@@ -1,43 +1,35 @@
 extends KinematicBody2D
 
-var is_social = false
-var follows_player = false
-var simple_path = PoolVector2Array()
-var following_player_start_position
-var navigation
+var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 
-onready var characters = $characters.get_children()
-
-# PARAMS
-#var knows_player_percentage = 10
-var MOVE_SPEED = 100
+# parameters
 var SPEECH_SPEED = 0.15
-var is_kid = false
-onready var game_settings = get_tree().get_root().get_node("game").game_settings
+var KIDS_INDEX = 2
+var MOVE_SPEED = game_settings["enemies"]["move_speed"]
 
 # conversation
-var conversations = [["Hey!", "How are you?"],
-					["Salut!", "Ça fait un bail.", "On fait la bise?"],
-					["Bonsoir Madame.", "*cough*"],
-					["Bonsoir", "*cough*"],
-					["Une clope?"],
-					["Psst...", "tu cherches", "un masque?", "J'en vends"],
-					["Psst...", "tu cherches", "un masque?", "J'en vends"],
-					["Psst...", "tu cherches", "un masque?", "J'en vends"],
-				]
-
-var kid_conversations =  [["Wanna play?"], ["Got candy?"]]
+var conversations_adult = game_settings["enemies"]["conversations_adult"]
+var conversations_kid = game_settings["enemies"]["conversations_kid"]
 var conversation
-
 var conv_number = 0
 var conv_page = 0
-onready var dialog_box = get_node("speech").get_node("text")
-onready var test = get_tree()
-onready var test2 = get_tree().get_root()
-onready var player = get_tree().get_root().get_node("game/elements/player")
 
+# navigation
+var is_social = false
+var follows_player = false
+var navigation
+var simple_path = PoolVector2Array()
+var following_player_start_position
 var remote_path_follow
 var remote_transform
+
+# objects
+onready var dialog_box = get_node("speech/text")
+onready var player = get_tree().get_root().get_node("game/elements/player")
+onready var characters = $characters.get_children()
+
+# other
+var is_kid = false
 
 func _ready():
 
@@ -62,55 +54,24 @@ func _ready():
 	else:
 		characters[character_number].get_node("mask").show()
 
-	if character_number < 2:
-		conversation = kid_conversations[randi() % kid_conversations.size()]
+	if character_number < KIDS_INDEX:
+		conversation = conversations_kid[randi() % conversations_kid.size()]
 	else:
-		conversation = conversations[randi() % conversations.size()]
-	
-func _process(delta):
+		conversation = conversations_adult[randi() % conversations_adult.size()]
 
+
+func _process(delta):
 	if follows_player:
 		var dir = (player.global_position - self.global_position).normalized()
 		self.move_and_collide(dir * MOVE_SPEED * delta)
-#		find_node("enemySprite").modulate = Color(0.2,0.2,0.2)
 	else:
 		if simple_path.size() > 0:
 			move_along_path(MOVE_SPEED * delta)
-#			find_node("enemySprite").modulate = Color(1,0,1)
 		else:
 			remote_path_follow.offset += MOVE_SPEED  * delta
 			self.global_position = remote_transform.global_position
-	
 
-func _on_social_distance_area_body_entered(body):
-	if body.get_name() == "player" and is_social:
-		follows_player = true
-		
-		if simple_path.size() == 0:
-			start_conversation()
-			following_player_start_position = self.global_position
 
-func start_conversation():
-	conv_page = 0
-	dialog_box.set_text(conversation[conv_page])
-	dialog_box.get_parent().show()
-	utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
-
-func dialog_next_page():
-	conv_page = conv_page + 1
-	if conv_page  >= conversation.size():
-		conv_page = 0
-		#dialog_box.get_parent().hide()
-	else:
-		dialog_box.set_text(conversation[conv_page])
-		utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
-		
-func _on_social_distance_area_body_exited(body):
-	if body.get_name() == "player" and is_social:
-		follows_player = false
-		simple_path = navigation.get_simple_path(global_position, following_player_start_position)
-		dialog_box.get_parent().hide()
-		
 func move_along_path(distance):
 	if distance == 0:
 		return
@@ -128,3 +89,35 @@ func move_along_path(distance):
 		distance -= distance_to_next
 		start_point = simple_path[0]
 		simple_path.remove(0)
+		
+
+func _on_social_distance_area_body_entered(body):
+	if body.get_name() == "player" and is_social:
+		follows_player = true
+		
+		if simple_path.size() == 0:
+			start_conversation()
+			following_player_start_position = self.global_position
+
+
+func start_conversation():
+	conv_page = 0
+	dialog_box.set_text(conversation[conv_page])
+	dialog_box.get_parent().show()
+	utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
+
+
+func dialog_next_page():
+	conv_page = conv_page + 1
+	if conv_page  >= conversation.size():
+		conv_page = 0
+	else:
+		dialog_box.set_text(conversation[conv_page])
+		utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
+
+
+func _on_social_distance_area_body_exited(body):
+	if body.get_name() == "player" and is_social:
+		follows_player = false
+		simple_path = navigation.get_simple_path(global_position, following_player_start_position)
+		dialog_box.get_parent().hide()

@@ -9,7 +9,7 @@ var TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])
 func _ready():
 	# DEBUG: skip to the scene that we are testing
 	# get_tree().change_scene("res://win-screen.tscn")
-	# get_tree().change_scene("res://level_bastille.tscn")
+	get_tree().change_scene("res://level_bastille.tscn")
 	# get_tree().change_scene("res://lose-sick.tscn")
 	next_page()
 
@@ -17,8 +17,6 @@ func next_page():
 		$audio/pop.play()
 
 		dialog_chunk += 1
-		print(dialog_chunk)
-		print(dialog_chunks.size())
 		if dialog_chunk == dialog_chunks.size():
 			go_to_next_scene()
 		else:

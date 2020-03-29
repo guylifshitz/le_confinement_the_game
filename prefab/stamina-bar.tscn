@@ -5,16 +5,16 @@
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 0.660156, 0.660156, 0.660156, 1 )
 
-[node name="stamina-bar" type="Node2D"]
+[node name="stamina_bar" type="Node2D"]
 
-[node name="stamina-bg" type="Line2D" parent="."]
+[node name="bg" type="Line2D" parent="."]
 points = PoolVector2Array( 119.536, 150, 267.019, 150 )
 width = 40.0
 default_color = Color( 0, 0, 0, 0.870588 )
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="stamina-bar" type="Line2D" parent="."]
+[node name="bar" type="Line2D" parent="."]
 position = Vector2( -0.536377, 0.536385 )
 points = PoolVector2Array( 119.536, 150, 267.019, 150 )
 width = 30.0
@@ -23,7 +23,7 @@ gradient = SubResource( 1 )
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="running-small" type="Sprite" parent="stamina-bar"]
+[node name="running-small" type="Sprite" parent="bar"]
 position = Vector2( 316.135, 154.416 )
 scale = Vector2( 0.24042, 0.24042 )
 texture = ExtResource( 1 )
