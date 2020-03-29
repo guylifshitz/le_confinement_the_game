@@ -94,10 +94,10 @@ func _physics_process(_delta):
 		if Input.is_action_just_released("run"):
 			running = false
 
-		if Input.is_action_just_pressed("run") and running == false and running_recovering == false:
+		if Input.is_action_just_pressed("run") and running_recovering == false:
 			running = true
 		elif Input.is_action_pressed("run") and running == true:
-			#if motion.x != 0 or motion.y != 0:
+			if motion.x != 0 or motion.y != 0:
 				motion = motion.normalized() * RUN_MOTION_SPEED
 				$main_char_node/main_character/AnimationPlayer.playback_speed = 4
 				stamina -= abs(_delta * STAMINA_DEPLETION_SPEED)
@@ -112,7 +112,6 @@ func _physics_process(_delta):
 
 		if motion.x == 0 and motion.y == 0:
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 0
-			running = false
 
 		if Input.is_action_pressed("move_left"):
 			$main_char_node/main_character/AnimationPlayer.play("left")

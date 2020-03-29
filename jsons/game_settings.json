@@ -1,7 +1,7 @@
 {
   "player": {
     "max_health": 1000,
-    "stamina_max_amount": 10000
+    "stamina_max_amount": 10
   },
   "enemies": {
     "count": 10,
