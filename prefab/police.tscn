@@ -71,13 +71,12 @@ animations = [ {
 } ]
 
 [node name="police" type="KinematicBody2D"]
-position = Vector2( 786.788, -420.03 )
 rotation = 0.00281142
-scale = Vector2( 0.0665812, 0.0665812 )
+scale = Vector2( 0.0665571, 0.0665369 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.17871, 419.583 )
+position = Vector2( -0.173004, -61.3521 )
 rotation = -2.32831e-10
 shape = SubResource( 1 )
 
@@ -147,26 +146,29 @@ scale = Vector2( 1.11864, 1.11864 )
 texture = ExtResource( 7 )
 
 [node name="control_area" type="Area2D" parent="."]
+position = Vector2( -1.35172, -480.934 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
 position = Vector2( -34.6397, 398.984 )
+scale = Vector2( 0.418911, 0.418911 )
 shape = SubResource( 3 )
 
 [node name="show_dialog" type="Area2D" parent="."]
+position = Vector2( -1.35172, -480.934 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="show_dialog"]
 position = Vector2( 128.041, 421.542 )
 shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -3.3418, 3.36084 )
+position = Vector2( -4.69351, -477.573 )
 scale = Vector2( 24.2327, 24.2327 )
 frames = SubResource( 13 )
 animation = "no_mask"
-frame = 3
 playing = true
 
 [node name="audio" type="Node2D" parent="."]
+position = Vector2( -1.35172, -480.934 )
 
 [node name="question" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 9 )

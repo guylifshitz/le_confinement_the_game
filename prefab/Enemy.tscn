@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=2]
 [ext_resource path="res://prefab/npc-1.tres" type="SpriteFrames" id=3]
@@ -83,20 +83,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="Enemy" type="KinematicBody2D"]
-position = Vector2( 462.031, 163.125 )
 script = ExtResource( 2 )
 
 [node name="speech" type="Node2D" parent="."]
-position = Vector2( 0.863251, -17.7318 )
+position = Vector2( 1.27005, -17.7318 )
 rotation = 0.00540832
 scale = Vector2( 1.25911, 1.25911 )
 
@@ -125,7 +116,7 @@ shape = SubResource( 2 )
 [node name="social_distance_area" type="Area2D" parent="."]
 
 [node name="shape" type="CollisionShape2D" parent="social_distance_area"]
-position = Vector2( -3.05176e-05, 0.242386 )
+position = Vector2( -0.34436, 0.242386 )
 shape = SubResource( 3 )
 
 [node name="characters" type="Node2D" parent="."]
@@ -136,6 +127,7 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = SubResource( 7 )
 animation = "down"
+frame = 1
 playing = true
 
 [node name="girl-1" type="AnimatedSprite" parent="characters"]
@@ -144,7 +136,6 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = ExtResource( 3 )
 animation = "down"
-frame = 2
 playing = true
 
 [node name="man-bald2" type="AnimatedSprite" parent="characters"]
@@ -153,7 +144,7 @@ position = Vector2( -3.96664, -26.1391 )
 scale = Vector2( 1.72856, 1.72856 )
 frames = SubResource( 11 )
 animation = "down"
-frame = 1
+frame = 2
 playing = true
 
 [node name="afro-boy" type="AnimatedSprite" parent="characters"]
@@ -162,13 +153,7 @@ position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
 frames = SubResource( 15 )
 animation = "down"
-frame = 1
-playing = true
-
-[node name="women1" type="AnimatedSprite" parent="characters"]
-position = Vector2( -1.96664, -26.1391 )
-scale = Vector2( 1.32886, 1.72856 )
-frames = SubResource( 16 )
+frame = 2
 playing = true
 
 [node name="audio" type="Node2D" parent="."]

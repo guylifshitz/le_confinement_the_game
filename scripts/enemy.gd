@@ -36,20 +36,24 @@ onready var test = get_tree()
 onready var test2 = get_tree().get_root()
 onready var player = get_tree().get_root().get_node("game/elements/player")
 
+var remote_path_follow
+var remote_transform
+
 func _ready():
-	navigation = get_parent().get_parent().get_parent().get_parent()
+
+	remote_path_follow.offset = randi() % 10000
+
+	navigation = remote_transform.get_parent().get_parent().get_parent().get_parent()
 
 	dialog_box.get_parent().hide()
-
-
 
 	if randi() % 100 > (100 - game_settings["enemies"].knows_player_percentage):
 		is_social = true
 	else:
 		dialog_box.get_parent().queue_free()
 
-	for i in characters.size():
-		characters[i].hide()
+	for character in characters:
+		character.hide()
 
 	var character_number = randi()%characters.size()
 	characters[character_number].show()
@@ -69,8 +73,8 @@ func _process(delta):
 			move_along_path(MOVE_SPEED * delta)
 #			find_node("enemySprite").modulate = Color(1,0,1)
 		else:
-			self.get_parent().offset += MOVE_SPEED  * delta
-#			find_node("enemySprite").modulate = Color(0,0,1)
+			remote_path_follow.offset += MOVE_SPEED  * delta
+			self.global_position = remote_transform.global_position
 	
 
 func _on_social_distance_area_body_entered(body):

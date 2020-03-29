@@ -14,14 +14,20 @@ var wants_to_control = true
 var simple_path = PoolVector2Array()
 var following_player_start_position
 var navigation
+var positioning_node
+
+var remote_path_follow
+var remote_transform
 
 func _ready():
+	remote_path_follow.offset = randi() % 10000
+
 	if randf() > 0.6:
 		$AnimatedSprite.play("no_mask")
 	else:
 		$AnimatedSprite.play("mask")
 	
-	navigation = get_parent().get_parent().get_parent().get_parent()
+	navigation = remote_transform.get_parent().get_parent().get_parent().get_parent()
 
 func _process(delta):
 	#var par = self.get_parent()
@@ -34,7 +40,9 @@ func _process(delta):
 		if simple_path.size() > 0:
 			move_along_path(MOVE_SPEED * delta)
 		else:
-			self.get_parent().offset += MOVE_SPEED  * delta
+			remote_path_follow.offset += MOVE_SPEED  * delta
+			self.global_position = remote_transform.global_position
+
 
 
 
