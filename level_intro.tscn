@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -6,12 +6,9 @@
 [ext_resource path="res://images/menu/tv-wide.png" type="Texture" id=4]
 [ext_resource path="res://scripts/intro.gd" type="Script" id=5]
 [ext_resource path="res://scripts/grandma.gd" type="Script" id=6]
-[ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
-[ext_resource path="res://images/interface/skip3bg.png" type="Texture" id=10]
-[ext_resource path="res://images/interface/skip.png" type="Texture" id=11]
-[ext_resource path="res://images/menu/apartment.jpg" type="Texture" id=12]
+[ext_resource path="res://images/menu/apartment-old.jpg" type="Texture" id=10]
 [ext_resource path="res://prefab/click_button.tscn" type="PackedScene" id=13]
 [ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=15]
@@ -59,11 +56,12 @@ font_data = ExtResource( 8 )
 script = ExtResource( 5 )
 
 [node name="apartment" type="Sprite" parent="."]
-position = Vector2( 490.724, 272.918 )
-scale = Vector2( 1.58982, 1.38982 )
-texture = ExtResource( 12 )
+position = Vector2( 476.83, 302.027 )
+scale = Vector2( 0.97, 0.97 )
+texture = ExtResource( 10 )
 
 [node name="grandma" type="Node2D" parent="."]
+position = Vector2( -18.8234, 69.5019 )
 script = ExtResource( 6 )
 
 [node name="grandma-body-small" type="Sprite" parent="grandma"]
@@ -71,7 +69,7 @@ position = Vector2( 192.411, 370.468 )
 texture = ExtResource( 2 )
 
 [node name="grandma-head-small" type="Sprite" parent="grandma"]
-position = Vector2( 202.911, 254.665 )
+position = Vector2( 203.457, 254.665 )
 rotation = -0.174533
 texture = ExtResource( 1 )
 
@@ -79,9 +77,10 @@ texture = ExtResource( 1 )
 anims/head-movement = SubResource( 1 )
 
 [node name="tv" type="Node2D" parent="."]
+position = Vector2( -305.086, 72.7701 )
 
 [node name="macron-cartoon" type="Sprite" parent="tv"]
-position = Vector2( 729.939, 331.628 )
+position = Vector2( 727.939, 336.628 )
 scale = Vector2( 0.290387, 0.292149 )
 texture = ExtResource( 3 )
 
@@ -177,18 +176,14 @@ __meta__ = {
 position = Vector2( 749.954, 88.9999 )
 
 [node name="skip3bg" type="Sprite" parent="skip_button"]
-visible = false
 modulate = Color( 0.372549, 0.294118, 0.294118, 1 )
 position = Vector2( 147.61, 432.748 )
 scale = Vector2( 0.218103, 0.218103 )
-texture = ExtResource( 10 )
 
 [node name="skip" type="Sprite" parent="skip_button"]
-visible = false
 modulate = Color( 0.992157, 0.709804, 0.270588, 1 )
 position = Vector2( 146.729, 432.185 )
 scale = Vector2( 0.175366, 0.175366 )
-texture = ExtResource( 11 )
 
 [node name="skip-text" type="RichTextLabel" parent="skip_button"]
 margin_left = -165.149
@@ -217,6 +212,7 @@ __meta__ = {
 }
 
 [node name="click_button" parent="." instance=ExtResource( 13 )]
+scale = Vector2( 0.28398, 0.28398 )
 
 [node name="audio" type="Node2D" parent="."]
 position = Vector2( 763.347, 296.825 )
@@ -226,11 +222,6 @@ scale = Vector2( 0.306909, 0.311166 )
 [node name="pop" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 21 )
 bus = "sound_effects"
-
-[node name="music" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource( 7 )
-autoplay = true
-bus = "music"
 
 [node name="icon_settings" type="Node2D" parent="."]
 

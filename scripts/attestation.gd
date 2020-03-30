@@ -9,12 +9,11 @@ var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 func _ready():
 	pass # Replace with function body.
 
-
-
 func _on_attestation_body_entered(body):
 	if body.name == "player" and self.get_parent().visible:
 		self.get_parent().hide()
-		utils_custom.create_timer_2(game_settings["level_1"]["attestation_respawn_time"], self, "enable_attestation")
+		if game_settings["level_1"]["attestation_respawn_time"] > 0:
+			utils_custom.create_timer_2(game_settings["level_1"]["attestation_respawn_time"], self, "enable_attestation")
 		
 		body.acquired_attestation()
 		star_music.stream_paused = false

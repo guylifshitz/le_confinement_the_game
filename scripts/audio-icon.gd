@@ -14,7 +14,8 @@ func _ready():
 		$no_music.hide()
 		$no_sound.show()
 	
-	only_sfx()
+	# only_sfx()
+	# mute_all()
 	
 func _on_Button_button_down():
 	if global.play_audio == "all":

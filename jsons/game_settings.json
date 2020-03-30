@@ -3,7 +3,7 @@
   "general": { "show_nearest_enemy_line": false },
   "level_1": {
     "attestation_duration": 5,
-    "attestation_respawn_time": 10,
+    "attestation_respawn_time": -1,
     "starting_bonus_score": 200,
     "damage_decrement_exponent": 2,
     "score_decrement_exponent": 1,
@@ -28,7 +28,8 @@
         "bottom_square_and_column": 3
       },
       "police": {
-        "top_square": 5
+        "top_square": 5,
+        "commissariat": 3,
       }
     }
   },

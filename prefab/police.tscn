@@ -10,7 +10,6 @@
 [ext_resource path="res://images/spritesheets/policeman-full.png" type="Texture" id=8]
 [ext_resource path="res://sounds/characters/police-question2.wav" type="AudioStream" id=9]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 298.055
 
@@ -28,46 +27,46 @@ radius = 2488.66
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 34, 54 )
+region = Rect2( 0, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 0, 34, 54 )
+region = Rect2( 34, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 0, 34, 54 )
+region = Rect2( 68, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 0, 34, 54 )
+region = Rect2( 102, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 216, 34, 54 )
+region = Rect2( 0, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 216, 34, 54 )
+region = Rect2( 34, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 216, 34, 54 )
+region = Rect2( 68, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 216, 34, 54 )
+region = Rect2( 102, 0, 34, 54 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "no_mask",
+"name": "mask",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "mask",
+"name": "no_mask",
 "speed": 5.0
 } ]
 
@@ -166,6 +165,7 @@ position = Vector2( -4.69351, -477.573 )
 scale = Vector2( 24.2327, 24.2327 )
 frames = SubResource( 13 )
 animation = "no_mask"
+frame = 1
 playing = true
 
 [node name="audio" type="Node2D" parent="."]
@@ -174,9 +174,11 @@ position = Vector2( -1.35172, -480.934 )
 [node name="question" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 9 )
 volume_db = -5.0
+bus = "sound_effects"
 
 [node name="question_2" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 1 )
+bus = "sound_effects"
 [connection signal="body_entered" from="control_area" to="." method="_on_police_body_entered"]
 [connection signal="body_entered" from="show_dialog" to="." method="_on_show_dialog_body_entered"]
 [connection signal="body_exited" from="show_dialog" to="." method="_on_show_dialog_body_exited"]

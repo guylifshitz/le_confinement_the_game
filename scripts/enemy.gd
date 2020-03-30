@@ -13,6 +13,7 @@ var conversations_kid = game_settings["enemies"]["conversations_kid"]
 var conversation
 var conv_number = 0
 var conv_page = 0
+var conversation_timer
 
 # navigation
 var is_social = false
@@ -104,16 +105,18 @@ func start_conversation():
 	conv_page = 0
 	dialog_box.set_text(conversation[conv_page])
 	dialog_box.get_parent().show()
-	utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
+	if not conversation_timer:
+		conversation_timer = utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
 
 
 func dialog_next_page():
 	conv_page = conv_page + 1
+	
 	if conv_page  >= conversation.size():
 		conv_page = 0
-	else:
-		dialog_box.set_text(conversation[conv_page])
-		utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
+
+	dialog_box.set_text(conversation[conv_page])
+	conversation_timer = utils_custom.create_timer_2(dialog_box.text.length() * SPEECH_SPEED, self, "dialog_next_page")
 
 
 func _on_social_distance_area_body_exited(body):

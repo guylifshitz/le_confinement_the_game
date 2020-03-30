@@ -1,11 +1,10 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=3]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/menu/level-select/attestation-filled.png" type="Texture" id=5]
-[ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.wav" type="AudioStream" id=6]
 [ext_resource path="res://images/spritesheets/girl.png" type="Texture" id=7]
 [ext_resource path="res://level_select.gd" type="Script" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
@@ -14,52 +13,52 @@
 [ext_resource path="res://images/menu/level-select/checkbox-ticked.png" type="Texture" id=12]
 [ext_resource path="res://prefab/buttons/level_select.tres" type="StyleBox" id=13]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 150, 50, 50 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 7 )
 region = Rect2( 50, 150, 50, 50 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 7 )
 region = Rect2( 100, 150, 50, 50 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
 region = Rect2( 150, 150, 50, 50 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 53
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 9 )
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id=9]
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxEmpty" id=18]
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.823529, 0.215686, 0.215686, 1 )
 draw_center = false
 border_color = Color( 0.960784, 0, 0, 1 )
@@ -67,13 +66,13 @@ corner_detail = 1
 shadow_color = Color( 0.470588, 0.470588, 0.470588, 1 )
 shadow_size = 33
 
+[sub_resource type="StyleBoxEmpty" id=14]
+
 [sub_resource type="StyleBoxEmpty" id=15]
 
 [sub_resource type="StyleBoxEmpty" id=16]
 
-[sub_resource type="StyleBoxEmpty" id=19]
-
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id=17]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource( 8 )
@@ -97,11 +96,6 @@ scale = Vector2( 0.306909, 0.311166 )
 stream = ExtResource( 3 )
 bus = "sound_effects"
 
-[node name="music" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource( 6 )
-autoplay = true
-bus = "music"
-
 [node name="icon_settings" type="Node2D" parent="."]
 
 [node name="fullscreen_icon" parent="icon_settings" instance=ExtResource( 4 )]
@@ -113,15 +107,15 @@ scale = Vector2( 1, 1.00358 )
 modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 245, 410.412 )
 scale = Vector2( 3.68378, 3.68378 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
+frame = 3
 speed_scale = 0.5
 playing = true
 
 [node name="girl" type="AnimatedSprite" parent="."]
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
-frames = SubResource( 6 )
-frame = 1
+frames = SubResource( 5 )
 speed_scale = 0.5
 playing = true
 
@@ -138,7 +132,7 @@ margin_left = 27.0
 margin_top = 12.0
 margin_right = 516.0
 margin_bottom = 279.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )
 custom_constants/shadow_offset_x = 11
 custom_constants/shadow_offset_y = 11
@@ -152,7 +146,7 @@ margin_left = 348.922
 margin_top = 119.903
 margin_right = 1065.92
 margin_bottom = 283.903
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] ATTESTATION DE DÉPLACEMENT
@@ -168,7 +162,7 @@ margin_left = 646.0
 margin_top = 549.0
 margin_right = 983.0
 margin_bottom = 595.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Signature:  _____________"
 __meta__ = {
@@ -188,7 +182,7 @@ margin_left = 465.484
 margin_top = 249.929
 margin_right = 985.484
 margin_bottom = 405.929
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle et des achats de première nécessité dans des établissements dont les activités demeurent autorisées."
 __meta__ = {
@@ -213,7 +207,7 @@ margin_left = 467.0
 margin_top = 377.0
 margin_right = 987.0
 margin_bottom = 533.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie."
 __meta__ = {
@@ -239,9 +233,9 @@ margin_top = 228.496
 margin_right = 1009.0
 margin_bottom = 335.496
 custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 18 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -252,11 +246,11 @@ margin_left = 398.0
 margin_top = 377.0
 margin_right = 1008.0
 margin_bottom = 524.0
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 19 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -103,7 +103,7 @@ anims/up = SubResource( 5 )
 
 [node name="circle" type="Sprite" parent="main_char_node"]
 position = Vector2( -0.372681, -18.3152 )
-scale = Vector2( 0.14111, 0.14111 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="holding_items" type="Node2D" parent="main_char_node"]

@@ -22,6 +22,8 @@ var damage_decrement_exponent = game_settings["level_1"]["damage_decrement_expon
 var score_decrement_exponent  = game_settings["level_1"]["score_decrement_exponent"]
 
 func _ready():
+	music.get_node("main_menu").stop()
+
 	if global.level_type == "sport":
 		self.get_node("interface/grandma").hide()
 	player.items_needed = game_settings["level_1"]["items_needed"]
@@ -76,7 +78,8 @@ func check_player_death():
 
 
 func player_dead():
-	get_tree().change_scene("res://lose-sick.tscn")
+	# get_tree().change_scene("res://lose-sick.tscn")
+	get_tree().change_scene("res://win-screen.tscn")
 
 
 func draw_nearest_line(nearest_distance):

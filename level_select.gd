@@ -1,5 +1,9 @@
 extends Node2D
 
+func _ready():
+	if not music.get_node("main_menu").playing:
+		music.get_node("main_menu").play()
+
 func play_groceries():
 	get_tree().change_scene("res://level_intro.tscn")
 

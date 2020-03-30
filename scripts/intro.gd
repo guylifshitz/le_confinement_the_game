@@ -7,6 +7,9 @@ var dialog_chunk = -1
 var TEXT_SCROLL_SPEED# = float(dialog_settings["TEXT_SCROLL_SPEED"])
 
 func _ready():
+	if not music.get_node("main_menu").playing:
+		music.get_node("main_menu").play()
+
 	if global.level_type == "groceries":
 		dialog_settings = utils_custom.load_json("res://jsons/opening_scene_dialog_groceries.json")
 	else:

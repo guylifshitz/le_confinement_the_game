@@ -60,11 +60,15 @@ func _input(event):
 		motion.y *= 0.5
 
 func _physics_process(_delta):
+	if Input.is_action_just_released("restart"):
+		get_tree().change_scene("res://level_bastille.tscn")
+
 	if can_move:
 		if running == false and running_recovering == false:
 			stamina += abs(_delta * STAMINA_RECOVER_SPEED)
 			stamina = min(stamina, STAMINA_MAX_AMOUNT)
 
+	
 		if Input.is_action_just_released("run"):
 			running = false
 
