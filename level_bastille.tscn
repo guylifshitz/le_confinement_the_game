@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://images/goals/boulangerie.png" type="Texture" id=18]
 [ext_resource path="res://scripts/spawn_enemies.gd" type="Script" id=19]
 [ext_resource path="res://scripts/game_logic.gd" type="Script" id=20]
+[ext_resource path="res://images/spritesheets/ducks.png" type="Texture" id=21]
 [ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=22]
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=23]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=24]
@@ -47,6 +48,7 @@
 [ext_resource path="res://sounds/bad/jingles_NES13.wav" type="AudioStream" id=46]
 [ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=47]
 [ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=48]
+[ext_resource path="res://images/interface/hand-sanitizer.png" type="Texture" id=49]
 [ext_resource path="res://prefab/stamina-bar.tscn" type="PackedScene" id=50]
 [ext_resource path="res://sounds/bump/Hit_02.wav" type="AudioStream" id=51]
 [ext_resource path="res://sounds/pickup/SFX_Pickup_41.wav" type="AudioStream" id=52]
@@ -59,6 +61,10 @@
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=59]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=60]
 [ext_resource path="res://images/interface/white-circle.png" type="Texture" id=61]
+[ext_resource path="res://scripts/hand_sanitizer.gd" type="Script" id=62]
+[ext_resource path="res://images/goals/waypoints-small.png" type="Texture" id=63]
+[ext_resource path="res://waypoint.gd" type="Script" id=64]
+[ext_resource path="res://sounds/pickup/SFX_Pickup_44.wav" type="AudioStream" id=65]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49696, 15.3129 )
@@ -744,107 +750,180 @@ points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49
 31/shapes = [  ]
 31/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 47.298, 38.6593 )
+[sub_resource type="DynamicFont" id=3]
+size = 48
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 33 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 150.01, 100.014 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 85.3008, 47.2509 )
+extents = Vector2( 47.298, 38.6593 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 28.0989, 31.9371 )
+extents = Vector2( 150.01, 100.014 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 85.3008, 47.2509 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 21 )
+region = Rect2( 48, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 21 )
+region = Rect2( 96, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 21 )
+region = Rect2( 48, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 21 )
+region = Rect2( 96, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 21 )
+region = Rect2( 48, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 21 )
+region = Rect2( 96, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 144, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 21 )
+region = Rect2( 48, 144, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 21 )
+region = Rect2( 96, 144, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "duck",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=21]
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 28.0989, 31.9371 )
+
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 26.4536, 20.7494 )
 
-[sub_resource type="NavigationPolygon" id=8]
+[sub_resource type="RectangleShape2D" id=24]
+
+[sub_resource type="NavigationPolygon" id=25]
 vertices = PoolVector2Array( 1449.35, -1441.69, 4891.81, 662.369, 1382.01, 2120.22, -869.962, 330.214 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662.369, 1449.35, -1441.69 ) ]
 
-[sub_resource type="Curve2D" id=9]
+[sub_resource type="Curve2D" id=26]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1396.21, -806.443, 0, 0, 0, 0, 755.671, -462.416, 0, 0, 0, 0, 1077.23, -114.605, 0, 0, 0, 0, 1887.97, -540.611, 0, 0, 0, 0, 1396.21, -806.443 )
 }
 
-[sub_resource type="Curve2D" id=10]
+[sub_resource type="Curve2D" id=27]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1308.78, 23.0505, 0, 0, 0, 0, 614.555, 375.262, 0, 0, 0, 0, 1709.19, 1007.44, 0, 0, 0, 0, 1802.33, 1211.28, 0, 0, 0, 0, 2163.19, 1187.54, 0, 0, 0, 0, 2264.21, 473.976, 0, 0, 0, 0, 1308.78, 23.0505 )
 }
 
-[sub_resource type="Curve2D" id=11]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2168.18, -216.759, 0, 0, 0, 0, 2031.63, -309.338, 0, 0, 0, 0, 2115.86, -235.47, 0, 0, 0, 0, 2051.09, -184.471, 0, 0, 0, 0, 2765.35, 145.897, 0, 0, 0, 0, 2820.89, 202.083, 0, 0, 0, 0, 2330.85, 444.368, 0, 0, 0, 0, 1090.25, -92.3774, 0, 0, 0, 0, 1879.95, -520.48, 0, 0, 0, 0, 1781.2, -491.687, 0, 0, 0, 0, 1435.87, -749.528, 0, 0, 0, 0, 728.581, -368.649, 0, 0, 0, 0, 1387.37, 61.2921, 0, 0, 0, 0, 607.12, 439.507, 0, 0, 0, 0, 1145.21, 790.832, 0, 0, 0, 0, 1824.86, 1167.07, 0, 0, 0, 0, 2121.58, 1020.79, 0, 0, 0, 0, 1872.44, 806.718, 0, 0, 0, 0, 3052.09, 161.125, 0, 0, 0, 0, 2925.72, 226.302, 0, 0, 0, 0, 2863.63, 70.0467, 0, 0, 0, 0, 2168.18, -216.759 )
-}
-
-[sub_resource type="Curve2D" id=12]
+[sub_resource type="Curve2D" id=29]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 790.424, 380.258, 0, 0, 0, 0, 1566.83, 767.395, 0, 0, 0, 0, 2056.06, 494.259, 0, 0, 0, 0, 1057.55, -96.159, 0, 0, 0, 0, 1085.88, -165.466, 0, 0, 0, 0, 1788.65, -541.211, 0, 0, 0, 0, 1446.85, -705.075, 0, 0, 0, 0, 776.992, -292.47, 0, 0, 0, 0, 1180.72, 34.1535, 0, 0, 0, 0, 672.708, 302.55, 0, 0, 0, 0, 790.424, 380.258 )
 }
 
-[sub_resource type="Curve2D" id=13]
+[sub_resource type="Curve2D" id=30]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1922.32, -549.914, 0, 0, 0, 0, 1838.3, -478.167, 0, 0, 0, 0, 1203.43, -93.0153, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1593.21, -403.749, 0, 0, 0, 0, 1768.37, -440.663, 0, 0, 0, 0, 1922.32, -549.914 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1768.91, -500.727, 0, 0, 0, 0, 1736.72, -398.119, 0, 0, 0, 0, 1203.43, -93.0153, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1593.21, -403.749, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1743.34, -558.448, 0, 0, 0, 0, 1768.91, -500.727 )
 }
 
-[sub_resource type="Curve2D" id=14]
+[sub_resource type="Curve2D" id=48]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1700.22, -651.102, 0, 0, 0, 0, 1658.78, -592.15, 0, 0, 0, 0, 1368.91, -723.396, 0, 0, 0, 0, 1417.14, -770.882, 0, 0, 0, 0, 1497.92, -727.37, 0, 0, 0, 0, 925.59, -429.126, 0, 0, 0, 0, 850.792, -520.84, 0, 0, 0, 0, 1362.05, -784.588, 0, 0, 0, 0, 1700.22, -651.102 )
+}
+
+[sub_resource type="Curve2D" id=28]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2168.18, -216.759, 0, 0, 0, 0, 2031.63, -309.338, 0, 0, 0, 0, 2115.86, -235.47, 0, 0, 0, 0, 2051.09, -184.471, 0, 0, 0, 0, 2765.35, 145.897, 0, 0, 0, 0, 2820.89, 202.083, 0, 0, 0, 0, 2330.85, 444.368, 0, 0, 0, 0, 1090.25, -92.3774, 0, 0, 0, 0, 1879.95, -520.48, 0, 0, 0, 0, 1781.2, -491.687, 0, 0, 0, 0, 1435.87, -749.528, 0, 0, 0, 0, 728.581, -368.649, 0, 0, 0, 0, 1387.37, 61.2921, 0, 0, 0, 0, 607.12, 439.507, 0, 0, 0, 0, 1145.21, 790.832, 0, 0, 0, 0, 1824.86, 1167.07, 0, 0, 0, 0, 2121.58, 1020.79, 0, 0, 0, 0, 1872.44, 806.718, 0, 0, 0, 0, 3052.09, 161.125, 0, 0, 0, 0, 2925.72, 226.302, 0, 0, 0, 0, 2863.63, 70.0467, 0, 0, 0, 0, 2168.18, -216.759 )
+}
+
+[sub_resource type="Curve2D" id=31]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1224.32, 968.971, 0, 0, 0, 0, 1152.61, 1016.78, 0, 0, 0, 0, 1212.09, 1065.22, 0, 0, 0, 0, 1030.07, 1150.71, 0, 0, 0, 0, 1128.16, 1228.84, 0, 0, 0, 0, 1288.59, 1164.5, 0, 0, 0, 0, 1352.53, 1068.19, 0, 0, 0, 0, 1224.32, 968.971 )
 }
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 101.546, 57.7512 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 84.2341, 39.1379 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 54.3187, 39.6317 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 32.7091, 28.6291 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 40.6436, 31.2152 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 71.6025, 43.6268 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 68.7866, 48.2061 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 64.8289, 44.0911 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 43.0076, 28.6318 )
 
-[sub_resource type="CapsuleShape2D" id=24]
+[sub_resource type="CapsuleShape2D" id=41]
 radius = 18.021
 height = 21.4161
 
-[sub_resource type="CircleShape2D" id=25]
+[sub_resource type="CircleShape2D" id=42]
 radius = 127.314
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=43]
 size = 28
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="ShaderMaterial" id=27]
+[sub_resource type="ShaderMaterial" id=44]
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=45]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 8.3756, 31.7769 )
 
 [node name="game" type="Node2D"]
@@ -872,6 +951,116 @@ rotation = -3.49246e-10
 position = Vector2( 0.00079958, 0.71449 )
 rotation = -3.49246e-10
 
+[node name="waypoints" type="YSort" parent="elements/goals"]
+position = Vector2( -0.000793457, -0.714478 )
+rotation = 2.32831e-10
+
+[node name="waypoint" type="Node2D" parent="elements/goals/waypoints"]
+position = Vector2( 1165.42, -76.6743 )
+script = ExtResource( 64 )
+
+[node name="waypoint_sprite" type="Sprite" parent="elements/goals/waypoints/waypoint"]
+position = Vector2( -0.0090332, -8.11136 )
+scale = Vector2( 0.679958, 0.679958 )
+texture = ExtResource( 63 )
+
+[node name="counter" type="RichTextLabel" parent="elements/goals/waypoints/waypoint"]
+margin_left = -39.3273
+margin_top = -28.3262
+margin_right = 39.6727
+margin_bottom = 37.6738
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 0.72549, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]1"
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="elements/goals/waypoints/waypoint"]
+position = Vector2( 3.04785, -11.1082 )
+scale = Vector2( 0.679958, 0.679958 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/waypoints/waypoint/Area2D"]
+position = Vector2( 1.64465, 9.52393 )
+scale = Vector2( 8.71773, 8.71773 )
+shape = SubResource( 4 )
+
+[node name="waypoint_positions" type="Node2D" parent="elements/goals/waypoints"]
+
+[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 764.698, -285.568 )
+
+[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1050.53, -129.166 )
+
+[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1399.32, 42.3071 )
+
+[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1737.68, 217.318 )
+
+[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2120.4, 420.483 )
+
+[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2078.99, 703.462 )
+
+[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2147.18, 1045.37 )
+
+[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1860.5, 1219.34 )
+
+[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1577.72, 987.852 )
+
+[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2025.21, 805.767 )
+
+[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2099.47, 1139.74 )
+
+[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1623.07, 1125.3 )
+
+[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1724.52, 891.61 )
+
+[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 2144.49, 971.335 )
+
+[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1950.91, 1221.88 )
+
+[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1569.08, 1038.1 )
+
+[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1337.63, 847.103 )
+
+[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1246.13, 652.417 )
+
+[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 963.418, 484.394 )
+
+[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 733.743, 326.886 )
+
+[node name="21" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1163.79, 90.1739 )
+
+[node name="22" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 1079.23, -117.741 )
+
+[node name="23" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 806.09, -276.08 )
+
+[node name="last" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+position = Vector2( 624.474, -435.199 )
+
 [node name="monoprix" type="YSort" parent="elements/goals"]
 position = Vector2( -10.8793, 14.2672 )
 rotation = -1.16415e-10
@@ -888,10 +1077,10 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/monoprix_node/grocery"]
 position = Vector2( 0.000610352, 0.548546 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="carrefour" type="YSort" parent="elements/goals"]
-position = Vector2( 83.9814, -14.8504 )
+position = Vector2( 84.6865, -14.8512 )
 rotation = -1.16415e-10
 
 [node name="carrefour_node" type="YSort" parent="elements/goals/carrefour"]
@@ -905,7 +1094,7 @@ texture = ExtResource( 5 )
 [node name="grocery" type="Area2D" parent="elements/goals/carrefour/carrefour_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/carrefour/carrefour_node/grocery"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="la_suprette" type="YSort" parent="elements/goals"]
 position = Vector2( 515.465, -472.944 )
@@ -922,7 +1111,7 @@ texture = ExtResource( 12 )
 [node name="grocery" type="Area2D" parent="elements/goals/la_suprette/la_superette_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/la_suprette/la_superette_node/grocery"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="boulangerie" type="YSort" parent="elements/goals"]
 rotation = -1.16415e-10
@@ -939,7 +1128,8 @@ texture = ExtResource( 18 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/boulangerie/boulangerie_node/grocery"]
-shape = SubResource( 3 )
+position = Vector2( -1.08557, 0.0012207 )
+shape = SubResource( 5 )
 
 [node name="pharmacy_1" type="YSort" parent="elements/goals"]
 position = Vector2( 40.9028, -25.1202 )
@@ -957,7 +1147,7 @@ texture = ExtResource( 13 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_1/pharma_1_node/area"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="pharmacy_2" type="YSort" parent="elements/goals"]
 rotation = -1.16415e-10
@@ -975,7 +1165,7 @@ position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_2/pharma_2_node/area"]
 position = Vector2( -13.2434, 17.07 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="flower_market" type="YSort" parent="elements/goals"]
 rotation = -3.49246e-10
@@ -994,14 +1184,54 @@ rotation = 0.00226946
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/Area2D"]
 position = Vector2( -21.7745, 32.2886 )
 rotation = -0.523599
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="elements/goals/flower_market/flower_market"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/StaticBody2D"]
 position = Vector2( -36.0358, 54.1382 )
 rotation = -0.523599
-shape = SubResource( 5 )
+shape = SubResource( 7 )
+
+[node name="duck" type="YSort" parent="elements/goals"]
+position = Vector2( 2218.74, 1153.91 )
+scale = Vector2( 1.69515, 1.69515 )
+
+[node name="duck" type="AnimatedSprite" parent="elements/goals/duck"]
+position = Vector2( 0.000366211, 0.000152588 )
+rotation = 2.32831e-10
+frames = SubResource( 20 )
+animation = "duck"
+frame = 8
+speed_scale = 0.5
+playing = true
+script = ExtResource( 15 )
+
+[node name="Area2D" type="Area2D" parent="elements/goals/duck/duck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck/duck/Area2D"]
+position = Vector2( -7.22363, 10.6795 )
+scale = Vector2( 3.68179, 3.68179 )
+shape = SubResource( 21 )
+
+[node name="duck2" type="AnimatedSprite" parent="elements/goals/duck"]
+position = Vector2( -23.0015, 18.7011 )
+rotation = 2.32831e-10
+frames = SubResource( 20 )
+animation = "duck"
+frame = 8
+speed_scale = 0.5
+playing = true
+flip_h = true
+
+[node name="duck3" type="AnimatedSprite" parent="elements/goals/duck"]
+position = Vector2( -23.3937, -14.6375 )
+rotation = 2.32831e-10
+frames = SubResource( 20 )
+animation = "duck"
+frame = 8
+speed_scale = 0.5
+playing = true
 
 [node name="home" type="Sprite" parent="elements/goals"]
 position = Vector2( 611.427, -453.384 )
@@ -1016,7 +1246,7 @@ script = ExtResource( 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/home/Area2D"]
 position = Vector2( 1.73572, 27.0154 )
 scale = Vector2( 9.18042, 6.88102 )
-shape = SubResource( 6 )
+shape = SubResource( 22 )
 
 [node name="attestation" type="Node2D" parent="elements/goals"]
 position = Vector2( 943.55, -252.906 )
@@ -1033,7 +1263,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation3" type="Node2D" parent="elements/goals"]
 position = Vector2( 2823.62, 164.383 )
@@ -1050,7 +1280,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation3/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation4" type="Node2D" parent="elements/goals"]
 position = Vector2( 1589.13, 752.241 )
@@ -1067,7 +1297,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation4/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation5" type="Node2D" parent="elements/goals"]
 position = Vector2( 738.936, 294.178 )
@@ -1084,7 +1314,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation5/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation2" type="Node2D" parent="elements/goals"]
 position = Vector2( 897.746, -492.399 )
@@ -1101,7 +1331,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation2/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation6" type="Node2D" parent="elements/goals"]
 position = Vector2( 1107.74, -576.202 )
@@ -1118,7 +1348,7 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation6/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
 
 [node name="attestation7" type="Node2D" parent="elements/goals"]
 position = Vector2( 1256.95, -653.771 )
@@ -1135,82 +1365,129 @@ rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation7/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
-shape = SubResource( 7 )
+shape = SubResource( 23 )
+
+[node name="hand_sanitizer" type="Node2D" parent="elements/goals"]
+position = Vector2( 1142.21, 1035.51 )
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer"]
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 24 )
+
+[node name="hand_sanitizer2" type="Node2D" parent="elements/goals"]
+position = Vector2( 2322.98, 497.026 )
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer2"]
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer2/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 24 )
+
+[node name="hand_sanitizer3" type="Node2D" parent="elements/goals"]
+position = Vector2( 777.927, -300.864 )
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer3"]
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer3/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 24 )
 
 [node name="enemy_paths" type="Navigation2D" parent="elements"]
+visible = false
 position = Vector2( -1.97906e-09, -1.19209e-07 )
 rotation = -4.65661e-10
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="elements/enemy_paths"]
 visible = false
 position = Vector2( 3.59968, 3.35905 )
-navpoly = SubResource( 8 )
+navpoly = SubResource( 25 )
 
 [node name="spawn_zombies" type="Node2D" parent="elements/enemy_paths"]
+visible = false
 rotation = 2.32831e-10
 script = ExtResource( 19 )
 enemy_type = "zombie"
 
-[node name="Path2D3" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
+[node name="top_square" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 9 )
+curve = SubResource( 26 )
 
-[node name="Path2D2" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
+[node name="bottom_square_and_column" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 10 )
+curve = SubResource( 27 )
 
-[node name="Path2D" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
+[node name="eight" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 11 )
+curve = SubResource( 29 )
 
-[node name="Path2D4" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
+[node name="crowded_street" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 12 )
+curve = SubResource( 30 )
 
-[node name="Path2D5" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
-visible = false
-curve = SubResource( 13 )
+[node name="crowded_street_above" type="Path2D" parent="elements/enemy_paths/spawn_zombies"]
+curve = SubResource( 48 )
 
 [node name="spawn_police" type="Node2D" parent="elements/enemy_paths"]
+visible = false
 rotation = 2.32831e-10
 script = ExtResource( 19 )
 enemy_type = "police"
 
-[node name="Path2D3" type="Path2D" parent="elements/enemy_paths/spawn_police"]
+[node name="top_square" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 9 )
+curve = SubResource( 26 )
 
 [node name="Path2D2" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 10 )
+curve = SubResource( 27 )
 
 [node name="Path2D" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 11 )
+curve = SubResource( 28 )
 
 [node name="Path2D4" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 12 )
+curve = SubResource( 29 )
 
 [node name="Path2D5" type="Path2D" parent="elements/enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 13 )
+curve = SubResource( 30 )
 
 [node name="Path2D6" type="Path2D" parent="elements/enemy_paths/spawn_police"]
-curve = SubResource( 14 )
+curve = SubResource( 31 )
 
 [node name="Path2D7" type="Path2D" parent="elements/enemy_paths/spawn_police"]
-curve = SubResource( 14 )
+curve = SubResource( 31 )
 
 [node name="Path2D8" type="Path2D" parent="elements/enemy_paths/spawn_police"]
-curve = SubResource( 14 )
+curve = SubResource( 31 )
 
 [node name="Path2D9" type="Path2D" parent="elements/enemy_paths/spawn_police"]
-curve = SubResource( 14 )
+curve = SubResource( 31 )
 
 [node name="enemies_holder" type="YSort" parent="elements"]
 rotation = -1.16415e-10
@@ -1537,7 +1814,7 @@ scale = Vector2( 0.704386, -0.694721 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market1/StaticBody2D"]
 position = Vector2( -11.2947, 56.2013 )
 rotation = 0.523599
-shape = SubResource( 15 )
+shape = SubResource( 32 )
 
 [node name="market3" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 2206.14, 1283.59 )
@@ -1550,7 +1827,7 @@ texture = ExtResource( 10 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market3/Area2D"]
 position = Vector2( -10.1455, 52.7846 )
 rotation = -0.523599
-shape = SubResource( 16 )
+shape = SubResource( 33 )
 
 [node name="market5" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 1929.65, 1124.08 )
@@ -1564,7 +1841,7 @@ position = Vector2( 0.420898, -0.418945 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market5/Area2D"]
 position = Vector2( -5.47559, 45.2761 )
 rotation = -0.523599
-shape = SubResource( 17 )
+shape = SubResource( 34 )
 
 [node name="market6" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 1446.62, 1205.5 )
@@ -1575,7 +1852,7 @@ texture = ExtResource( 37 )
 [node name="Area2D" type="StaticBody2D" parent="elements/scene/markets/market6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market6/Area2D"]
-shape = SubResource( 18 )
+shape = SubResource( 35 )
 
 [node name="market14" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 2406.36, 1664.28 )
@@ -1587,7 +1864,7 @@ texture = ExtResource( 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market14/Area2D"]
 position = Vector2( -16.8594, -12.6445 )
-shape = SubResource( 19 )
+shape = SubResource( 36 )
 
 [node name="market15" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 2052.22, 1490.36 )
@@ -1599,7 +1876,7 @@ texture = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market15/Area2D"]
 position = Vector2( -2.26782, 20.4124 )
-shape = SubResource( 20 )
+shape = SubResource( 37 )
 
 [node name="market16" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 2679.93, 1800.75 )
@@ -1611,7 +1888,7 @@ texture = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market16/StaticBody2D"]
 position = Vector2( -1.58276, 20.6477 )
-shape = SubResource( 21 )
+shape = SubResource( 38 )
 
 [node name="market7" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 2310.74, 1336.78 )
@@ -1630,7 +1907,7 @@ texture = ExtResource( 10 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market11/StaticBody2D"]
 position = Vector2( 3.67261, 34.9796 )
 rotation = -0.523599
-shape = SubResource( 22 )
+shape = SubResource( 39 )
 
 [node name="market8" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 1850.97, 1401.38 )
@@ -1642,7 +1919,7 @@ texture = ExtResource( 36 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/markets/market8/StaticBody2D"]
 position = Vector2( 10.8401, 0.928162 )
-shape = SubResource( 23 )
+shape = SubResource( 40 )
 
 [node name="market13" type="Sprite" parent="elements/scene/markets"]
 position = Vector2( 1776.13, 1383.41 )
@@ -1686,7 +1963,7 @@ offset = Vector2( 0, -38.44 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/scene/bastille-trans/StaticBody2D"]
 position = Vector2( 2.05194, 8.16479 )
 rotation = 1.5708
-shape = SubResource( 24 )
+shape = SubResource( 41 )
 
 [node name="barriers" type="YSort" parent="elements/scene"]
 position = Vector2( -1.16665, 1.18545 )
@@ -1810,7 +2087,7 @@ position = Vector2( 4.11304, -23.4973 )
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="elements/scene/carroussel/Area2D"]
 position = Vector2( 2.95288, 8.85962 )
 scale = Vector2( 1, 0.612 )
-shape = SubResource( 25 )
+shape = SubResource( 42 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
@@ -1821,7 +2098,7 @@ margin_left = 4.3064
 margin_top = 7.0
 margin_right = 124.306
 margin_bottom = 61.0
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 43 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -1844,7 +2121,7 @@ margin_left = 841.846
 margin_top = 175.755
 margin_right = 928.846
 margin_bottom = 220.755
-custom_fonts/normal_font = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 43 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -1917,14 +2194,14 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 27 )
+material = SubResource( 44 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 27 )
+material = SubResource( 44 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
@@ -1944,7 +2221,7 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 28 )
+custom_fonts/normal_font = SubResource( 45 )
 text = "32"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2004,23 +2281,23 @@ end_cap_mode = 2
 [node name="market" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 361.606, 294.661 )
 rotation = -0.555015
-shape = SubResource( 29 )
+shape = SubResource( 46 )
 
 [node name="seine" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 29 )
+shape = SubResource( 46 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 2600.15, 1034.86 )
 rotation = -0.555015
-shape = SubResource( 29 )
+shape = SubResource( 46 )
 
 [node name="small-road" type="CollisionShape2D" parent="gamelimits"]
 position = Vector2( 1927.31, -332.633 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 30 )
+shape = SubResource( 47 )
 
 [node name="audio" type="Node2D" parent="."]
 
@@ -2063,6 +2340,10 @@ stream = ExtResource( 52 )
 volume_db = -5.0
 bus = "sound_effects"
 
+[node name="pickup_health" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 65 )
+bus = "sound_effects"
+
 [node name="bumps" type="Node2D" parent="audio"]
 position = Vector2( 0.459473, 0 )
 
@@ -2085,6 +2366,7 @@ bus = "sound_effects"
 stream = ExtResource( 54 )
 volume_db = -10.0
 bus = "sound_effects"
+[connection signal="body_entered" from="elements/goals/waypoints/waypoint/Area2D" to="elements/goals/waypoints/waypoint" method="_on_waypoint_body_entered"]
 [connection signal="body_entered" from="elements/goals/monoprix/monoprix_node/grocery" to="elements/goals/monoprix/monoprix_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/carrefour/carrefour_node/grocery" to="elements/goals/carrefour/carrefour_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/la_suprette/la_superette_node/grocery" to="elements/goals/la_suprette/la_superette_node" method="_on_grocery_body_entered"]
@@ -2092,6 +2374,7 @@ bus = "sound_effects"
 [connection signal="body_entered" from="elements/goals/pharmacy_1/pharma_1_node/area" to="elements/goals/pharmacy_1/pharma_1_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/pharmacy_2/pharma_2_node/area" to="elements/goals/pharmacy_2/pharma_2_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/flower_market/flower_market/Area2D" to="elements/goals/flower_market/flower_market" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/duck/duck/Area2D" to="elements/goals/duck/duck" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/home/Area2D" to="elements/goals/home/Area2D" method="_on_home_body_entered"]
 [connection signal="body_entered" from="elements/goals/attestation/Area2D" to="elements/goals/attestation/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/goals/attestation3/Area2D" to="elements/goals/attestation3/attestation" method="_on_attestation_body_entered"]
@@ -2100,3 +2383,6 @@ bus = "sound_effects"
 [connection signal="body_entered" from="elements/goals/attestation2/Area2D" to="elements/goals/attestation2/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/goals/attestation6/Area2D" to="elements/goals/attestation6/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/goals/attestation7/Area2D" to="elements/goals/attestation7/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizer/Area2D" to="elements/goals/hand_sanitizer/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizer2/Area2D" to="elements/goals/hand_sanitizer2/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizer3/Area2D" to="elements/goals/hand_sanitizer3/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]

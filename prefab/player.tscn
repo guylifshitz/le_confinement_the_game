@@ -120,6 +120,9 @@ position = Vector2( 40.5772, -60.4628 )
 [node name="flower_slot" type="Node2D" parent="main_char_node/holding_items"]
 position = Vector2( 1.72204, -114.186 )
 
+[node name="duck_slot" type="Node2D" parent="main_char_node/holding_items"]
+position = Vector2( -42.022, -114.186 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.00012207, -12.4708 )
 shape = SubResource( 6 )

@@ -32,6 +32,7 @@ var stamina = STAMINA_MAX_AMOUNT
 onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
 onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
 onready var sound_acquired_attestation = get_tree().get_root().get_node("game/audio/pickup_attestation")
+onready var sound_acquired_hand_sanitizer = get_tree().get_root().get_node("game/audio/pickup_health")
 onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
 var motion = Vector2(0,0)
@@ -139,6 +140,12 @@ func set_nearest_enemy():
 			if enemy.global_position.distance_to(self.global_position) < nearest_enemy.global_position.distance_to(self.global_position):
 				nearest_enemy = enemy
 	
+
+func acquired_hand_sanitizer():
+	sound_acquired_hand_sanitizer.play()
+	get_tree().get_root().get_node("game").damage += 30
+	get_tree().get_root().get_node("game").damage = min(get_tree().get_root().get_node("game").damage,game_settings["player"]["max_health"])
+
 
 func acquired_attestation():
 	sound_acquired_attestation.play()

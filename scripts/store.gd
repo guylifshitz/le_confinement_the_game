@@ -4,6 +4,7 @@ onready var store_x = load("res://prefab/store_x.tscn")
 onready var holding_bread = load("res://prefab/holding_bread.tscn")
 onready var holding_drugs = load("res://prefab/holding_drugs.tscn")
 onready var holding_flower = load("res://prefab/holding_flower.tscn")
+onready var holding_duck = load("res://prefab/holding_duck.tscn")
 onready var holding_toilet_paper = load("res://prefab/holding_toilet_paper.tscn")
 
 onready var pickedup_sound = get_tree().get_root().get_node("game/audio/picked_up")
@@ -17,7 +18,7 @@ func _ready():
 	pass
 
 func _on_grocery_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" and global.level_type == "groceries":
 
 		var found_item = false
 		for item in body.items_needed:
@@ -25,7 +26,6 @@ func _on_grocery_body_entered(body):
 				found_item = true
 				if  body.items_holding.find(item) == -1:
 					var holding_slot = body.find_node("holding_items").get_child(body.items_holding.size())
-					var flower_slot = body.find_node("holding_items").find_node("flower_slot")
 					body.items_holding.append(item)
 					if item == "bread":
 						holding_slot.add_child(holding_bread.instance())
@@ -39,11 +39,13 @@ func _on_grocery_body_entered(body):
 			if store_has_items.find(item) != -1:
 				found_item = true
 				if  body.items_holding_bonus.find(item) == -1:
-					var holding_slot = body.find_node("holding_items").get_child(body.items_holding.size())
 					var flower_slot = body.find_node("holding_items").find_node("flower_slot")
+					var duck_slot = body.find_node("holding_items").find_node("duck_slot")
 					body.items_holding_bonus.append(item)
 					if item == "flower":
 						flower_slot.add_child(holding_flower.instance())
+					if item == "duck":
+						duck_slot.add_child(holding_duck.instance())
 					pickedup_sound.play()
 
 		if found_item == false:

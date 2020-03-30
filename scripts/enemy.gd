@@ -95,8 +95,8 @@ func _on_social_distance_area_body_entered(body):
 	if body.get_name() == "player" and is_social:
 		follows_player = true
 		
+		start_conversation()
 		if simple_path.size() == 0:
-			start_conversation()
 			following_player_start_position = self.global_position
 
 

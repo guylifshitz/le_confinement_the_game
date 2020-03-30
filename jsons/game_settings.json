@@ -2,12 +2,13 @@
   "debug": true,
   "general": { "show_nearest_enemy_line": false },
   "level_1": {
-    "attestation_duration": 10,
+    "attestation_duration": 5,
+    "attestation_respawn_time": 10,
     "starting_bonus_score": 200,
     "damage_decrement_exponent": 2,
     "score_decrement_exponent": 1,
     "items_needed": ["toilet_paper", "bread", "drugs"],
-    "items_bonus": ["flower"],
+    "items_bonus": ["flower", "duck"],
     "store_items": [
       { "store": "boulangerie", "has_items": ["bread"] },
       { "store": "monoprix", "has_items": [] },
@@ -15,8 +16,21 @@
       { "store": "la_suprette", "has_items": [] },
       { "store": "pharmacy_1", "has_items": ["drugs"] },
       { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["flower"] }
-    ]
+      { "store": "flower_market", "has_items": ["flower"] },
+      { "store": "duck", "has_items": ["duck"] }
+    ],
+    "enemies_per_path": {
+      "enemies": {
+        "top_square": 3,
+      "crowded_street": 6,
+        "crowded_street_above": 6,
+        "eight": 3,
+        "bottom_square_and_column": 3
+      },
+      "police": {
+        "top_square": 5
+      }
+    }
   },
   "player": {
     "max_health": 100,
@@ -30,17 +44,19 @@
     "knows_player_percentage": 100,
     "move_speed": 100,
     "conversations_adult": [
-      ["Hey!", "How are you?"],
+      ["Salut!", "ça va?"],
       ["Salut!", "Ça fait un bail.", "On fait la bise?"],
       ["Bonsoir Madame.", "*cough*"],
       ["Une clope?"],
       ["Du feu?"],
-      ["Psst...", "tu cherches", "un masque?", "J'en vends"],
+      ["Where is", "Eiffel Tower?"],
+      ["Is this", "cham-s ely-zay?"],
+      ["Psst...", "tu cherches", "un masque?", "J'en vends"]
     ],
     "conversations_kid": [["Wanna play?"], ["Got candy?"]]
   },
   "police": {
     "count": 15,
-    "move_speed": 100,
+    "move_speed": 100
   }
 }

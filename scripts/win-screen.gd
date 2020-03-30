@@ -9,4 +9,4 @@ func _ready():
 		$dialog/bonus_items/none.show()
 
 func next_scene():
-	get_tree().change_scene("res://main-menu.tscn")
+	get_tree().change_scene("res://level_select.tscn")

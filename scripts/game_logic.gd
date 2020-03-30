@@ -22,6 +22,8 @@ var damage_decrement_exponent = game_settings["level_1"]["damage_decrement_expon
 var score_decrement_exponent  = game_settings["level_1"]["score_decrement_exponent"]
 
 func _ready():
+	if global.level_type == "sport":
+		self.get_node("interface/grandma").hide()
 	player.items_needed = game_settings["level_1"]["items_needed"]
 	player.items_bonus = game_settings["level_1"]["items_bonus"]
 	for store_settings in game_settings["level_1"]["store_items"]:
@@ -110,3 +112,4 @@ func show_win_screen():
 	global.score = score
 	global.bonus_items_recovered = player.items_holding_bonus
 	get_tree().change_scene("res://win-screen.tscn")
+

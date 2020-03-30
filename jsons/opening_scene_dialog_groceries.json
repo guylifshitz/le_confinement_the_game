@@ -12,10 +12,13 @@
     " This bar will tell you how exposed you have been.",
     " Do you still remember how to walk? Just use the arrow keys. \n\n You can run for a short time using the shift key."
   ],
-  "show_items_list_text_index": 1,
-  "show_distance_bar_text_index": 8,
-  "show_attestation_text_index": 4,
-  "show_police_text_index": 5,
-  "show_health_bar_text_index": 9,
   "TEXT_SCROLL_SPEED": 0.01,
+  "show_item_index": {
+    "groceries": 1,
+    "distance_bar": 8,
+    "distance_circle": 8,
+    "attestation": 4,
+    "policeman": 5,
+    "health_bar": 9,
+  }
 }

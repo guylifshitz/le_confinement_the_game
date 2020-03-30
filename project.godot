@@ -20,7 +20,7 @@ config/description="This demo shows 		a traditional isometric view with depth so
 
 A character can move around the level and will also slide around objects,
 as well as be occluded when standing in front or behind them."
-run/main_scene="res://title_screen2.tscn"
+run/main_scene="res://title_screen.tscn"
 
 [autoload]
 
