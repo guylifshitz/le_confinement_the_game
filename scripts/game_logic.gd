@@ -19,6 +19,7 @@ var damage = game_settings["player"]["max_health"]
 var score_increment_speed = 10
 var score_max_distance = 200
 var damage_decrement_exponent = game_settings["level_1"]["damage_decrement_exponent"]
+var damage_multiplier = game_settings["level_1"]["damage_multiplier"]
 var score_decrement_exponent  = game_settings["level_1"]["score_decrement_exponent"]
 
 func _ready():
@@ -46,8 +47,8 @@ func _process(delta):
 		score -= max(score_delta, 0)
 
 		if nearest_distance < 100:
-			var damage_intensity = (100-nearest_distance) / 100
-			damage -= pow(damage_intensity, damage_decrement_exponent)
+			var damage_intensity = (100-nearest_distance) / 100 + 0.2
+			damage -= pow(damage_intensity, damage_decrement_exponent) * damage_multiplier
 			sprite_sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
 			circle.modulate = Color(damage_intensity,0,0, max(damage_intensity, 0.15))
 		else:
@@ -78,8 +79,7 @@ func check_player_death():
 
 
 func player_dead():
-	# get_tree().change_scene("res://lose-sick.tscn")
-	get_tree().change_scene("res://win-screen.tscn")
+	get_tree().change_scene("res://lose-sick.tscn")
 
 
 func draw_nearest_line(nearest_distance):

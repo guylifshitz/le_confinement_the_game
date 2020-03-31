@@ -28,3 +28,18 @@ func _on_sport_button_down():
 	$form/signature.show()
 	$buttons/groceries.disabled = true
 	utils_custom.create_timer_2(1, self, "play_sport")
+
+
+func _on_difficulty_button_down():
+	$difficulty/easy.hide()
+	$difficulty/medium.hide()
+	$difficulty/hard.hide()
+	if global.level_difficulty == "easy":
+		$difficulty/medium.show()
+		global.level_difficulty = "medium"
+	elif global.level_difficulty == "medium":
+		$difficulty/hard.show()
+		global.level_difficulty = "hard"
+	else:
+		$difficulty/easy.show()
+		global.level_difficulty = "easy"

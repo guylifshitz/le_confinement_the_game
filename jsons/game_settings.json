@@ -1,38 +1,7 @@
 {
   "debug": true,
   "general": { "show_nearest_enemy_line": false },
-  "level_1": {
-    "attestation_duration": 5,
-    "attestation_respawn_time": -1,
-    "starting_bonus_score": 200,
-    "damage_decrement_exponent": 2,
-    "score_decrement_exponent": 1,
-    "items_needed": ["toilet_paper", "bread", "drugs"],
-    "items_bonus": ["flower", "duck"],
-    "store_items": [
-      { "store": "boulangerie", "has_items": ["bread"] },
-      { "store": "monoprix", "has_items": [] },
-      { "store": "carrefour", "has_items": ["toilet_paper"] },
-      { "store": "la_suprette", "has_items": [] },
-      { "store": "pharmacy_1", "has_items": ["drugs"] },
-      { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["flower"] },
-      { "store": "duck", "has_items": ["duck"] }
-    ],
-    "enemies_per_path": {
-      "enemies": {
-        "top_square": 3,
-      "crowded_street": 6,
-        "crowded_street_above": 6,
-        "eight": 3,
-        "bottom_square_and_column": 3
-      },
-      "police": {
-        "top_square": 5,
-        "commissariat": 3,
-      }
-    }
-  },
+  "audio": { "volume_on_start": "all" },
   "player": {
     "max_health": 100,
     "stamina_max_amount": 10,
@@ -42,7 +11,7 @@
   },
   "enemies": {
     "count": 10,
-    "knows_player_percentage": 100,
+    "knows_player_percentage": 30,
     "move_speed": 100,
     "conversations_adult": [
       ["Salut!", "ça va?"],
@@ -59,5 +28,41 @@
   "police": {
     "count": 15,
     "move_speed": 100
+  },
+  "level_1": {
+    "attestation": {
+      "visible_list": ["attestation_1", "attestation_2"],
+      "duration": 5,
+      "respawn_time": -1
+    },
+    "starting_bonus_score": 200,
+    "damage_decrement_exponent": 2,
+    "damage_multiplier": 5,
+    "score_decrement_exponent": 1,
+    "items_needed": ["toilet_paper", "bread", "drugs"],
+    "items_bonus": ["flower", "duck"],
+    "store_items": [
+      { "store": "boulangerie", "has_items": ["bread"] },
+      { "store": "monoprix", "has_items": [] },
+      { "store": "carrefour", "has_items": ["toilet_paper"] },
+      { "store": "la_suprette", "has_items": [] },
+      { "store": "pharmacy_1", "has_items": ["drugs"] },
+      { "store": "pharmacy_2", "has_items": [] },
+      { "store": "flower_market", "has_items": ["flower"] },
+      { "store": "duck", "has_items": ["duck"] }
+    ],
+    "enemies_per_path": {
+      "enemies": {
+        "top_square": 3,
+        "crowded_street": 6,
+        "crowded_street_above": 6,
+        "eight": 3,
+        "bottom_square_and_column": 3
+      },
+      "police": {
+        "top_square": 5,
+        "commissariat": 3
+      }
+    }
   }
 }

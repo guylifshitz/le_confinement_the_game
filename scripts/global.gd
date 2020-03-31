@@ -7,3 +7,4 @@ var play_audio = "all"
 
 
 var level_type
+var level_difficulty

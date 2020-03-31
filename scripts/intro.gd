@@ -62,3 +62,7 @@ func text_clicked():
 	else:
 		next_page()
 
+
+
+func _on_back_button_down():
+	get_tree().change_scene("res://level_select.tscn")

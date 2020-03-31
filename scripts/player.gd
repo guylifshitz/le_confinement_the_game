@@ -36,6 +36,7 @@ onready var sound_acquired_hand_sanitizer = get_tree().get_root().get_node("game
 onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
 var motion = Vector2(0,0)
+var mouse_pressed = false
 
 func _ready():
 	set_process(true)
@@ -51,7 +52,11 @@ func animate_distance_circle():
 
 
 func _input(event):
-	if event is InputEventScreenDrag:
+
+	if event is InputEventMouseButton:
+		mouse_pressed = event.pressed
+
+	if event is InputEventScreenDrag or (event is InputEventMouseMotion and mouse_pressed):
 		motion.x = (event.position.x - get_viewport_rect().size.x/2) / get_viewport_rect().size.x
 		motion.y = (event.position.y - get_viewport_rect().size.y/2) / get_viewport_rect().size.y / 2
 	else:

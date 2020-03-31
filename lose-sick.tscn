@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small-sad.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
 [ext_resource path="res://images/spritesheets/girl.png" type="Texture" id=10]
+[ext_resource path="res://fonts/font-45.tres" type="DynamicFont" id=11]
 [ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=14]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=15]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=16]
@@ -47,6 +48,8 @@ tracks/1/keys = {
 }
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="menu" type="Node2D"]
 script = ExtResource( 5 )
@@ -148,6 +151,7 @@ anims/head-movement = SubResource( 2 )
 
 [node name="continue_button" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.423529, 0.423529, 0.423529, 1 )
+position = Vector2( 0, 1.79749 )
 
 [node name="button" type="Button" parent="continue_button"]
 margin_left = -63.0
@@ -155,6 +159,31 @@ margin_top = -24.0
 margin_right = 1151.0
 margin_bottom = 631.0
 custom_styles/focus = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Node2D" parent="."]
+modulate = Color( 0.462745, 0.462745, 0.462745, 1 )
+
+[node name="exit" type="RichTextLabel" parent="exit"]
+margin_left = 156.134
+margin_top = 515.426
+margin_right = 576.134
+margin_bottom = 630.426
+custom_fonts/normal_font = ExtResource( 11 )
+text = "<<<EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="exit"]
+margin_left = 160.297
+margin_top = 509.152
+margin_right = 338.297
+margin_bottom = 565.152
+custom_styles/focus = SubResource( 4 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -174,3 +203,4 @@ stream = ExtResource( 7 )
 autoplay = true
 bus = "music"
 [connection signal="button_down" from="continue_button/button" to="." method="_on_continue_button_down"]
+[connection signal="button_down" from="exit/Button" to="." method="_on_exit_button_down"]

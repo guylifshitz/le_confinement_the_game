@@ -53,6 +53,7 @@ use_mipmaps = true
 font_data = ExtResource( 8 )
 
 [node name="menu" type="Node2D"]
+position = Vector2( 0, 0.947266 )
 script = ExtResource( 5 )
 
 [node name="apartment" type="Sprite" parent="."]
@@ -161,9 +162,9 @@ anchor_left = -0.00269775
 anchor_top = 0.00269775
 anchor_right = -0.00269775
 anchor_bottom = 0.00269775
-margin_left = -73.5649
+margin_left = -72.6177
 margin_top = -106.382
-margin_right = 961.435
+margin_right = 962.382
 margin_bottom = 625.618
 custom_styles/focus = SubResource( 3 )
 action_mode = 0
@@ -174,16 +175,6 @@ __meta__ = {
 
 [node name="skip_button" type="Node2D" parent="."]
 position = Vector2( 749.954, 88.9999 )
-
-[node name="skip3bg" type="Sprite" parent="skip_button"]
-modulate = Color( 0.372549, 0.294118, 0.294118, 1 )
-position = Vector2( 147.61, 432.748 )
-scale = Vector2( 0.218103, 0.218103 )
-
-[node name="skip" type="Sprite" parent="skip_button"]
-modulate = Color( 0.992157, 0.709804, 0.270588, 1 )
-position = Vector2( 146.729, 432.185 )
-scale = Vector2( 0.175366, 0.175366 )
 
 [node name="skip-text" type="RichTextLabel" parent="skip_button"]
 margin_left = -165.149
@@ -211,6 +202,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="back_button" type="Node2D" parent="."]
+position = Vector2( 637.954, 88.9999 )
+
+[node name="back_text" type="RichTextLabel" parent="back_button"]
+margin_left = -478.568
+margin_top = 426.092
+margin_right = -4.56824
+margin_bottom = 527.092
+rect_scale = Vector2( 0.590261, 0.590261 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "<<<BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_dialog" type="Button" parent="back_button"]
+anchor_left = -0.00269775
+anchor_top = 0.00269775
+anchor_right = -0.00269775
+anchor_bottom = 0.00269775
+margin_left = -482.0
+margin_top = 406.947
+margin_right = -233.0
+margin_bottom = 505.947
+action_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="click_button" parent="." instance=ExtResource( 13 )]
 scale = Vector2( 0.28398, 0.28398 )
 
@@ -231,3 +252,4 @@ bus = "sound_effects"
 scale = Vector2( 1, 1.00358 )
 [connection signal="button_down" from="scroll_faster" to="." method="text_clicked"]
 [connection signal="button_down" from="skip_button/skip_dialog" to="." method="go_to_next_scene"]
+[connection signal="button_down" from="back_button/back_dialog" to="." method="_on_back_button_down"]

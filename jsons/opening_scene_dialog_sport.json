@@ -11,7 +11,8 @@
     " Otherwise you might become contagious and bring home the disease.",
     " These bars will tell you how far you are from people.",
     " This bar will tell you how exposed you have been.",
-    " Do you still remember how to run? Just use the arrow keys."
+    " Do you still remember how to run? Just use the arrow keys, or click where you want to move.",
+    " You can run for a short time using the shift key."
   ],
   "TEXT_SCROLL_SPEED": 0.01,
   "show_item_index": {

@@ -10,8 +10,14 @@ func restart_game():
 
 func enable_continue_button():
 	$continue_button.modulate = Color(1,1,1)
+	$exit_button.modulate = Color(1,1,1)
 	continue_button_enabled = true
 	
 func _on_continue_button_down():
 	if continue_button_enabled:
 		restart_game()
+
+
+func _on_exit_button_down():
+	if continue_button_enabled:
+		get_tree().change_scene("res://level_select.tscn")

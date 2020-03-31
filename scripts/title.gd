@@ -2,9 +2,12 @@ extends Node2D
 
 func _ready():
 	pass
+	# get_tree().change_scene("res://lose-sick.tscn")
+	# get_tree().change_scene("res://level_select.tscn")
+	# get_tree().change_scene("res://lose-police.tscn")
 	#print(music.get_node("main_menu").play())
-# 	global.level_type = "groceries"
-# 	get_tree().change_scene("res://level_bastille.tscn")
+	# global.level_type = "groceries"
+	get_tree().change_scene("res://level_bastille.tscn")
 
 
 func next_scene():

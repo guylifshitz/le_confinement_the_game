@@ -1080,7 +1080,7 @@ position = Vector2( 0.000610352, 0.548546 )
 shape = SubResource( 5 )
 
 [node name="carrefour" type="YSort" parent="elements/goals"]
-position = Vector2( 84.6865, -14.8512 )
+position = Vector2( -922.77, -459.045 )
 rotation = -1.16415e-10
 
 [node name="carrefour_node" type="YSort" parent="elements/goals/carrefour"]
@@ -1088,7 +1088,7 @@ position = Vector2( 2964.45, 125.767 )
 script = ExtResource( 15 )
 
 [node name="carrefour" type="Sprite" parent="elements/goals/carrefour/carrefour_node"]
-scale = Vector2( 0.367114, 0.367114 )
+scale = Vector2( 0.240174, 0.240174 )
 texture = ExtResource( 5 )
 
 [node name="grocery" type="Area2D" parent="elements/goals/carrefour/carrefour_node"]
@@ -1151,6 +1151,7 @@ position = Vector2( -0.00231934, -2.02785 )
 shape = SubResource( 5 )
 
 [node name="pharmacy_2" type="YSort" parent="elements/goals"]
+position = Vector2( 1033.54, 483.771 )
 rotation = -1.16415e-10
 
 [node name="pharma_2_node" type="Node2D" parent="elements/goals/pharmacy_2"]
@@ -1204,7 +1205,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 20 )
 animation = "duck"
-frame = 11
+frame = 7
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1221,7 +1222,7 @@ position = Vector2( -23.0015, 18.7011 )
 rotation = 2.32831e-10
 frames = SubResource( 20 )
 animation = "duck"
-frame = 11
+frame = 7
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1231,7 +1232,7 @@ position = Vector2( -23.3937, -14.6375 )
 rotation = 2.32831e-10
 frames = SubResource( 20 )
 animation = "duck"
-frame = 11
+frame = 7
 speed_scale = 0.5
 playing = true
 
@@ -1250,166 +1251,185 @@ position = Vector2( 1.73572, 27.0154 )
 scale = Vector2( 9.18042, 6.88102 )
 shape = SubResource( 22 )
 
-[node name="attestation" type="Node2D" parent="elements/goals"]
+[node name="attestations" type="YSort" parent="elements/goals"]
+visible = false
+
+[node name="attestation" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 943.55, -252.906 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation3" type="Node2D" parent="elements/goals"]
+[node name="attestation3" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 2823.62, 164.383 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation3"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation3"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation3"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation3"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation3/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation4" type="Node2D" parent="elements/goals"]
+[node name="attestation4" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 1589.13, 752.241 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation4"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation4"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation4"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation4"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation4/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation5" type="Node2D" parent="elements/goals"]
+[node name="attestation5" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 738.936, 294.178 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation5"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation5"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation5"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation5"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation5/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation5/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation2" type="Node2D" parent="elements/goals"]
+[node name="attestation2" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 897.746, -492.399 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation2"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation2"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation2"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation2"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation2/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation6" type="Node2D" parent="elements/goals"]
+[node name="attestation6" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 1107.74, -576.202 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation6"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation6"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation6"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation6"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation6/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation6/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="attestation7" type="Node2D" parent="elements/goals"]
+[node name="attestation7" type="Node2D" parent="elements/goals/attestations"]
+visible = false
 position = Vector2( 1256.95, -653.771 )
-rotation = -3.49246e-10
+rotation = -4.65661e-10
 
-[node name="attestation" type="Sprite" parent="elements/goals/attestation7"]
+[node name="attestation" type="Sprite" parent="elements/goals/attestations/attestation7"]
 position = Vector2( 0.00012207, -1.52588e-05 )
 rotation = 2.32831e-10
 texture = ExtResource( 17 )
 script = ExtResource( 29 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/attestation7"]
+[node name="Area2D" type="Area2D" parent="elements/goals/attestations/attestation7"]
 rotation = 2.32831e-10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestation7/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/attestations/attestation7/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 23 )
 
-[node name="hand_sanitizer" type="Node2D" parent="elements/goals"]
+[node name="hand_sanitizers" type="YSort" parent="elements/goals"]
+visible = false
+
+[node name="hand_sanitizer" type="Node2D" parent="elements/goals/hand_sanitizers"]
+visible = false
 position = Vector2( 1142.21, 1035.51 )
+rotation = -1.11035e-10
 scale = Vector2( 0.52423, 0.52423 )
 
-[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer"]
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizers/hand_sanitizer"]
 texture = ExtResource( 49 )
 script = ExtResource( 62 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer"]
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizers/hand_sanitizer"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizers/hand_sanitizer/Area2D"]
 position = Vector2( -26.8276, 7.93604 )
 scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 24 )
 
-[node name="hand_sanitizer2" type="Node2D" parent="elements/goals"]
+[node name="hand_sanitizer2" type="Node2D" parent="elements/goals/hand_sanitizers"]
+visible = false
 position = Vector2( 2322.98, 497.026 )
+rotation = -1.11035e-10
 scale = Vector2( 0.52423, 0.52423 )
 
-[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer2"]
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizers/hand_sanitizer2"]
 texture = ExtResource( 49 )
 script = ExtResource( 62 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer2"]
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizers/hand_sanitizer2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizers/hand_sanitizer2/Area2D"]
 position = Vector2( -26.8276, 7.93604 )
 scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 24 )
 
-[node name="hand_sanitizer3" type="Node2D" parent="elements/goals"]
+[node name="hand_sanitizer3" type="Node2D" parent="elements/goals/hand_sanitizers"]
+visible = false
 position = Vector2( 777.927, -300.864 )
+rotation = -1.11035e-10
 scale = Vector2( 0.52423, 0.52423 )
 
-[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizer3"]
+[node name="hand_sanitizer" type="Sprite" parent="elements/goals/hand_sanitizers/hand_sanitizer3"]
 texture = ExtResource( 49 )
 script = ExtResource( 62 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizer3"]
+[node name="Area2D" type="Area2D" parent="elements/goals/hand_sanitizers/hand_sanitizer3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizer3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/hand_sanitizers/hand_sanitizer3/Area2D"]
 position = Vector2( -26.8276, 7.93604 )
 scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 24 )
@@ -2113,7 +2133,7 @@ __meta__ = {
 }
 
 [node name="bonus_points_star" type="Sprite" parent="interface"]
-position = Vector2( 962.748, 191.104 )
+position = Vector2( 961.972, 188.239 )
 scale = Vector2( 0.10125, 0.10125 )
 texture = ExtResource( 56 )
 
@@ -2379,13 +2399,13 @@ bus = "sound_effects"
 [connection signal="body_entered" from="elements/goals/flower_market/flower_market/Area2D" to="elements/goals/flower_market/flower_market" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/duck/duck/Area2D" to="elements/goals/duck/duck" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/home/Area2D" to="elements/goals/home/Area2D" method="_on_home_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation/Area2D" to="elements/goals/attestation/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation3/Area2D" to="elements/goals/attestation3/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation4/Area2D" to="elements/goals/attestation4/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation5/Area2D" to="elements/goals/attestation5/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation2/Area2D" to="elements/goals/attestation2/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation6/Area2D" to="elements/goals/attestation6/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/attestation7/Area2D" to="elements/goals/attestation7/attestation" method="_on_attestation_body_entered"]
-[connection signal="body_entered" from="elements/goals/hand_sanitizer/Area2D" to="elements/goals/hand_sanitizer/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
-[connection signal="body_entered" from="elements/goals/hand_sanitizer2/Area2D" to="elements/goals/hand_sanitizer2/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
-[connection signal="body_entered" from="elements/goals/hand_sanitizer3/Area2D" to="elements/goals/hand_sanitizer3/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation/Area2D" to="elements/goals/attestations/attestation/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation3/Area2D" to="elements/goals/attestations/attestation3/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation4/Area2D" to="elements/goals/attestations/attestation4/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation5/Area2D" to="elements/goals/attestations/attestation5/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation2/Area2D" to="elements/goals/attestations/attestation2/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation6/Area2D" to="elements/goals/attestations/attestation6/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/attestations/attestation7/Area2D" to="elements/goals/attestations/attestation7/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizers/hand_sanitizer/Area2D" to="elements/goals/hand_sanitizers/hand_sanitizer/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizers/hand_sanitizer2/Area2D" to="elements/goals/hand_sanitizers/hand_sanitizer2/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/goals/hand_sanitizers/hand_sanitizer3/Area2D" to="elements/goals/hand_sanitizers/hand_sanitizer3/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
