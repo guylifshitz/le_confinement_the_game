@@ -28,10 +28,10 @@ func spawn():
 		var enemy_path = self.get_node(path)
 
 		for i in range(0, spawn_distribution[path]):
+			set_process(false)
 			var new_enemy = node_to_clone.instance()
 			new_enemy.position = Vector2(0, 0)
 			new_enemy.add_to_group("enemies")
-			enemies_holder.add_child(new_enemy)
 
 			# Should have used a Transform2D, but I was not able to get it to work.
 			# Instead just set the global_position to this node
@@ -47,4 +47,5 @@ func spawn():
 			enemy_path.add_child(new_path_follow)
 
 			new_enemy.remote_path_follow = new_path_follow
-
+			enemies_holder.add_child(new_enemy)
+				

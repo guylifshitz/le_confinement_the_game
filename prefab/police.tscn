@@ -27,46 +27,46 @@ radius = 2488.66
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 216, 34, 54 )
+region = Rect2( 0, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 216, 34, 54 )
+region = Rect2( 34, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 216, 34, 54 )
+region = Rect2( 68, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 216, 34, 54 )
+region = Rect2( 102, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 34, 54 )
+region = Rect2( 0, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 0, 34, 54 )
+region = Rect2( 34, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 0, 34, 54 )
+region = Rect2( 68, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 0, 34, 54 )
+region = Rect2( 102, 216, 34, 54 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "mask",
+"name": "no_mask",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "no_mask",
+"name": "mask",
 "speed": 5.0
 } ]
 
@@ -146,7 +146,8 @@ scale = Vector2( 1.11864, 1.11864 )
 texture = ExtResource( 7 )
 
 [node name="control_area" type="Area2D" parent="."]
-position = Vector2( -1.35172, -480.934 )
+position = Vector2( 69.5556, -987.607 )
+scale = Vector2( 2.2067, 2.2067 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
 position = Vector2( -34.6397, 398.984 )
