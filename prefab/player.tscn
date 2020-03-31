@@ -130,3 +130,6 @@ shape = SubResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -0.621521, -16.5823 )
 current = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

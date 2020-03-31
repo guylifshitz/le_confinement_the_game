@@ -176,7 +176,7 @@ modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 210.238, 364.114 )
 scale = Vector2( 3.68378, 3.68378 )
 frames = SubResource( 9 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -184,7 +184,7 @@ playing = true
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
 frames = SubResource( 9 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -212,5 +212,8 @@ text = "the game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="button_down" from="scroll_faster" to="." method="text_clicked"]
 [connection signal="button_down" from="start_button/start_button" to="." method="_on_start_button_button_down"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

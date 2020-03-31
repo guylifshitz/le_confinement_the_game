@@ -2,38 +2,39 @@ extends Node2D
 
 onready var player = get_tree().get_root().get_node("game/elements/player")
 onready var nearest_enemy_line = get_tree().get_root().get_node("game/nearest_enemy_line/")
-onready var stores = $elements/goals/
+onready var stores = $elements/goals/ 
 
-		
 onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
 onready var sound_win = get_tree().get_root().get_node("game/audio/win")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
 
 
-var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 
-var score = game_settings["level_1"]["starting_bonus_score"]
-var damage = game_settings["player"]["max_health"]
+var score = global.level_settings["starting_bonus_score"]
+var damage = global.game_settings["player"]["max_health"]
 
 var score_increment_speed = 10
 var score_max_distance = 200
-var damage_decrement_exponent = game_settings["level_1"]["damage_decrement_exponent"]
-var damage_multiplier = game_settings["level_1"]["damage_multiplier"]
-var score_decrement_exponent  = game_settings["level_1"]["score_decrement_exponent"]
+var damage_decrement_exponent = global.level_settings["damage_decrement_exponent"]
+var damage_multiplier = global.level_settings["damage_multiplier"]
+var score_decrement_exponent  = global.level_settings["score_decrement_exponent"]
 
 func _ready():
 	music.get_node("main_menu").stop()
 
 	if global.level_type == "sport":
 		self.get_node("interface/grandma").hide()
-	player.items_needed = game_settings["level_1"]["items_needed"]
-	player.items_bonus = game_settings["level_1"]["items_bonus"]
-	for store_settings in game_settings["level_1"]["store_items"]:
+	player.items_needed = global.level_settings["items_needed"]
+	player.items_bonus = global.level_settings["items_bonus"]
+	for store_settings in global.level_settings["store_items"]:
 		stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
 
-	if not game_settings["debug"]:
+	if not global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").hide()
+
+	add_attestations()	
+	add_sanitizer()
 
 func _process(delta):
 	if player.nearest_enemy:
@@ -57,15 +58,38 @@ func _process(delta):
 
 		update_bar($interface/distance_bar, score_ratio)
 		$interface/score_label.bbcode_text = "[right]" + str(int(score))
-		update_bar($interface/health_bar, max(damage/game_settings["player"]["max_health"], 0))
+		update_bar($interface/health_bar, max(damage/global.game_settings["player"]["max_health"], 0))
 		check_player_death()
 		draw_nearest_line(nearest_distance)
 
 	update_bar($interface/stamina_bar, max(player.stamina/player.STAMINA_MAX_AMOUNT, 0))
 
-	if game_settings["debug"]:
+	if global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").set_text("FPS:"+str(Engine.get_frames_per_second()))
 
+func add_attestations():
+	var attestations = get_node("elements/pickups/attestations")
+	for attestation in attestations.get_children():
+		attestation.hide()
+	
+	for attestation_name in global.level_settings["attestation"]["visible_list"]:
+		attestations.get_node(attestation_name).show()
+
+	for attestation in attestations.get_children():
+		if not attestation.visible:
+			attestation.queue_free()
+
+func add_sanitizer():
+	var sanitizers = get_node("elements/pickups/sanitizers")
+	for sanitizer in sanitizers.get_children():
+		sanitizer.hide()
+	
+	for sanitizer_name in global.level_settings["sanitizer"]["visible_list"]:
+		sanitizers.get_node(sanitizer_name).show()
+
+	for sanitizer in sanitizers.get_children():
+		if not sanitizer.visible:
+			sanitizer.queue_free()
 
 func check_player_death():
 	if damage < 0:
@@ -83,7 +107,7 @@ func player_dead():
 
 
 func draw_nearest_line(nearest_distance):
-	if game_settings["general"]["show_nearest_enemy_line"]:
+	if global.game_settings["general"]["show_nearest_enemy_line"]:
 		nearest_enemy_line.points = [player.global_position, player.nearest_enemy.global_position]
 		nearest_enemy_line.default_color = Color(1-(nearest_distance/3/100),0,0, max(1-(nearest_distance/3/100), 0))
 		if nearest_distance < 500:

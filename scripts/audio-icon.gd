@@ -1,7 +1,5 @@
 extends Node2D
 
-var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
-
 func _ready():
 	if global.play_audio == "all":
 		$has_sound.show()
@@ -17,9 +15,9 @@ func _ready():
 		$no_sound.show()
 	
 	# mute_music()
-	if game_settings["audio"]["volume_on_start"] == "mute_all":
+	if global.game_settings["audio"]["volume_on_start"] == "mute_all":
 		mute_all()
-	elif game_settings["audio"]["volume_on_start"] == "mute_music":
+	elif global.game_settings["audio"]["volume_on_start"] == "mute_music":
 		mute_music()
 	
 func _on_Button_button_down():

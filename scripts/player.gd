@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
-var player_settings = game_settings["player"]
+var player_settings = global.game_settings["player"]
 
 
 var MOTION_SPEED = player_settings["walk_speed"]
@@ -66,7 +65,7 @@ func _input(event):
 
 func _physics_process(_delta):
 	if Input.is_action_just_released("restart"):
-		get_tree().change_scene("res://level_bastille.tscn")
+		$HTTPRequest.request("http://localhost:8082/TEST_settingss.json")
 
 	if can_move:
 		if running == false and running_recovering == false:
@@ -86,7 +85,7 @@ func _physics_process(_delta):
 				stamina -= abs(_delta * STAMINA_DEPLETION_SPEED)
 				if stamina < 0:
 					stop_running()
-		elif Input.is_action_pressed("run_fast") and game_settings["debug"]:
+		elif Input.is_action_pressed("run_fast") and global.game_settings["debug"]:
 			motion = motion.normalized() * RUN_MOTION_SPEED_FAST
 			$main_char_node/main_character/AnimationPlayer.playback_speed = 8
 		else:
@@ -153,7 +152,7 @@ func set_nearest_enemy():
 func acquired_hand_sanitizer():
 	sound_acquired_hand_sanitizer.play()
 	get_tree().get_root().get_node("game").damage += 30
-	get_tree().get_root().get_node("game").damage = min(get_tree().get_root().get_node("game").damage,game_settings["player"]["max_health"])
+	get_tree().get_root().get_node("game").damage = min(get_tree().get_root().get_node("game").damage,global.game_settings["player"]["max_health"])
 
 
 func acquired_attestation():
@@ -164,7 +163,7 @@ func acquired_attestation():
 
 	has_attestation = true
 	
-	has_attestation_time = game_settings["level_1"]["attestation_duration"]
+	has_attestation_time = global.level_settings["attestation"]["duration"]
 	var attestation_timer = get_node("/root/game/interface/attestation_timer")
 	var attestation_slot_empty = get_node("/root/game/interface/attestation_slot_empty")
 	var attestation_slot_full = get_node("/root/game/interface/attestation_slot_full")
@@ -199,6 +198,10 @@ func decrement_attestation_timer():
 
 
 
-
-
+func _on_HTTPRequest_request_completed( result, response_code, headers, body ):
+	var json = JSON.parse(body.get_string_from_utf8()).result
+	global.game_settings = json
+	
+	global.set_level_settings("groceries_easy", "groceries")
+	get_tree().change_scene("res://level_bastille.tscn")
 

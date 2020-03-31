@@ -1,10 +1,7 @@
 extends  KinematicBody2D
 
-
-var game_settings = utils_custom.load_json("res://jsons/game_settings.json")
-
 # parameters
-var MOVE_SPEED = game_settings["police"]["move_speed"]
+var MOVE_SPEED = global.level_settings["police"]["move_speed"]
 
 # objects
 onready var player = get_tree().get_root().get_node("game/elements/player")

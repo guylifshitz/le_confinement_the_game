@@ -1,7 +1,6 @@
 extends Node2D
 
 # onready var enemy_paths = self.get_children()
-onready var game_settings = get_tree().get_root().get_node("game").game_settings
 onready var enemies_holder = get_tree().get_root().get_node("game//elements/enemies_holder")
 
 onready var new_enemy_base = load("res://prefab/Enemy.tscn")
@@ -20,10 +19,10 @@ func spawn():
 	var spawn_distribution
 	if enemy_type == "police":
 		node_to_clone = new_police_base
-		spawn_distribution = game_settings["level_1"]["enemies_per_path"]["police"]
+		spawn_distribution = global.level_settings["enemies_per_path"]["police"]
 	else:
 		node_to_clone = new_enemy_base
-		spawn_distribution = game_settings["level_1"]["enemies_per_path"]["enemies"]
+		spawn_distribution = global.level_settings["enemies_per_path"]["enemies"]
 
 	for path in spawn_distribution.keys():
 		var enemy_path = self.get_node(path)

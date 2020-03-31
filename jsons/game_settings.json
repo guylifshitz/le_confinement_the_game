@@ -1,7 +1,7 @@
 {
   "debug": true,
   "general": { "show_nearest_enemy_line": false },
-  "audio": { "volume_on_start": "all" },
+  "audio": { "volume_on_start": "mute_all" },
   "player": {
     "max_health": 100,
     "stamina_max_amount": 10,
@@ -10,9 +10,6 @@
     "debug_run_speed": 1200
   },
   "enemies": {
-    "count": 10,
-    "knows_player_percentage": 30,
-    "move_speed": 100,
     "conversations_adult": [
       ["Salut!", "ça va?"],
       ["Salut!", "Ça fait un bail.", "On fait la bise?"],
@@ -25,16 +22,8 @@
     ],
     "conversations_kid": [["Wanna play?"], ["Got candy?"]]
   },
-  "police": {
-    "count": 15,
-    "move_speed": 100
-  },
-  "level_1": {
-    "attestation": {
-      "visible_list": ["attestation_1", "attestation_2"],
-      "duration": 5,
-      "respawn_time": -1
-    },
+  "groceries_easy": {
+    "type": "groceries",
     "starting_bonus_score": 200,
     "damage_decrement_exponent": 2,
     "damage_multiplier": 5,
@@ -51,6 +40,21 @@
       { "store": "flower_market", "has_items": ["flower"] },
       { "store": "duck", "has_items": ["duck"] }
     ],
+    "enemies": {
+      "knows_player_percentage": 30,
+      "move_speed": 100
+    },
+    "police": { "move_speed": 100 },
+    "attestation": {
+      "visible_list": ["attestation_1"],
+      "duration": 5,
+      "respawn_time": -1
+    },
+    "sanitizer": {
+      "visible_list": ["sanitizer_1"],
+      "healing_points": 5,
+      "respawn_time": 1
+    },
     "enemies_per_path": {
       "enemies": {
         "top_square": 3,
