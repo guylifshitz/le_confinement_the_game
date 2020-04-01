@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
@@ -39,17 +39,17 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=6]
-size = 53
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 53
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
@@ -81,19 +81,45 @@ outline_size = 5
 outline_color = Color( 0.576471, 0.262745, 0.262745, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=19]
 size = 45
 outline_size = 5
 outline_color = Color( 0.737255, 0.607843, 0.172549, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=20]
 size = 45
 outline_size = 5
 outline_color = Color( 0.345098, 0.576471, 0.262745, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxFlat" id=21]
+draw_center = false
+shadow_color = Color( 0.439216, 0.439216, 0.439216, 1 )
+shadow_size = 33
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="DynamicFont" id=24]
+size = 45
+outline_size = 5
+outline_color = Color( 1, 0.00784314, 0.00784314, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 45
+outline_size = 5
+outline_color = Color( 0, 0.0627451, 1, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+draw_center = false
+shadow_color = Color( 0.415686, 0.415686, 0.415686, 1 )
+shadow_size = 33
+
+[sub_resource type="StyleBoxEmpty" id=27]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource( 8 )
@@ -129,7 +155,6 @@ modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 245, 410.412 )
 scale = Vector2( 3.68378, 3.68378 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -137,7 +162,7 @@ playing = true
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -149,26 +174,14 @@ texture = ExtResource( 5 )
 
 [node name="form" type="Node2D" parent="."]
 
-[node name="title" type="RichTextLabel" parent="form"]
-margin_left = 27.0
-margin_top = 12.0
-margin_right = 516.0
-margin_bottom = 279.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )
-custom_constants/shadow_offset_x = 11
-custom_constants/shadow_offset_y = 11
-text = "Select your reason for leaving the house:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="french" type="Node2D" parent="form"]
 
-[node name="title_attestation" type="RichTextLabel" parent="form"]
+[node name="title_attestation" type="RichTextLabel" parent="form/french"]
 margin_left = 348.922
 margin_top = 119.903
 margin_right = 1065.92
 margin_bottom = 283.903
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] ATTESTATION DE DÉPLACEMENT
@@ -179,12 +192,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="groceries_text" type="RichTextLabel" parent="form/french"]
+margin_left = 465.484
+margin_top = 249.929
+margin_right = 985.484
+margin_bottom = 405.929
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle et des achats de première nécessité dans des établissements dont les activités demeurent autorisées."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_sport" type="RichTextLabel" parent="form/french"]
+margin_left = 467.0
+margin_top = 377.0
+margin_right = 987.0
+margin_bottom = 533.0
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="select_text" type="RichTextLabel" parent="form/french"]
+margin_left = 27.0
+margin_top = 12.0
+margin_right = 393.0
+margin_bottom = 332.0
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )
+custom_constants/shadow_offset_x = 11
+custom_constants/shadow_offset_y = 11
+text = "Ton déplacement est lié à quel motif?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="english" type="Node2D" parent="form"]
+visible = false
+
+[node name="title_attestation" type="RichTextLabel" parent="form/english"]
+margin_left = 348.922
+margin_top = 119.903
+margin_right = 1065.92
+margin_bottom = 283.903
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center] ENGLISH NAME"
+text = " ENGLISH NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="groceries_text" type="RichTextLabel" parent="form/english"]
+margin_left = 465.484
+margin_top = 249.929
+margin_right = 985.484
+margin_bottom = 405.929
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "GROCERIES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_sport" type="RichTextLabel" parent="form/english"]
+margin_left = 467.0
+margin_top = 377.0
+margin_right = 987.0
+margin_bottom = 533.0
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "SPORT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="select_text" type="RichTextLabel" parent="form/english"]
+margin_left = 26.4734
+margin_top = 12.5266
+margin_right = 515.473
+margin_bottom = 279.527
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )
+custom_constants/shadow_offset_x = 11
+custom_constants/shadow_offset_y = 11
+text = "Select your reason for leaving the house:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="signature_text" type="RichTextLabel" parent="form"]
 margin_left = 646.0
 margin_top = 549.0
 margin_right = 983.0
 margin_bottom = 595.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Signature:  _____________"
 __meta__ = {
@@ -197,44 +303,20 @@ position = Vector2( 803.306, 565.325 )
 scale = Vector2( 0.459288, 0.459288 )
 texture = ExtResource( 11 )
 
-[node name="option_groceriess" type="Node2D" parent="form"]
+[node name="option_groceries" type="Node2D" parent="form"]
 
-[node name="groceries_text" type="RichTextLabel" parent="form/option_groceriess"]
-margin_left = 465.484
-margin_top = 249.929
-margin_right = 985.484
-margin_bottom = 405.929
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle et des achats de première nécessité dans des établissements dont les activités demeurent autorisées."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="checkbox_emptty" type="Sprite" parent="form/option_groceriess"]
+[node name="checkbox_emptty" type="Sprite" parent="form/option_groceries"]
 position = Vector2( 420.805, 279.238 )
 scale = Vector2( 0.303446, 0.303446 )
 texture = ExtResource( 10 )
 
-[node name="checkbox_checked" type="Sprite" parent="form/option_groceriess"]
+[node name="checkbox_checked" type="Sprite" parent="form/option_groceries"]
 visible = false
 position = Vector2( 420.91, 279.234 )
 scale = Vector2( 0.303446, 0.303446 )
 texture = ExtResource( 12 )
 
 [node name="option_sport" type="Node2D" parent="form"]
-
-[node name="text_sport" type="RichTextLabel" parent="form/option_sport"]
-margin_left = 467.0
-margin_top = 377.0
-margin_right = 987.0
-margin_bottom = 533.0
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie."
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="checkbox_empty" type="Sprite" parent="form/option_sport"]
 position = Vector2( 420.805, 439.238 )
@@ -278,7 +360,7 @@ __meta__ = {
 }
 
 [node name="difficulty" type="Node2D" parent="."]
-position = Vector2( 374.395, 6.94834 )
+position = Vector2( 382.395, 14.9483 )
 scale = Vector2( 0.66941, 0.66941 )
 
 [node name="difficulty_text" type="RichTextLabel" parent="difficulty"]
@@ -312,7 +394,7 @@ margin_left = 805.0
 margin_top = 24.0
 margin_right = 946.0
 margin_bottom = 69.0
-custom_fonts/normal_font = SubResource( 20 )
+custom_fonts/normal_font = SubResource( 19 )
 bbcode_enabled = true
 bbcode_text = "[center]MED."
 text = "MED."
@@ -325,7 +407,7 @@ margin_left = 805.0
 margin_top = 24.0
 margin_right = 946.0
 margin_bottom = 69.0
-custom_fonts/normal_font = SubResource( 19 )
+custom_fonts/normal_font = SubResource( 20 )
 bbcode_enabled = true
 bbcode_text = "[center]EASY"
 text = "EASY"
@@ -334,15 +416,73 @@ __meta__ = {
 }
 
 [node name="difficulty_button" type="Button" parent="difficulty"]
-margin_left = 397.0
-margin_top = -35.0
-margin_right = 1012.0
-margin_bottom = 103.0
-custom_styles/focus = SubResource( 21 )
-flat = true
+margin_left = 527.0
+margin_top = 5.0
+margin_right = 937.0
+margin_bottom = 86.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="language" type="Node2D" parent="."]
+position = Vector2( 45.173, 13.614 )
+scale = Vector2( 0.66941, 0.66941 )
+
+[node name="language" type="RichTextLabel" parent="language"]
+margin_left = 526.843
+margin_top = 23.765
+margin_right = 1073.84
+margin_bottom = 68.765
+custom_fonts/normal_font = ExtResource( 6 )
+text = "LANGUAGE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="english" type="RichTextLabel" parent="language"]
+visible = false
+margin_left = 766.408
+margin_top = 24.0
+margin_right = 968.408
+margin_bottom = 69.0
+custom_fonts/normal_font = SubResource( 24 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "ENGLISH"
+text = "ENGLISH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="french" type="RichTextLabel" parent="language"]
+margin_left = 769.0
+margin_top = 24.0
+margin_right = 998.0
+margin_bottom = 69.0
+custom_fonts/normal_font = SubResource( 25 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "FRANÇAIS"
+text = "FRANÇAIS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="language_button" type="Button" parent="language"]
+margin_left = 512.972
+margin_top = 3.58749
+margin_right = 989.972
+margin_bottom = 89.5875
+custom_styles/hover = SubResource( 26 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/normal = SubResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="buttons/groceries" to="." method="_on_groceries_button_down"]
 [connection signal="button_down" from="buttons/sport" to="." method="_on_sport_button_down"]
 [connection signal="button_down" from="difficulty/difficulty_button" to="." method="_on_difficulty_button_down"]
+[connection signal="button_down" from="language/language_button" to="." method="_on_language_button_down"]

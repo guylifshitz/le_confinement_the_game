@@ -15,7 +15,7 @@ func _ready():
 	else:
 		dialog_settings = utils_custom.load_json("res://jsons/opening_scene_dialog_sport.json")
 
-	dialog_chunks = dialog_settings["english"]
+	dialog_chunks = dialog_settings[global.language]
 	TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])
 	next_page()
 

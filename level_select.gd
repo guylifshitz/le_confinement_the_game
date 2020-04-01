@@ -1,8 +1,10 @@
 extends Node2D
 
 var level_difficulty
+var language
 
 func _ready():
+	set_language()
 	_on_difficulty_button_down()
 	if not music.get_node("main_menu").playing:
 		music.get_node("main_menu").play()
@@ -14,10 +16,9 @@ func play_sport():
 	get_tree().change_scene("res://level_intro.tscn")
 	# get_tree().change_scene("res://level_bastille.tscn")
 
-
 func _on_groceries_button_down():
 	# play sound
-	$form/option_groceriess/checkbox_checked.show()
+	$form/option_groceries/checkbox_checked.show()
 	$form/signature.show()
 	$buttons/sport.disabled = true
 	global.set_level_settings("groceries_" + level_difficulty, "groceries")
@@ -46,3 +47,24 @@ func _on_difficulty_button_down():
 	else:
 		$difficulty/easy.show()
 		level_difficulty = "easy"
+
+
+func _on_language_button_down():
+	if global.language == "english":
+		global.language = "french"
+	else:
+		global.language = "english"
+	set_language()
+
+
+func set_language():
+	if global.language == "french":
+		$form/french.show()
+		$form/english.hide()
+		$language/french.show()
+		$language/english.hide()
+	else:
+		$form/french.hide()
+		$form/english.show()
+		$language/french.hide()
+		$language/english.show()

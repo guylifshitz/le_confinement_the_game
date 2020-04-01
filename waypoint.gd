@@ -2,6 +2,7 @@ extends Node2D
 
 onready var waypoint_positions = get_parent().get_node("waypoint_positions")
 var waypoint_number = -1
+onready var game = get_tree().get_root().get_node("game")
 
 func _ready():
 	if global.level_type == "sport":
@@ -17,7 +18,7 @@ func increment_waypoint():
 	waypoint_number += 1
 
 	if waypoint_number >= waypoint_positions.get_children().size():
-		get_tree().change_scene("res://win-screen.tscn")
+		game.win_game()
 		set_process(false)
 	else:
 		self.position = waypoint_positions.get_child(waypoint_number).position

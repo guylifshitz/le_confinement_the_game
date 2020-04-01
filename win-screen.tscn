@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://images/interface/flower.png" type="Texture" id=22]
 [ext_resource path="res://images/interface/x.png" type="Texture" id=23]
 [ext_resource path="res://images/interface/score.png" type="Texture" id=24]
+[ext_resource path="res://images/interface/items/pasta.png" type="Texture" id=25]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -107,13 +108,13 @@ position = Vector2( 443.676, 197.668 )
 scale = Vector2( 1.14214, 1.08631 )
 texture = ExtResource( 9 )
 
-[node name="grandma_dialog" type="RichTextLabel" parent="dialog"]
+[node name="groceries_text" type="RichTextLabel" parent="dialog"]
 anchor_top = 0.00132736
 anchor_bottom = 0.00132736
-margin_left = 158.0
-margin_top = 33.5943
-margin_right = 635.0
-margin_bottom = 243.594
+margin_left = 157.0
+margin_top = 32.5943
+margin_right = 634.0
+margin_bottom = 242.594
 rect_pivot_offset = Vector2( 251.779, 153.389 )
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
@@ -130,68 +131,111 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bonus_items" type="Node2D" parent="dialog"]
-position = Vector2( 561.653, 227.625 )
-
-[node name="flower" type="Sprite" parent="dialog/bonus_items"]
-visible = false
-position = Vector2( -0.427734, -59.6857 )
-scale = Vector2( 0.155071, 0.155071 )
-texture = ExtResource( 22 )
-
-[node name="duck" type="Sprite" parent="dialog/bonus_items"]
-visible = false
-position = Vector2( 55.5723, -59.6857 )
-scale = Vector2( 0.155071, 0.155071 )
-texture = ExtResource( 14 )
-
-[node name="none" type="Sprite" parent="dialog/bonus_items"]
-visible = false
-position = Vector2( -51.8555, -59.5073 )
-scale = Vector2( 0.0961459, 0.0961459 )
-texture = ExtResource( 23 )
-
-[node name="main_items" type="Node2D" parent="dialog"]
+[node name="groceries_items" type="Node2D" parent="dialog"]
 position = Vector2( 280.4, 17.6656 )
 
-[node name="health_bar" parent="dialog/main_items" instance=ExtResource( 17 )]
+[node name="health_bar" parent="dialog/groceries_items" instance=ExtResource( 17 )]
 visible = false
 position = Vector2( -55.9095, 6.21217 )
 
-[node name="distance_bar" parent="dialog/main_items" instance=ExtResource( 15 )]
+[node name="distance_bar" parent="dialog/groceries_items" instance=ExtResource( 15 )]
 visible = false
 position = Vector2( -55.5515, 5.67231 )
 
-[node name="groceries" type="Node2D" parent="dialog/main_items"]
+[node name="groceries" type="Node2D" parent="dialog/groceries_items"]
 position = Vector2( 233.581, 91.5542 )
 scale = Vector2( 0.695001, 0.695001 )
 
-[node name="baguette" type="Sprite" parent="dialog/main_items/groceries"]
+[node name="baguette" type="Sprite" parent="dialog/groceries_items/groceries"]
 scale = Vector2( 0.268183, 0.268183 )
 texture = ExtResource( 11 )
 
-[node name="drugs" type="Sprite" parent="dialog/main_items/groceries"]
+[node name="drugs" type="Sprite" parent="dialog/groceries_items/groceries"]
 position = Vector2( 144.448, -2.10902 )
 scale = Vector2( 0.112089, 0.112089 )
 texture = ExtResource( 19 )
 
-[node name="tp" type="Sprite" parent="dialog/main_items/groceries"]
-position = Vector2( 71.8132, -0.639862 )
+[node name="tp" type="Sprite" parent="dialog/groceries_items/groceries"]
+position = Vector2( 71.8132, -1.82773 )
 scale = Vector2( 0.32535, 0.32535 )
 texture = ExtResource( 12 )
 
-[node name="attestation" type="Sprite" parent="dialog/main_items"]
+[node name="attestation" type="Sprite" parent="dialog/groceries_items"]
 visible = false
 position = Vector2( 367.681, 118.286 )
 texture = ExtResource( 3 )
 
-[node name="policeman" type="Sprite" parent="dialog/main_items"]
+[node name="policeman" type="Sprite" parent="dialog/groceries_items"]
 visible = false
 position = Vector2( 368.206, 110.965 )
 scale = Vector2( 1.60179, 1.60179 )
 texture = ExtResource( 18 )
 vframes = 4
 hframes = 4
+
+[node name="sports_text" type="RichTextLabel" parent="dialog"]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 157.0
+margin_top = 32.5943
+margin_right = 634.0
+margin_bottom = 242.594
+rect_pivot_offset = Vector2( 251.779, 153.389 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Wow, you're 
+such a fast runner!
+
+Time:
+
+
+Bonus points:"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sports_time" type="RichTextLabel" parent="dialog"]
+margin_left = 486.0
+margin_top = 116.0
+margin_right = 643.0
+margin_bottom = 178.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "123"
+text = "123"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_items" type="Node2D" parent="dialog"]
+position = Vector2( 561.653, 227.625 )
+
+[node name="flower" type="Sprite" parent="dialog/bonus_items"]
+visible = false
+position = Vector2( -48.4277, -59.6857 )
+scale = Vector2( 0.155071, 0.155071 )
+texture = ExtResource( 22 )
+
+[node name="duck" type="Sprite" parent="dialog/bonus_items"]
+visible = false
+position = Vector2( 7.57227, -59.6857 )
+scale = Vector2( 0.155071, 0.155071 )
+texture = ExtResource( 14 )
+
+[node name="pasta" type="Sprite" parent="dialog/bonus_items"]
+visible = false
+position = Vector2( 82.9094, -59.6857 )
+scale = Vector2( 0.186044, 0.186044 )
+texture = ExtResource( 25 )
+
+[node name="none" type="Sprite" parent="dialog/bonus_items"]
+visible = false
+position = Vector2( -51.8555, -59.5073 )
+scale = Vector2( 0.0961459, 0.0961459 )
+texture = ExtResource( 23 )
 
 [node name="bonus_score" type="Node2D" parent="dialog"]
 position = Vector2( 561.653, 227.625 )

@@ -14,6 +14,21 @@
     " Do you still remember how to run? Just use the arrow keys, or click where you want to move.",
     " You can run for a short time using the shift key."
   ],
+  "french": [
+    " Il fait trop beau dehors! ",
+    " You should probably get some exercise to keep your body healthy.",
+    " How about you use those new shoes I bought you?",
+    " You should go through the waypoints, and come back home.",
+    " Nothing will stop French bureaucracy, not even a global pandemic. \n\n You need to fill out a form to leave the house.",
+    " Unfortunately, we don't have paper to write the form on. \n\n You'll have to find paper outside.",
+    " Avoid the police if you don't have the form! \n\n Remember, the form is only valid a short time.",
+    " Most importantly, don't forget!!! \n\n You need to keep your distance from the other people.",
+    " Otherwise you might become contagious and bring home the disease.",
+    " These bars will tell you how far you are from people.",
+    " This bar will tell you how exposed you have been.",
+    " Do you still remember how to run? Just use the arrow keys, or click where you want to move.",
+    " You can run for a short time using the shift key."
+  ],
   "TEXT_SCROLL_SPEED": 0.01,
   "show_item_index": {
     "attestation": 1,

@@ -9,22 +9,26 @@ onready var sound_win = get_tree().get_root().get_node("game/audio/win")
 onready var music_star = get_tree().get_root().get_node("game/audio/star_music")
 onready var music_main = get_tree().get_root().get_node("game/audio/main_music")
 
-
+var sports_timer_start = 0
 
 var score = global.level_settings["starting_bonus_score"]
 var damage = global.game_settings["player"]["max_health"]
 
-var score_increment_speed = 10
 var score_max_distance = 200
 var damage_decrement_exponent = global.level_settings["damage_decrement_exponent"]
 var damage_multiplier = global.level_settings["damage_multiplier"]
+var nearest_distance_minimum = global.game_settings["general"]["nearest_distance_minimum"]
 var score_decrement_exponent  = global.level_settings["score_decrement_exponent"]
+var score_increment_speed = global.level_settings["score_increment_speed"]
 
 func _ready():
 	music.get_node("main_menu").stop()
 
 	if global.level_type == "sport":
 		self.get_node("interface/grandma").hide()
+	else:
+		self.get_node("interface/sports_timer_label").hide()
+	
 	player.items_needed = global.level_settings["items_needed"]
 	player.items_bonus = global.level_settings["items_bonus"]
 	for store_settings in global.level_settings["store_items"]:
@@ -33,6 +37,7 @@ func _ready():
 	if not global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").hide()
 
+	sports_timer_start = OS.get_unix_time()
 	add_attestations()	
 	add_sanitizer()
 
@@ -41,11 +46,12 @@ func _process(delta):
 		var sprite_sprite = player.get_node("main_char_node/main_character")
 		var circle = player.get_node("main_char_node/circle")
 
-		var nearest_distance = player.nearest_enemy.global_position.distance_to(player.global_position)
+		var nearest_distance = max(player.nearest_enemy.global_position.distance_to(player.global_position), nearest_distance_minimum)
 
 		var score_ratio = min(pow(nearest_distance/score_max_distance, score_decrement_exponent), 1)
 		var score_delta =  (1-score_ratio) * score_increment_speed * delta
 		score -= max(score_delta, 0)
+		score = max(score, 0)
 
 		if nearest_distance < 100:
 			var damage_intensity = (100-nearest_distance) / 100 + 0.2
@@ -63,6 +69,7 @@ func _process(delta):
 		draw_nearest_line(nearest_distance)
 
 	update_bar($interface/stamina_bar, max(player.stamina/player.STAMINA_MAX_AMOUNT, 0))
+	update_sports_timer()
 
 	if global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").set_text("FPS:"+str(Engine.get_frames_per_second()))
@@ -125,6 +132,15 @@ func update_bar(bar_prefab, value):
 	end_pos = lerp(start_pos, end_pos, value)
 	bar.points[0] = end_pos
 
+func update_sports_timer():
+	if global.level_type == "sport":
+		var time_now = OS.get_unix_time()
+		var elapsed = time_now - sports_timer_start
+		var minutes = elapsed / 60
+		var seconds = elapsed % 60
+		var str_elapsed = "%02d:%02d" % [minutes, seconds]
+		$interface/sports_timer_label.bbcode_text = "[center]"+str_elapsed
+		global.sports_timer = str_elapsed
 
 func win_game():
 	if player.can_move:

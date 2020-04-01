@@ -120,6 +120,9 @@ position = Vector2( 40.5772, -60.4628 )
 [node name="flower_slot" type="Node2D" parent="main_char_node/holding_items"]
 position = Vector2( 1.72204, -114.186 )
 
+[node name="pasta_slot" type="Node2D" parent="main_char_node/holding_items"]
+position = Vector2( 43.798, -115.558 )
+
 [node name="duck_slot" type="Node2D" parent="main_char_node/holding_items"]
 position = Vector2( -42.022, -114.186 )
 
