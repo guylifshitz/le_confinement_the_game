@@ -7,7 +7,7 @@
 [ext_resource path="res://images/menu/level-select/attestation-filled.png" type="Texture" id=5]
 [ext_resource path="res://fonts/font-45.tres" type="DynamicFont" id=6]
 [ext_resource path="res://images/spritesheets/girl.png" type="Texture" id=7]
-[ext_resource path="res://level_select.gd" type="Script" id=8]
+[ext_resource path="res://scripts/level_select.gd" type="Script" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://images/menu/level-select/checkbox-empty.png" type="Texture" id=10]
 [ext_resource path="res://images/menu/level-select/signature.png" type="Texture" id=11]
@@ -175,6 +175,7 @@ texture = ExtResource( 5 )
 [node name="form" type="Node2D" parent="."]
 
 [node name="french" type="Node2D" parent="form"]
+visible = false
 
 [node name="title_attestation" type="RichTextLabel" parent="form/french"]
 margin_left = 348.922
@@ -231,7 +232,6 @@ __meta__ = {
 }
 
 [node name="english" type="Node2D" parent="form"]
-visible = false
 
 [node name="title_attestation" type="RichTextLabel" parent="form/english"]
 margin_left = 348.922
@@ -241,8 +241,12 @@ margin_bottom = 283.903
 custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[center] ENGLISH NAME"
-text = " ENGLISH NAME"
+bbcode_text = "[center] ATTESTATION DE DÉPLACEMENT
+DÉROGATOIRE
+"
+text = " ATTESTATION DE DÉPLACEMENT
+DÉROGATOIRE
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -254,7 +258,8 @@ margin_right = 985.484
 margin_bottom = 405.929
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "GROCERIES"
+text = "Travels to carry out purchases of goods necessary for a professional activity or essential goods in facilities practicing activities which remain authorized. 
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -266,7 +271,8 @@ margin_right = 987.0
 margin_bottom = 533.0
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "SPORT"
+text = "Short travels, not lasting more than one hour per day and within a one kilometre distance from home, either for the purpose of an individual physical activity, with the exclusion of all group activities and any proximity to other individuals, or for the purpose of a walk only with the people belonging to the same household, or for the needs of pets. 
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }

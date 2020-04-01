@@ -25,11 +25,11 @@
   },
   "groceries_easy": {
     "type": "groceries",
-    "starting_bonus_score": 200,
+    "starting_bonus_score": 1000,
     "damage_decrement_exponent": 1,
     "damage_multiplier": 0.5,
     "score_decrement_exponent": 1,
-    "score_increment_speed": 20,
+    "score_increment_speed": 40,
     "items_needed": ["toilet_paper", "bread", "drugs"],
     "items_bonus": ["flower", "duck", "pasta"],
     "store_items": [
