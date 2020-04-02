@@ -217,6 +217,7 @@ position = Vector2( -2, 0 )
 
 [node name="music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 7 )
+volume_db = -5.0
 autoplay = true
 bus = "music"
 [connection signal="button_down" from="continue_button/button" to="." method="_on_continue_button_down"]

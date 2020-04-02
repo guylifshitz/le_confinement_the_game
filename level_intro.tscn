@@ -241,6 +241,7 @@ scale = Vector2( 0.306909, 0.311166 )
 
 [node name="pop" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 21 )
+volume_db = 10.0
 bus = "sound_effects"
 
 [node name="icon_settings" type="Node2D" parent="."]
