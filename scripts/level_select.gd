@@ -1,11 +1,10 @@
 extends Node2D
 
-var level_difficulty
 var language
 
 func _ready():
 	set_language()
-	_on_difficulty_button_down()
+	show_right_difficulty()
 	if not music.get_node("main_menu").playing:
 		music.get_node("main_menu").play()
 
@@ -21,7 +20,7 @@ func _on_groceries_button_down():
 	$form/option_groceries/checkbox_checked.show()
 	$form/signature.show()
 	$buttons/sport.disabled = true
-	global.set_level_settings("groceries_" + level_difficulty, "groceries")
+	global.set_level_settings("groceries_" + global.level_difficulty, "groceries")
 	utils_custom.create_timer_2(1, self, "play_groceries")
 
 
@@ -31,23 +30,29 @@ func _on_sport_button_down():
 	$form/signature.show()
 	$buttons/groceries.disabled = true
 	utils_custom.create_timer_2(1, self, "play_sport")
-	global.set_level_settings("sport_" + level_difficulty, "sport")
+	global.set_level_settings("sport_" + global.level_difficulty, "sport")
 
 
-func _on_difficulty_button_down():
+func show_right_difficulty():
 	$difficulty/easy.hide()
 	$difficulty/medium.hide()
 	$difficulty/hard.hide()
-	if level_difficulty == "easy":
-		$difficulty/medium.show()
-		level_difficulty = "medium"
-	elif level_difficulty == "medium":
-		$difficulty/hard.show()
-		level_difficulty = "hard"
-	else:
+	if global.level_difficulty == "easy":
 		$difficulty/easy.show()
-		level_difficulty = "easy"
+	elif global.level_difficulty == "medium":
+		$difficulty/medium.show()
+	else:
+		$difficulty/hard.show()
 
+
+func _on_difficulty_button_down():
+	if global.level_difficulty == "easy":
+		global.level_difficulty = "medium"
+	elif global.level_difficulty == "medium":
+		global.level_difficulty = "hard"
+	else:
+		global.level_difficulty = "easy"
+	show_right_difficulty()
 
 func _on_language_button_down():
 	if global.language == "english":

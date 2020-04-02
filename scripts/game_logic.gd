@@ -28,11 +28,11 @@ func _ready():
 		self.get_node("interface/grandma").hide()
 	else:
 		self.get_node("interface/sports_timer_label").hide()
-	
-	player.items_needed = global.level_settings["items_needed"]
-	player.items_bonus = global.level_settings["items_bonus"]
-	for store_settings in global.level_settings["store_items"]:
-		stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
+		player.items_needed = global.level_settings["items_needed"]
+		player.items_bonus = global.level_settings["items_bonus"]
+		
+		for store_settings in global.level_settings["store_items"]:
+			stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
 
 	if not global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").hide()

@@ -247,5 +247,6 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	global.game_settings = json
 
 	# TODO keep the current level 
-	global.set_level_settings("groceries_easy", "groceries")
+	# global.set_level_settings("groceries_easy", "groceries")
+	global.set_level_settings("sport_easy", "sport")
 	get_tree().change_scene("res://level_bastille.tscn")

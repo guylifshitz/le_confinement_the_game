@@ -7,7 +7,7 @@ var play_audio = "all"
 var sports_timer
 
 var level_type
-var level_difficulty
+var level_difficulty = "easy"
 var language = "french"
 
 var game_settings
