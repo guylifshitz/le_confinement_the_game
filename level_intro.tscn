@@ -100,10 +100,10 @@ texture = ExtResource( 9 )
 [node name="grandma_dialog" type="RichTextLabel" parent="dialog"]
 anchor_top = 0.00132736
 anchor_bottom = 0.00132736
-margin_left = 158.024
-margin_top = 39.3476
-margin_right = 635.024
-margin_bottom = 220.348
+margin_left = 158.0
+margin_top = 39.0
+margin_right = 689.0
+margin_bottom = 220.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -128,8 +128,7 @@ texture = ExtResource( 24 )
 position = Vector2( 40.4485, 21.6723 )
 
 [node name="groceries" type="Node2D" parent="dialog/icons"]
-visible = false
-position = Vector2( 145.309, 127.665 )
+position = Vector2( 76.402, 174.901 )
 scale = Vector2( 0.695001, 0.695001 )
 
 [node name="baguette" type="Sprite" parent="dialog/icons/groceries"]
@@ -151,7 +150,7 @@ position = Vector2( 367.681, 118.286 )
 texture = ExtResource( 19 )
 
 [node name="policeman" type="Sprite" parent="dialog/icons"]
-position = Vector2( 368.206, 110.965 )
+position = Vector2( 393.206, 110.965 )
 scale = Vector2( 1.60179, 1.60179 )
 texture = ExtResource( 20 )
 vframes = 4
@@ -162,10 +161,10 @@ anchor_left = -0.00269775
 anchor_top = 0.00269775
 anchor_right = -0.00269775
 anchor_bottom = 0.00269775
-margin_left = -72.6177
-margin_top = -106.382
-margin_right = 962.382
-margin_bottom = 625.618
+margin_left = 5.20846
+margin_top = -40.7021
+margin_right = 1040.21
+margin_bottom = 691.298
 custom_styles/focus = SubResource( 3 )
 action_mode = 0
 flat = true

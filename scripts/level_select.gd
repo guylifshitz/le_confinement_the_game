@@ -16,6 +16,7 @@ func play_sport():
 	# get_tree().change_scene("res://level_bastille.tscn")
 
 func _on_groceries_button_down():
+	$audio/pop.play()
 	# play sound
 	$form/option_groceries/checkbox_checked.show()
 	$form/signature.show()
@@ -25,6 +26,7 @@ func _on_groceries_button_down():
 
 
 func _on_sport_button_down():
+	$audio/pop.play()
 	# play sound
 	$form/option_sport/checkbox_checked.show()
 	$form/signature.show()
@@ -46,15 +48,19 @@ func show_right_difficulty():
 
 
 func _on_difficulty_button_down():
+	$audio/pop.play()
 	if global.level_difficulty == "easy":
 		global.level_difficulty = "medium"
 	elif global.level_difficulty == "medium":
-		global.level_difficulty = "hard"
+		# global.level_difficulty = "hard"
+		global.level_difficulty = "easy"
 	else:
 		global.level_difficulty = "easy"
 	show_right_difficulty()
 
 func _on_language_button_down():
+	$audio/pop.play()
+
 	if global.language == "english":
 		global.language = "french"
 	else:

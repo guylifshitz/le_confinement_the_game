@@ -95,7 +95,7 @@ func _input(event):
 
 
 func _physics_process(_delta):
-	if Input.is_action_just_released("restart"):
+	if Input.is_action_just_released("restart") and global.game_settings["debug"]:
 		restart_pressed()
 
 	if can_move:
@@ -158,7 +158,9 @@ func play_bump_sound():
 	if should_play_bump_sound:
 		if get_slide_count() != 0:
 			for i in range(0, get_slide_count()):
-				if get_slide_collision(i).collider.get_name() == "Enemy":
+				print(get_slide_collision(i).collider.get_name())
+				var a = get_slide_collision(i).collider
+				if get_slide_collision(i).collider.get_name().find("Enemy") != -1:
 					if should_play_bump_sound:
 						sound_bumps.get_child(randi() % sound_bumps.get_child_count()).play()
 						utils_custom.create_timer_2(1, self, "set_should_play_bump_sound")

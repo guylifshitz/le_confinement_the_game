@@ -5,11 +5,11 @@ var dialog_chunk = 0
 var accepts_input 
 
 func _ready():
-	update_text()
+
 
 #	randomize()
 #	if randf() > 0.5:
-	$glass_text_box/grandma_sick_text.show()
+	#$glass_text_box/grandma_sick_text.show()
 	$grandma.show()
 	$girl.hide()
 	$glass_text_box/girl_sick_text.hide()
@@ -18,7 +18,17 @@ func _ready():
 #	$grandma.hide()
 #	$girl.show()
 #	$glass_text_box/girl_sick_text.show()
+	if global.language == "french":
+		$glass_text_box/grandma_sick_text_english.hide()
+		$glass_text_box/grandma_sick_text_french.show()
+		dialog_chunks = ["*Kof*kof*"]
+	else:
+		$glass_text_box/grandma_sick_text_english.show()
+		$glass_text_box/grandma_sick_text_french.hide()
+		dialog_chunks = ["*Cough*Cough*"]
 
+	update_text()
+	
 	accepts_input = false
 	utils_custom.create_timer_2(3, self, "accept_input")
 

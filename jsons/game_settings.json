@@ -1,10 +1,10 @@
 {
-  "debug": true,
+  "debug": false,
   "general": {
     "show_nearest_enemy_line": false,
     "nearest_distance_minimum": 30
   },
-  "audio": { "volume_on_start": "mute_all" },
+  "audio": { "volume_on_start": "all" },
   "player": {
     "max_health": 100,
     "stamina_max_amount": 1,

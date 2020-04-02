@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -71,6 +71,7 @@
 [ext_resource path="res://scripts/key.gd" type="Script" id=69]
 [ext_resource path="res://sounds/pickup/SFX_Pickup_13.wav" type="AudioStream" id=70]
 [ext_resource path="res://sounds/pickup/Click_Mechanical_00.wav" type="AudioStream" id=71]
+[ext_resource path="res://sounds/bad/Blip_Select19.wav" type="AudioStream" id=72]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49696, 15.3129 )
@@ -921,107 +922,107 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2066.47, 550.502, 0, 0, 0, 0, 1595.86, 788.954, 0, 0, 0, 0, 1668.26, 1021.96, 0, 0, 0, 0, 1950.61, 1151.84, 0, 0, 0, 0, 2066.47, 550.502 )
 }
 
-[sub_resource type="Curve2D" id=66]
+[sub_resource type="Curve2D" id=46]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2161.03, 1048.27, 0, 0, 0, 0, 2159.19, 825.26, 0, 0, 0, 0, 1667.9, 851.495, 0, 0, 0, 0, 1606.48, 1115.49, 0, 0, 0, 0, 2005.31, 1178.4, 0, 0, 0, 0, 2161.03, 1048.27 )
 }
 
-[sub_resource type="Curve2D" id=46]
+[sub_resource type="Curve2D" id=47]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1319.12, 8.34949, 0, 0, 0, 0, 1389.6, -29.5893, 0, 0, 0, 0, 2207.5, 407.002, 0, 0, 0, 0, 2109, 442.734, 0, 0, 0, 0, 1319.12, 8.34949 )
 }
 
-[sub_resource type="Curve2D" id=47]
+[sub_resource type="Curve2D" id=48]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2229.43, 515.051, 0, 0, 0, 0, 1364.28, 75.8862, 0, 0, 0, 0, 1405.53, 21.2133, 0, 0, 0, 0, 2246.5, 476.672, 0, 0, 0, 0, 2229.43, 515.051 )
 }
 
-[sub_resource type="Curve2D" id=67]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2047.35, 444.569, 0, 0, 0, 0, 1329.3, 77.6923 )
-}
-
-[sub_resource type="Curve2D" id=48]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2124.5, -244.283, 0, 0, 0, 0, 2084.72, -210.413, 0, 0, 0, 0, 2819.02, 121.529, 0, 0, 0, 0, 2904.14, 216.357, 0, 0, 0, 0, 3075.13, 116.87, 0, 0, 0, 0, 2533.17, 478.648, 0, 0, 0, 0, 2408.28, 434.057, 0, 0, 0, 0, 2873.89, 117.101, 0, 0, 0, 0, 2124.5, -244.283 )
-}
-
 [sub_resource type="Curve2D" id=49]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2054.05, -309.013, 0, 0, 0, 0, 2913.25, 89.3418, 0, 0, 0, 0, 2740.25, 319.764, 0, 0, 0, 0, 2802.41, 94.9249, 0, 0, 0, 0, 2128.43, -198.897, 0, 0, 0, 0, 2192.96, -231.705, 0, 0, 0, 0, 2054.05, -309.013 )
+"points": PoolVector2Array( 0, 0, 0, 0, 2047.35, 444.569, 0, 0, 0, 0, 1344.46, 68.1456, 0, 0, 0, 0, 1329.3, 77.6923, 0, 0, 0, 0, 2047.35, 444.569 )
 }
 
 [sub_resource type="Curve2D" id=50]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1354.48, -734.208, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1401.94, -725.89, 0, 0, 0, 0, 1766.88, -541.852, 0, 0, 0, 0, 1426.48, -325.697, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1762.4, -557.793, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1362.73, -738.404, 0, 0, 0, 0, 1354.48, -734.208 )
+"points": PoolVector2Array( 0, 0, 0, 0, 2124.5, -244.283, 0, 0, 0, 0, 2084.72, -210.413, 0, 0, 0, 0, 2819.02, 121.529, 0, 0, 0, 0, 2904.14, 216.357, 0, 0, 0, 0, 3075.13, 116.87, 0, 0, 0, 0, 2533.17, 478.648, 0, 0, 0, 0, 2408.28, 434.057, 0, 0, 0, 0, 2873.89, 117.101, 0, 0, 0, 0, 2124.5, -244.283 )
 }
 
 [sub_resource type="Curve2D" id=51]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 710.823, 321.288, 0, 0, 0, 0, 795.851, 379.961, 0, 0, 0, 0, 730.714, 327.773, 0, 0, 0, 0, 714.499, 340.42, 0, 0, 0, 0, 778.407, 402.524, 0, 0, 0, 0, 830.79, 381.531, 0, 0, 0, 0, 710.823, 321.288 )
+"points": PoolVector2Array( 0, 0, 0, 0, 2054.05, -309.013, 0, 0, 0, 0, 2913.25, 89.3418, 0, 0, 0, 0, 2740.25, 319.764, 0, 0, 0, 0, 2802.41, 94.9249, 0, 0, 0, 0, 2128.43, -198.897, 0, 0, 0, 0, 2192.96, -231.705, 0, 0, 0, 0, 2054.05, -309.013 )
 }
 
 [sub_resource type="Curve2D" id=52]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1179.42, 852.749, 0, 0, 0, 0, 1383.38, 756.709, 0, 0, 0, 0, 1447.65, 709.135, 0, 0, 0, 0, 1326.88, 646.478, 0, 0, 0, 0, 1291.21, 702.07, 0, 0, 0, 0, 1381.02, 770.399, 0, 0, 0, 0, 1217.52, 834.994, 0, 0, 0, 0, 1110.25, 770.71, 0, 0, 0, 0, 1056.27, 784.459, 0, 0, 0, 0, 1179.42, 852.749 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1354.48, -734.208, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1401.94, -725.89, 0, 0, 0, 0, 1766.88, -541.852, 0, 0, 0, 0, 1426.48, -325.697, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1762.4, -557.793, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1362.73, -738.404, 0, 0, 0, 0, 1354.48, -734.208 )
 }
 
 [sub_resource type="Curve2D" id=53]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 695.6, 341.272, 0, 0, 0, 0, 551.969, 422.267, 0, 0, 0, 0, 1182.83, 770.949, 0, 0, 0, 0, 1095.52, 803.252, 0, 0, 0, 0, 479.781, 484.342, 0, 0, 0, 0, 714.668, 351.233, 0, 0, 0, 0, 1391.63, 743.335, 0, 0, 0, 0, 1178.15, 851.463, 0, 0, 0, 0, 861.095, 662.537, 0, 0, 0, 0, 1013.87, 499.689, 0, 0, 0, 0, 695.6, 341.272 )
+"points": PoolVector2Array( 0, 0, 0, 0, 710.823, 321.288, 0, 0, 0, 0, 795.851, 379.961, 0, 0, 0, 0, 730.714, 327.773, 0, 0, 0, 0, 714.499, 340.42, 0, 0, 0, 0, 778.407, 402.524, 0, 0, 0, 0, 830.79, 381.531, 0, 0, 0, 0, 710.823, 321.288 )
 }
 
 [sub_resource type="Curve2D" id=54]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1525.43, 859.438, 0, 0, 0, 0, 1167.54, 1063.45, 0, 0, 0, 0, 1251.72, 1140.53, 0, 0, 0, 0, 1357.58, 1155.11, 0, 0, 0, 0, 1438.69, 1080.04, 0, 0, 0, 0, 1349.5, 1060.3, 0, 0, 0, 0, 1281.4, 1103.01, 0, 0, 0, 0, 1216.12, 1070.01, 0, 0, 0, 0, 1466.69, 836.72, 0, 0, 0, 0, 1525.43, 859.438 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1179.42, 852.749, 0, 0, 0, 0, 1383.38, 756.709, 0, 0, 0, 0, 1447.65, 709.135, 0, 0, 0, 0, 1326.88, 646.478, 0, 0, 0, 0, 1291.21, 702.07, 0, 0, 0, 0, 1381.02, 770.399, 0, 0, 0, 0, 1217.52, 834.994, 0, 0, 0, 0, 1110.25, 770.71, 0, 0, 0, 0, 1056.27, 784.459, 0, 0, 0, 0, 1179.42, 852.749 )
 }
 
 [sub_resource type="Curve2D" id=55]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1438.7, 1091.07, 0, 0, 0, 0, 1240.85, 1145.69, 0, 0, 0, 0, 1612.53, 957.83, 0, 0, 0, 0, 1838.21, 1159.7, 0, 0, 0, 0, 2082.38, 1039.61, 0, 0, 0, 0, 1857.32, 743.659, 0, 0, 0, 0, 1141.37, 991.448, 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1158.75, 981.137, 0, 0, 0, 0, 1320.63, 1172.05, 0, 0, 0, 0, 1188.45, 954.643, 0, 0, 0, 0, 1091.44, 1070.89, 0, 0, 0, 0, 1309.03, 1178.68 )
+"points": PoolVector2Array( 0, 0, 0, 0, 695.6, 341.272, 0, 0, 0, 0, 551.969, 422.267, 0, 0, 0, 0, 1182.83, 770.949, 0, 0, 0, 0, 1095.52, 803.252, 0, 0, 0, 0, 479.781, 484.342, 0, 0, 0, 0, 714.668, 351.233, 0, 0, 0, 0, 1391.63, 743.335, 0, 0, 0, 0, 1178.15, 851.463, 0, 0, 0, 0, 861.095, 662.537, 0, 0, 0, 0, 1013.87, 499.689, 0, 0, 0, 0, 695.6, 341.272 )
 }
 
 [sub_resource type="Curve2D" id=56]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1424.19, 1084.47, 0, 0, 0, 0, 1336.56, 1162.48, 0, 0, 0, 0, 1115.98, 976.042, 0, 0, 0, 0, 1307.54, 1139.73, 0, 0, 0, 0, 1174.68, 964.949, 0, 0, 0, 0, 1143.66, 1094.35, 0, 0, 0, 0, 1424.19, 1084.47 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1525.43, 859.438, 0, 0, 0, 0, 1167.54, 1063.45, 0, 0, 0, 0, 1251.72, 1140.53, 0, 0, 0, 0, 1357.58, 1155.11, 0, 0, 0, 0, 1438.69, 1080.04, 0, 0, 0, 0, 1349.5, 1060.3, 0, 0, 0, 0, 1281.4, 1103.01, 0, 0, 0, 0, 1216.12, 1070.01, 0, 0, 0, 0, 1466.69, 836.72, 0, 0, 0, 0, 1525.43, 859.438 )
 }
 
 [sub_resource type="Curve2D" id=57]
 _data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1438.7, 1091.07, 0, 0, 0, 0, 1240.85, 1145.69, 0, 0, 0, 0, 1612.53, 957.83, 0, 0, 0, 0, 1838.21, 1159.7, 0, 0, 0, 0, 2082.38, 1039.61, 0, 0, 0, 0, 1857.32, 743.659, 0, 0, 0, 0, 1141.37, 991.448, 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1158.75, 981.137, 0, 0, 0, 0, 1320.63, 1172.05, 0, 0, 0, 0, 1188.45, 954.643, 0, 0, 0, 0, 1091.44, 1070.89, 0, 0, 0, 0, 1309.03, 1178.68 )
+}
+
+[sub_resource type="Curve2D" id=58]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1424.19, 1084.47, 0, 0, 0, 0, 1336.56, 1162.48, 0, 0, 0, 0, 1115.98, 976.042, 0, 0, 0, 0, 1307.54, 1139.73, 0, 0, 0, 0, 1174.68, 964.949, 0, 0, 0, 0, 1143.66, 1094.35, 0, 0, 0, 0, 1424.19, 1084.47 )
+}
+
+[sub_resource type="Curve2D" id=59]
+_data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2211.18, 473.091, 0, 0, 0, 0, 1623.82, 883.181, 0, 0, 0, 0, 1314.08, 1036.4, 0, 0, 0, 0, 1285.52, 1215.29, 0, 0, 0, 0, 1320.3, 1045.85, 0, 0, 0, 0, 1627.89, 909.178, 0, 0, 0, 0, 1688.77, 1137.61, 0, 0, 0, 0, 1970.15, 1194.81, 0, 0, 0, 0, 2285.51, 915.041, 0, 0, 0, 0, 2112.78, 735.589, 0, 0, 0, 0, 2359.65, 502.862, 0, 0, 0, 0, 2326.69, 493.918 )
 }
 
-[sub_resource type="Curve2D" id=65]
+[sub_resource type="Curve2D" id=60]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1418.67, 757.189, 0, 0, 0, 0, 1532.21, 825.609, 0, 0, 0, 0, 1838.45, 868.594, 0, 0, 0, 0, 2112.67, 772.149, 0, 0, 0, 0, 2255.69, 941.077, 0, 0, 0, 0, 1882.2, 1210.98, 0, 0, 0, 0, 1418.67, 757.189 )
 }
 
-[sub_resource type="DynamicFont" id=58]
+[sub_resource type="DynamicFont" id=61]
 size = 28
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="DynamicFont" id=59]
+[sub_resource type="DynamicFont" id=62]
 size = 48
 outline_size = 5
 outline_color = Color( 0.603922, 0.14902, 0.14902, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="ShaderMaterial" id=60]
+[sub_resource type="ShaderMaterial" id=63]
 
-[sub_resource type="DynamicFont" id=61]
+[sub_resource type="DynamicFont" id=64]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 6.12814, 56.529 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 1.65803, 95.0301 )
 
 [node name="game" type="Node2D"]
@@ -1534,7 +1535,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 10
+frame = 11
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1551,7 +1552,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 10
+frame = 11
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1561,7 +1562,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 10
+frame = 11
 speed_scale = 0.5
 playing = true
 
@@ -1577,7 +1578,7 @@ position = Vector2( 8.85329, -129.202 )
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/home/Area2D"]
-position = Vector2( 1.73572, 27.0154 )
+position = Vector2( -0.983154, 29.7786 )
 scale = Vector2( 9.18042, 6.88102 )
 shape = SubResource( 25 )
 
@@ -2252,29 +2253,28 @@ curve = SubResource( 45 )
 [node name="bastille_3" type="Path2D" parent="enemy_paths/spawn_zombies"]
 visible = false
 rotation = -1.16415e-10
-scale = Vector2( 1, 1 )
-curve = SubResource( 66 )
+curve = SubResource( 46 )
 
 [node name="middle_1" type="Path2D" parent="enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 46 )
+curve = SubResource( 47 )
 
 [node name="middle_2" type="Path2D" parent="enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 47 )
+curve = SubResource( 48 )
 
 [node name="middle_3" type="Path2D" parent="enemy_paths/spawn_zombies"]
+visible = false
 rotation = -1.16415e-10
-scale = Vector2( 1, 1 )
-curve = SubResource( 67 )
+curve = SubResource( 49 )
 
 [node name="right_1" type="Path2D" parent="enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 48 )
+curve = SubResource( 50 )
 
 [node name="right_2" type="Path2D" parent="enemy_paths/spawn_zombies"]
 visible = false
-curve = SubResource( 49 )
+curve = SubResource( 51 )
 
 [node name="spawn_police" type="Node2D" parent="enemy_paths"]
 rotation = 2.32831e-10
@@ -2285,39 +2285,39 @@ enemy_type = "police"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 50 )
+curve = SubResource( 52 )
 
 [node name="market_top" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 51 )
+curve = SubResource( 53 )
 
 [node name="market_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 52 )
+curve = SubResource( 54 )
 
 [node name="market_full" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 53 )
+curve = SubResource( 55 )
 
 [node name="police_station_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 54 )
+curve = SubResource( 56 )
 
 [node name="police_station_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 55 )
+curve = SubResource( 57 )
 
 [node name="police_station_3" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 56 )
+curve = SubResource( 58 )
 
 [node name="bastille_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 57 )
+curve = SubResource( 59 )
 
 [node name="bastille_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 65 )
+curve = SubResource( 60 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
@@ -2328,7 +2328,7 @@ margin_left = 4.3064
 margin_top = 7.0
 margin_right = 124.306
 margin_bottom = 61.0
-custom_fonts/normal_font = SubResource( 58 )
+custom_fonts/normal_font = SubResource( 61 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2351,7 +2351,7 @@ margin_left = 841.846
 margin_top = 175.755
 margin_right = 928.846
 margin_bottom = 220.755
-custom_fonts/normal_font = SubResource( 58 )
+custom_fonts/normal_font = SubResource( 61 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2369,7 +2369,7 @@ margin_left = 392.819
 margin_top = 22.0
 margin_right = 632.819
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 59 )
+custom_fonts/normal_font = SubResource( 62 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2436,32 +2436,33 @@ texture = ExtResource( 24 )
 
 [node name="attestation_slot_full" type="Node2D" parent="interface"]
 visible = false
-position = Vector2( 891.954, 532.471 )
+position = Vector2( 693.48, 49.0849 )
 rotation = 0.00113466
 scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 60 )
+material = SubResource( 63 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 60 )
+material = SubResource( 63 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_empty" type="Sprite" parent="interface"]
 modulate = Color( 1, 1, 1, 0.690196 )
-position = Vector2( 893.979, 534 )
+position = Vector2( 695.505, 50.6139 )
 rotation = 0.00113466
 scale = Vector2( 0.999992, 0.986271 )
 texture = ExtResource( 28 )
 
 [node name="attestation_timer" type="Node2D" parent="interface"]
 visible = false
+position = Vector2( -253.474, -437.386 )
 
 [node name="timer_label" type="RichTextLabel" parent="interface/attestation_timer"]
 margin_left = 950.448
@@ -2469,8 +2470,8 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 61 )
-text = "32"
+custom_fonts/normal_font = SubResource( 64 )
+text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2537,35 +2538,35 @@ end_cap_mode = 2
 [node name="market" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 361.606, 294.661 )
 rotation = -0.555015
-shape = SubResource( 62 )
+shape = SubResource( 65 )
 
 [node name="seine" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 62 )
+shape = SubResource( 65 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2600.15, 1034.86 )
 rotation = -0.555015
-shape = SubResource( 62 )
+shape = SubResource( 65 )
 
 [node name="small-road-key-locked" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1859.43, -366.296 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 63 )
+shape = SubResource( 66 )
 
 [node name="small-road_limit1" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1790.11, -269.7 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 64 )
+shape = SubResource( 67 )
 
 [node name="small-road_limit2" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2011.74, -434.1 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 64 )
+shape = SubResource( 67 )
 
 [node name="audio" type="Node2D" parent="."]
 
@@ -2575,13 +2576,13 @@ bus = "sound_effects"
 
 [node name="star_music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 41 )
-volume_db = 10.0
 autoplay = true
 stream_paused = true
 bus = "music"
 
 [node name="main_music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 42 )
+volume_db = -5.0
 autoplay = true
 bus = "music"
 
@@ -2622,27 +2623,29 @@ stream = ExtResource( 71 )
 volume_db = 15.0
 bus = "sound_effects"
 
+[node name="home_bad" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 72 )
+bus = "sound_effects"
+
 [node name="bumps" type="Node2D" parent="audio"]
 position = Vector2( 0.459473, 0 )
 
 [node name="bump" type="AudioStreamPlayer" parent="audio/bumps"]
 stream = ExtResource( 51 )
-volume_db = -10.0
 bus = "sound_effects"
 
 [node name="bump2" type="AudioStreamPlayer" parent="audio/bumps"]
 stream = ExtResource( 55 )
-volume_db = -10.0
+volume_db = -5.0
 bus = "sound_effects"
 
 [node name="bump4" type="AudioStreamPlayer" parent="audio/bumps"]
 stream = ExtResource( 53 )
-volume_db = -10.0
+volume_db = -5.0
 bus = "sound_effects"
 
 [node name="bump3" type="AudioStreamPlayer" parent="audio/bumps"]
 stream = ExtResource( 54 )
-volume_db = -10.0
 bus = "sound_effects"
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_test/Area2D" to="elements/pickups/attestations/attestation_test/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_market_top/Area2D" to="elements/pickups/attestations/attestation_market_top/attestation" method="_on_attestation_body_entered"]

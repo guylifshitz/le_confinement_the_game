@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://music/Jingle_Lose_00.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/lose_police.gd" type="Script" id=2]
@@ -7,10 +7,17 @@
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://prefab/continue_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/font-45.tres" type="DynamicFont" id=7]
+[ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+outline_size = 5
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 8 )
 
 [node name="lose_police" type="Node2D"]
 script = ExtResource( 2 )
@@ -64,6 +71,19 @@ margin_right = 330.0
 margin_bottom = 551.0
 custom_styles/focus = SubResource( 2 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost" type="RichTextLabel" parent="."]
+margin_left = 156.325
+margin_top = 151.489
+margin_right = 488.325
+margin_bottom = 269.489
+rect_rotation = -15.2017
+rect_scale = Vector2( 1.54201, 1.55565 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "-135 €"
 __meta__ = {
 "_edit_use_anchors_": false
 }

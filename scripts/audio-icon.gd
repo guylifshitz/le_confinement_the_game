@@ -15,6 +15,7 @@ func _ready():
 		$no_sound.show()
 	
 	# mute_music()
+	global.load_local_game_settings()
 	if global.game_settings["audio"]["volume_on_start"] == "mute_all":
 		mute_all()
 	elif global.game_settings["audio"]["volume_on_start"] == "mute_music":

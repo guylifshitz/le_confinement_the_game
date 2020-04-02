@@ -43,14 +43,14 @@ tracks/0/keys = {
 "values": [ -10.0, 10.0, -10.0 ]
 }
 
-[sub_resource type="DynamicFont" id=2]
-size = 33
-font_data = ExtResource( 8 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 42
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -108,29 +108,6 @@ position = Vector2( 443.676, 197.668 )
 scale = Vector2( 1.14214, 1.08631 )
 texture = ExtResource( 9 )
 
-[node name="groceries_text" type="RichTextLabel" parent="dialog"]
-anchor_top = 0.00132736
-anchor_bottom = 0.00132736
-margin_left = 157.0
-margin_top = 32.5943
-margin_right = 634.0
-margin_bottom = 242.594
-rect_pivot_offset = Vector2( 251.779, 153.389 )
-custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Great job! You got
-
-The essentials: 
-
-Extra stuff:
-
-Bonus points:"
-scroll_active = false
-scroll_following = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="groceries_items" type="Node2D" parent="dialog"]
 position = Vector2( 280.4, 17.6656 )
 
@@ -172,29 +149,6 @@ scale = Vector2( 1.60179, 1.60179 )
 texture = ExtResource( 18 )
 vframes = 4
 hframes = 4
-
-[node name="sports_text" type="RichTextLabel" parent="dialog"]
-anchor_top = 0.00132736
-anchor_bottom = 0.00132736
-margin_left = 157.0
-margin_top = 32.5943
-margin_right = 634.0
-margin_bottom = 242.594
-rect_pivot_offset = Vector2( 251.779, 153.389 )
-custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Wow, you're 
-such a fast runner!
-
-Time:
-
-
-Bonus points:"
-scroll_active = false
-scroll_following = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="sports_time" type="RichTextLabel" parent="dialog"]
 margin_left = 486.0
@@ -255,6 +209,103 @@ custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "123"
 text = "123"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sports_text" type="Node2D" parent="dialog"]
+
+[node name="english" type="RichTextLabel" parent="dialog/sports_text"]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 157.0
+margin_top = 32.5943
+margin_right = 634.0
+margin_bottom = 242.594
+rect_pivot_offset = Vector2( 251.779, 153.389 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Wow, you're 
+such a fast runner!
+
+Time:
+
+
+Bonus points:"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="french" type="RichTextLabel" parent="dialog/sports_text"]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 157.0
+margin_top = 33.0
+margin_right = 792.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 251.779, 153.389 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Ouah ! Tu cours très vite !
+
+
+Temps :
+
+
+Points bonus :"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="groceries_text" type="Node2D" parent="dialog"]
+position = Vector2( 0, 2 )
+
+[node name="english" type="RichTextLabel" parent="dialog/groceries_text"]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 157.0
+margin_top = 32.5943
+margin_right = 634.0
+margin_bottom = 242.594
+rect_pivot_offset = Vector2( 251.779, 153.389 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Great job! You got
+
+The essentials: 
+
+Extra stuff:
+
+Bonus points:"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="french" type="RichTextLabel" parent="dialog/groceries_text"]
+anchor_top = 0.00132736
+anchor_bottom = 0.00132736
+margin_left = 157.0
+margin_top = 32.5943
+margin_right = 634.0
+margin_bottom = 242.594
+rect_pivot_offset = Vector2( 251.779, 153.389 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Bien joué ! Tu as
+
+les courses :
+
+les extras :
+
+Points bonus :"
+scroll_active = false
+scroll_following = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
