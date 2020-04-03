@@ -117,19 +117,11 @@ stream = ExtResource( 21 )
 volume_db = 10.0
 bus = "sound_effects"
 
-[node name="icon_settings" type="Node2D" parent="."]
-
-[node name="fullscreen_icon" parent="icon_settings" instance=ExtResource( 23 )]
-
-[node name="audio-icon" parent="icon_settings" instance=ExtResource( 22 )]
-scale = Vector2( 1, 1.00358 )
-
 [node name="girl-bg" type="AnimatedSprite" parent="."]
 modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 210.238, 364.114 )
 scale = Vector2( 3.68378, 3.68378 )
 frames = SubResource( 6 )
-frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -137,7 +129,6 @@ playing = true
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
 frames = SubResource( 6 )
-frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -197,5 +188,12 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="icon_settings" type="Node2D" parent="."]
+
+[node name="fullscreen_icon" parent="icon_settings" instance=ExtResource( 23 )]
+
+[node name="audio-icon" parent="icon_settings" instance=ExtResource( 22 )]
+scale = Vector2( 1, 1.00358 )
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="button_down" from="start_button/start_button" to="." method="_on_start_button_button_down"]

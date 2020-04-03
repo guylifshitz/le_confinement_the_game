@@ -30,7 +30,7 @@
     "type": "groceries",
     "starting_bonus_score": 1000,
     "damage_decrement_exponent": 1,
-    "damage_multiplier": 0.5,
+    "damage_multiplier": 0.7,
     "score_decrement_exponent": 1,
     "score_increment_speed": 40,
     "items_needed": ["toilet_paper", "bread", "drugs"],
@@ -49,7 +49,7 @@
       "knows_player_percentage": 30,
       "move_speed": 100
     },
-    "police": { "move_speed": 120 },
+    "police": { "move_speed": 100 },
     "attestation": {
       "visible_list": [
         "attestation_market_top",
@@ -58,13 +58,15 @@
         "attestation_top",
         "attestation_pharmacy"
       ],
-      "duration": 5,
+      "duration": 8,
       "respawn_time": 5
     },
     "sanitizer": {
       "visible_list": [
         "sanitizer_far_right_1",
         "sanitizer_far_right_2",
+        "market",
+        "water",
         "sanitizer_bastille"
       ],
       "healing_points": 100,
@@ -81,16 +83,15 @@
         "bastille_2": 3,
         "middle_1": 1,
         "middle_2": 1,
-        "right_1": 3,
-        "right_2": 3
+        "right_1": 2,
+        "right_2": 2
       },
       "police": {
         "top_square": 3,
-        "commissariat": 0,
         "market_full": 1,
         "market_top": 1,
         "market_bottom": 1,
-        "police_station_1": 1,
+        "police_station_1": 0,
         "police_station_2": 0,
         "police_station_3": 1
       }
@@ -157,7 +158,6 @@
       },
       "police": {
         "top_square": 3,
-        "commissariat": 0,
         "market_full": 1,
         "market_top": 1,
         "market_bottom": 1,
@@ -178,7 +178,7 @@
       "knows_player_percentage": 30,
       "move_speed": 100
     },
-    "police": { "move_speed": 150 },
+    "police": { "move_speed": 130 },
     "attestation": {
       "visible_list": [
         "attestation_market_2",
@@ -187,7 +187,7 @@
         "attestation_top",
         "attestation_pharmacy"
       ],
-      "duration": 5,
+      "duration": 8,
       "respawn_time": 5
     },
     "sanitizer": {
@@ -218,7 +218,6 @@
       },
       "police": {
         "top_square": 1,
-        "commissariat": 0,
         "market_full": 1,
         "market_top": 0,
         "market_bottom": 1,
@@ -278,7 +277,6 @@
       },
       "police": {
         "top_square": 1,
-        "commissariat": 0,
         "market_full": 1,
         "market_top": 1,
         "market_bottom": 1,

@@ -219,9 +219,9 @@ __meta__ = {
 }
 
 [node name="select_text" type="RichTextLabel" parent="form/french"]
-margin_left = 27.0
+margin_left = 26.0
 margin_top = 12.0
-margin_right = 393.0
+margin_right = 411.0
 margin_bottom = 332.0
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://music/main-menu - Chiptune Ringtone of Freedom - retro chiptune.ogg" type="AudioStream" id=1]
+[ext_resource path="res://music.gd" type="Script" id=2]
 
 [node name="music" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="main_menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

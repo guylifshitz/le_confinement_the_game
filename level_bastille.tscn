@@ -1210,6 +1210,40 @@ position = Vector2( -26.8276, 7.93604 )
 scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 4 )
 
+[node name="water" type="Node2D" parent="elements/pickups/sanitizers"]
+position = Vector2( 2076.6, 1194.85 )
+rotation = -1.11035e-10
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/pickups/sanitizers/water"]
+position = Vector2( 0.00219727, 1.93408 )
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/pickups/sanitizers/water"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/sanitizers/water/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 4 )
+
+[node name="market" type="Node2D" parent="elements/pickups/sanitizers"]
+position = Vector2( 484.891, 457.645 )
+rotation = -1.11035e-10
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/pickups/sanitizers/market"]
+position = Vector2( 0.00219727, 1.93408 )
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/pickups/sanitizers/market"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/sanitizers/market/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 4 )
+
 [node name="sanitizer_far_right_2" type="Node2D" parent="elements/pickups/sanitizers"]
 position = Vector2( 1660.84, -681.897 )
 rotation = -1.11035e-10
@@ -1535,7 +1569,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 11
+frame = 8
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1552,7 +1586,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 11
+frame = 8
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1562,7 +1596,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 23 )
 animation = "duck"
-frame = 11
+frame = 8
 speed_scale = 0.5
 playing = true
 
@@ -2656,6 +2690,8 @@ bus = "sound_effects"
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_top/Area2D" to="elements/pickups/attestations/attestation_top/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_test/Area2D" to="elements/pickups/sanitizers/sanitizer_test/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_far_right_1/Area2D" to="elements/pickups/sanitizers/sanitizer_far_right_1/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/pickups/sanitizers/water/Area2D" to="elements/pickups/sanitizers/water/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/pickups/sanitizers/market/Area2D" to="elements/pickups/sanitizers/market/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_far_right_2/Area2D" to="elements/pickups/sanitizers/sanitizer_far_right_2/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_bastille/Area2D" to="elements/pickups/sanitizers/sanitizer_bastille/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_pharmacy/Area2D" to="elements/pickups/sanitizers/sanitizer_pharmacy/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
