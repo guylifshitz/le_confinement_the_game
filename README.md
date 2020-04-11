@@ -44,3 +44,32 @@ Renderer: GLES 2
 ##### TILESET:
 - City streets: https://opengameart.org/content/econ-u-tiles
 - Isometric renders were made with Blender: https://www.blender.org/
+
+##### POLICE SOUNDS
+- police-question-4.wav
+- police-question.wav
+- police-question2.wav
+- poloice-question-3.wav
+
+##### BUMP SOUNDS
+- 242622__reitanna__grunt2.wav: https://freesound.org/people/Reitanna/sounds/242622/
+- 242623__reitanna__grunt.wav: https://freesound.org/people/Reitanna/sounds/242623/
+- 262279__dirtjm__grunts-male.wav: https://freesound.org/people/Dirtjm/sounds/262279/
+- 507730__keskaowl__effortnoise.wav: https://freesound.org/people/Keskaowl/sounds/507730/
+- Craft_00.wav: https://opengameart.org/content/8-bit-sound-effects-library
+- Hit_02.wav: https://opengameart.org/content/8-bit-sound-effects-library
+- Open_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
+
+#### OTHER SOUNDS
+jingles_NES13.wav: Short jingles by Kenney Vleugels (www.kenney.nl)
+Collect_Point_00.wav: https://opengameart.org/content/8-bit-sound-effects-library
+Shoot_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
+Click_Mechanical_00.wav: https://opengameart.org/content/ui-sound-effects-library
+SFX_Pickup_13.wav: https://opengameart.org/content/8-bit-pickup-1
+SFX_Pickup_41.wav: https://opengameart.org/content/8-bit-pickup-1
+SFX_Pickup_44.wav: https://opengameart.org/content/8-bit-pickup-1
+270319__littlerobotsoundfactory__jingle-win-01.wav: https://freesound.org/people/LittleRobotSoundFactory/sounds/270319/
+495005__evretro__win-video-game-sound.wav: https://freesound.org/people/EVRetro/sounds/495005/
+Jingle_Achievement_01.wav: https://opengameart.org/content/8-bit-pickup-1
+Blip_Select19.wav:  https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
+Randomize2.wav: https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
