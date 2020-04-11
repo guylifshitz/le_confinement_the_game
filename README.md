@@ -60,7 +60,7 @@ Renderer: GLES 2
 - Hit_02.wav: https://opengameart.org/content/8-bit-sound-effects-library
 - Open_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
 
-#### OTHER SOUNDS
+##### OTHER SOUNDS
 - jingles_NES13.wav: Short jingles by Kenney Vleugels (www.kenney.nl)
 - Collect_Point_00.wav: https://opengameart.org/content/8-bit-sound-effects-library
 - Shoot_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
