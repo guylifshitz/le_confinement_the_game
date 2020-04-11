@@ -1,24 +1,44 @@
-# Isometric Game
+# Le confinement : The game
 
-This demo shows a traditional isometric view with depth sorting.
-
-A character can move around the level and will also slide around objects,
-as well as be occluded when standing in front or behind them. 
-
+Environment: Godot
 Language: GDScript
-
 Renderer: GLES 2
 
-## How does it work?
+# Media Credits
+##### Spritesheet:
+Main character - walking: https://opengameart.org/content/girl-sprite-sheet
+Non-player pedestrians: https://opengameart.org/content/characters-zombies-and-weapons-oh-my
+Grandma: https://www.hiclipart.com/free-transparent-background-png-clipart-iofox
+Ducks: https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
+Police  https://forum.starmen.net/forum/Fan/Games/Looking-for-an-RPG-maker-XP-sprite-sheet
 
-The level uses a [`TileMap`](https://docs.godotengine.org/en/latest/classes/class_tilemap.html#class-tilemap)
-in which the tiles have different vertical offsets.
-The walls, doors, and pillars each have
-[`StaticBody2D`](https://docs.godotengine.org/en/latest/classes/class_staticbody2d.html)
-and [`CollisionPolygon2D`](https://docs.godotengine.org/en/latest/classes/class_collisionpolygon2d.html)
-at their base. The player also has a collider at its base,
-which makes the player collide with the level.
+##### OBJECTS:
+Hand sanitizer: https://www.flaticon.com/free-icon/alcohol_2746437
+Pasta: https://www.kindpng.com/imgv/ixTiioh_transparent-spaghetti-png-pasta-icon-transparent-png-download/
+Key: https://www.pngwave.com/png-clip-art-ngyji
+Polaroid (outline): https://transparants.tumblr.com/post/142942965859/polaroid-transparents-like-or-reblog-if-using-x
+Duck (for polaroid): https://br.vexels.com/png-svg/previsualizar/161710/pato-de-cabeca-verde-liso
+Fence (based on): https://www.vectorstock.com/royalty-free-vector/fence-icons-set-isometric-style-vector-26162638
+Baguette: https://www.pngarts.com/explore/62725
+Attestation: https://icons8.com/icon/set/parchment/cotton
+Opéra Bastille (3D object): https://3dwarehouse.sketchup.com/model/f92f29a19c8dabfac399474a44086523/Op%C3%A9ra-Bastille-Paris?hl=en
+Tv: http://clipart-library.com/clip-art/tv-clipart-transparent-4.htm
+Flower: https://www.stickpng.com/img/nature/flowers/daffodils/daffodils-tied-together
+Waypoint Star: https://www.uihere.com/free-cliparts/star-clip-art-gold-star-png-transparent-clip-art-image-yellow-star-illustration-972976
+Tree: https://design.tutsplus.com/tutorials/how-to-create-an-isometric-pixel-art-tree-in-adobe-photoshop--cms-23606
+Pills: https://www.flaticon.com/free-icon/drugs_233048
 
-## Screenshots
+##### INTERFACE:
+Hospital glass background (Kenney.nl): https://opengameart.org/content/ui-pack-space-extension  
+Running: https://en.wikipedia.org/wiki/File:Running_icon_-_Noun_Project_17825.svg
+Sound icon: https://www.flaticon.com/free-icon/volume_2359127
+Fullscreen icon: http://www.iconhot.com/icon/default-icon/full-screen.html
+Ruler: http://www.free-icons-download.net/ruler-icon-50648/
+Click: https://www.pngfuel.com/free-png/nmpxr
+Smiley face: Grinning Face on Apple iOS 10.3
+Angry face: Apple emoji
+Dialog box: https://www.cleanpng.com/png-dialog-box-icon-painted-simple-dialog-box-329539/
 
-![Screenshot](screenshots/isometric.png)
+##### TILESET:
+City streets: https://opengameart.org/content/econ-u-tiles
+Isometric renders were made with Blender: https://www.blender.org/
