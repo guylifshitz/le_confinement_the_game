@@ -45,12 +45,6 @@ Renderer: GLES 2
 - City streets: https://opengameart.org/content/econ-u-tiles
 - Isometric renders were made with Blender: https://www.blender.org/
 
-##### POLICE SOUNDS
-- police-question-4.wav
-- police-question.wav
-- police-question2.wav
-- poloice-question-3.wav
-
 ##### BUMP SOUNDS
 - 242622__reitanna__grunt2.wav: https://freesound.org/people/Reitanna/sounds/242622/
 - 242623__reitanna__grunt.wav: https://freesound.org/people/Reitanna/sounds/242623/
