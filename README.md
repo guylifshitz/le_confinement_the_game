@@ -6,11 +6,11 @@ Renderer: GLES 2
 
 # Media Credits
 ##### Spritesheet:
-Main character - walking: https://opengameart.org/content/girl-sprite-sheet
-Non-player pedestrians: https://opengameart.org/content/characters-zombies-and-weapons-oh-my
-Grandma: https://www.hiclipart.com/free-transparent-background-png-clipart-iofox
-Ducks: https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
-Police  https://forum.starmen.net/forum/Fan/Games/Looking-for-an-RPG-maker-XP-sprite-sheet
+- Main character - walking: https://opengameart.org/content/girl-sprite-sheet
+- Non-player pedestrians: https://opengameart.org/content/characters-zombies-and-weapons-oh-my
+- Grandma: https://www.hiclipart.com/free-transparent-background-png-clipart-iofox
+- Ducks: https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
+- Police  https://forum.starmen.net/forum/Fan/Games/Looking-for-an-RPG-maker-XP-sprite-sheet
 
 ##### OBJECTS:
 Hand sanitizer: https://www.flaticon.com/free-icon/alcohol_2746437
