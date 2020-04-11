@@ -5,7 +5,7 @@ Language: GDScript
 Renderer: GLES 2
 
 # Media Credits
-##### Spritesheet:
+##### SPRITESHEET:
 - Main character - walking: https://opengameart.org/content/girl-sprite-sheet
 - Non-player pedestrians: https://opengameart.org/content/characters-zombies-and-weapons-oh-my
 - Grandma: https://www.hiclipart.com/free-transparent-background-png-clipart-iofox
