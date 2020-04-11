@@ -61,15 +61,15 @@ Renderer: GLES 2
 - Open_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
 
 #### OTHER SOUNDS
-jingles_NES13.wav: Short jingles by Kenney Vleugels (www.kenney.nl)
-Collect_Point_00.wav: https://opengameart.org/content/8-bit-sound-effects-library
-Shoot_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
-Click_Mechanical_00.wav: https://opengameart.org/content/ui-sound-effects-library
-SFX_Pickup_13.wav: https://opengameart.org/content/8-bit-pickup-1
-SFX_Pickup_41.wav: https://opengameart.org/content/8-bit-pickup-1
-SFX_Pickup_44.wav: https://opengameart.org/content/8-bit-pickup-1
-270319__littlerobotsoundfactory__jingle-win-01.wav: https://freesound.org/people/LittleRobotSoundFactory/sounds/270319/
-495005__evretro__win-video-game-sound.wav: https://freesound.org/people/EVRetro/sounds/495005/
-Jingle_Achievement_01.wav: https://opengameart.org/content/8-bit-pickup-1
-Blip_Select19.wav:  https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
-Randomize2.wav: https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
+- jingles_NES13.wav: Short jingles by Kenney Vleugels (www.kenney.nl)
+- Collect_Point_00.wav: https://opengameart.org/content/8-bit-sound-effects-library
+- Shoot_01.wav: https://opengameart.org/content/8-bit-sound-effects-library
+- Click_Mechanical_00.wav: https://opengameart.org/content/ui-sound-effects-library
+- SFX_Pickup_13.wav: https://opengameart.org/content/8-bit-pickup-1
+- SFX_Pickup_41.wav: https://opengameart.org/content/8-bit-pickup-1
+- SFX_Pickup_44.wav: https://opengameart.org/content/8-bit-pickup-1
+- 270319__littlerobotsoundfactory__jingle-win-01.wav: https://freesound.org/people/LittleRobotSoundFactory/sounds/270319/
+- 495005__evretro__win-video-game-sound.wav: https://freesound.org/people/EVRetro/sounds/495005/
+- Jingle_Achievement_01.wav: https://opengameart.org/content/8-bit-pickup-1
+- Blip_Select19.wav:  https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
+- Randomize2.wav: https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
