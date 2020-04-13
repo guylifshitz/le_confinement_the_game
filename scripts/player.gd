@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var player_settings = global.game_settings["player"]
 
-var MOTION_SPEED = player_settings["walk_speed"]
-var RUN_MOTION_SPEED = player_settings["run_speed"]
-var JOGGING_MOTION_SPEED = player_settings["jogging_speed"]
+var MOTION_SPEED = global.level_settings["player"]["walk_speed"]
+var RUN_MOTION_SPEED = global.level_settings["player"]["run_speed"]
+var JOGGING_MOTION_SPEED = global.level_settings["player"]["jogging_speed"]
 var RUN_MOTION_SPEED_FAST = player_settings["debug_run_speed"]
 var WALK_PLAYBACK_SPEED = 2
 var RUN_PLAYBACK_SPEED = 4
@@ -56,7 +56,12 @@ func _ready():
 		MOTION_SPEED = JOGGING_MOTION_SPEED
 		WALK_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED
 		RUN_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED * 2
-
+		$main_char_node/bike_character.show()
+		$main_char_node/main_character.hide()
+	elif global.level_type == "sport":
+		$main_char_node/bike_character.hide()
+		$main_char_node/main_character.show()
+		
 	set_process(true)
 	animate_distance_circle()
 
@@ -144,10 +149,13 @@ func can_run_again():
 func set_animation_by_motion_direction():
 	if motion.x == 0 and motion.y == 0:
 		$main_char_node/main_character/AnimationPlayer.playback_speed = 0
+		$main_char_node/bike_character.playing = false
 	elif motion.x < 0:
 		$main_char_node/main_character/AnimationPlayer.play("left")
+		$main_char_node/bike_character.play("left")
 	elif motion.x > 0:
 		$main_char_node/main_character/AnimationPlayer.play("right")
+		$main_char_node/bike_character.play("right")
 	elif motion.y < 0:
 		$main_char_node/main_character/AnimationPlayer.play("up")
 	elif motion.y > 0:

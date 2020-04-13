@@ -52,8 +52,8 @@ func _on_difficulty_button_down():
 	if global.level_difficulty == "easy":
 		global.level_difficulty = "medium"
 	elif global.level_difficulty == "medium":
-		# global.level_difficulty = "hard"
-		global.level_difficulty = "easy"
+		global.level_difficulty = "hard"
+		# global.level_difficulty = "easy"
 	else:
 		global.level_difficulty = "easy"
 	show_right_difficulty()

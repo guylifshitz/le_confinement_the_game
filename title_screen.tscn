@@ -122,6 +122,7 @@ modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 210.238, 364.114 )
 scale = Vector2( 3.68378, 3.68378 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -129,6 +130,7 @@ playing = true
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -178,10 +180,10 @@ anchor_left = -0.00269775
 anchor_top = 0.00269775
 anchor_right = -0.00269775
 anchor_bottom = 0.00269775
-margin_left = -791.0
-margin_top = -65.0
-margin_right = 238.0
-margin_bottom = 547.0
+margin_left = -790.03
+margin_top = -65.9695
+margin_right = 238.97
+margin_bottom = 546.03
 custom_styles/focus = SubResource( 9 )
 action_mode = 0
 flat = true
@@ -190,6 +192,7 @@ __meta__ = {
 }
 
 [node name="icon_settings" type="Node2D" parent="."]
+visible = false
 
 [node name="fullscreen_icon" parent="icon_settings" instance=ExtResource( 23 )]
 

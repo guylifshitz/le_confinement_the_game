@@ -8,14 +8,14 @@ func _ready():
 	# get_tree().change_scene("res://level_select.tscn")
 	# get_tree().change_scene("res://lose-police.tscn")
 	# global.language = "english"
-	# global.set_level_settings("sport_easy", "sport")
+	global.set_level_settings("sport_easy", "sport")
 	# global.set_level_settings("groceries_easy", "groceries")
 	# get_tree().change_scene("res://win-screen.tscn")
 	# get_tree().change_scene("res://level_intro.tscn")
 
 	# global.set_level_settings("groceries_easy", "groceries")
 
-	# get_tree().change_scene("res://level_bastille.tscn")
+	get_tree().change_scene("res://level_bastille.tscn")
 	#$;	HTTPRequest.request("http://localhost:8082/TEST_settingss.json")
 	
 func _on_HTTPRequest_request_completed( result, response_code, headers, body ):

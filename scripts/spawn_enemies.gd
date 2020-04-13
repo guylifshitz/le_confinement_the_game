@@ -5,7 +5,8 @@ onready var enemies_holder = get_tree().get_root().get_node("game//elements/enem
 
 onready var new_enemy_base = load("res://prefab/Enemy.tscn")
 onready var new_police_base = load("res://prefab/police.tscn")
-
+onready var new_motorbike_base = load("res://prefab/motorbike.tscn")
+onready var new_police_car_base = load("res://police_car.tscn")
 export var enemy_type:String
 
 func _ready():
@@ -13,16 +14,25 @@ func _ready():
 
 func spawn():
 
-	seed(1)
+	if "spawn_seed" in global.level_settings["enemies_per_path"][enemy_type]:
+		seed(global.level_settings["enemies_per_path"][enemy_type]["spawn_seed"])
+	else:
+		seed(global.level_settings["spawn_seed"])
 	
 	var node_to_clone
 	var spawn_distribution
 	if enemy_type == "police":
 		node_to_clone = new_police_base
 		spawn_distribution = global.level_settings["enemies_per_path"]["police"]
+	elif enemy_type == "motorbike":
+		node_to_clone = new_motorbike_base
+		spawn_distribution = global.level_settings["enemies_per_path"]["motorbike"]
+	elif enemy_type == "police_car":
+		node_to_clone = new_police_car_base
+		spawn_distribution = global.level_settings["enemies_per_path"]["motorbike"]
 	else:
 		node_to_clone = new_enemy_base
-		spawn_distribution = global.level_settings["enemies_per_path"]["enemies"]
+		spawn_distribution = global.level_settings["enemies_per_path"]["pedestrians"]
 
 	for path in spawn_distribution.keys():
 		var enemy_path = self.get_node(path)
@@ -48,4 +58,4 @@ func spawn():
 
 			new_enemy.remote_path_follow = new_path_follow
 			enemies_holder.add_child(new_enemy)
-				
+			
