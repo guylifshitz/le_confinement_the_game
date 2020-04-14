@@ -9,10 +9,12 @@ func _ready():
 		music.get_node("main_menu").play()
 
 func play_groceries():
-	get_tree().change_scene("res://level_intro.tscn")
+	get_tree().change_scene("res://level_select_part_2.tscn")
+	#get_tree().change_scene("res://level_intro.tscn")
 
 func play_sport():
-	get_tree().change_scene("res://level_intro.tscn")
+	get_tree().change_scene("res://level_select_part_2.tscn")
+	#get_tree().change_scene("res://level_intro.tscn")
 	# get_tree().change_scene("res://level_bastille.tscn")
 
 func _on_groceries_button_down():

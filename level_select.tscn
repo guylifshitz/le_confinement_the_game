@@ -125,9 +125,9 @@ shadow_size = 33
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 381.705
+margin_left = 382.54
 margin_top = 91.3446
-margin_right = 756.705
+margin_right = 757.54
 margin_bottom = 408.345
 rect_scale = Vector2( 1.70336, 1.70336 )
 __meta__ = {
@@ -279,9 +279,9 @@ __meta__ = {
 }
 
 [node name="select_text" type="RichTextLabel" parent="form/english"]
-margin_left = 26.4734
+margin_left = 25.2209
 margin_top = 12.5266
-margin_right = 515.473
+margin_right = 514.221
 margin_bottom = 279.527
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/font_color_shadow = Color( 0.215686, 0.215686, 0.215686, 1 )
