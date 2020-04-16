@@ -151,7 +151,7 @@ scale = Vector2( 2.2067, 2.2067 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
 position = Vector2( -34.6397, 398.984 )
-scale = Vector2( 0.418911, 0.418911 )
+scale = Vector2( 0.46152, 0.459232 )
 shape = SubResource( 3 )
 
 [node name="show_dialog" type="Area2D" parent="."]
@@ -162,11 +162,11 @@ position = Vector2( 128.041, 421.542 )
 shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -4.69351, -477.573 )
+position = Vector2( -10.7207, -477.556 )
 scale = Vector2( 24.2327, 24.2327 )
 frames = SubResource( 13 )
 animation = "no_mask"
-frame = 3
+frame = 1
 playing = true
 
 [node name="audio" type="Node2D" parent="."]

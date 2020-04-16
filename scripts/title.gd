@@ -6,16 +6,17 @@ func _ready():
 	pass
 	# get_tree().change_scene("res://lose-sick.tscn")
 	# get_tree().change_scene("res://level_select.tscn")
-	global.level_type = "groceries"
-	get_tree().change_scene("res://level_select_part_2.tscn")
-
 	# global.level_type = "groceries"
-	# global.set_level_settings("groceries", 4)
+	# get_tree().change_scene("res://level_select_part_2.tscn")
+
+	global.level_type = "groceries"
+	global.set_level_settings("groceries", 5)
 	# get_tree().change_scene("res://level_bastille.tscn")
 	# get_tree().change_scene("res://lose-police.tscn")
 	# global.language = "english"
-	# get_tree().change_scene("res://win-screen.tscn")
-	# global.items_recovered = ["bread", "toilet_paper"]
+	global.items_recovered = ["bread", "toilet_paper"]
+	global.bonus_items_recovered  = ["bread", "toilet_paper"]
+	get_tree().change_scene("res://win-screen.tscn")
 	# get_tree().change_scene("res://level_intro.tscn")
 
 	# global.set_level_settings("groceries_easy", "groceries")

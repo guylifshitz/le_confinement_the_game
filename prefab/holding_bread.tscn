@@ -5,5 +5,6 @@
 [node name="baguette" type="Node2D"]
 
 [node name="image" type="Sprite" parent="."]
+position = Vector2( 0, 0.062912 )
 scale = Vector2( 0.100841, 0.100841 )
 texture = ExtResource( 1 )

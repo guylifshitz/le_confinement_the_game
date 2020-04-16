@@ -266,7 +266,6 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="level_05" parent="groceries" instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 734.805, 418.804 )
 level_number = "05"
 

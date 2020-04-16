@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -23,9 +23,6 @@
 [ext_resource path="res://images/spritesheets/ducks.png" type="Texture" id=21]
 [ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=22]
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=23]
-[ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=24]
-[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=25]
-[ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=26]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=27]
 [ext_resource path="res://images/interface/attestation_slot.png" type="Texture" id=28]
 [ext_resource path="res://scripts/attestation.gd" type="Script" id=29]
@@ -885,15 +882,15 @@ height = 21.4161
 [sub_resource type="CircleShape2D" id=37]
 radius = 127.314
 
-[sub_resource type="RectangleShape2D" id=73]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 10, 13.2851 )
 
-[sub_resource type="NavigationPolygon" id=38]
+[sub_resource type="NavigationPolygon" id=39]
 vertices = PoolVector2Array( 1449.35, -1441.69, 4891.81, 662.369, 1382.01, 2120.22, -869.962, 330.214 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662.369, 1449.35, -1441.69 ) ]
 
-[sub_resource type="Curve2D" id=39]
+[sub_resource type="Curve2D" id=40]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1430.45, -670.501, 0, 0, 0, 0, 1737.92, -513.7, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
 }
@@ -1003,55 +1000,55 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1418.67, 757.189, 0, 0, 0, 0, 1532.21, 825.609, 0, 0, 0, 0, 1838.45, 868.594, 0, 0, 0, 0, 2112.67, 772.149, 0, 0, 0, 0, 2255.69, 941.077, 0, 0, 0, 0, 1882.2, 1210.98, 0, 0, 0, 0, 1418.67, 757.189 )
 }
 
-[sub_resource type="Curve2D" id=74]
+[sub_resource type="Curve2D" id=62]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1413.2, 100.133, 0, 0, 0, 0, 1104.68, -143.834, 0, 0, 0, 0, 1534.03, 33.5165, 0, 0, 0, 0, 1584, 71.2718, 0, 0, 0, 0, 1413.2, 100.133 )
 }
 
-[sub_resource type="Curve2D" id=62]
+[sub_resource type="Curve2D" id=63]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2948.97, 189.146, 0, 0, 0, 0, 1178.04, 1030.67, 0, 0, 0, 0, 1322.88, 1111.22, 0, 0, 0, 0, 1469.35, 1037.18, 0, 0, 0, 0, 1369.26, 991.611, 0, 0, 0, 0, 3018.94, 217.951, 0, 0, 0, 0, 2948.97, 189.146 )
 }
 
-[sub_resource type="Curve2D" id=63]
+[sub_resource type="Curve2D" id=64]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2427.39, 528.357, 0, 0, 0, 0, 1427.53, 40.316, 0, 0, 0, 0, 706.282, -309.865, 0, 0, 0, 0, 1437.31, -699.944, 0, 0, 0, 0, 1870.56, -497.46, 0, 0, 0, 0, 1045.74, -88.0266, 0, 0, 0, 0, 2355.93, 564.09, 0, 0, 0, 0, 2427.39, 528.357 )
 }
 
-[sub_resource type="Curve2D" id=64]
+[sub_resource type="Curve2D" id=65]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1275.81, 80.9984, 0, 0, 0, 0, 469.594, 477.859, 0, 0, 0, 0, 1355.72, 944.329, 0, 0, 0, 0, 1164.31, 1038.68, 0, 0, 0, 0, 1295.96, 1146.06, 0, 0, 0, 0, 1501.46, 1056.13, 0, 0, 0, 0, 1418.77, 1003, 0, 0, 0, 0, 1649.09, 901.327, 0, 0, 0, 0, 677.911, 367.284, 0, 0, 0, 0, 478.724, 487.571, 0, 0, 0, 0, 1436.21, 1013.01, 0, 0, 0, 0, 2407.02, 521.676, 0, 0, 0, 0, 1383.17, 22.2556, 0, 0, 0, 0, 1275.81, 80.9984 )
 }
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="DynamicFont" id=66]
 size = 28
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="DynamicFont" id=66]
+[sub_resource type="DynamicFont" id=67]
 size = 48
 outline_size = 5
 outline_color = Color( 0.603922, 0.14902, 0.14902, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="ShaderMaterial" id=67]
+[sub_resource type="ShaderMaterial" id=68]
 
-[sub_resource type="DynamicFont" id=68]
+[sub_resource type="DynamicFont" id=69]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 6.12814, 56.529 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 1.65803, 95.0301 )
 
-[sub_resource type="CanvasItemMaterial" id=72]
+[sub_resource type="CanvasItemMaterial" id=73]
 blend_mode = 1
 
 [node name="game" type="Node2D"]
@@ -1639,7 +1636,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 10
+frame = 4
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1656,7 +1653,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 10
+frame = 4
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1666,7 +1663,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 10
+frame = 4
 speed_scale = 0.5
 playing = true
 
@@ -2415,7 +2412,6 @@ scale = Vector2( 1, -1 )
 [node name="per_level_game_elements" type="YSort" parent="elements"]
 position = Vector2( -7.00005, 0.00805664 )
 rotation = -3.49246e-10
-scale = Vector2( 1, 1 )
 
 [node name="block_boulangerie" type="YSort" parent="elements/per_level_game_elements"]
 position = Vector2( 362.647, 398.551 )
@@ -2437,7 +2433,7 @@ position = Vector2( 777.51, -955.222 )
 position = Vector2( 895.581, -1023.37 )
 rotation = -0.503201
 scale = Vector2( 29.1886, 6.05039 )
-shape = SubResource( 73 )
+shape = SubResource( 38 )
 
 [node name="door" type="Node2D" parent="elements"]
 position = Vector2( 1911.81, -350.441 )
@@ -2446,14 +2442,12 @@ scale = Vector2( 0.119263, 0.120922 )
 
 [node name="wooden-door" type="Sprite" parent="elements/door"]
 position = Vector2( 0, -0.000488281 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 75 )
 offset = Vector2( 0, -200 )
 
 [node name="wooden-door-open" type="Sprite" parent="elements/door"]
 visible = false
 position = Vector2( 0.306641, -199.858 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 77 )
 
 [node name="enemy_paths" type="Navigation2D" parent="."]
@@ -2464,7 +2458,7 @@ scale = Vector2( 0.999992, 0.986271 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="enemy_paths"]
 visible = false
 position = Vector2( 3.59968, 3.35905 )
-navpoly = SubResource( 38 )
+navpoly = SubResource( 39 )
 
 [node name="spawn_pedestrians" type="Node2D" parent="enemy_paths"]
 rotation = 2.32831e-10
@@ -2475,7 +2469,7 @@ enemy_type = "pedestrians"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -2.32831e-10
-curve = SubResource( 39 )
+curve = SubResource( 40 )
 
 [node name="bottom_square_and_column" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
@@ -2574,7 +2568,7 @@ curve = SubResource( 61 )
 [node name="boulangerie_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
 position = Vector2( 537.481, 292.736 )
-curve = SubResource( 74 )
+curve = SubResource( 62 )
 
 [node name="spawn_motorbike" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -2585,13 +2579,13 @@ enemy_type = "motorbike"
 [node name="vehicles_lower" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 62 )
-
-[node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 curve = SubResource( 63 )
 
-[node name="market" type="Path2D" parent="enemy_paths/spawn_motorbike"]
+[node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 curve = SubResource( 64 )
+
+[node name="market" type="Path2D" parent="enemy_paths/spawn_motorbike"]
+curve = SubResource( 65 )
 
 [node name="spawn_police_car" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -2602,14 +2596,14 @@ enemy_type = "police_car"
 [node name="vehicles_lower" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 62 )
+curve = SubResource( 63 )
 
 [node name="market" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -2.32831e-10
-curve = SubResource( 64 )
+curve = SubResource( 65 )
 
 [node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_police_car"]
-curve = SubResource( 63 )
+curve = SubResource( 64 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
@@ -2620,7 +2614,7 @@ margin_left = 4.3064
 margin_top = 7.0
 margin_right = 124.306
 margin_bottom = 61.0
-custom_fonts/normal_font = SubResource( 65 )
+custom_fonts/normal_font = SubResource( 66 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2643,7 +2637,7 @@ margin_left = 841.846
 margin_top = 175.755
 margin_right = 928.846
 margin_bottom = 220.755
-custom_fonts/normal_font = SubResource( 65 )
+custom_fonts/normal_font = SubResource( 66 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2661,7 +2655,7 @@ margin_left = 392.819
 margin_top = 22.0
 margin_right = 632.819
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 66 )
+custom_fonts/normal_font = SubResource( 67 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2712,22 +2706,19 @@ position = Vector2( 372.185, -19.1464 )
 texture = ExtResource( 22 )
 offset = Vector2( 3.59909, 9.94012 )
 
-[node name="objects" type="Node2D" parent="interface/grandma"]
+[node name="items_wanted" type="Node2D" parent="interface/grandma"]
 
-[node name="drugs" type="Sprite" parent="interface/grandma/objects"]
-position = Vector2( 320.241, -94.7028 )
-scale = Vector2( 0.192044, 0.192044 )
-texture = ExtResource( 26 )
-
-[node name="toilet_paper" type="Sprite" parent="interface/grandma/objects"]
-position = Vector2( 198.695, -99.3232 )
-scale = Vector2( 0.500958, 0.500958 )
-texture = ExtResource( 25 )
-
-[node name="bread" type="Sprite" parent="interface/grandma/objects"]
+[node name="item_slot_1" type="Node2D" parent="interface/grandma/items_wanted"]
 position = Vector2( 80.6853, -94.9857 )
-scale = Vector2( 0.42092, 0.42092 )
-texture = ExtResource( 24 )
+scale = Vector2( 4, 4 )
+
+[node name="item_slot_2" type="Node2D" parent="interface/grandma/items_wanted"]
+position = Vector2( 198.695, -99.3232 )
+scale = Vector2( 4, 4 )
+
+[node name="item_slot_3" type="Node2D" parent="interface/grandma/items_wanted"]
+position = Vector2( 320.241, -94.7028 )
+scale = Vector2( 4, 4 )
 
 [node name="attestation_slot_full" type="Node2D" parent="interface"]
 visible = false
@@ -2737,14 +2728,14 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 67 )
+material = SubResource( 68 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 67 )
+material = SubResource( 68 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
@@ -2765,7 +2756,7 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 68 )
+custom_fonts/normal_font = SubResource( 69 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2929,35 +2920,35 @@ visible = false
 [node name="market" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 361.606, 294.661 )
 rotation = -0.555015
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 
 [node name="seine" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2600.15, 1035.8 )
 rotation = -0.555015
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 
 [node name="small-road-key-locked" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1859.43, -366.296 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 70 )
+shape = SubResource( 71 )
 
 [node name="small-road_limit1" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1790.11, -269.7 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 71 )
+shape = SubResource( 72 )
 
 [node name="small-road_limit2" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2011.74, -434.1 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 71 )
+shape = SubResource( 72 )
 
 [node name="audio" type="Node2D" parent="."]
 
@@ -3088,28 +3079,28 @@ rotation = -4.65661e-10
 
 [node name="path918" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 709.005, -182.026 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path926" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1340.1, -96.9813 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path939" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1411.15, 136.619 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path927" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1906.23, 403.195 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3117,7 +3108,7 @@ texture = ExtResource( 74 )
 
 [node name="path940" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2483.51, 838.647 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3125,7 +3116,7 @@ texture = ExtResource( 74 )
 
 [node name="path933" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2357.49, 224.101 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3133,7 +3124,7 @@ texture = ExtResource( 74 )
 
 [node name="path936" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2537.46, -161.199 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3141,7 +3132,7 @@ texture = ExtResource( 74 )
 
 [node name="path937" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2639.03, -421.254 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3149,7 +3140,7 @@ texture = ExtResource( 74 )
 
 [node name="path929" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1474.87, 618.118 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3157,7 +3148,7 @@ texture = ExtResource( 74 )
 
 [node name="path942" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.819608, 0.517647, 0.317647, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1766.27, 1016.29 )
 scale = Vector2( 0.551193, 0.551193 )
 z_index = 1
@@ -3165,7 +3156,7 @@ texture = ExtResource( 74 )
 
 [node name="path943" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1263.6, 1212.24 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3173,7 +3164,7 @@ texture = ExtResource( 74 )
 
 [node name="path947" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 588.299, 1082.45 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3181,7 +3172,7 @@ texture = ExtResource( 74 )
 
 [node name="path949" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1519.55, 1386.94 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3189,7 +3180,7 @@ texture = ExtResource( 74 )
 
 [node name="path930" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1192.74, 505.767 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3197,7 +3188,7 @@ texture = ExtResource( 74 )
 
 [node name="path946" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 308.248, 433.343 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -3205,28 +3196,28 @@ texture = ExtResource( 74 )
 
 [node name="path921" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1104.44, -588.098 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path925" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1285.02, -434.268 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path952" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 443.541, -468.389 )
 scale = Vector2( 0.636649, 0.585266 )
 texture = ExtResource( 74 )
 
 [node name="path928" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1852.61, 148.32 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3234,7 +3225,7 @@ texture = ExtResource( 74 )
 
 [node name="path934" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2897.08, -22.1476 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3242,7 +3233,7 @@ texture = ExtResource( 74 )
 
 [node name="path935" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2088.58, -347.185 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3250,7 +3241,7 @@ texture = ExtResource( 74 )
 
 [node name="path951" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2240.87, -101.004 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3258,7 +3249,7 @@ texture = ExtResource( 74 )
 
 [node name="path938" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2799.03, 268.536 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3266,7 +3257,7 @@ texture = ExtResource( 74 )
 
 [node name="path941" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 2267.29, 569.261 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3274,7 +3265,7 @@ texture = ExtResource( 74 )
 
 [node name="path931" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 721.998, 116.888 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3282,7 +3273,7 @@ texture = ExtResource( 74 )
 
 [node name="path944" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 885.036, 371.479 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3290,7 +3281,7 @@ texture = ExtResource( 74 )
 
 [node name="path945" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 704.694, 635.532 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3298,7 +3289,7 @@ texture = ExtResource( 74 )
 
 [node name="path932" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1030.09, 850.836 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3306,7 +3297,7 @@ texture = ExtResource( 74 )
 
 [node name="path948" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 802.48, 1229.19 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3314,7 +3305,7 @@ texture = ExtResource( 74 )
 
 [node name="path950" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1811.48, 1489.15 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -3322,35 +3313,35 @@ texture = ExtResource( 74 )
 
 [node name="path923" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1584.14, -583.63 )
 scale = Vector2( 0.349383, 0.348027 )
 texture = ExtResource( 74 )
 
 [node name="path919" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 909.267, -357.195 )
 scale = Vector2( 0.419806, 0.419806 )
 texture = ExtResource( 74 )
 
 [node name="path922" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1149.4, -840.021 )
 scale = Vector2( 0.38098, 0.38098 )
 texture = ExtResource( 74 )
 
 [node name="path924" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 1618.24, -787.077 )
 scale = Vector2( 0.394746, 0.400668 )
 texture = ExtResource( 74 )
 
 [node name="path920" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.933333, 0.792157, 0.576471, 0.509804 )
-material = SubResource( 72 )
+material = SubResource( 73 )
 position = Vector2( 672.058, -629.217 )
 scale = Vector2( 0.489091, 0.489091 )
 texture = ExtResource( 74 )

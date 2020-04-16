@@ -31,28 +31,23 @@ func _on_grocery_body_entered(body):
 						body.items_holding.size()
 					)
 					body.items_holding.append(item)
-					if item == "bread":
-						holding_slot.add_child(holding_bread.instance())
-					elif item == "toilet_paper":
-						holding_slot.add_child(holding_toilet_paper.instance())
-					elif item == "drugs":
-						holding_slot.add_child(holding_drugs.instance())
+
+					var item_to_hold = load("res://prefab/holding_" + item + ".tscn")
+					holding_slot.add_child(item_to_hold.instance())
+
 					pickedup_sound.play()
 
 		for item in body.items_bonus:
 			if store_has_items.find(item) != -1:
 				found_item = true
 				if body.items_holding_bonus.find(item) == -1:
-					var flower_slot = body.find_node("holding_items").find_node("flower_slot")
-					var duck_slot = body.find_node("holding_items").find_node("duck_slot")
-					var pasta_slot = body.find_node("holding_items").find_node("pasta_slot")
+					var holding_slot = body.find_node("holding_bonus_items").get_child(
+						body.items_holding_bonus.size()
+					)
 					body.items_holding_bonus.append(item)
-					if item == "flower":
-						flower_slot.add_child(holding_flower.instance())
-					if item == "duck":
-						duck_slot.add_child(holding_duck.instance())
-					if item == "pasta":
-						pasta_slot.add_child(holding_pasta.instance())
+
+					var item_to_hold = load("res://prefab/holding_" + item + ".tscn")
+					holding_slot.add_child(item_to_hold.instance())
 
 					pickedup_sound.play()
 

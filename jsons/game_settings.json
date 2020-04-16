@@ -143,7 +143,7 @@
           "police_station_1": 0,
           "police_station_2": 0,
           "police_station_3": 0,
-          "boulangerie_bottom": 2
+          "boulangerie_bottom": 10
         },
         "motorbike": {},
         "police_car": {}
@@ -313,6 +313,65 @@
           "police_station_1": 1,
           "police_station_2": 0,
           "police_station_3": 1
+        },
+        "motorbike": {},
+        "police_car": {}
+      },
+      "game_limits": [],
+      "game_elements": []
+    },
+    "05": {
+      "level_name": {
+        "french": "TEST",
+        "english": "TEST"
+      },
+      "level_difficulty": 0,
+      "type": "groceries",
+      "starting_bonus_score": 1000,
+      "damage_decrement_exponent": 1,
+      "damage_multiplier": 3,
+      "score_decrement_exponent": 1,
+      "score_increment_speed": 40,
+      "items_needed": ["pasta", "drugs", "toilet_paper"],
+      "items_bonus": ["flower", "duck", "drugs"],
+      "store_items": [
+        { "store": "la_suprette", "has_items": ["pasta"] },
+        { "store": "monoprix", "has_items": ["toilet_paper"] },
+        { "store": "boulangerie", "has_items": ["bread"] },
+        { "store": "flower_market", "has_items": ["flower"] },
+        { "store": "duck", "has_items": ["duck"] },
+        { "store": "pharmacy_1", "has_items": ["drugs"] }
+      ],
+      "player": {
+        "walk_speed": 200,
+        "jogging_speed": 450,
+        "run_speed": 500,
+        "stamina_drain_speed": 1
+      },
+      "pedestrians": {
+        "knows_player_percentage": 0,
+        "move_speed": 50
+      },
+      "police": { "move_speed": 50 },
+      "attestation": {
+        "visible_list": [],
+        "duration": 8,
+        "respawn_time": 5
+      },
+      "sanitizer": {
+        "visible_list": [],
+        "healing_points": 100,
+        "respawn_time": 5
+      },
+      "spawn_seed": 2,
+      "enemies_per_path": {
+        "pedestrians": {
+          "top_square_1": 0,
+          "crowded_street": 0,
+          "crowded_street_above": 0
+        },
+        "police": {
+          "top_square": 0
         },
         "motorbike": {},
         "police_car": {}

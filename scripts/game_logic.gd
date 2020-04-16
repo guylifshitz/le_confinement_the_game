@@ -34,7 +34,7 @@ func _ready():
 		
 		for store_settings in global.level_settings["store_items"]:
 			stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
-		setup_grandma()
+			setup_grandma()
 
 	setup_per_level_game_limits()
 	setup_per_level_game_elements()
@@ -72,12 +72,15 @@ func setup_per_level_game_elements():
 					
 	
 func setup_grandma():
-	var grandma_goals = self.get_node("interface/grandma/objects")
-	for child in grandma_goals.get_children():
-		child.hide()
-	
-	for goal in global.level_settings["items_needed"]:
-		grandma_goals.get_node(goal).show()
+	var grandma_goals = self.get_node("interface/grandma/items_wanted")
+
+	for item_index in range(global.level_settings["items_needed"].size()):
+		var item  = global.level_settings["items_needed"][item_index]
+
+		var holding_slot = grandma_goals.get_child(item_index)
+		var item_to_hold = load("res://prefab/holding_"+item+".tscn")
+
+		holding_slot.add_child(item_to_hold.instance())
 
 func _process(delta):
 	if player.nearest_enemy:
