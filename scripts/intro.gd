@@ -12,6 +12,7 @@ func _ready():
 
 	if global.level_type == "groceries":
 		dialog_settings = utils_custom.load_json("res://jsons/opening_scene_dialog_groceries.json")
+		setup_groceries()
 	else:
 		dialog_settings = utils_custom.load_json("res://jsons/opening_scene_dialog_sport.json")
 
@@ -19,6 +20,14 @@ func _ready():
 	TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])
 	next_page()
 
+func setup_groceries():
+	var found_items_holder = get_node("dialog/icons/groceries")
+	for item_index in range(global.level_settings["items_needed"].size()):
+		var item = global.level_settings["items_needed"][item_index]
+		var holding_slot = found_items_holder.get_child(item_index)
+		var item_to_hold = load("res://prefab/holding_" + item + ".tscn")
+		holding_slot.add_child(item_to_hold.instance())
+	
 func next_page():
 		$audio/pop.play()
 

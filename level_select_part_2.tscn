@@ -212,7 +212,7 @@ __meta__ = {
 
 [node name="level_00" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 325.239, 234.282 )
-level_number = "01"
+level_number = "00"
 
 [node name="baguette2" type="Sprite" parent="groceries/level_00"]
 position = Vector2( 8.10168, -15.6677 )
@@ -261,7 +261,7 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="level_05" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 734.805, 418.804 )
+position = Vector2( 734.388, 418.804 )
 level_number = "05"
 
 [node name="angryemoji" type="Sprite" parent="groceries/level_05"]
