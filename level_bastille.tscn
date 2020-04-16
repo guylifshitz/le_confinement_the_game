@@ -892,7 +892,7 @@ outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662
 
 [sub_resource type="Curve2D" id=40]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1430.45, -670.501, 0, 0, 0, 0, 1737.92, -513.7, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1430.45, -670.501, 0, 0, 0, 0, 1714.27, -527.17, 0, 0, 0, 0, 1672.89, -663.606, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
 }
 
 [sub_resource type="Curve2D" id=41]
@@ -902,7 +902,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=42]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1768.91, -500.727, 0, 0, 0, 0, 1746.95, -388.522, 0, 0, 0, 0, 1414.08, -233.689, 0, 0, 0, 0, 1288.9, -266.36, 0, 0, 0, 0, 1201.17, -91.7913, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1582.93, -421.695, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1743.34, -558.448, 0, 0, 0, 0, 1768.91, -500.727 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1733.69, -459.804, 0, 0, 0, 0, 1710.23, -377.034, 0, 0, 0, 0, 1414.08, -233.689, 0, 0, 0, 0, 1288.9, -266.36, 0, 0, 0, 0, 1201.17, -91.7913, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1582.93, -421.695, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1731.12, -505.864, 0, 0, 0, 0, 1748.74, -540.858, 0, 0, 0, 0, 1733.69, -459.804 )
 }
 
 [sub_resource type="Curve2D" id=43]
@@ -1360,7 +1360,7 @@ scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 5 )
 
 [node name="key" type="YSort" parent="elements/pickups"]
-position = Vector2( 2905.28, -256.108 )
+position = Vector2( 884.39, 698.424 )
 script = ExtResource( 69 )
 
 [node name="key" type="Sprite" parent="elements/pickups/key"]
@@ -1636,7 +1636,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 3
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1653,7 +1653,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 3
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1663,7 +1663,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -2869,6 +2869,7 @@ __meta__ = {
 }
 
 [node name="block_right" type="Node2D" parent="game_limits_per_level"]
+visible = false
 position = Vector2( 2786.9, 272.093 )
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="game_limits_per_level/block_right"]

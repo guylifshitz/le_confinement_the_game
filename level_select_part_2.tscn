@@ -7,10 +7,10 @@
 [ext_resource path="res://scripts/level_select_part_2.gd" type="Script" id=5]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=6]
 [ext_resource path="res://prefab/level_select.tscn" type="PackedScene" id=7]
-[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=10]
 [ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=11]
+[ext_resource path="res://images/interface/items/pasta.png" type="Texture" id=12]
 [ext_resource path="res://images/menu/level-select-2/buttons/blue_button06.png" type="Texture" id=14]
 [ext_resource path="res://images/menu/level-select-2/star-icon.png" type="Texture" id=15]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
@@ -134,6 +134,7 @@ __meta__ = {
 [node name="groceries" type="Node2D" parent="."]
 
 [node name="level_help" type="Node2D" parent="groceries"]
+visible = false
 position = Vector2( 319.425, 232.484 )
 
 [node name="ColorRect2" type="ColorRect" parent="groceries/level_help"]
@@ -209,65 +210,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="level_00" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 325.239, 234.282 )
+level_number = "01"
+
+[node name="baguette2" type="Sprite" parent="groceries/level_00"]
+position = Vector2( 8.10168, -15.6677 )
+scale = Vector2( 0.244508, 0.244508 )
+texture = ExtResource( 17 )
+
 [node name="level_01" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 234.282 )
 level_number = "01"
 
-[node name="baguette2" type="Sprite" parent="groceries/level_01"]
-position = Vector2( 8.10168, -15.6677 )
-scale = Vector2( 0.244508, 0.244508 )
-texture = ExtResource( 17 )
+[node name="drugs2" type="Sprite" parent="groceries/level_01"]
+position = Vector2( 5.63623, -16.6433 )
+scale = Vector2( 0.0760416, 0.0760416 )
+texture = ExtResource( 10 )
 
 [node name="level_02" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 734.805, 234.554 )
 level_number = "02"
 
-[node name="drugs2" type="Sprite" parent="groceries/level_02"]
-position = Vector2( 7.27344, -16.9153 )
-scale = Vector2( 0.0760416, 0.0760416 )
-texture = ExtResource( 10 )
+[node name="pasta" type="Sprite" parent="groceries/level_02"]
+position = Vector2( 9.01709, -16.8113 )
+scale = Vector2( 0.206087, 0.204604 )
+texture = ExtResource( 12 )
 
 [node name="level_03" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 325.385, 418.804 )
+position = Vector2( 324.777, 418.804 )
 level_number = "03"
 
-[node name="drugs" type="Sprite" parent="groceries/level_03"]
-position = Vector2( -34.3904, -23.3926 )
-scale = Vector2( 0.0760416, 0.0760416 )
-texture = ExtResource( 10 )
-
-[node name="baguette" type="Sprite" parent="groceries/level_03"]
-position = Vector2( 4.11182, -17.5186 )
-scale = Vector2( 0.170555, 0.170555 )
-texture = ExtResource( 17 )
-
-[node name="toilletpaper" type="Sprite" parent="groceries/level_03"]
-position = Vector2( 50.67, -13.562 )
+[node name="angryemoji6" type="Sprite" parent="groceries/level_03"]
+position = Vector2( 5.18079, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 
 [node name="level_04" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 418.804 )
 level_number = "04"
 
-[node name="angryemoji" type="Sprite" parent="groceries/level_04"]
-position = Vector2( -36.5186, -16.2119 )
+[node name="angryemoji5" type="Sprite" parent="groceries/level_04"]
+position = Vector2( -10.6401, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji2" type="Sprite" parent="groceries/level_04"]
-position = Vector2( 3.28076, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
-texture = ExtResource( 11 )
-
-[node name="angryemoji3" type="Sprite" parent="groceries/level_04"]
-position = Vector2( 44.5015, -16.2119 )
+[node name="angryemoji4" type="Sprite" parent="groceries/level_04"]
+position = Vector2( 30.5806, -16.8198 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="level_05" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 734.805, 418.804 )
 level_number = "05"
+
+[node name="angryemoji" type="Sprite" parent="groceries/level_05"]
+position = Vector2( -26.8183, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
+
+[node name="angryemoji2" type="Sprite" parent="groceries/level_05"]
+position = Vector2( 13.981, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
+
+[node name="angryemoji3" type="Sprite" parent="groceries/level_05"]
+position = Vector2( 54.2017, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
 
 [node name="sport" type="Node2D" parent="."]
 visible = false
