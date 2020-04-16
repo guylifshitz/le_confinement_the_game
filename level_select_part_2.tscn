@@ -1,12 +1,16 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=3]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=4]
-[ext_resource path="res://level_select_part_2.gd" type="Script" id=5]
+[ext_resource path="res://scripts/level_select_part_2.gd" type="Script" id=5]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=6]
+[ext_resource path="res://prefab/level_select.tscn" type="PackedScene" id=7]
+[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=10]
+[ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=11]
 [ext_resource path="res://images/menu/level-select-2/buttons/blue_button06.png" type="Texture" id=14]
 [ext_resource path="res://images/menu/level-select-2/star-icon.png" type="Texture" id=15]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
@@ -17,41 +21,41 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 45
+[sub_resource type="DynamicFont" id=2]
+size = 53
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 extra_spacing_bottom = -4
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 250
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=5]
 draw_center = false
 shadow_size = 12
 
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
 [sub_resource type="StyleBoxEmpty" id=9]
 
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://fonts/VCR_OSD_MONO_1.001.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=11]
 size = 17
-font_data = SubResource( 3 )
+font_data = SubResource( 10 )
 
 [node name="level_select" type="Node2D"]
 script = ExtResource( 5 )
@@ -109,12 +113,12 @@ __meta__ = {
 }
 
 [node name="back" type="RichTextLabel" parent="."]
-margin_left = 119.141
-margin_top = 490.352
-margin_right = 359.141
-margin_bottom = 555.352
-custom_fonts/normal_font = SubResource( 7 )
-text = "<<< BACK"
+margin_left = 161.0
+margin_top = 517.0
+margin_right = 482.0
+margin_bottom = 582.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "<<<BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,9 +127,11 @@ __meta__ = {
 margin_right = 214.0
 margin_bottom = 49.0
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="groceries" type="Node2D" parent="."]
-visible = false
 
 [node name="level_help" type="Node2D" parent="groceries"]
 position = Vector2( 319.425, 232.484 )
@@ -162,7 +168,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] How to 
@@ -179,7 +185,7 @@ margin_top = -44.0
 margin_right = 218.0
 margin_bottom = 199.0
 rect_scale = Vector2( 0.394825, 0.394825 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 10
 custom_constants/shadow_offset_y = 10
@@ -194,516 +200,78 @@ margin_left = -69.0
 margin_top = -87.0
 margin_right = 89.0
 margin_bottom = 58.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level_1" type="Node2D" parent="groceries"]
-position = Vector2( 529.28, 231.997 )
+[node name="level_01" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 524.442, 234.282 )
+level_number = "01"
 
-[node name="ColorRect" type="ColorRect" parent="groceries/level_1"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="groceries/level_1"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="groceries/level_1"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
+[node name="baguette2" type="Sprite" parent="groceries/level_01"]
+position = Vector2( 8.10168, -15.6677 )
+scale = Vector2( 0.244508, 0.244508 )
 texture = ExtResource( 17 )
 
-[node name="difficulty" type="Node2D" parent="groceries/level_1"]
-position = Vector2( 23.656, 6.15329 )
+[node name="level_02" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 734.805, 234.554 )
+level_number = "02"
 
-[node name="stars" type="Node2D" parent="groceries/level_1/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
+[node name="drugs2" type="Sprite" parent="groceries/level_02"]
+position = Vector2( 7.27344, -16.9153 )
+scale = Vector2( 0.0760416, 0.0760416 )
+texture = ExtResource( 10 )
 
-[node name="star-icon" type="Sprite" parent="groceries/level_1/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
+[node name="level_03" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 325.385, 418.804 )
+level_number = "03"
 
-[node name="star-icon2" type="Sprite" parent="groceries/level_1/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
+[node name="drugs" type="Sprite" parent="groceries/level_03"]
+position = Vector2( -34.3904, -23.3926 )
+scale = Vector2( 0.0760416, 0.0760416 )
+texture = ExtResource( 10 )
 
-[node name="star-icon3" type="Sprite" parent="groceries/level_1/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="groceries/level_1"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="groceries/level_1"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="groceries/level_1"]
-margin_left = -68.078
-margin_top = -86.5126
-margin_right = 89.922
-margin_bottom = 58.4874
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_2" type="Node2D" parent="groceries"]
-position = Vector2( 737.28, 231.997 )
-
-[node name="ColorRect" type="ColorRect" parent="groceries/level_2"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="groceries/level_2"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="groceries/level_2"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
+[node name="baguette" type="Sprite" parent="groceries/level_03"]
+position = Vector2( 4.11182, -17.5186 )
+scale = Vector2( 0.170555, 0.170555 )
 texture = ExtResource( 17 )
 
-[node name="difficulty" type="Node2D" parent="groceries/level_2"]
-position = Vector2( 23.656, 6.15329 )
+[node name="toilletpaper" type="Sprite" parent="groceries/level_03"]
+position = Vector2( 50.67, -13.562 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 8 )
 
-[node name="stars" type="Node2D" parent="groceries/level_2/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
+[node name="level_04" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 524.442, 418.804 )
+level_number = "04"
 
-[node name="star-icon" type="Sprite" parent="groceries/level_2/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
+[node name="angryemoji" type="Sprite" parent="groceries/level_04"]
+position = Vector2( -36.5186, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
 
-[node name="star-icon2" type="Sprite" parent="groceries/level_2/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
+[node name="angryemoji2" type="Sprite" parent="groceries/level_04"]
+position = Vector2( 3.28076, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
 
-[node name="star-icon3" type="Sprite" parent="groceries/level_2/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
+[node name="angryemoji3" type="Sprite" parent="groceries/level_04"]
+position = Vector2( 44.5015, -16.2119 )
+scale = Vector2( 0.20256, 0.20256 )
+texture = ExtResource( 11 )
 
-[node name="diff_text" type="RichTextLabel" parent="groceries/level_2"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="groceries/level_2"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="groceries/level_2"]
-margin_left = -69.7416
-margin_top = -86.5126
-margin_right = 88.2584
-margin_bottom = 58.4874
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_3" type="Node2D" parent="groceries"]
-position = Vector2( 320.28, 401.913 )
-
-[node name="ColorRect" type="ColorRect" parent="groceries/level_3"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="groceries/level_3"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="groceries/level_3"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="groceries/level_3"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="groceries/level_3/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="groceries/level_3/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="groceries/level_3/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="groceries/level_3/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="groceries/level_3"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="groceries/level_3"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="groceries/level_3"]
-margin_left = -68.9914
-margin_top = -86.3058
-margin_right = 89.0086
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_4" type="Node2D" parent="groceries"]
-position = Vector2( 529.28, 401.913 )
-
-[node name="ColorRect" type="ColorRect" parent="groceries/level_4"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="groceries/level_4"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="groceries/level_4"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="groceries/level_4"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="groceries/level_4/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="groceries/level_4/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="groceries/level_4/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="groceries/level_4/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="groceries/level_4"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="groceries/level_4"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="groceries/level_4"]
-margin_left = -67.2152
-margin_top = -86.3058
-margin_right = 90.7848
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_5" type="Node2D" parent="groceries"]
-position = Vector2( 737.28, 401.913 )
-
-[node name="ColorRect2" type="ColorRect" parent="groceries/level_5"]
-margin_left = -58.0383
-margin_top = -73.8601
-margin_right = 98.9617
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="groceries/level_5"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="groceries/level_5"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="groceries/level_5"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="groceries/level_5/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="groceries/level_5/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="groceries/level_5/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="groceries/level_5/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="groceries/level_5"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="groceries/level_5"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="groceries/level_5"]
-margin_left = -69.7416
-margin_top = -86.3058
-margin_right = 88.2584
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="level_05" parent="groceries" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 734.805, 418.804 )
+level_number = "05"
 
 [node name="sport" type="Node2D" parent="."]
+visible = false
 
 [node name="level_help" type="Node2D" parent="sport"]
 position = Vector2( 319.425, 232.484 )
@@ -740,7 +308,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] How to 
@@ -757,7 +325,7 @@ margin_top = -44.0
 margin_right = 218.0
 margin_bottom = 199.0
 rect_scale = Vector2( 0.394825, 0.394825 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 10
 custom_constants/shadow_offset_y = 10
@@ -772,11 +340,11 @@ margin_left = -69.0
 margin_top = -87.0
 margin_right = 89.0
 margin_bottom = 58.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -839,7 +407,7 @@ margin_left = -58.981
 margin_top = 18.0
 margin_right = 78.019
 margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Difficulty"
@@ -853,7 +421,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] Le footing"
@@ -872,11 +440,11 @@ margin_left = -68.078
 margin_top = -86.1213
 margin_right = 89.922
 margin_bottom = 58.8787
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -939,7 +507,7 @@ margin_left = -58.981
 margin_top = 18.0
 margin_right = 78.019
 margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Difficulty"
@@ -953,7 +521,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Le footing
@@ -969,11 +537,11 @@ margin_left = -69.7416
 margin_top = -86.5126
 margin_right = 88.2584
 margin_bottom = 58.4874
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1046,7 +614,7 @@ margin_left = -58.981
 margin_top = 18.0
 margin_right = 78.019
 margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Difficulty"
@@ -1060,7 +628,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] Le pain quotidien "
@@ -1074,11 +642,11 @@ margin_left = -68.9914
 margin_top = -86.3058
 margin_right = 89.0086
 margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1146,7 +714,7 @@ margin_left = -58.981
 margin_top = 18.0
 margin_right = 78.019
 margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Difficulty"
@@ -1160,7 +728,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] Le pain quotidien "
@@ -1174,11 +742,11 @@ margin_left = -67.2152
 margin_top = -86.3058
 margin_right = 90.7848
 margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1246,7 +814,7 @@ margin_left = -58.981
 margin_top = 18.0
 margin_right = 78.019
 margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Difficulty"
@@ -1260,7 +828,7 @@ margin_left = -68.0
 margin_top = -80.0
 margin_right = 89.0
 margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center] Le pain quotidien "
@@ -1274,16 +842,15 @@ margin_left = -69.7416
 margin_top = -86.3058
 margin_right = 88.2584
 margin_bottom = 58.6942
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="back/Button" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="groceries/level_help/Button" to="." method="_on_help_button_down"]
-[connection signal="button_down" from="groceries/level_1/Button" to="." method="_on_level_1_button_down"]
 [connection signal="button_down" from="sport/level_help/Button" to="." method="_on_help_button_down"]
 [connection signal="button_down" from="sport/level_1/Button" to="." method="_on_level_1_button_down"]

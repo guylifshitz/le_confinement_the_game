@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=151 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -73,8 +73,10 @@
 [ext_resource path="res://sounds/pickup/Click_Mechanical_00.wav" type="AudioStream" id=71]
 [ext_resource path="res://sounds/bad/Blip_Select19.wav" type="AudioStream" id=72]
 [ext_resource path="res://images/light/light-circle.jpg" type="Texture" id=73]
-[ext_resource path="res://images/light/path918.png" type="Texture" id=74]
+[ext_resource path="res://images/light/white_gradient.png" type="Texture" id=74]
+[ext_resource path="res://images/TEMP/wooden-door.png" type="Texture" id=75]
 [ext_resource path="res://traficlight.tscn" type="PackedScene" id=76]
+[ext_resource path="res://images/TEMP/wooden-door-open.png" type="Texture" id=77]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49696, 15.3129 )
@@ -883,179 +885,181 @@ height = 21.4161
 [sub_resource type="CircleShape2D" id=37]
 radius = 127.314
 
-[sub_resource type="OccluderPolygon2D" id=38]
-cull_mode = 2
-polygon = PoolVector2Array( 1089.95, -392.074, 1095.62, -218.723, 1095.62, -219.835, 1095.62, -219.835 )
+[sub_resource type="RectangleShape2D" id=73]
+extents = Vector2( 10, 13.2851 )
 
-[sub_resource type="CanvasItemMaterial" id=39]
-blend_mode = 1
-
-[sub_resource type="NavigationPolygon" id=40]
+[sub_resource type="NavigationPolygon" id=38]
 vertices = PoolVector2Array( 1449.35, -1441.69, 4891.81, 662.369, 1382.01, 2120.22, -869.962, 330.214 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662.369, 1449.35, -1441.69 ) ]
 
+[sub_resource type="Curve2D" id=39]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1430.45, -670.501, 0, 0, 0, 0, 1737.92, -513.7, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
+}
+
 [sub_resource type="Curve2D" id=41]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1435.61, -679.462, 0, 0, 0, 0, 1741.48, -530.873, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
-}
-
-[sub_resource type="Curve2D" id=42]
-_data = {
-"points": PoolVector2Array(  )
-}
-
-[sub_resource type="Curve2D" id=43]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1308.78, 23.0505, 0, 0, 0, 0, 614.555, 375.262, 0, 0, 0, 0, 1709.19, 1007.44, 0, 0, 0, 0, 1802.33, 1211.28, 0, 0, 0, 0, 2163.19, 1187.54, 0, 0, 0, 0, 2264.21, 473.976, 0, 0, 0, 0, 1308.78, 23.0505 )
 }
 
+[sub_resource type="Curve2D" id=42]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1768.91, -500.727, 0, 0, 0, 0, 1746.95, -388.522, 0, 0, 0, 0, 1414.08, -233.689, 0, 0, 0, 0, 1288.9, -266.36, 0, 0, 0, 0, 1201.17, -91.7913, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1582.93, -421.695, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1743.34, -558.448, 0, 0, 0, 0, 1768.91, -500.727 )
+}
+
+[sub_resource type="Curve2D" id=43]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1700.22, -651.102, 0, 0, 0, 0, 1675.14, -604.49, 0, 0, 0, 0, 1381.92, -730.425, 0, 0, 0, 0, 1417.14, -770.882, 0, 0, 0, 0, 1504.85, -719.037, 0, 0, 0, 0, 927.979, -410.927, 0, 0, 0, 0, 850.792, -520.84, 0, 0, 0, 0, 1362.05, -784.588, 0, 0, 0, 0, 1700.22, -651.102 )
+}
+
 [sub_resource type="Curve2D" id=44]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1768.91, -500.727, 0, 0, 0, 0, 1736.72, -398.119, 0, 0, 0, 0, 1203.43, -93.0153, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1593.21, -403.749, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1743.34, -558.448, 0, 0, 0, 0, 1768.91, -500.727 )
-}
-
-[sub_resource type="Curve2D" id=45]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1700.22, -651.102, 0, 0, 0, 0, 1658.78, -592.15, 0, 0, 0, 0, 1368.91, -723.396, 0, 0, 0, 0, 1417.14, -770.882, 0, 0, 0, 0, 1497.92, -727.37, 0, 0, 0, 0, 925.59, -429.126, 0, 0, 0, 0, 850.792, -520.84, 0, 0, 0, 0, 1362.05, -784.588, 0, 0, 0, 0, 1700.22, -651.102 )
-}
-
-[sub_resource type="Curve2D" id=46]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 577.629, 453.997, 0, 0, 0, 0, 1159.85, 774.828, 0, 0, 0, 0, 1155.93, 815.663, 0, 0, 0, 0, 1320, 791.361, 0, 0, 0, 0, 1293.75, 719.054, 0, 0, 0, 0, 1139.98, 728.072, 0, 0, 0, 0, 574.419, 418.475, 0, 0, 0, 0, 577.629, 453.997 )
 }
 
-[sub_resource type="Curve2D" id=47]
+[sub_resource type="Curve2D" id=45]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2306.45, 970.703, 0, 0, 0, 0, 1989.06, 1020.17, 0, 0, 0, 0, 1917.41, 1191.65, 0, 0, 0, 0, 1646.36, 1130.23, 0, 0, 0, 0, 1612.66, 942.101, 0, 0, 0, 0, 1710.37, 805.276, 0, 0, 0, 0, 1921.32, 802.093, 0, 0, 0, 0, 2017.87, 916.644, 0, 0, 0, 0, 2223.79, 955.363, 0, 0, 0, 0, 2339.92, 821.457, 0, 0, 0, 0, 2133.89, 692.331, 0, 0, 0, 0, 2228.79, 629.011, 0, 0, 0, 0, 2523.33, 826.391, 0, 0, 0, 0, 2306.45, 970.703 )
 }
 
-[sub_resource type="Curve2D" id=48]
+[sub_resource type="Curve2D" id=46]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2066.47, 550.502, 0, 0, 0, 0, 1595.86, 788.954, 0, 0, 0, 0, 1668.26, 1021.96, 0, 0, 0, 0, 1950.61, 1151.84, 0, 0, 0, 0, 2066.47, 550.502 )
 }
 
-[sub_resource type="Curve2D" id=49]
+[sub_resource type="Curve2D" id=47]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2161.03, 1048.27, 0, 0, 0, 0, 2159.19, 825.26, 0, 0, 0, 0, 1667.9, 851.495, 0, 0, 0, 0, 1606.48, 1115.49, 0, 0, 0, 0, 2005.31, 1178.4, 0, 0, 0, 0, 2161.03, 1048.27 )
 }
 
-[sub_resource type="Curve2D" id=50]
+[sub_resource type="Curve2D" id=48]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1319.12, 8.34949, 0, 0, 0, 0, 1389.6, -29.5893, 0, 0, 0, 0, 2207.5, 407.002, 0, 0, 0, 0, 2109, 442.734, 0, 0, 0, 0, 1319.12, 8.34949 )
 }
 
-[sub_resource type="Curve2D" id=51]
+[sub_resource type="Curve2D" id=49]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2229.43, 515.051, 0, 0, 0, 0, 1364.28, 75.8862, 0, 0, 0, 0, 1405.53, 21.2133, 0, 0, 0, 0, 2246.5, 476.672, 0, 0, 0, 0, 2229.43, 515.051 )
 }
 
-[sub_resource type="Curve2D" id=52]
+[sub_resource type="Curve2D" id=50]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2047.35, 444.569, 0, 0, 0, 0, 1344.46, 68.1456, 0, 0, 0, 0, 1329.3, 77.6923, 0, 0, 0, 0, 2047.35, 444.569 )
 }
 
-[sub_resource type="Curve2D" id=53]
+[sub_resource type="Curve2D" id=51]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2124.5, -244.283, 0, 0, 0, 0, 2084.72, -210.413, 0, 0, 0, 0, 2819.02, 121.529, 0, 0, 0, 0, 2904.14, 216.357, 0, 0, 0, 0, 3075.13, 116.87, 0, 0, 0, 0, 2533.17, 478.648, 0, 0, 0, 0, 2408.28, 434.057, 0, 0, 0, 0, 2873.89, 117.101, 0, 0, 0, 0, 2124.5, -244.283 )
 }
 
-[sub_resource type="Curve2D" id=54]
+[sub_resource type="Curve2D" id=52]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2054.05, -309.013, 0, 0, 0, 0, 2913.25, 89.3418, 0, 0, 0, 0, 2740.25, 319.764, 0, 0, 0, 0, 2802.41, 94.9249, 0, 0, 0, 0, 2128.43, -198.897, 0, 0, 0, 0, 2192.96, -231.705, 0, 0, 0, 0, 2054.05, -309.013 )
 }
 
-[sub_resource type="Curve2D" id=55]
+[sub_resource type="Curve2D" id=53]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1354.48, -734.208, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1401.94, -725.89, 0, 0, 0, 0, 1766.88, -541.852, 0, 0, 0, 0, 1426.48, -325.697, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1762.4, -557.793, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1362.73, -738.404, 0, 0, 0, 0, 1354.48, -734.208 )
 }
 
-[sub_resource type="Curve2D" id=56]
+[sub_resource type="Curve2D" id=54]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 710.823, 321.288, 0, 0, 0, 0, 795.851, 379.961, 0, 0, 0, 0, 730.714, 327.773, 0, 0, 0, 0, 714.499, 340.42, 0, 0, 0, 0, 778.407, 402.524, 0, 0, 0, 0, 830.79, 381.531, 0, 0, 0, 0, 710.823, 321.288 )
 }
 
-[sub_resource type="Curve2D" id=57]
+[sub_resource type="Curve2D" id=55]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1179.42, 852.749, 0, 0, 0, 0, 1383.38, 756.709, 0, 0, 0, 0, 1447.65, 709.135, 0, 0, 0, 0, 1326.88, 646.478, 0, 0, 0, 0, 1291.21, 702.07, 0, 0, 0, 0, 1381.02, 770.399, 0, 0, 0, 0, 1217.52, 834.994, 0, 0, 0, 0, 1110.25, 770.71, 0, 0, 0, 0, 1056.27, 784.459, 0, 0, 0, 0, 1179.42, 852.749 )
 }
 
-[sub_resource type="Curve2D" id=58]
+[sub_resource type="Curve2D" id=56]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 695.6, 341.272, 0, 0, 0, 0, 551.969, 422.267, 0, 0, 0, 0, 1182.83, 770.949, 0, 0, 0, 0, 1095.52, 803.252, 0, 0, 0, 0, 479.781, 484.342, 0, 0, 0, 0, 714.668, 351.233, 0, 0, 0, 0, 1391.63, 743.335, 0, 0, 0, 0, 1178.15, 851.463, 0, 0, 0, 0, 861.095, 662.537, 0, 0, 0, 0, 1013.87, 499.689, 0, 0, 0, 0, 695.6, 341.272 )
 }
 
-[sub_resource type="Curve2D" id=59]
+[sub_resource type="Curve2D" id=57]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1525.43, 859.438, 0, 0, 0, 0, 1167.54, 1063.45, 0, 0, 0, 0, 1251.72, 1140.53, 0, 0, 0, 0, 1357.58, 1155.11, 0, 0, 0, 0, 1438.69, 1080.04, 0, 0, 0, 0, 1349.5, 1060.3, 0, 0, 0, 0, 1281.4, 1103.01, 0, 0, 0, 0, 1216.12, 1070.01, 0, 0, 0, 0, 1466.69, 836.72, 0, 0, 0, 0, 1525.43, 859.438 )
 }
 
-[sub_resource type="Curve2D" id=60]
+[sub_resource type="Curve2D" id=58]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1438.7, 1091.07, 0, 0, 0, 0, 1240.85, 1145.69, 0, 0, 0, 0, 1612.53, 957.83, 0, 0, 0, 0, 1838.21, 1159.7, 0, 0, 0, 0, 2082.38, 1039.61, 0, 0, 0, 0, 1857.32, 743.659, 0, 0, 0, 0, 1141.37, 991.448, 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1158.75, 981.137, 0, 0, 0, 0, 1320.63, 1172.05, 0, 0, 0, 0, 1188.45, 954.643, 0, 0, 0, 0, 1091.44, 1070.89, 0, 0, 0, 0, 1309.03, 1178.68 )
 }
 
-[sub_resource type="Curve2D" id=61]
+[sub_resource type="Curve2D" id=59]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1424.19, 1084.47, 0, 0, 0, 0, 1336.56, 1162.48, 0, 0, 0, 0, 1115.98, 976.042, 0, 0, 0, 0, 1307.54, 1139.73, 0, 0, 0, 0, 1174.68, 964.949, 0, 0, 0, 0, 1143.66, 1094.35, 0, 0, 0, 0, 1424.19, 1084.47 )
 }
 
-[sub_resource type="Curve2D" id=62]
+[sub_resource type="Curve2D" id=60]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2211.18, 473.091, 0, 0, 0, 0, 1623.82, 883.181, 0, 0, 0, 0, 1314.08, 1036.4, 0, 0, 0, 0, 1285.52, 1215.29, 0, 0, 0, 0, 1320.3, 1045.85, 0, 0, 0, 0, 1627.89, 909.178, 0, 0, 0, 0, 1688.77, 1137.61, 0, 0, 0, 0, 1970.15, 1194.81, 0, 0, 0, 0, 2285.51, 915.041, 0, 0, 0, 0, 2112.78, 735.589, 0, 0, 0, 0, 2359.65, 502.862, 0, 0, 0, 0, 2326.69, 493.918 )
 }
 
-[sub_resource type="Curve2D" id=63]
+[sub_resource type="Curve2D" id=61]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1418.67, 757.189, 0, 0, 0, 0, 1532.21, 825.609, 0, 0, 0, 0, 1838.45, 868.594, 0, 0, 0, 0, 2112.67, 772.149, 0, 0, 0, 0, 2255.69, 941.077, 0, 0, 0, 0, 1882.2, 1210.98, 0, 0, 0, 0, 1418.67, 757.189 )
 }
 
-[sub_resource type="Curve2D" id=64]
+[sub_resource type="Curve2D" id=74]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1413.2, 100.133, 0, 0, 0, 0, 1104.68, -143.834, 0, 0, 0, 0, 1534.03, 33.5165, 0, 0, 0, 0, 1584, 71.2718, 0, 0, 0, 0, 1413.2, 100.133 )
+}
+
+[sub_resource type="Curve2D" id=62]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2948.97, 189.146, 0, 0, 0, 0, 1178.04, 1030.67, 0, 0, 0, 0, 1322.88, 1111.22, 0, 0, 0, 0, 1469.35, 1037.18, 0, 0, 0, 0, 1369.26, 991.611, 0, 0, 0, 0, 3018.94, 217.951, 0, 0, 0, 0, 2948.97, 189.146 )
 }
 
-[sub_resource type="Curve2D" id=65]
+[sub_resource type="Curve2D" id=63]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2427.39, 528.357, 0, 0, 0, 0, 1427.53, 40.316, 0, 0, 0, 0, 706.282, -309.865, 0, 0, 0, 0, 1437.31, -699.944, 0, 0, 0, 0, 1870.56, -497.46, 0, 0, 0, 0, 1045.74, -88.0266, 0, 0, 0, 0, 2355.93, 564.09, 0, 0, 0, 0, 2427.39, 528.357 )
 }
 
-[sub_resource type="Curve2D" id=66]
+[sub_resource type="Curve2D" id=64]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1275.81, 80.9984, 0, 0, 0, 0, 469.594, 477.859, 0, 0, 0, 0, 1355.72, 944.329, 0, 0, 0, 0, 1164.31, 1038.68, 0, 0, 0, 0, 1295.96, 1146.06, 0, 0, 0, 0, 1501.46, 1056.13, 0, 0, 0, 0, 1418.77, 1003, 0, 0, 0, 0, 1649.09, 901.327, 0, 0, 0, 0, 677.911, 367.284, 0, 0, 0, 0, 478.724, 487.571, 0, 0, 0, 0, 1436.21, 1013.01, 0, 0, 0, 0, 2407.02, 521.676, 0, 0, 0, 0, 1383.17, 22.2556, 0, 0, 0, 0, 1275.81, 80.9984 )
 }
 
-[sub_resource type="DynamicFont" id=67]
+[sub_resource type="DynamicFont" id=65]
 size = 28
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="DynamicFont" id=68]
+[sub_resource type="DynamicFont" id=66]
 size = 48
 outline_size = 5
 outline_color = Color( 0.603922, 0.14902, 0.14902, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="ShaderMaterial" id=69]
+[sub_resource type="ShaderMaterial" id=67]
 
-[sub_resource type="DynamicFont" id=70]
+[sub_resource type="DynamicFont" id=68]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=72]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 6.12814, 56.529 )
 
-[sub_resource type="RectangleShape2D" id=73]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 1.65803, 95.0301 )
+
+[sub_resource type="CanvasItemMaterial" id=72]
+blend_mode = 1
 
 [node name="game" type="Node2D"]
 position = Vector2( 127.747, -366.384 )
 script = ExtResource( 20 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="streeet" type="TileMap" parent="."]
 position = Vector2( 206.018, 243.238 )
@@ -1072,7 +1076,7 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="player" parent="elements" instance=ExtResource( 2 )]
 material = SubResource( 3 )
-position = Vector2( 953.997, -203.782 )
+position = Vector2( 539.05, -353.181 )
 rotation = -3.49246e-10
 
 [node name="pickups" type="YSort" parent="elements"]
@@ -1113,6 +1117,23 @@ script = ExtResource( 29 )
 rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/attestations/attestation_market_top/Area2D"]
+position = Vector2( 0.296753, -0.000335693 )
+shape = SubResource( 4 )
+
+[node name="attestation_market_top_2" type="Node2D" parent="elements/pickups/attestations"]
+position = Vector2( 848.51, 202.162 )
+rotation = -4.65661e-10
+
+[node name="attestation" type="Sprite" parent="elements/pickups/attestations/attestation_market_top_2"]
+position = Vector2( 0.00012207, -1.52588e-05 )
+rotation = 2.32831e-10
+texture = ExtResource( 17 )
+script = ExtResource( 29 )
+
+[node name="Area2D" type="Area2D" parent="elements/pickups/attestations/attestation_market_top_2"]
+rotation = 2.32831e-10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/attestations/attestation_market_top_2/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 4 )
 
@@ -1164,6 +1185,23 @@ script = ExtResource( 29 )
 rotation = 2.32831e-10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/attestations/attestation_opera/Area2D"]
+position = Vector2( 0.296753, -0.000335693 )
+shape = SubResource( 4 )
+
+[node name="attestation_opera_2" type="Node2D" parent="elements/pickups/attestations"]
+position = Vector2( 2352.28, 587.839 )
+rotation = -4.65661e-10
+
+[node name="attestation" type="Sprite" parent="elements/pickups/attestations/attestation_opera_2"]
+position = Vector2( 0.00012207, -1.52588e-05 )
+rotation = 2.32831e-10
+texture = ExtResource( 17 )
+script = ExtResource( 29 )
+
+[node name="Area2D" type="Area2D" parent="elements/pickups/attestations/attestation_opera_2"]
+rotation = 2.32831e-10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/attestations/attestation_opera_2/Area2D"]
 position = Vector2( 0.296753, -0.000335693 )
 shape = SubResource( 4 )
 
@@ -1374,7 +1412,8 @@ position = Vector2( 3.04785, -11.1082 )
 scale = Vector2( 0.679958, 0.679958 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/waypoints/waypoint/Area2D"]
-position = Vector2( 1.64465, 9.52393 )
+visible = false
+position = Vector2( 0.78772, 8.65704 )
 scale = Vector2( 8.71773, 8.71773 )
 shape = SubResource( 8 )
 
@@ -1467,6 +1506,7 @@ texture = ExtResource( 11 )
 [node name="grocery" type="Area2D" parent="elements/goals/monoprix/monoprix_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/monoprix_node/grocery"]
+visible = false
 position = Vector2( 0.000610352, 0.548546 )
 shape = SubResource( 9 )
 
@@ -1520,6 +1560,7 @@ texture = ExtResource( 18 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/boulangerie/boulangerie_node/grocery"]
+visible = false
 position = Vector2( -1.08557, 0.0012207 )
 shape = SubResource( 9 )
 
@@ -1598,7 +1639,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1615,7 +1656,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1625,7 +1666,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 
@@ -1936,7 +1977,7 @@ position = Vector2( 1218.69, 914.669 )
 position = Vector2( 2115.97, 531.143 )
 
 [node name="opera" parent="elements/scene" instance=ExtResource( 6 )]
-position = Vector2( -29.8347, -7.77938 )
+position = Vector2( -28.8965, -7.78045 )
 
 [node name="upper_buildings" parent="elements/scene" instance=ExtResource( 1 )]
 position = Vector2( 0, 0 )
@@ -2327,6 +2368,7 @@ texture = ExtResource( 73 )
 color = Color( 0.592157, 0.447059, 0.254902, 1 )
 
 [node name="traffic_lights" type="YSort" parent="elements/scene"]
+visible = false
 position = Vector2( 1406.95, 734.082 )
 rotation = -3.14044
 scale = Vector2( 0.247002, -0.250438 )
@@ -2370,290 +2412,51 @@ position = Vector2( 3519.83, -1023.73 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="elements"]
-visible = false
-occluder = SubResource( 38 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="elements"]
-position = Vector2( 562.753, -256.08 )
-rotation = -4.65661e-10
-color = Color( 0.717647, 0.568627, 0.568627, 1 )
-
-[node name="street_lights" type="Node2D" parent="elements"]
-position = Vector2( 82.4846, 42.6096 )
+[node name="per_level_game_elements" type="YSort" parent="elements"]
+position = Vector2( -7.00005, 0.00805664 )
 rotation = -3.49246e-10
+scale = Vector2( 1, 1 )
 
-[node name="path918" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 709.005, -182.026 )
-scale = Vector2( 0.384018, 0.384018 )
-texture = ExtResource( 74 )
+[node name="block_boulangerie" type="YSort" parent="elements/per_level_game_elements"]
+position = Vector2( 362.647, 398.551 )
+rotation = -0.00115045
+scale = Vector2( 0.565005, 0.572865 )
 
-[node name="path926" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1340.1, -96.9813 )
-scale = Vector2( 0.384018, 0.384018 )
-texture = ExtResource( 74 )
+[node name="police-car-flipped5" parent="elements/per_level_game_elements/block_boulangerie" instance=ExtResource( 31 )]
+position = Vector2( 889.477, -1038.1 )
 
-[node name="path939" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1411.15, 136.619 )
-scale = Vector2( 0.384018, 0.384018 )
-texture = ExtResource( 74 )
+[node name="police-car5" parent="elements/per_level_game_elements/block_boulangerie" instance=ExtResource( 30 )]
+position = Vector2( 1047.47, -1108.54 )
 
-[node name="path927" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1906.23, 403.195 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
+[node name="police-car6" parent="elements/per_level_game_elements/block_boulangerie" instance=ExtResource( 30 )]
+position = Vector2( 777.51, -955.222 )
 
-[node name="path940" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2483.51, 838.647 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/per_level_game_elements/block_boulangerie"]
 
-[node name="path933" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2357.49, 224.101 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/per_level_game_elements/block_boulangerie/StaticBody2D"]
+position = Vector2( 895.581, -1023.37 )
+rotation = -0.503201
+scale = Vector2( 29.1886, 6.05039 )
+shape = SubResource( 73 )
 
-[node name="path936" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2537.46, -161.199 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
+[node name="door" type="Node2D" parent="elements"]
+position = Vector2( 1911.81, -350.441 )
+rotation = -0.00115045
+scale = Vector2( 0.119263, 0.120922 )
 
-[node name="path937" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2639.03, -421.254 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
+[node name="wooden-door" type="Sprite" parent="elements/door"]
+position = Vector2( 0, -0.000488281 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 75 )
+offset = Vector2( 0, -200 )
 
-[node name="path929" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1474.87, 618.118 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path942" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.819608, 0.517647, 0.317647, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1766.27, 1016.29 )
-scale = Vector2( 0.551193, 0.551193 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path943" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1263.6, 1212.24 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path947" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 588.299, 1082.45 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path949" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1519.55, 1386.94 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path930" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1192.74, 505.767 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path946" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 308.248, 433.343 )
-scale = Vector2( 0.384018, 0.384018 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path921" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1104.44, -588.098 )
-scale = Vector2( 0.370649, 0.370649 )
-texture = ExtResource( 74 )
-
-[node name="path925" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1285.02, -434.268 )
-scale = Vector2( 0.370649, 0.370649 )
-texture = ExtResource( 74 )
-
-[node name="path952" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 443.541, -468.389 )
-scale = Vector2( 0.636649, 0.585266 )
-texture = ExtResource( 74 )
-
-[node name="path928" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1852.61, 148.32 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path934" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2897.08, -22.1476 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path935" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2088.58, -347.185 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path951" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2240.87, -101.004 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path938" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2799.03, 268.536 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path941" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 2267.29, 569.261 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path931" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 721.998, 116.888 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path944" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 885.036, 371.479 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path945" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 704.694, 635.532 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path932" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1030.09, 850.836 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path948" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 802.48, 1229.19 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path950" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1811.48, 1489.15 )
-scale = Vector2( 0.370649, 0.370649 )
-z_index = 1
-texture = ExtResource( 74 )
-
-[node name="path923" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1584.14, -583.63 )
-scale = Vector2( 0.349383, 0.348027 )
-texture = ExtResource( 74 )
-
-[node name="path919" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 909.267, -357.195 )
-scale = Vector2( 0.419806, 0.419806 )
-texture = ExtResource( 74 )
-
-[node name="path922" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1149.4, -840.021 )
-scale = Vector2( 0.38098, 0.38098 )
-texture = ExtResource( 74 )
-
-[node name="path924" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 1618.24, -787.077 )
-scale = Vector2( 0.394746, 0.400668 )
-texture = ExtResource( 74 )
-
-[node name="path920" type="Sprite" parent="elements/street_lights"]
-modulate = Color( 0.933333, 0.792157, 0.576471, 0.509804 )
-material = SubResource( 39 )
-position = Vector2( 672.058, -629.217 )
-scale = Vector2( 0.489091, 0.489091 )
-texture = ExtResource( 74 )
+[node name="wooden-door-open" type="Sprite" parent="elements/door"]
+visible = false
+position = Vector2( 0.306641, -199.858 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 77 )
 
 [node name="enemy_paths" type="Navigation2D" parent="."]
-visible = false
 position = Vector2( 1, 0 )
 rotation = 0.00113466
 scale = Vector2( 0.999992, 0.986271 )
@@ -2661,7 +2464,7 @@ scale = Vector2( 0.999992, 0.986271 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="enemy_paths"]
 visible = false
 position = Vector2( 3.59968, 3.35905 )
-navpoly = SubResource( 40 )
+navpoly = SubResource( 38 )
 
 [node name="spawn_pedestrians" type="Node2D" parent="enemy_paths"]
 rotation = 2.32831e-10
@@ -2672,63 +2475,58 @@ enemy_type = "pedestrians"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -2.32831e-10
-curve = SubResource( 41 )
-
-[node name="top_square_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
-visible = false
-rotation = -2.32831e-10
-curve = SubResource( 42 )
+curve = SubResource( 39 )
 
 [node name="bottom_square_and_column" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 43 )
+curve = SubResource( 41 )
 
 [node name="crowded_street" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 44 )
+curve = SubResource( 42 )
 
 [node name="crowded_street_above" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 45 )
+curve = SubResource( 43 )
 
 [node name="market_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 46 )
+curve = SubResource( 44 )
 
 [node name="bastille_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 47 )
+curve = SubResource( 45 )
 
 [node name="bastille_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 48 )
+curve = SubResource( 46 )
 
 [node name="bastille_3" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 49 )
+curve = SubResource( 47 )
 
 [node name="middle_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 50 )
+curve = SubResource( 48 )
 
 [node name="middle_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 51 )
+curve = SubResource( 49 )
 
 [node name="middle_3" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 52 )
+curve = SubResource( 50 )
 
 [node name="right_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 53 )
+curve = SubResource( 51 )
 
 [node name="right_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 54 )
+curve = SubResource( 52 )
 
 [node name="spawn_police" type="Node2D" parent="enemy_paths"]
 rotation = 2.32831e-10
@@ -2739,41 +2537,47 @@ enemy_type = "police"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 55 )
+curve = SubResource( 53 )
 
 [node name="market_top" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 56 )
+curve = SubResource( 54 )
 
 [node name="market_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 57 )
+curve = SubResource( 55 )
 
 [node name="market_full" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 58 )
+curve = SubResource( 56 )
 
 [node name="police_station_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 59 )
+curve = SubResource( 57 )
 
 [node name="police_station_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 60 )
+curve = SubResource( 58 )
 
 [node name="police_station_3" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 61 )
+curve = SubResource( 59 )
 
 [node name="bastille_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 62 )
+curve = SubResource( 60 )
 
 [node name="bastille_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 63 )
+curve = SubResource( 61 )
+
+[node name="boulangerie_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
+visible = false
+position = Vector2( 537.481, 292.736 )
+curve = SubResource( 74 )
 
 [node name="spawn_motorbike" type="Node2D" parent="enemy_paths"]
+visible = false
 rotation = -1.16415e-10
 script = ExtResource( 19 )
 enemy_type = "motorbike"
@@ -2781,15 +2585,16 @@ enemy_type = "motorbike"
 [node name="vehicles_lower" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 64 )
+curve = SubResource( 62 )
 
 [node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_motorbike"]
-curve = SubResource( 65 )
+curve = SubResource( 63 )
 
 [node name="market" type="Path2D" parent="enemy_paths/spawn_motorbike"]
-curve = SubResource( 66 )
+curve = SubResource( 64 )
 
 [node name="spawn_police_car" type="Node2D" parent="enemy_paths"]
+visible = false
 rotation = -1.16415e-10
 script = ExtResource( 19 )
 enemy_type = "police_car"
@@ -2797,14 +2602,14 @@ enemy_type = "police_car"
 [node name="vehicles_lower" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 64 )
+curve = SubResource( 62 )
 
 [node name="market" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -2.32831e-10
-curve = SubResource( 66 )
+curve = SubResource( 64 )
 
 [node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_police_car"]
-curve = SubResource( 65 )
+curve = SubResource( 63 )
 
 [node name="interface" type="CanvasLayer" parent="."]
 
@@ -2815,7 +2620,7 @@ margin_left = 4.3064
 margin_top = 7.0
 margin_right = 124.306
 margin_bottom = 61.0
-custom_fonts/normal_font = SubResource( 67 )
+custom_fonts/normal_font = SubResource( 65 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2838,7 +2643,7 @@ margin_left = 841.846
 margin_top = 175.755
 margin_right = 928.846
 margin_bottom = 220.755
-custom_fonts/normal_font = SubResource( 67 )
+custom_fonts/normal_font = SubResource( 65 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2856,7 +2661,7 @@ margin_left = 392.819
 margin_top = 22.0
 margin_right = 632.819
 margin_bottom = 66.0
-custom_fonts/normal_font = SubResource( 68 )
+custom_fonts/normal_font = SubResource( 66 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -2881,6 +2686,7 @@ position = Vector2( 107.852, 104.354 )
 scale = Vector2( 0.464339, 0.45989 )
 
 [node name="grandma-head-small" type="Sprite" parent="interface/grandma"]
+position = Vector2( 0, 0.306091 )
 texture = ExtResource( 23 )
 
 [node name="dialogbox" type="Sprite" parent="interface/grandma"]
@@ -2906,17 +2712,19 @@ position = Vector2( 372.185, -19.1464 )
 texture = ExtResource( 22 )
 offset = Vector2( 3.59909, 9.94012 )
 
-[node name="drugs" type="Sprite" parent="interface/grandma"]
+[node name="objects" type="Node2D" parent="interface/grandma"]
+
+[node name="drugs" type="Sprite" parent="interface/grandma/objects"]
 position = Vector2( 320.241, -94.7028 )
 scale = Vector2( 0.192044, 0.192044 )
 texture = ExtResource( 26 )
 
-[node name="toilletpaper" type="Sprite" parent="interface/grandma"]
+[node name="toilet_paper" type="Sprite" parent="interface/grandma/objects"]
 position = Vector2( 198.695, -99.3232 )
 scale = Vector2( 0.500958, 0.500958 )
 texture = ExtResource( 25 )
 
-[node name="baguette" type="Sprite" parent="interface/grandma"]
+[node name="bread" type="Sprite" parent="interface/grandma/objects"]
 position = Vector2( 80.6853, -94.9857 )
 scale = Vector2( 0.42092, 0.42092 )
 texture = ExtResource( 24 )
@@ -2929,14 +2737,14 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 69 )
+material = SubResource( 67 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 69 )
+material = SubResource( 67 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
@@ -2957,7 +2765,7 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 70 )
+custom_fonts/normal_font = SubResource( 68 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3020,40 +2828,136 @@ default_color = Color( 0.611765, 0.494118, 0.396078, 0.870588 )
 begin_cap_mode = 2
 end_cap_mode = 2
 
+[node name="game_limits_per_level" type="Node2D" parent="."]
+
+[node name="block_boulangerie" type="Node2D" parent="game_limits_per_level"]
+visible = false
+position = Vector2( 37.7588, 18.8794 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="game_limits_per_level/block_boulangerie"]
+position = Vector2( 1082.1, -56.0751 )
+rotation = -0.451185
+scale = Vector2( 0.975907, 0.318884 )
+
+[node name="block_boulangerie" type="CollisionPolygon2D" parent="game_limits_per_level/block_boulangerie/StaticBody2D"]
+position = Vector2( -1104.05, 210.493 )
+polygon = PoolVector2Array( 919.72, 21.961, 972.871, -0.126648, 1350.45, -157.038, 1408.65, -72.9145, 1038, 140.239 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="game_limits_per_level/block_boulangerie"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 1619.88
+margin_top = -252.35
+margin_right = 3621.88
+margin_bottom = 1884.65
+rect_rotation = 67.2146
+rect_scale = Vector2( 0.224893, 0.515874 )
+texture = ExtResource( 74 )
+patch_margin_left = 200
+patch_margin_top = 200
+patch_margin_right = 200
+patch_margin_bottom = 200
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="game_limits_per_level/block_boulangerie"]
+modulate = Color( 0, 0, 0, 0.419608 )
+margin_left = 1619.88
+margin_top = -252.35
+margin_right = 3621.88
+margin_bottom = 1884.65
+rect_rotation = 67.2146
+rect_scale = Vector2( 0.224893, 0.515874 )
+texture = ExtResource( 74 )
+patch_margin_left = 200
+patch_margin_top = 200
+patch_margin_right = 200
+patch_margin_bottom = 200
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="block_right" type="Node2D" parent="game_limits_per_level"]
+position = Vector2( 2786.9, 272.093 )
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="game_limits_per_level/block_right"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 683.0
+margin_top = -185.0
+margin_right = 3224.0
+margin_bottom = 2066.0
+rect_rotation = 112.553
+rect_scale = Vector2( 0.224893, 0.515874 )
+texture = ExtResource( 74 )
+patch_margin_left = 200
+patch_margin_top = 200
+patch_margin_right = 200
+patch_margin_bottom = 200
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="game_limits_per_level/block_right"]
+modulate = Color( 0, 0, 0, 0.419608 )
+margin_left = 670.0
+margin_top = -182.0
+margin_right = 3178.0
+margin_bottom = 2049.0
+rect_rotation = 112.553
+rect_scale = Vector2( 0.224893, 0.515874 )
+texture = ExtResource( 74 )
+patch_margin_left = 200
+patch_margin_top = 200
+patch_margin_right = 200
+patch_margin_bottom = 200
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="game_limits_per_level/block_right"]
+position = Vector2( -158.779, -28.9609 )
+rotation = 0.543929
+scale = Vector2( 0.975907, 0.318884 )
+
+[node name="block_boulangerie" type="CollisionPolygon2D" parent="game_limits_per_level/block_right/StaticBody2D2"]
+position = Vector2( -1104.05, 210.493 )
+polygon = PoolVector2Array( 919.72, 21.961, 972.871, -0.126648, 1350.45, -157.038, 1408.65, -72.9145, 1038, 140.239 )
+
 [node name="game_limits" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="market" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 361.606, 294.661 )
 rotation = -0.555015
-shape = SubResource( 71 )
+shape = SubResource( 69 )
 
 [node name="seine" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 71 )
+shape = SubResource( 69 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="game_limits"]
-position = Vector2( 2600.15, 1034.86 )
+position = Vector2( 2600.15, 1035.8 )
 rotation = -0.555015
-shape = SubResource( 71 )
+shape = SubResource( 69 )
 
 [node name="small-road-key-locked" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1859.43, -366.296 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 72 )
+shape = SubResource( 70 )
 
 [node name="small-road_limit1" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1790.11, -269.7 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 73 )
+shape = SubResource( 71 )
 
 [node name="small-road_limit2" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2011.74, -434.1 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 73 )
+shape = SubResource( 71 )
 
 [node name="audio" type="Node2D" parent="."]
 
@@ -3165,11 +3069,298 @@ polygon = PoolVector2Array( 384.437, 443.051, 1289.19, 913.772, 793.874, 1154.55
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sidewalk_limits"]
 visible = false
 polygon = PoolVector2Array( 641.999, 397.882, 1416.42, 784.282, 1298.32, 848.257, 542.654, 477.148 )
+
+[node name="night" type="Node2D" parent="."]
+visible = false
+rotation = 0.00113466
+scale = Vector2( 0.999992, 0.986271 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="night"]
+visible = false
+position = Vector2( 562.753, -256.08 )
+rotation = -5.82077e-10
+color = Color( 0.717647, 0.568627, 0.568627, 1 )
+
+[node name="street_lights" type="Node2D" parent="night"]
+visible = false
+position = Vector2( 82.4846, 42.6096 )
+rotation = -4.65661e-10
+
+[node name="path918" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 709.005, -182.026 )
+scale = Vector2( 0.384018, 0.384018 )
+texture = ExtResource( 74 )
+
+[node name="path926" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1340.1, -96.9813 )
+scale = Vector2( 0.384018, 0.384018 )
+texture = ExtResource( 74 )
+
+[node name="path939" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1411.15, 136.619 )
+scale = Vector2( 0.384018, 0.384018 )
+texture = ExtResource( 74 )
+
+[node name="path927" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1906.23, 403.195 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path940" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2483.51, 838.647 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path933" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2357.49, 224.101 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path936" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2537.46, -161.199 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path937" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2639.03, -421.254 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path929" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1474.87, 618.118 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path942" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.819608, 0.517647, 0.317647, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1766.27, 1016.29 )
+scale = Vector2( 0.551193, 0.551193 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path943" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1263.6, 1212.24 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path947" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 588.299, 1082.45 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path949" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1519.55, 1386.94 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path930" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1192.74, 505.767 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path946" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 308.248, 433.343 )
+scale = Vector2( 0.384018, 0.384018 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path921" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1104.44, -588.098 )
+scale = Vector2( 0.370649, 0.370649 )
+texture = ExtResource( 74 )
+
+[node name="path925" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1285.02, -434.268 )
+scale = Vector2( 0.370649, 0.370649 )
+texture = ExtResource( 74 )
+
+[node name="path952" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 443.541, -468.389 )
+scale = Vector2( 0.636649, 0.585266 )
+texture = ExtResource( 74 )
+
+[node name="path928" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1852.61, 148.32 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path934" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2897.08, -22.1476 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path935" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2088.58, -347.185 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path951" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2240.87, -101.004 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path938" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2799.03, 268.536 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path941" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 2267.29, 569.261 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path931" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 721.998, 116.888 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path944" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 885.036, 371.479 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path945" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 704.694, 635.532 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path932" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1030.09, 850.836 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path948" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 802.48, 1229.19 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path950" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1811.48, 1489.15 )
+scale = Vector2( 0.370649, 0.370649 )
+z_index = 1
+texture = ExtResource( 74 )
+
+[node name="path923" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1584.14, -583.63 )
+scale = Vector2( 0.349383, 0.348027 )
+texture = ExtResource( 74 )
+
+[node name="path919" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 909.267, -357.195 )
+scale = Vector2( 0.419806, 0.419806 )
+texture = ExtResource( 74 )
+
+[node name="path922" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1149.4, -840.021 )
+scale = Vector2( 0.38098, 0.38098 )
+texture = ExtResource( 74 )
+
+[node name="path924" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 1618.24, -787.077 )
+scale = Vector2( 0.394746, 0.400668 )
+texture = ExtResource( 74 )
+
+[node name="path920" type="Sprite" parent="night/street_lights"]
+modulate = Color( 0.933333, 0.792157, 0.576471, 0.509804 )
+material = SubResource( 72 )
+position = Vector2( 672.058, -629.217 )
+scale = Vector2( 0.489091, 0.489091 )
+texture = ExtResource( 74 )
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_test/Area2D" to="elements/pickups/attestations/attestation_test/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_market_top/Area2D" to="elements/pickups/attestations/attestation_market_top/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/pickups/attestations/attestation_market_top_2/Area2D" to="elements/pickups/attestations/attestation_market_top_2/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_market_2/Area2D" to="elements/pickups/attestations/attestation_market_2/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_pharmacy/Area2D" to="elements/pickups/attestations/attestation_pharmacy/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_opera/Area2D" to="elements/pickups/attestations/attestation_opera/attestation" method="_on_attestation_body_entered"]
+[connection signal="body_entered" from="elements/pickups/attestations/attestation_opera_2/Area2D" to="elements/pickups/attestations/attestation_opera_2/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_column/Area2D" to="elements/pickups/attestations/attestation_column/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/attestations/attestation_top/Area2D" to="elements/pickups/attestations/attestation_top/attestation" method="_on_attestation_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_test/Area2D" to="elements/pickups/sanitizers/sanitizer_test/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]

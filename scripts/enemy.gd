@@ -3,11 +3,11 @@ extends KinematicBody2D
 # parameters
 var SPEECH_SPEED = 0.15
 var KIDS_INDEX = 2
-var MOVE_SPEED = global.level_settings["enemies"]["move_speed"]
+var MOVE_SPEED = global.level_settings["pedestrians"]["move_speed"]
 
 # conversation
-var conversations_adult = global.game_settings["enemies"]["conversations_adult"]
-var conversations_kid = global.game_settings["enemies"]["conversations_kid"]
+var conversations_adult = global.game_settings["pedestrians"]["conversations_adult"]
+var conversations_kid = global.game_settings["pedestrians"]["conversations_kid"]
 var conversation
 var conv_number = 0
 var conv_page = 0
@@ -38,7 +38,7 @@ func _ready():
 
 	dialog_box.get_parent().hide()
 
-	if randi() % 100 > (100 - global.level_settings["enemies"].knows_player_percentage):
+	if randi() % 100 > (100 - global.level_settings["pedestrians"].knows_player_percentage):
 		is_social = true
 	else:
 		dialog_box.get_parent().queue_free()

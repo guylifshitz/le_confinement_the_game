@@ -367,6 +367,7 @@ __meta__ = {
 }
 
 [node name="difficulty" type="Node2D" parent="."]
+visible = false
 position = Vector2( 382.395, 14.9483 )
 scale = Vector2( 0.66941, 0.66941 )
 
@@ -435,7 +436,7 @@ __meta__ = {
 }
 
 [node name="language" type="Node2D" parent="."]
-position = Vector2( 45.173, 13.614 )
+position = Vector2( 333.173, 13.614 )
 scale = Vector2( 0.66941, 0.66941 )
 
 [node name="language" type="RichTextLabel" parent="language"]

@@ -27,7 +27,7 @@ var should_play_bump_sound = true
 var STAMINA_MAX_AMOUNT = player_settings["stamina_max_amount"]
 
 var STAMINA_RECOVER_SPEED = 0.5
-var STAMINA_DEPLETION_SPEED = 2
+var STAMINA_DEPLETION_SPEED = global.level_settings["player"]["stamina_drain_speed"]
 var STAMINA_RECOVERY_TIME = 2
 var stamina = STAMINA_MAX_AMOUNT
 
@@ -58,7 +58,7 @@ func _ready():
 		RUN_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED * 2
 		$main_char_node/bike_character.show()
 		$main_char_node/main_character.hide()
-	elif global.level_type == "sport":
+	elif global.level_type == "groceries":
 		$main_char_node/bike_character.hide()
 		$main_char_node/main_character.show()
 		
@@ -195,6 +195,10 @@ func set_nearest_enemy():
 func acquired_key():
 	sound_acquired_key.play()
 	sound_acquired_key_door.play()
+
+	get_tree().get_root().get_node("game/elements/door/wooden-door").hide()
+	get_tree().get_root().get_node("game/elements/door/wooden-door-open").show()
+
 	get_tree().get_root().get_node("game/interface/key").show()
 	var blocked_passage = get_tree().get_root().get_node("game/game_limits/small-road-key-locked")
 	blocked_passage.queue_free()

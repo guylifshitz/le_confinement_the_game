@@ -18,7 +18,6 @@ func _process(delta):
 	#global_position = Vector2(500,500)
 	remote_path_follow.offset += MOVE_SPEED  * delta
 	self.global_position = remote_transform.global_position
-	print(global_position)
 #	print9
 	if prev_x < self.global_position.x and prev_y > self.global_position.y:
 		self.scale = Vector2(base_scale, base_scale)

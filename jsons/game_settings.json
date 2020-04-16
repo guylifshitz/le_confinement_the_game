@@ -1,5 +1,5 @@
 {
-  "debug": false,
+  "debug": true,
   "general": {
     "show_nearest_enemy_line": false,
     "nearest_distance_minimum": 30
@@ -10,7 +10,7 @@
     "stamina_max_amount": 1,
     "debug_run_speed": 1200
   },
-  "enemies": {
+  "pedestrians": {
     "conversations_adult": [
       ["Salut!", "ça va?"],
       ["Salut!", "Ça fait un bail.", "On fait la bise?"],
@@ -23,210 +23,302 @@
     ],
     "conversations_kid": [["Wanna play?"], ["Got candy?"]]
   },
-  "groceries_easy": {
-    "type": "groceries",
-    "starting_bonus_score": 1000,
-    "damage_decrement_exponent": 1,
-    "damage_multiplier": 0.8,
-    "score_decrement_exponent": 1,
-    "score_increment_speed": 40,
-    "items_needed": ["toilet_paper", "bread", "drugs"],
-    "items_bonus": ["flower", "duck", "pasta"],
-    "store_items": [
-      { "store": "boulangerie", "has_items": ["bread"] },
-      { "store": "monoprix", "has_items": [] },
-      { "store": "carrefour", "has_items": ["toilet_paper"] },
-      { "store": "la_suprette", "has_items": ["pasta"] },
-      { "store": "pharmacy_1", "has_items": ["drugs"] },
-      { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["flower"] },
-      { "store": "duck", "has_items": ["duck"] }
-    ],
-    "enemies": {
-      "knows_player_percentage": 30,
-      "move_speed": 100
-    },
-    "police": { "move_speed": 100 },
-    "attestation": {
-      "visible_list": [
-        "attestation_market_top",
-        "attestation_market_2",
-        "attestation_column",
-        "attestation_top",
-        "attestation_pharmacy"
-      ],
-      "duration": 8,
-      "respawn_time": 5
-    },
-    "sanitizer": {
-      "visible_list": [
-        "sanitizer_far_right_1",
-        "sanitizer_far_right_2",
-        "market",
-        "water",
-        "sanitizer_bastille"
-      ],
-      "healing_points": 100,
-      "respawn_time": 5
-    },
-    "enemies_per_path": {
-      "enemies": {
-        "top_square_1": 1,
-        "top_square_2": 1,
-        "crowded_street": 10,
-        "crowded_street_above": 0,
-        "market_1": 3,
-        "bastille_1": 3,
-        "bastille_2": 3,
-        "middle_1": 1,
-        "middle_2": 1,
-        "right_1": 2,
-        "right_2": 2
+  "groceries": {
+    "01": {
+      "level_name": {
+        "french": "Le pain\nquotidien",
+        "english": "Daily bread"
       },
-      "police": {
-        "top_square": 3,
-        "market_full": 1,
-        "market_top": 1,
-        "market_bottom": 1,
-        "police_station_1": 0,
-        "police_station_2": 0,
-        "police_station_3": 1
-      }
-    }
-  },
-  "groceries_medium": {
-    "type": "groceries",
-    "starting_bonus_score": 1000,
-    "damage_decrement_exponent": 1,
-    "damage_multiplier": 0.8,
-    "score_decrement_exponent": 1,
-    "score_increment_speed": 40,
-    "items_needed": ["toilet_paper", "bread", "drugs"],
-    "items_bonus": ["flower", "duck", "pasta"],
-    "store_items": [
-      { "store": "boulangerie", "has_items": ["bread"] },
-      { "store": "monoprix", "has_items": [] },
-      { "store": "carrefour", "has_items": ["toilet_paper"] },
-      { "store": "la_suprette", "has_items": ["pasta"] },
-      { "store": "pharmacy_1", "has_items": ["drugs"] },
-      { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["flower"] },
-      { "store": "duck", "has_items": ["duck"] }
-    ],
-    "enemies": {
-      "knows_player_percentage": 30,
-      "move_speed": 100
-    },
-    "police": { "move_speed": 120 },
-    "attestation": {
-      "visible_list": [
-        "attestation_market_top",
-        "attestation_market_2",
-        "attestation_column",
-        "attestation_top",
-        "attestation_pharmacy"
-      ],
-      "duration": 5,
-      "respawn_time": 5
-    },
-    "sanitizer": {
-      "visible_list": [
-        "sanitizer_far_right_1",
-        "sanitizer_far_right_2",
-        "sanitizer_bastille"
-      ],
-      "healing_points": 50,
-      "respawn_time": 5
-    },
-    "enemies_per_path": {
-      "enemies": {
-        "top_square_1": 1,
-        "top_square_2": 1,
-        "crowded_street": 10,
-        "crowded_street_above": 4,
-        "market_1": 3,
-        "bastille_1": 4,
-        "bastille_2": 3,
-        "bastille_3": 2,
-        "middle_1": 2,
-        "middle_2": 1,
-        "right_1": 3,
-        "right_2": 3
+      "level_difficulty": 0,
+      "type": "groceries",
+      "starting_bonus_score": 1000,
+      "damage_decrement_exponent": 1,
+      "damage_multiplier": 3,
+      "score_decrement_exponent": 1,
+      "score_increment_speed": 40,
+      "items_needed": ["bread"],
+      "items_bonus": [],
+      "store_items": [{ "store": "boulangerie", "has_items": ["bread"] }],
+      "player": {
+        "walk_speed": 200,
+        "jogging_speed": 450,
+        "run_speed": 500,
+        "stamina_drain_speed": 1
       },
-      "police": {
-        "top_square": 3,
-        "market_full": 1,
-        "market_top": 1,
-        "market_bottom": 1,
-        "police_station_1": 1,
-        "police_station_2": 0,
-        "police_station_3": 1
-      }
-    }
-  },
-  "groceries_hard": {
-    "type": "groceries",
-    "starting_bonus_score": 1000,
-    "damage_decrement_exponent": 1,
-    "damage_multiplier": 0.8,
-    "score_decrement_exponent": 1,
-    "score_increment_speed": 40,
-    "items_needed": ["toilet_paper", "bread", "drugs"],
-    "items_bonus": ["flower", "duck", "pasta"],
-    "store_items": [
-      { "store": "boulangerie", "has_items": ["bread"] },
-      { "store": "monoprix", "has_items": [] },
-      { "store": "carrefour", "has_items": ["toilet_paper"] },
-      { "store": "la_suprette", "has_items": ["pasta"] },
-      { "store": "pharmacy_1", "has_items": ["drugs"] },
-      { "store": "pharmacy_2", "has_items": [] },
-      { "store": "flower_market", "has_items": ["flower"] },
-      { "store": "duck", "has_items": ["duck"] }
-    ],
-    "enemies": {
-      "knows_player_percentage": 20,
-      "move_speed": 100
-    },
-    "police": { "move_speed": 130 },
-    "attestation": {
-      "visible_list": [
-        "attestation_market_top",
-        "attestation_market_2",
-        "attestation_opera",
-        "attestation_pharmacy"
-      ],
-      "duration": 5,
-      "respawn_time": 5
-    },
-    "sanitizer": {
-      "visible_list": [],
-      "healing_points": 50,
-      "respawn_time": 5
-    },
-    "enemies_per_path": {
-      "enemies": {
-        "top_square_1": 2,
-        "top_square_2": 2,
-        "crowded_street": 10,
-        "crowded_street_above": 6,
-        "market_1": 3,
-        "bastille_1": 4,
-        "bastille_2": 3,
-        "bastille_3": 2,
-        "middle_1": 2,
-        "middle_2": 1,
-        "right_1": 2,
-        "right_2": 2
+      "pedestrians": {
+        "knows_player_percentage": 0,
+        "move_speed": 50
       },
-      "police": {
-        "top_square": 4,
-        "market_full": 1,
-        "market_top": 1,
-        "market_bottom": 1,
-        "police_station_1": 1,
-        "police_station_2": 0,
-        "police_station_3": 1
-      }
+      "police": { "move_speed": 50 },
+      "attestation": {
+        "visible_list": [],
+        "duration": 8,
+        "respawn_time": 5
+      },
+      "sanitizer": {
+        "visible_list": [],
+        "healing_points": 100,
+        "respawn_time": 5
+      },
+      "spawn_seed": 2,
+      "enemies_per_path": {
+        "pedestrians": {
+          "top_square_1": 3,
+          "crowded_street": 3,
+          "crowded_street_above": 1
+        },
+        "police": {
+          "top_square": 0
+        },
+        "motorbike": {},
+        "police_car": {}
+      },
+      "game_limits": ["block_boulangerie"],
+      "game_elements": ["block_boulangerie"]
+    },
+    "02": {
+      "type": "groceries",
+      "level_name": { "french": "Doliprane", "english": "Tyleonl" },
+      "level_difficulty": 1,
+      "starting_bonus_score": 1000,
+      "damage_decrement_exponent": 1,
+      "damage_multiplier": 2,
+      "score_decrement_exponent": 1,
+      "score_increment_speed": 40,
+      "items_needed": ["drugs"],
+      "items_bonus": ["flower", "duck"],
+      "store_items": [
+        { "store": "pharmacy_1", "has_items": ["drugs"] },
+        { "store": "flower_market", "has_items": ["flower"] },
+        { "store": "duck", "has_items": ["duck"] }
+      ],
+      "player": {
+        "walk_speed": 200,
+        "jogging_speed": 450,
+        "run_speed": 500,
+        "stamina_drain_speed": 1
+      },
+      "pedestrians": {
+        "knows_player_percentage": 60,
+        "move_speed": 100
+      },
+      "police": { "move_speed": 130 },
+      "attestation": {
+        "visible_list": [
+          "attestation_market_top_2",
+          "attestation_market_2",
+          "attestation_opera_2",
+          "attestation_pharmacy"
+        ],
+        "duration": 5,
+        "respawn_time": 5
+      },
+      "sanitizer": {
+        "visible_list": ["sanitizer_pharmacy"],
+        "healing_points": 50,
+        "respawn_time": 5
+      },
+      "spawn_seed": 3,
+      "enemies_per_path": {
+        "pedestrians": {
+          "spawn_seed": 2,
+          "middle_2": 1,
+          "top_square_1": 2,
+          "crowded_street": 2,
+          "crowded_street_above": 1,
+          "market_1": 0,
+          "bastille_1": 1,
+          "bastille_2": 0,
+          "bastille_3": 1,
+          "middle_1": 0,
+          "right_1": 0,
+          "right_2": 0
+        },
+        "police": {
+          "spawn_seed": 1,
+          "top_square": 0,
+          "market_full": 0,
+          "market_top": 1,
+          "market_bottom": 2,
+          "police_station_1": 0,
+          "police_station_2": 0,
+          "police_station_3": 0,
+          "boulangerie_bottom": 2
+        },
+        "motorbike": {},
+        "police_car": {}
+      },
+      "game_limits": ["block_right"],
+      "game_elements": ["block_boulangerie"]
+    },
+    "03": {
+      "type": "groceries",
+      "level_name": {
+        "french": "Le panier\nplein",
+        "english": "A full\nbasket"
+      },
+      "level_difficulty": 2,
+      "starting_bonus_score": 1000,
+      "damage_decrement_exponent": 1,
+      "damage_multiplier": 0.8,
+      "score_decrement_exponent": 1,
+      "score_increment_speed": 40,
+      "items_needed": ["toilet_paper", "bread", "drugs"],
+      "items_bonus": ["flower", "duck", "pasta"],
+      "store_items": [
+        { "store": "boulangerie", "has_items": ["bread"] },
+        { "store": "monoprix", "has_items": [] },
+        { "store": "carrefour", "has_items": ["toilet_paper"] },
+        { "store": "la_suprette", "has_items": ["pasta"] },
+        { "store": "pharmacy_1", "has_items": ["drugs"] },
+        { "store": "pharmacy_2", "has_items": [] },
+        { "store": "flower_market", "has_items": ["flower"] },
+        { "store": "duck", "has_items": ["duck"] }
+      ],
+      "player": {
+        "walk_speed": 200,
+        "jogging_speed": 450,
+        "run_speed": 500,
+        "stamina_drain_speed": 1
+      },
+      "pedestrians": {
+        "knows_player_percentage": 30,
+        "move_speed": 100
+      },
+      "police": { "move_speed": 100 },
+      "attestation": {
+        "visible_list": [
+          "attestation_market_top",
+          "attestation_market_2",
+          "attestation_column",
+          "attestation_top",
+          "attestation_pharmacy"
+        ],
+        "duration": 8,
+        "respawn_time": 5
+      },
+      "sanitizer": {
+        "visible_list": [
+          "sanitizer_far_right_1",
+          "sanitizer_far_right_2",
+          "market",
+          "water",
+          "sanitizer_bastille"
+        ],
+        "healing_points": 100,
+        "respawn_time": 5
+      },
+      "spawn_seed": 2,
+      "enemies_per_path": {
+        "pedestrians": {
+          "top_square_1": 1,
+          "crowded_street": 10,
+          "crowded_street_above": 0,
+          "market_1": 3,
+          "bastille_1": 3,
+          "bastille_2": 3,
+          "middle_1": 1,
+          "middle_2": 1,
+          "right_1": 2,
+          "right_2": 2
+        },
+        "police": {
+          "top_square": 3,
+          "market_full": 1,
+          "market_top": 1,
+          "market_bottom": 1,
+          "police_station_1": 0,
+          "police_station_2": 0,
+          "police_station_3": 1
+        },
+        "motorbike": {},
+        "police_car": {}
+      },
+      "game_limits": [],
+      "game_elements": []
+    },
+    "04": {
+      "type": "groceries",
+      "level_name": { "french": "L'heure de\npointe", "english": "Rush hour" },
+      "level_difficulty": 3,
+      "player": { "walk_speed": 300, "jogging_speed": 450, "run_speed": 600 },
+      "starting_bonus_score": 1000,
+      "damage_decrement_exponent": 1,
+      "damage_multiplier": 0.8,
+      "score_decrement_exponent": 1,
+      "score_increment_speed": 40,
+      "items_needed": ["toilet_paper", "bread", "drugs"],
+      "items_bonus": ["flower", "duck", "pasta"],
+      "store_items": [
+        { "store": "boulangerie", "has_items": ["bread"] },
+        { "store": "monoprix", "has_items": [] },
+        { "store": "carrefour", "has_items": ["toilet_paper"] },
+        { "store": "la_suprette", "has_items": ["pasta"] },
+        { "store": "pharmacy_1", "has_items": ["drugs"] },
+        { "store": "pharmacy_2", "has_items": [] },
+        { "store": "flower_market", "has_items": ["flower"] },
+        { "store": "duck", "has_items": ["duck"] }
+      ],
+      "player": {
+        "walk_speed": 200,
+        "jogging_speed": 450,
+        "run_speed": 500,
+        "stamina_drain_speed": 1
+      },
+      "pedestrians": {
+        "knows_player_percentage": 30,
+        "move_speed": 100
+      },
+      "police": { "move_speed": 120 },
+      "attestation": {
+        "visible_list": [
+          "attestation_market_top",
+          "attestation_market_2",
+          "attestation_column",
+          "attestation_top",
+          "attestation_pharmacy"
+        ],
+        "duration": 5,
+        "respawn_time": 5
+      },
+      "sanitizer": {
+        "visible_list": [
+          "sanitizer_far_right_1",
+          "sanitizer_far_right_2",
+          "sanitizer_bastille"
+        ],
+        "healing_points": 50,
+        "respawn_time": 5
+      },
+      "spawn_seed": 2,
+      "enemies_per_path": {
+        "pedestrians": {
+          "top_square_1": 1,
+          "crowded_street": 10,
+          "crowded_street_above": 4,
+          "market_1": 3,
+          "bastille_1": 4,
+          "bastille_2": 3,
+          "bastille_3": 2,
+          "middle_1": 2,
+          "middle_2": 1,
+          "right_1": 3,
+          "right_2": 3
+        },
+        "police": {
+          "top_square": 3,
+          "market_full": 1,
+          "market_top": 1,
+          "market_bottom": 1,
+          "police_station_1": 1,
+          "police_station_2": 0,
+          "police_station_3": 1
+        },
+        "motorbike": {},
+        "police_car": {}
+      },
+      "game_limits": [],
+      "game_elements": []
     }
   },
   "sport_easy": {
@@ -317,7 +409,6 @@
     "enemies_per_path": {
       "enemies": {
         "top_square_1": 1,
-        "top_square_2": 0,
         "crowded_street": 1,
         "crowded_street_above": 0,
         "market_1": 2,
@@ -371,7 +462,6 @@
     "enemies_per_path": {
       "enemies": {
         "top_square_1": 1,
-        "top_square_2": 0,
         "crowded_street": 1,
         "crowded_street_above": 0,
         "market_1": 2,

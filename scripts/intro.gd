@@ -65,4 +65,5 @@ func text_clicked():
 
 
 func _on_back_button_down():
-	get_tree().change_scene("res://level_select.tscn")
+	# get_tree().change_scene("res://level_select.tscn")
+	get_tree().change_scene("res://level_select_part_2.tscn")

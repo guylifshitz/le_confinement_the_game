@@ -8,6 +8,7 @@ func _ready():
 		$dialog/sports_time.hide()
 		$dialog/groceries_items.show()
 		$dialog/groceries_text.show()
+		setup_groceries()
 
 		if global.language == "english":
 			$dialog/groceries_text/english.show()
@@ -33,6 +34,13 @@ func _ready():
 			$dialog/sports_text/french.show()
 
 		$dialog/sports_time.text = global.sports_timer
+
+func setup_groceries():
+	for item in $dialog/groceries_items/groceries.get_children():
+		item.hide()
+
+	for item in global.items_recovered:
+		get_node("dialog/groceries_items/groceries/"+item).show()
 
 func next_scene():
 	get_tree().change_scene("res://level_select.tscn")

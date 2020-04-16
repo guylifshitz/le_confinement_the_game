@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://images/light/path918.png" type="Texture" id=1]
+[ext_resource path="res://images/light/white_gradient.png" type="Texture" id=1]
 [ext_resource path="res://images/scenery/trafficlight.png" type="Texture" id=2]
 [ext_resource path="res://traffic-light.gd" type="Script" id=3]
+
 
 [node name="traficlight" type="Node2D"]
 position = Vector2( 1399.12, 725.6 )

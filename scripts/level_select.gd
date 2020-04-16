@@ -19,11 +19,10 @@ func play_sport():
 
 func _on_groceries_button_down():
 	$audio/pop.play()
-	# play sound
 	$form/option_groceries/checkbox_checked.show()
 	$form/signature.show()
 	$buttons/sport.disabled = true
-	global.set_level_settings("groceries_" + global.level_difficulty, "groceries")
+	global.level_type = "groceries"
 	utils_custom.create_timer_2(1, self, "play_groceries")
 
 

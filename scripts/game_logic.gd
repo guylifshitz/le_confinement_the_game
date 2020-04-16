@@ -27,12 +27,17 @@ func _ready():
 	if global.level_type == "sport":
 		self.get_node("interface/grandma").hide()
 	else:
+		self.get_node("sidewalk_limits").queue_free()
 		self.get_node("interface/sports_timer_label").hide()
 		player.items_needed = global.level_settings["items_needed"]
 		player.items_bonus = global.level_settings["items_bonus"]
 		
 		for store_settings in global.level_settings["store_items"]:
 			stores.find_node(store_settings["store"]).get_child(0).store_has_items = store_settings["has_items"]
+		setup_grandma()
+
+	setup_per_level_game_limits()
+	setup_per_level_game_elements()
 
 	if not global.game_settings["debug"]:
 		get_tree().get_root().get_node("game/interface/fps").hide()
@@ -40,6 +45,39 @@ func _ready():
 	sports_timer_start = OS.get_unix_time()
 	add_attestations()	
 	add_sanitizer()
+
+func setup_per_level_game_limits():
+	var limits = get_node("game_limits_per_level")
+	for child in limits.get_children():
+		child.hide()
+
+	for game_limit in global.level_settings["game_limits"]:
+		limits.get_node(game_limit).show()
+	
+	for child in limits.get_children():
+		if not child.visible:
+			child.queue_free()
+
+func setup_per_level_game_elements():
+	var limits = get_node("elements/per_level_game_elements")
+	for child in limits.get_children():
+		child.hide()
+
+	for game_limit in global.level_settings["game_elements"]:
+		limits.get_node(game_limit).show()
+	
+	for child in limits.get_children():
+		if not child.visible:
+			child.queue_free()
+					
+	
+func setup_grandma():
+	var grandma_goals = self.get_node("interface/grandma/objects")
+	for child in grandma_goals.get_children():
+		child.hide()
+	
+	for goal in global.level_settings["items_needed"]:
+		grandma_goals.get_node(goal).show()
 
 func _process(delta):
 	if player.nearest_enemy:
@@ -52,9 +90,13 @@ func _process(delta):
 		var score_delta =  (1-score_ratio) * score_increment_speed * delta
 		score -= max(score_delta, 0)
 		score = max(score, 0)
+		
+		var nearest_distance_threshold = 80
+		if global.level_type == "sport":
+			nearest_distance_threshold = 110
 
-		if nearest_distance < 100:
-			var damage_intensity = (100-nearest_distance) / 100 + 0.2
+		if nearest_distance < nearest_distance_threshold:
+			var damage_intensity = (nearest_distance_threshold-nearest_distance) / nearest_distance_threshold + 0.2
 			damage -= pow(damage_intensity, damage_decrement_exponent) * damage_multiplier
 			sprite_sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
 			circle.modulate = Color(damage_intensity,0,0, max(damage_intensity, 0.15))
@@ -154,5 +196,6 @@ func win_game():
 func show_win_screen():
 	global.score = score
 	global.bonus_items_recovered = player.items_holding_bonus
+	global.items_recovered = player.items_holding
 	get_tree().change_scene("res://win-screen.tscn")
 

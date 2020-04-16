@@ -35,6 +35,8 @@ func spawn():
 		spawn_distribution = global.level_settings["enemies_per_path"]["pedestrians"]
 
 	for path in spawn_distribution.keys():
+		if path == "spawn_seed":
+			continue
 		var enemy_path = self.get_node(path)
 
 		for i in range(0, spawn_distribution[path]):

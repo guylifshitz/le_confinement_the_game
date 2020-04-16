@@ -7,6 +7,8 @@ var play_audio = "all"
 var sports_timer
 
 var level_type
+var level_number = 1
+
 var level_difficulty = "easy"
 var language = "french"
 
@@ -19,6 +21,8 @@ func _ready():
 func load_local_game_settings():
 	game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 
-func set_level_settings(level_name, level_type_param):
-	level_settings = game_settings[level_name]
+func set_level_settings(level_type_param, level_number):
 	level_type = level_type_param
+	level_number = str(level_number).pad_zeros(2)
+	level_settings = game_settings[level_type_param][level_number]
+

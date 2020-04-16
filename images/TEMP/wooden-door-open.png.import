@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/path918.png-5f1a0af3ae6a1610af14cbbb053aaa95.stex"
+path="res://.import/wooden-door-open.png-d09edad3ce1d60c381eb40cb58bdb5c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/light/path918.png"
-dest_files=[ "res://.import/path918.png-5f1a0af3ae6a1610af14cbbb053aaa95.stex" ]
+source_file="res://images/TEMP/wooden-door-open.png"
+dest_files=[ "res://.import/wooden-door-open.png-d09edad3ce1d60c381eb40cb58bdb5c0.stex" ]
 
 [params]
 
