@@ -32,8 +32,8 @@ func _on_sport_button_down():
 	$form/option_sport/checkbox_checked.show()
 	$form/signature.show()
 	$buttons/groceries.disabled = true
+	global.level_type = "sport"
 	utils_custom.create_timer_2(1, self, "play_sport")
-	global.set_level_settings("sport_" + global.level_difficulty, "sport")
 
 
 func show_right_difficulty():

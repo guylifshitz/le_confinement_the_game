@@ -8,11 +8,13 @@ func _ready():
 	# get_tree().change_scene("res://level_select.tscn")
 	
 	# LEVEL SELECT 2
-	global.level_type = "groceries"
-	get_tree().change_scene("res://level_select_part_2.tscn")
+	# global.level_type = "groceries"
+	# get_tree().change_scene("res://level_select_part_2.tscn")
 
 	# global.level_type = "groceries"
 	# global.set_level_settings("groceries", 3)
+	# global.level_type = "sport"
+	# global.set_level_settings("sport", 4)
 	# get_tree().change_scene("res://level_bastille.tscn")
 	# get_tree().change_scene("res://lose-police.tscn")
 	# global.language = "english"

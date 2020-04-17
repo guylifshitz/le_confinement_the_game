@@ -156,6 +156,7 @@ modulate = Color( 0, 0, 0, 0.870588 )
 position = Vector2( 245, 410.412 )
 scale = Vector2( 3.68378, 3.68378 )
 frames = SubResource( 5 )
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -163,7 +164,6 @@ playing = true
 position = Vector2( 170, 370 )
 scale = Vector2( 3.11326, 3.11326 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.5
 playing = true
 

@@ -1,18 +1,16 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=3]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/level_select_part_2.gd" type="Script" id=5]
-[ext_resource path="res://images/interface/running-small.png" type="Texture" id=6]
 [ext_resource path="res://prefab/level_select.tscn" type="PackedScene" id=7]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=10]
 [ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=11]
 [ext_resource path="res://images/interface/items/pasta.png" type="Texture" id=12]
 [ext_resource path="res://images/menu/level-select-2/buttons/blue_button06.png" type="Texture" id=14]
-[ext_resource path="res://images/menu/level-select-2/star-icon.png" type="Texture" id=15]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
@@ -49,13 +47,6 @@ shadow_size = 12
 [sub_resource type="StyleBoxEmpty" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="DynamicFontData" id=10]
-font_path = "res://fonts/VCR_OSD_MONO_1.001.ttf"
-
-[sub_resource type="DynamicFont" id=11]
-size = 17
-font_data = SubResource( 10 )
 
 [node name="level_select" type="Node2D"]
 script = ExtResource( 5 )
@@ -132,6 +123,7 @@ __meta__ = {
 }
 
 [node name="groceries" type="Node2D" parent="."]
+visible = false
 
 [node name="level_help" type="Node2D" parent="groceries"]
 visible = false
@@ -280,9 +272,9 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="sport" type="Node2D" parent="."]
-visible = false
 
 [node name="level_help" type="Node2D" parent="sport"]
+visible = false
 position = Vector2( 319.425, 232.484 )
 
 [node name="ColorRect2" type="ColorRect" parent="sport/level_help"]
@@ -358,508 +350,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level_1" type="Node2D" parent="sport"]
-position = Vector2( 529.28, 232.388 )
+[node name="level_00" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 325.239, 234.282 )
+level_number = "00"
 
-[node name="ColorRect" type="ColorRect" parent="sport/level_1"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="level_01" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 524.442, 234.282 )
+level_number = "01"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="sport/level_1"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="level_02" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 734.805, 234.554 )
+level_number = "02"
 
-[node name="difficulty" type="Node2D" parent="sport/level_1"]
-position = Vector2( 23.656, 6.15329 )
+[node name="level_03" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 324.777, 418.804 )
+level_number = "03"
 
-[node name="stars" type="Node2D" parent="sport/level_1/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
+[node name="level_04" parent="sport" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 524.442, 418.804 )
+level_number = "04"
 
-[node name="star-icon" type="Sprite" parent="sport/level_1/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="sport/level_1/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="sport/level_1/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="sport/level_1"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="sport/level_1"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le footing"
-text = " Le footing"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="running-small" type="Sprite" parent="sport/level_1"]
-position = Vector2( 6.99109, -12.5143 )
-scale = Vector2( 0.345771, 0.345771 )
-texture = ExtResource( 6 )
-
-[node name="Button" type="Button" parent="sport/level_1"]
-margin_left = -68.078
-margin_top = -86.1213
-margin_right = 89.922
-margin_bottom = 58.8787
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_2" type="Node2D" parent="sport"]
-position = Vector2( 738.28, 231.997 )
-
-[node name="ColorRect" type="ColorRect" parent="sport/level_2"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="sport/level_2"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="difficulty" type="Node2D" parent="sport/level_2"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="sport/level_2/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="sport/level_2/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="sport/level_2/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="sport/level_2/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="sport/level_2"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="sport/level_2"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Le footing
-de 19h"
-text = "Le footing
-de 19h"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="sport/level_2"]
-margin_left = -69.7416
-margin_top = -86.5126
-margin_right = 88.2584
-margin_bottom = 58.4874
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="running-small2" type="Sprite" parent="sport/level_2"]
-position = Vector2( 9.12671, -14.123 )
-scale = Vector2( 0.345771, 0.345771 )
-texture = ExtResource( 6 )
-
-[node name="level_3" type="Node2D" parent="sport"]
-position = Vector2( 320.28, 401.913 )
-
-[node name="ColorRect" type="ColorRect" parent="sport/level_3"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="sport/level_3"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="sport/level_3"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="sport/level_3"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="sport/level_3/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="sport/level_3/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="sport/level_3/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="sport/level_3/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="sport/level_3"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="sport/level_3"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="sport/level_3"]
-margin_left = -68.9914
-margin_top = -86.3058
-margin_right = 89.0086
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_4" type="Node2D" parent="sport"]
-position = Vector2( 529.28, 401.913 )
-
-[node name="ColorRect" type="ColorRect" parent="sport/level_4"]
-margin_left = -59.0859
-margin_top = -73.8601
-margin_right = 97.9141
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="sport/level_4"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="sport/level_4"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="sport/level_4"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="sport/level_4/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="sport/level_4/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="sport/level_4/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="sport/level_4/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="sport/level_4"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="sport/level_4"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="sport/level_4"]
-margin_left = -67.2152
-margin_top = -86.3058
-margin_right = 90.7848
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="level_5" type="Node2D" parent="sport"]
-position = Vector2( 737.28, 401.913 )
-
-[node name="ColorRect2" type="ColorRect" parent="sport/level_5"]
-margin_left = -58.0383
-margin_top = -73.8601
-margin_right = 98.9617
-margin_bottom = 70.1399
-color = Color( 0.858824, 0.858824, 0.858824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="sport/level_5"]
-margin_left = -71.6956
-margin_top = -88.7017
-margin_right = 63.3049
-margin_bottom = 33.2986
-rect_scale = Vector2( 1.21244, 1.26561 )
-texture = ExtResource( 14 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="baguette" type="Sprite" parent="sport/level_5"]
-position = Vector2( 11.2346, -18.1748 )
-scale = Vector2( 0.242621, 0.242621 )
-texture = ExtResource( 17 )
-
-[node name="difficulty" type="Node2D" parent="sport/level_5"]
-position = Vector2( 23.656, 6.15329 )
-
-[node name="stars" type="Node2D" parent="sport/level_5/difficulty"]
-position = Vector2( -33.8618, 8.4447 )
-scale = Vector2( 1.58274, 1.58274 )
-
-[node name="star-icon" type="Sprite" parent="sport/level_5/difficulty/stars"]
-position = Vector2( -1.83789, 17.3115 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon2" type="Sprite" parent="sport/level_5/difficulty/stars"]
-position = Vector2( 10.5879, 16.9551 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="star-icon3" type="Sprite" parent="sport/level_5/difficulty/stars"]
-modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
-position = Vector2( 22.6133, 16.7725 )
-scale = Vector2( 0.022593, 0.022593 )
-texture = ExtResource( 15 )
-
-[node name="diff_text" type="RichTextLabel" parent="sport/level_5"]
-margin_left = -58.981
-margin_top = 18.0
-margin_right = 78.019
-margin_bottom = 39.0
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Difficulty"
-text = "Difficulty"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tittle" type="RichTextLabel" parent="sport/level_5"]
-margin_left = -68.0
-margin_top = -80.0
-margin_right = 89.0
-margin_bottom = -31.0
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center] Le pain quotidien "
-text = " Le pain quotidien "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buttton" type="Button" parent="sport/level_5"]
-margin_left = -69.7416
-margin_top = -86.3058
-margin_right = 88.2584
-margin_bottom = 58.6942
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="level_05" parent="sport" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 734.388, 418.804 )
+level_number = "05"
 [connection signal="button_down" from="back/Button" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="groceries/level_help/Button" to="." method="_on_help_button_down"]
 [connection signal="button_down" from="sport/level_help/Button" to="." method="_on_help_button_down"]
-[connection signal="button_down" from="sport/level_1/Button" to="." method="_on_level_1_button_down"]

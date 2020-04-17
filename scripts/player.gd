@@ -31,6 +31,7 @@ var STAMINA_DEPLETION_SPEED = global.level_settings["player"]["stamina_drain_spe
 var STAMINA_RECOVERY_TIME = 2
 var stamina = STAMINA_MAX_AMOUNT
 
+onready var sound_lost = get_tree().get_root().get_node("game/audio/lost")
 onready var star_music = get_tree().get_root().get_node("game/audio/star_music")
 onready var main_music = get_tree().get_root().get_node("game/audio/main_music")
 onready var sound_acquired_attestation = get_tree().get_root().get_node(
@@ -39,12 +40,8 @@ onready var sound_acquired_attestation = get_tree().get_root().get_node(
 onready var sound_acquired_hand_sanitizer = get_tree().get_root().get_node(
 	"game/audio/pickup_health"
 )
-onready var sound_acquired_key = get_tree().get_root().get_node(
-	"game/audio/pickup_key"
-)
-onready var sound_acquired_key_door = get_tree().get_root().get_node(
-	"game/audio/door_open"
-)
+onready var sound_acquired_key = get_tree().get_root().get_node("game/audio/pickup_key")
+onready var sound_acquired_key_door = get_tree().get_root().get_node("game/audio/door_open")
 onready var sound_bumps = get_tree().get_root().get_node("game/audio/bumps")
 
 var motion = Vector2(0, 0)
@@ -52,6 +49,8 @@ var mouse_pressed = false
 
 
 func _ready():
+	show_win_icon()
+	#	show_lose_icon("accident")
 	if global.level_type == "sport":
 		MOTION_SPEED = JOGGING_MOTION_SPEED
 		WALK_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED
@@ -61,7 +60,7 @@ func _ready():
 	elif global.level_type == "groceries":
 		$main_char_node/bike_character.hide()
 		$main_char_node/main_character.show()
-		
+
 	set_process(true)
 	animate_distance_circle()
 
@@ -131,7 +130,7 @@ func _physics_process(_delta):
 
 		set_animation_by_motion_direction()
 		play_bump_sound()
-
+		check_for_vehicle_collisions()
 		set_nearest_enemy()
 
 
@@ -175,6 +174,29 @@ func play_bump_sound():
 						should_play_bump_sound = false
 
 
+func check_for_vehicle_collisions():
+	for i in range(0, get_slide_count()):
+		print(get_slide_collision(i).collider.get_name())
+		var a = get_slide_collision(i).collider
+		if get_slide_collision(i).collider.get_name().find("vehicle") != -1:
+			# TOOD: add an animation here: Skull and bone?
+			can_move = false
+			main_music.stop()
+			star_music.stop()
+			sound_lost.play()
+			if should_play_bump_sound:
+				var bump_sound = sound_bumps.get_child(randi() % sound_bumps.get_child_count())
+				bump_sound.volume_db = 20
+				bump_sound.play()
+				utils_custom.create_timer_2(1, self, "set_should_play_bump_sound")
+				should_play_bump_sound = false
+			utils_custom.create_timer_2(2, self, "player_hit_by_car")
+
+
+func player_hit_by_car():
+	get_tree().change_scene("res://lose-hurt.tscn")
+
+
 func set_should_play_bump_sound():
 	should_play_bump_sound = true
 
@@ -202,7 +224,8 @@ func acquired_key():
 	get_tree().get_root().get_node("game/interface/key").show()
 	var blocked_passage = get_tree().get_root().get_node("game/game_limits/small-road-key-locked")
 	blocked_passage.queue_free()
-	
+
+
 func acquired_hand_sanitizer():
 	sound_acquired_hand_sanitizer.play()
 	get_tree().get_root().get_node("game").damage += global.level_settings["sanitizer"]["healing_points"]
@@ -264,3 +287,21 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	# global.set_level_settings("groceries_easy", "groceries")
 	global.set_level_settings("sport_easy", "sport")
 	get_tree().change_scene("res://level_bastille.tscn")
+
+
+func show_lose_icon(cause):
+	var sprite = Sprite.new()
+	var image_to_show
+	if cause == "accident":
+		image_to_show = "x-eyes.png"
+	sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show))
+	get_node("main_char_node/end_level_icons").add_child(sprite)
+
+
+func show_win_icon():
+	randomize()
+	var sprite = Sprite.new()
+	var image_to_show_choices = global.level_settings["win_icons"]
+	var image_to_show = image_to_show_choices[randi() % image_to_show_choices.size()]
+	sprite.set_texture(load("res://images/interface/end_level_icons/"+image_to_show+".png"))
+	get_node("main_char_node/end_level_icons").add_child(sprite)

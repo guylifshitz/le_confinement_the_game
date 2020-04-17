@@ -1,31 +1,22 @@
 extends Node2D
 
-var dialog_chunks = ["*Cough*Cough*"]
+var dialog_chunks = []
 var dialog_chunk = 0
 var accepts_input 
 
 func _ready():
 
-
-#	randomize()
-#	if randf() > 0.5:
-	#$glass_text_box/grandma_sick_text.show()
-	$grandma.show()
-	$girl.hide()
+	$girl.show()
 	$glass_text_box/girl_sick_text.hide()
-#	else:
-#	$glass_text_box/grandma_sick_text.hide()
-#	$grandma.hide()
-#	$girl.show()
-#	$glass_text_box/girl_sick_text.show()
+	
 	if global.language == "french":
-		$glass_text_box/grandma_sick_text_english.hide()
-		$glass_text_box/grandma_sick_text_french.show()
-		dialog_chunks = ["*Kof*kof*"]
+		$glass_text_box/caption_text_english.hide()
+		$glass_text_box/caption_text_french.show()
+		dialog_chunks = ["*OUCH!*"]
 	else:
 		$glass_text_box/grandma_sick_text_english.show()
 		$glass_text_box/grandma_sick_text_french.hide()
-		dialog_chunks = ["*Cough*Cough*"]
+		dialog_chunks = ["*OUCH!**"]
 
 	update_text()
 	

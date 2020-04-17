@@ -2,7 +2,7 @@
 
 [ext_resource path="res://images/scenery/policecar-3d-03-03.png" type="Texture" id=1]
 [ext_resource path="res://images/scenery/police-car.png" type="Texture" id=2]
-[ext_resource path="res://police-car.gd" type="Script" id=3]
+[ext_resource path="res://scripts/police-car.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="police_car" type="KinematicBody2D"]
+[node name="vehicle_police_car" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

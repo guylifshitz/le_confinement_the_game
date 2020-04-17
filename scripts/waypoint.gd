@@ -28,6 +28,6 @@ func increment_waypoint():
 		set_process(false)
 	else:
 		self.position = waypoint_positions.get_child(waypoint_number).position
-		get_node("counter").bbcode_text = "[center] "+str(waypoint_number+1)
+		get_node("counter").bbcode_text = "[center]"+str(waypoint_number+1)
 	
 

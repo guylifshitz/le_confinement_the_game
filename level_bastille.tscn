@@ -1391,10 +1391,10 @@ scale = Vector2( 0.679958, 0.679958 )
 texture = ExtResource( 63 )
 
 [node name="counter" type="RichTextLabel" parent="elements/goals/waypoints/waypoint"]
-margin_left = -39.3273
-margin_top = -28.3262
-margin_right = 39.6727
-margin_bottom = 37.6738
+margin_left = -62.9818
+margin_top = -31.7773
+margin_right = 64.0182
+margin_bottom = 74.2227
 custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.72549, 0, 1 )
 bbcode_enabled = true
@@ -1636,7 +1636,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 9
+frame = 5
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1653,7 +1653,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 9
+frame = 5
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1663,7 +1663,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 9
+frame = 5
 speed_scale = 0.5
 playing = true
 
@@ -3068,13 +3068,11 @@ rotation = 0.00113466
 scale = Vector2( 0.999992, 0.986271 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="night"]
-visible = false
 position = Vector2( 562.753, -256.08 )
 rotation = -5.82077e-10
 color = Color( 0.717647, 0.568627, 0.568627, 1 )
 
 [node name="street_lights" type="Node2D" parent="night"]
-visible = false
 position = Vector2( 82.4846, 42.6096 )
 rotation = -4.65661e-10
 
