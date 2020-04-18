@@ -5,6 +5,8 @@
     "english": "A full cart #2"
   },
   "level_difficulty": 3,
+  "is_bike_ride": false,
+  "is_night": false,
   "win_icons": ["smile_hearts", "smile", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,

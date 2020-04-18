@@ -3,10 +3,11 @@
     "french": "Le footing",
     "english": "The jog"
   },
-  "level_difficulty": 2,
+  "level_difficulty": 1,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
+  "waypoint_positions": "bastille",
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -15,8 +16,8 @@
   "score_increment_speed": 40,
   "player": {
     "walk_speed": 400,
-    "run_speed": 700,
-    "stamina_drain_speed": 1
+    "run_speed": 1000,
+    "stamina_drain_speed": 2
   },
   "pedestrians": {
     "knows_player_percentage": 30,
@@ -59,18 +60,18 @@
     },
     "police": {
       "top_square": 1,
-      "market_full": 1,
+      "market_full": 0,
       "market_top": 1,
       "market_bottom": 1,
       "police_station_1": 1,
       "police_station_2": 0,
       "police_station_3": 0,
-      "bastille_1": 1,
+      "bastille_1": 0,
       "bastille_2": 0
     },
     "motorbike": {},
     "police_car": {}
   },
-  "game_limits": [],
+  "game_limits": ["block_right"],
   "game_elements": []
 }

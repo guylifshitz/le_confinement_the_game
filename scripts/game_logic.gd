@@ -29,6 +29,7 @@ func _ready():
 		if not global.level_settings["is_bike_ride"]:
 			self.get_node("sidewalk_limits").queue_free()
 		if global.level_settings["is_night"]:
+			self.get_node("elements/scene/traffic_lights").show()
 			self.get_node("night").show()
 	
 	else:

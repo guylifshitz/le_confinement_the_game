@@ -962,7 +962,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=53]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1354.48, -734.208, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1401.94, -725.89, 0, 0, 0, 0, 1766.88, -541.852, 0, 0, 0, 0, 1426.48, -325.697, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1762.4, -557.793, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1362.73, -738.404, 0, 0, 0, 0, 1354.48, -734.208 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1275.55, -755.444, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1407.53, -813.777, 0, 0, 0, 0, 1416.83, -660.765, 0, 0, 0, 0, 1414.21, -804.026, 0, 0, 0, 0, 1868.58, -584.336, 0, 0, 0, 0, 1395.86, -327.794, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1722.43, -510.47, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1669.33, -539.063, 0, 0, 0, 0, 1457.05, -669.945, 0, 0, 0, 0, 1381.18, -652.966, 0, 0, 0, 0, 1310.74, -741.721, 0, 0, 0, 0, 1275.55, -755.444 )
 }
 
 [sub_resource type="Curve2D" id=54]
@@ -1755,7 +1755,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1772,7 +1772,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1782,7 +1782,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 10
 speed_scale = 0.5
 playing = true
 
@@ -2580,6 +2580,7 @@ position = Vector2( 3.59968, 3.35905 )
 navpoly = SubResource( 39 )
 
 [node name="spawn_pedestrians" type="Node2D" parent="enemy_paths"]
+visible = false
 rotation = 2.32831e-10
 script = ExtResource( 19 )
 enemy_type = "pedestrians"
@@ -2650,6 +2651,12 @@ script = ExtResource( 19 )
 enemy_type = "police"
 
 [node name="top_square" type="Path2D" parent="enemy_paths/spawn_police"]
+visible = false
+self_modulate = Color( 0.501961, 0.6, 1, 1 )
+rotation = -1.16415e-10
+curve = SubResource( 53 )
+
+[node name="top_square_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10

@@ -7,6 +7,7 @@
   "type": "sport",
   "is_bike_ride": true,
   "is_night": true,
+  "waypoint_positions": "bastille",
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -14,9 +15,9 @@
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "player": {
-    "walk_speed": 200,
-    "run_speed": 500,
-    "stamina_drain_speed": 1
+    "walk_speed": 400,
+    "run_speed": 900,
+    "stamina_drain_speed": 2
   },
   "pedestrians": {
     "knows_player_percentage": 30,

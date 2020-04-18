@@ -5,29 +5,24 @@ func _ready():
 	utils_custom.create_timer_2(1, self, "enable_start_button")
 	pass
 	# get_tree().change_scene("res://lose-sick.tscn")
-	get_tree().change_scene("res://level_select.tscn")
+	# get_tree().change_scene("res://level_select.tscn")
 	
 	# LEVEL SELECT 2
 	# global.level_type = "groceries"
 	# get_tree().change_scene("res://level_select_part_2.tscn")
 
-	# global.level_type = "groceries"
-	# global.set_level_settings("groceries", 3)
+	global.level_type = "groceries"
+	# global.set_level_settings("groceries", "doliprane")
+	# global.set_level_settings("groceries", "hidden_pasta")
+	# global.set_level_settings("groceries", "full_cart_1")
+	global.set_level_settings("groceries", "full_cart_3")
+
 	# global.level_type = "sport"
-	# global.set_level_settings("sport", 4)
-	global.level_type = "sport"
-	global.set_level_settings("sport", "near_home")
+	# global.set_level_settings("sport", "near_home")
+	# global.set_level_settings("sport", "jogging_2")
+	# global.set_level_settings("sport", "night_bike")
+
 	get_tree().change_scene("res://level_bastille.tscn")
-	# get_tree().change_scene("res://lose-police.tscn")
-	# global.language = "english"
-	# global.items_recovered = ["bread", "toilet_paper"]
-	# global.bonus_items_recovered  = ["bread", "toilet_paper"]
-	# get_tree().change_scene("res://win-screen.tscn")
-	# get_tree().change_scene("res://level_intro.tscn")
-
-	# global.set_level_settings("groceries_easy", "groceries")
-
-	# get_tree().change_scene("res://level_bastille.tscn")
 	#$;	HTTPRequest.request("http://localhost:8082/TEST_settingss.json")
 	
 func _on_HTTPRequest_request_completed( result, response_code, headers, body ):

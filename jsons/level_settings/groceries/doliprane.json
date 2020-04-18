@@ -2,6 +2,8 @@
   "type": "groceries",
   "level_name": { "french": "Doliprane", "english": "Tyleonl" },
   "level_difficulty": 1,
+  "is_bike_ride": false,
+  "is_night": false,
   "win_icons": ["smile_hearts", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -17,7 +19,6 @@
   ],
   "player": {
     "walk_speed": 200,
-    "jogging_speed": 450,
     "run_speed": 500,
     "stamina_drain_speed": 1
   },
@@ -66,7 +67,7 @@
       "police_station_1": 0,
       "police_station_2": 0,
       "police_station_3": 0,
-      "boulangerie_bottom": 10
+      "boulangerie_bottom": 1
     },
     "motorbike": {},
     "police_car": {}

@@ -3,10 +3,11 @@
     "french": "Le footing #2",
     "english": "The jog #2"
   },
-  "level_difficulty": 2,
+  "level_difficulty": 3,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
+  "waypoint_positions": "bastille",
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -14,9 +15,9 @@
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "player": {
-    "walk_speed": 200,
-    "run_speed": 500,
-    "stamina_drain_speed": 1
+    "walk_speed": 400,
+    "run_speed": 1000,
+    "stamina_drain_speed": 2
   },
   "pedestrians": {
     "knows_player_percentage": 30,
@@ -25,9 +26,9 @@
   "police": { "move_speed": 150 },
   "attestation": {
     "visible_list": [
+      "attestation_market_top",
       "attestation_market_2",
       "attestation_opera",
-      "attestation_top",
       "attestation_pharmacy"
     ],
     "duration": 5,
@@ -38,7 +39,7 @@
     "healing_points": 50,
     "respawn_time": 5
   },
-  "spawn_seed": 2,
+  "spawn_seed": 4,
   "enemies_per_path": {
     "pedestrians": {
       "top_square_1": 1,
@@ -53,7 +54,7 @@
       "right_2": 1
     },
     "police": {
-      "top_square": 1,
+      "top_square_2": 1,
       "market_full": 1,
       "market_top": 1,
       "market_bottom": 1,
@@ -66,6 +67,6 @@
     "motorbike": {},
     "police_car": {}
   },
-  "game_limits": [],
-  "game_elements": []
+  "game_limits": ["block_right"],
+  "game_elements": ["block_boulangerie"]
 }

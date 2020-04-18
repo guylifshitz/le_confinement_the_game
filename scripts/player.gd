@@ -51,7 +51,7 @@ func _ready():
 	if global.level_type == "sport":
 		WALK_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED
 		RUN_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED * 2
-	
+
 	if global.level_settings["is_bike_ride"]:
 		$main_char_node/bike_character.show()
 		$main_char_node/main_character.hide()
@@ -291,21 +291,22 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 func show_lose_icon(cause):
 	var sprite = Sprite.new()
 
-	var image_to_show_choices
-	if cause == "accident":
-		image_to_show_choices = ["x_eyes", "hurt", "skull_and_cross", "angry", "angry_00"]
-	elif cause == "sick":
-		image_to_show_choices = [
-			"face-with-thermometer",
-			"x_eyes",
-		]
-	elif cause == "police":
-		image_to_show_choices = ["x_eyes", "angry_00"]
+	if get_node("main_char_node/end_level_icons").get_children().size() == 0:
+		var image_to_show_choices
+		if cause == "accident":
+			image_to_show_choices = ["x_eyes", "hurt", "skull_and_cross", "angry", "angry_00"]
+		elif cause == "sick":
+			image_to_show_choices = [
+				"face-with-thermometer",
+				"x_eyes",
+			]
+		elif cause == "police":
+			image_to_show_choices = ["x_eyes", "angry_00"]
 
-	randomize()
-	var image_to_show = image_to_show_choices[randi() % image_to_show_choices.size()]
-	sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show + ".png"))
-	get_node("main_char_node/end_level_icons").add_child(sprite)
+		randomize()
+		var image_to_show = image_to_show_choices[randi() % image_to_show_choices.size()]
+		sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show + ".png"))
+		get_node("main_char_node/end_level_icons").add_child(sprite)
 
 
 func show_win_icon():

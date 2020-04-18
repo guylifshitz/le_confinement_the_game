@@ -25,6 +25,8 @@ font_data = ExtResource( 8 )
 [node name="menu" type="Node2D"]
 position = Vector2( -0.602722, 0 )
 script = ExtResource( 5 )
+dialog_text_english = "*Ouch!*"
+dialog_text_french = "*Ouch!*"
 
 [node name="hospital" type="Sprite" parent="."]
 position = Vector2( 556.724, 286.952 )
@@ -136,7 +138,6 @@ __meta__ = {
 }
 
 [node name="continue_button" parent="." instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 0.423529, 0.423529, 0.423529, 1 )
 position = Vector2( 0, 1.79749 )
 

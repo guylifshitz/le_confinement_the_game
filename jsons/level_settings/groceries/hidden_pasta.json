@@ -5,6 +5,8 @@
     "english": "Hidden pasta"
   },
   "level_difficulty": 1,
+  "is_bike_ride": false,
+  "is_night": false,
   "win_icons": ["smile"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -13,6 +15,7 @@
   "score_increment_speed": 40,
   "items_needed": ["pasta"],
   "items_bonus": ["flower", "duck"],
+  "key_position": true,
   "store_items": [
     { "store": "boulangerie", "has_items": [] },
     { "store": "monoprix", "has_items": [] },
