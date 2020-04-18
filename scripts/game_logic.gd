@@ -156,6 +156,7 @@ func check_player_death():
 			music_main.stop()
 			music_star.stop()
 			sound_lost.play()
+			player.show_lose_icon("sick")
 			utils_custom.create_timer_2(2, self, "player_dead")
 
 
@@ -194,6 +195,7 @@ func update_sports_timer():
 
 func win_game():
 	if player.can_move:
+		player.show_win_icon()
 		player.can_move = false
 		music_main.stop()
 		music_star.stop()

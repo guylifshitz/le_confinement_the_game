@@ -202,71 +202,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level_00" parent="groceries" instance=ExtResource( 7 )]
+[node name="daily_bread" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 325.239, 234.282 )
-level_number = "00"
 
-[node name="baguette2" type="Sprite" parent="groceries/level_00"]
+[node name="baguette2" type="Sprite" parent="groceries/daily_bread"]
 position = Vector2( 8.10168, -15.6677 )
 scale = Vector2( 0.244508, 0.244508 )
 texture = ExtResource( 17 )
 
-[node name="level_01" parent="groceries" instance=ExtResource( 7 )]
+[node name="doliprane" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 234.282 )
-level_number = "01"
 
-[node name="drugs2" type="Sprite" parent="groceries/level_01"]
+[node name="drugs2" type="Sprite" parent="groceries/doliprane"]
 position = Vector2( 5.63623, -16.6433 )
 scale = Vector2( 0.0760416, 0.0760416 )
 texture = ExtResource( 10 )
 
-[node name="level_02" parent="groceries" instance=ExtResource( 7 )]
+[node name="hidden_pasta" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 734.805, 234.554 )
-level_number = "02"
 
-[node name="pasta" type="Sprite" parent="groceries/level_02"]
+[node name="pasta" type="Sprite" parent="groceries/hidden_pasta"]
 position = Vector2( 9.01709, -16.8113 )
 scale = Vector2( 0.206087, 0.204604 )
 texture = ExtResource( 12 )
 
-[node name="level_03" parent="groceries" instance=ExtResource( 7 )]
+[node name="full_cart_1" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 324.777, 418.804 )
-level_number = "03"
 
-[node name="angryemoji6" type="Sprite" parent="groceries/level_03"]
+[node name="angryemoji6" type="Sprite" parent="groceries/full_cart_1"]
 position = Vector2( 5.18079, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="level_04" parent="groceries" instance=ExtResource( 7 )]
+[node name="full_cart_2" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 418.804 )
-level_number = "04"
 
-[node name="angryemoji5" type="Sprite" parent="groceries/level_04"]
+[node name="angryemoji5" type="Sprite" parent="groceries/full_cart_2"]
 position = Vector2( -10.6401, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji4" type="Sprite" parent="groceries/level_04"]
+[node name="angryemoji4" type="Sprite" parent="groceries/full_cart_2"]
 position = Vector2( 30.5806, -16.8198 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="level_05" parent="groceries" instance=ExtResource( 7 )]
+[node name="full_cart_3" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 734.388, 418.804 )
-level_number = "05"
 
-[node name="angryemoji" type="Sprite" parent="groceries/level_05"]
+[node name="angryemoji" type="Sprite" parent="groceries/full_cart_3"]
 position = Vector2( -26.8183, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji2" type="Sprite" parent="groceries/level_05"]
+[node name="angryemoji2" type="Sprite" parent="groceries/full_cart_3"]
 position = Vector2( 13.981, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji3" type="Sprite" parent="groceries/level_05"]
+[node name="angryemoji3" type="Sprite" parent="groceries/full_cart_3"]
 position = Vector2( 54.2017, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
@@ -350,31 +344,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level_00" parent="sport" instance=ExtResource( 7 )]
-position = Vector2( 325.239, 234.282 )
-level_number = "00"
+[node name="jogging_1" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 325.239, 233.607 )
 
-[node name="level_01" parent="sport" instance=ExtResource( 7 )]
+[node name="jogging_2" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 234.282 )
-level_number = "01"
 
-[node name="level_02" parent="sport" instance=ExtResource( 7 )]
+[node name="night_bike" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 734.805, 234.554 )
-level_number = "02"
 
-[node name="level_03" parent="sport" instance=ExtResource( 7 )]
+[node name="test" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 324.777, 418.804 )
-level_number = "03"
 
 [node name="level_04" parent="sport" instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 524.442, 418.804 )
-level_number = "04"
 
 [node name="level_05" parent="sport" instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 734.388, 418.804 )
-level_number = "05"
 [connection signal="button_down" from="back/Button" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="groceries/level_help/Button" to="." method="_on_help_button_down"]
 [connection signal="button_down" from="sport/level_help/Button" to="." method="_on_help_button_down"]

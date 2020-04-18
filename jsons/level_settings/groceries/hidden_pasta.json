@@ -1,0 +1,80 @@
+{
+  "type": "groceries",
+  "level_name": {
+    "french": "Les pates\ncachées",
+    "english": "Hidden pasta"
+  },
+  "level_difficulty": 1,
+  "win_icons": ["smile"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 0.8,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "items_needed": ["pasta"],
+  "items_bonus": ["flower", "duck"],
+  "store_items": [
+    { "store": "boulangerie", "has_items": [] },
+    { "store": "monoprix", "has_items": [] },
+    { "store": "carrefour", "has_items": [] },
+    { "store": "la_suprette", "has_items": ["pasta"] },
+    { "store": "pharmacy_1", "has_items": [] },
+    { "store": "pharmacy_2", "has_items": [] },
+    { "store": "flower_market", "has_items": ["flower"] },
+    { "store": "duck", "has_items": ["duck"] }
+  ],
+  "player": {
+    "walk_speed": 200,
+    "jogging_speed": 450,
+    "run_speed": 500,
+    "stamina_drain_speed": 1
+  },
+  "pedestrians": {
+    "knows_player_percentage": 30,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 100 },
+  "attestation": {
+    "visible_list": [
+      "attestation_market_top",
+      "attestation_market_2",
+      "attestation_column",
+      "attestation_pharmacy"
+    ],
+    "duration": 8,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": ["sanitizer_far_right_1", "sanitizer_bastille"],
+    "healing_points": 100,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "pedestrians": {
+      "top_square_1": 15,
+      "crowded_street": 10,
+      "crowded_street_above": 10,
+      "market_1": 3,
+      "bastille_1": 3,
+      "bastille_2": 3,
+      "middle_1": 2,
+      "middle_2": 0,
+      "right_1": 2,
+      "right_2": 2
+    },
+    "police": {
+      "top_square": 4,
+      "market_full": 1,
+      "market_top": 1,
+      "market_bottom": 1,
+      "police_station_1": 0,
+      "police_station_2": 0,
+      "police_station_3": 1
+    },
+    "motorbike": {},
+    "police_car": {}
+  },
+  "game_limits": [],
+  "game_elements": []
+}

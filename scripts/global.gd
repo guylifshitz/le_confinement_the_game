@@ -15,14 +15,24 @@ var language = "french"
 var game_settings = {}
 var level_settings
 
+
 func _ready():
 	load_local_game_settings()
+
 
 func load_local_game_settings():
 	game_settings = utils_custom.load_json("res://jsons/game_settings.json")
 
-func set_level_settings(level_type_param, level_number):
-	level_type = level_type_param
-	level_number = str(level_number).pad_zeros(2)
-	level_settings = game_settings[level_type_param][level_number]
 
+func load_level_settings_json(level_type, level_id):
+	level_settings = utils_custom.load_json(
+		"res://jsons/level_settings/{l_type}/{l_id}.json".format(
+			{"l_type": level_type, "l_id": level_id}
+		)
+	)
+
+func set_level_settings(level_type_param, level_id):
+	#level_type = level_type_param
+	# level_number = str(level_number).pad_zeros(2)
+	# level_settings = game_settings[level_type_param][level_number]
+	load_level_settings_json(level_type_param, level_id)

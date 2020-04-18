@@ -1,0 +1,77 @@
+{
+  "level_name": {
+    "french": "Le footing",
+    "english": "The jog"
+  },
+  "level_difficulty": 2,
+  "type": "sport",
+  "is_bike_ride": false,
+  "is_night": false,
+  "win_icons": ["trophy", "medal"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 0.9,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "player": {
+    "walk_speed": 400,
+    "jogging_speed": 500,
+    "run_speed": 700,
+    "stamina_drain_speed": 1
+  },
+  "pedestrians": {
+    "knows_player_percentage": 30,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 150 },
+  "attestation": {
+    "visible_list": [
+      "attestation_market_2",
+      "attestation_opera",
+      "attestation_top",
+      "attestation_pharmacy"
+    ],
+    "duration": 5,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": [
+      "sanitizer_far_right_1",
+      "sanitizer_far_right_2",
+      "sanitizer_bastille",
+      "sanitizer_pharmacy"
+    ],
+    "healing_points": 50,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "pedestrians": {
+      "top_square_1": 1,
+      "crowded_street": 1,
+      "crowded_street_above": 0,
+      "market_1": 2,
+      "bastille_1": 3,
+      "bastille_2": 3,
+      "middle_1": 1,
+      "middle_2": 1,
+      "right_1": 1,
+      "right_2": 1
+    },
+    "police": {
+      "top_square": 1,
+      "market_full": 1,
+      "market_top": 1,
+      "market_bottom": 1,
+      "police_station_1": 1,
+      "police_station_2": 0,
+      "police_station_3": 0,
+      "bastille_1": 1,
+      "bastille_2": 0
+    },
+    "motorbike": {},
+    "police_car": {}
+  },
+  "game_limits": [],
+  "game_elements": []
+}

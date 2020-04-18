@@ -77,7 +77,7 @@ func _on_police_body_entered(body):
 			$dialogbox_wants_attestation.hide()
 			$dialogbox_is_angry.show()
 			player.can_move = false
-
+			player.show_lose_icon("police")
 			music_main.stop()
 			music_star.stop()
 			sound_lost.play()

@@ -1497,6 +1497,7 @@ position = Vector2( 1362.89, -88.5613 )
 script = ExtResource( 15 )
 
 [node name="monoprix" type="Sprite" parent="elements/goals/monoprix/monoprix_node"]
+position = Vector2( 0.000488281, 0.40213 )
 scale = Vector2( 0.510342, 0.510342 )
 texture = ExtResource( 11 )
 
@@ -1636,7 +1637,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 4
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1653,7 +1654,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 4
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1663,7 +1664,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 4
 speed_scale = 0.5
 playing = true
 

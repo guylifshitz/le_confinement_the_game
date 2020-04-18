@@ -5,7 +5,7 @@ func _ready():
 	utils_custom.create_timer_2(1, self, "enable_start_button")
 	pass
 	# get_tree().change_scene("res://lose-sick.tscn")
-	# get_tree().change_scene("res://level_select.tscn")
+	get_tree().change_scene("res://level_select.tscn")
 	
 	# LEVEL SELECT 2
 	# global.level_type = "groceries"

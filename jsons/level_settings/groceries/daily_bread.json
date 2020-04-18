@@ -1,0 +1,53 @@
+{
+  "level_name": {
+    "french": "Le pain\nquotidien",
+    "english": "Daily bread"
+  },
+  "type": "groceries",
+  "level_difficulty": 0,
+  "win_icons": ["smile"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 3,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "items_needed": ["bread"],
+  "items_bonus": [],
+  "store_items": [{ "store": "boulangerie", "has_items": ["bread"] }],
+  "player": {
+    "walk_speed": 200,
+    "jogging_speed": 450,
+    "run_speed": 500,
+    "stamina_drain_speed": 1
+  },
+  "pedestrians": {
+    "knows_player_percentage": 0,
+    "move_speed": 50
+  },
+  "police": { "move_speed": 50 },
+  "attestation": {
+    "visible_list": [],
+    "duration": 8,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": [],
+    "healing_points": 100,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "pedestrians": {
+      "top_square_1": 3,
+      "crowded_street": 3,
+      "crowded_street_above": 1
+    },
+    "police": {
+      "top_square": 0
+    },
+    "motorbike": {},
+    "police_car": {}
+  },
+  "game_limits": ["block_boulangerie"],
+  "game_elements": ["block_boulangerie"]
+}

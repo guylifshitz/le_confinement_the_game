@@ -21,4 +21,3 @@ func _on_home_body_entered(body):
 				if not first_enter:
 					sound_bad_home.play()
 				first_enter = false
-			body.show_win_icon()

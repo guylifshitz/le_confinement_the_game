@@ -49,8 +49,6 @@ var mouse_pressed = false
 
 
 func _ready():
-	show_win_icon()
-	#	show_lose_icon("accident")
 	if global.level_type == "sport":
 		MOTION_SPEED = JOGGING_MOTION_SPEED
 		WALK_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED
@@ -190,6 +188,7 @@ func check_for_vehicle_collisions():
 				bump_sound.play()
 				utils_custom.create_timer_2(1, self, "set_should_play_bump_sound")
 				should_play_bump_sound = false
+			show_lose_icon("accident")
 			utils_custom.create_timer_2(2, self, "player_hit_by_car")
 
 
@@ -291,10 +290,21 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 func show_lose_icon(cause):
 	var sprite = Sprite.new()
-	var image_to_show
+
+	var image_to_show_choices
 	if cause == "accident":
-		image_to_show = "x-eyes.png"
-	sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show))
+		image_to_show_choices = ["x_eyes", "hurt", "skull_and_cross", "angry", "angry_00"]
+	elif cause == "sick":
+		image_to_show_choices = [
+			"face-with-thermometer",
+			"x_eyes",
+		]
+	elif cause == "police":
+		image_to_show_choices = ["x_eyes", "angry_00"]
+
+	randomize()
+	var image_to_show = image_to_show_choices[randi() % image_to_show_choices.size()]
+	sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show + ".png"))
 	get_node("main_char_node/end_level_icons").add_child(sprite)
 
 
@@ -303,5 +313,5 @@ func show_win_icon():
 	var sprite = Sprite.new()
 	var image_to_show_choices = global.level_settings["win_icons"]
 	var image_to_show = image_to_show_choices[randi() % image_to_show_choices.size()]
-	sprite.set_texture(load("res://images/interface/end_level_icons/"+image_to_show+".png"))
+	sprite.set_texture(load("res://images/interface/end_level_icons/" + image_to_show + ".png"))
 	get_node("main_char_node/end_level_icons").add_child(sprite)

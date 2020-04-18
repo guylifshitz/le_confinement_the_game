@@ -1,0 +1,68 @@
+{
+  "level_name": {
+    "french": "Le vélo de nuit",
+    "english": "Nightly bike ride"
+  },
+  "level_difficulty": 1,
+  "type": "sport",
+  "is_bike_ride": true,
+  "is_night": true,
+  "win_icons": ["trophy", "medal"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 0.8,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "player": {
+    "walk_speed": 200,
+    "jogging_speed": 450,
+    "run_speed": 500,
+    "stamina_drain_speed": 1
+  },
+  "pedestrians": {
+    "knows_player_percentage": 30,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 130 },
+  "motorcycle": { "move_speed": 600 },
+  "police_car": { "move_speed": 300 },
+  "attestation": {
+    "visible_list": [
+      "attestation_market_2",
+      "attestation_opera",
+      "attestation_column",
+      "attestation_top",
+      "attestation_pharmacy"
+    ],
+    "duration": 8,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": [
+      "sanitizer_far_right_1",
+      "sanitizer_far_right_2",
+      "sanitizer_bastille",
+      "sanitizer_pharmacy"
+    ],
+    "healing_points": 100,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "motorbike": {
+      "vehicles_upper": 1,
+      "vehicles_lower": 1,
+      "market": 1
+    },
+    "police_car": {
+      "spawn_seed": 4,
+      "vehicles_upper": 1,
+      "vehicles_lower": 1,
+      "market": 1
+    },
+    "pedestrians": {},
+    "police": {}
+  },
+  "game_limits": [],
+  "game_elements": []
+}
