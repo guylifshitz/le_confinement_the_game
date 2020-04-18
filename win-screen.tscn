@@ -290,6 +290,7 @@ position = Vector2( 141.223, -59.6857 )
 scale = Vector2( 2, 2 )
 
 [node name="none" type="Sprite" parent="bonus_items"]
+visible = false
 position = Vector2( -51.8555, -59.5073 )
 scale = Vector2( 0.0961459, 0.0961459 )
 texture = ExtResource( 23 )

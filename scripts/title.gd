@@ -15,7 +15,9 @@ func _ready():
 	# global.set_level_settings("groceries", 3)
 	# global.level_type = "sport"
 	# global.set_level_settings("sport", 4)
-	# get_tree().change_scene("res://level_bastille.tscn")
+	global.level_type = "sport"
+	global.set_level_settings("sport", "near_home")
+	get_tree().change_scene("res://level_bastille.tscn")
 	# get_tree().change_scene("res://lose-police.tscn")
 	# global.language = "english"
 	# global.items_recovered = ["bread", "toilet_paper"]

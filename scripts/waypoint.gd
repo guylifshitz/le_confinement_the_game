@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var waypoint_positions = get_parent().get_node("waypoint_positions")
+onready var waypoint_positions = get_parent().get_node("waypoint_positions/"+global.level_id)
 var waypoint_number = -1
 onready var game = get_tree().get_root().get_node("game")
 

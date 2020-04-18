@@ -4,7 +4,6 @@ var player_settings = global.game_settings["player"]
 
 var MOTION_SPEED = global.level_settings["player"]["walk_speed"]
 var RUN_MOTION_SPEED = global.level_settings["player"]["run_speed"]
-var JOGGING_MOTION_SPEED = global.level_settings["player"]["jogging_speed"]
 var RUN_MOTION_SPEED_FAST = player_settings["debug_run_speed"]
 var WALK_PLAYBACK_SPEED = 2
 var RUN_PLAYBACK_SPEED = 4
@@ -50,12 +49,13 @@ var mouse_pressed = false
 
 func _ready():
 	if global.level_type == "sport":
-		MOTION_SPEED = JOGGING_MOTION_SPEED
 		WALK_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED
 		RUN_PLAYBACK_SPEED = RUN_PLAYBACK_SPEED * 2
+	
+	if global.level_settings["is_bike_ride"]:
 		$main_char_node/bike_character.show()
 		$main_char_node/main_character.hide()
-	elif global.level_type == "groceries":
+	else:
 		$main_char_node/bike_character.hide()
 		$main_char_node/main_character.show()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=2]
+[gd_scene load_steps=149 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -955,6 +955,11 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2054.05, -309.013, 0, 0, 0, 0, 2913.25, 89.3418, 0, 0, 0, 0, 2740.25, 319.764, 0, 0, 0, 0, 2802.41, 94.9249, 0, 0, 0, 0, 2128.43, -198.897, 0, 0, 0, 0, 2192.96, -231.705, 0, 0, 0, 0, 2054.05, -309.013 )
 }
 
+[sub_resource type="Curve2D" id=74]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1094.75, -204.111, 0, 0, 0, 0, 963.153, -127.303, 0, 0, 0, 0, 1131.58, -26.3201, 0, 0, 0, 0, 1274.56, -94.0536, 0, 0, 0, 0, 840.127, -314.515, 0, 0, 0, 0, 692.342, -223.647, 0, 0, 0, 0, 921.284, -102.915, 0, 0, 0, 0, 1094.75, -204.111 )
+}
+
 [sub_resource type="Curve2D" id=53]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1354.48, -734.208, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1401.94, -725.89, 0, 0, 0, 0, 1766.88, -541.852, 0, 0, 0, 0, 1426.48, -325.697, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1762.4, -557.793, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1362.73, -738.404, 0, 0, 0, 0, 1354.48, -734.208 )
@@ -1416,77 +1421,190 @@ shape = SubResource( 8 )
 
 [node name="waypoint_positions" type="Node2D" parent="elements/goals/waypoints"]
 
-[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="near_home" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+visible = false
+
+[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 820.012, -407.57 )
+
+[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1093.13, -571.717 )
+
+[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1564.59, -670.777 )
+
+[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1895.69, -507.354 )
+
+[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1610.59, -353.573 )
+
+[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1199.38, -179.553 )
+
+[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 787.93, -229.012 )
+
+[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 810.404, -406.341 )
+
+[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1099.94, -572.127 )
+
+[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1566.4, -667.126 )
+
+[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1612.39, -353.575 )
+
+[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1196.48, -170.335 )
+
+[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 799.428, -264.175 )
+
+[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 803.684, -412.912 )
+
+[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1095.53, -571.036 )
+
+[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1568.89, -672.387 )
+
+[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1606.64, -349.68 )
+
+[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 1205.1, -178.122 )
+
+[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 802.322, -247.652 )
+
+[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
+position = Vector2( 541.027, -379.921 )
+
+[node name="bastille" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+
+[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 764.698, -285.568 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1050.53, -129.166 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1399.32, 42.3071 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1737.68, 217.318 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2120.4, 420.483 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2078.99, 703.462 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2147.18, 1045.37 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1860.5, 1219.34 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1577.72, 987.852 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2025.21, 805.767 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2099.47, 1139.74 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1623.07, 1125.3 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1654.71, 830.597 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 2144.49, 971.335 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1934.65, 1150.06 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1569.08, 1038.1 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1337.63, 847.103 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1246.13, 652.417 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 963.418, 484.394 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 733.743, 326.886 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="21" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="21" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1163.79, 90.1739 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="22" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="22" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 1079.23, -117.741 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="23" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="23" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 806.09, -276.08 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
-[node name="last" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+[node name="last" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 536.374, -379.714 )
+rotation = -1.16415e-10
+scale = Vector2( 1, 1 )
 
 [node name="monoprix" type="YSort" parent="elements/goals"]
 position = Vector2( -10.8793, 14.2672 )
@@ -2522,6 +2640,9 @@ curve = SubResource( 51 )
 [node name="right_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 curve = SubResource( 52 )
+
+[node name="boulangerie" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
+curve = SubResource( 74 )
 
 [node name="spawn_police" type="Node2D" parent="enemy_paths"]
 rotation = 2.32831e-10

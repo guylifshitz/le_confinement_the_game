@@ -344,17 +344,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="jogging_1" parent="sport" instance=ExtResource( 7 )]
+[node name="near_home" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 325.239, 233.607 )
 
-[node name="jogging_2" parent="sport" instance=ExtResource( 7 )]
+[node name="jogging_1" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 524.442, 234.282 )
 
-[node name="night_bike" parent="sport" instance=ExtResource( 7 )]
+[node name="jogging_2" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 734.805, 234.554 )
 
-[node name="test" parent="sport" instance=ExtResource( 7 )]
+[node name="night_bike" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 324.777, 418.804 )
+
+[node name="test" parent="sport" instance=ExtResource( 7 )]
+position = Vector2( 532.804, 418.804 )
 
 [node name="level_04" parent="sport" instance=ExtResource( 7 )]
 visible = false

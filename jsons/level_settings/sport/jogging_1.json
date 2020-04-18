@@ -15,7 +15,6 @@
   "score_increment_speed": 40,
   "player": {
     "walk_speed": 400,
-    "jogging_speed": 500,
     "run_speed": 700,
     "stamina_drain_speed": 1
   },
