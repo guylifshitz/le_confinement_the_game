@@ -55,6 +55,8 @@ func _ready():
 	if global.level_settings["is_bike_ride"]:
 		$main_char_node/bike_character.show()
 		$main_char_node/main_character.hide()
+		if global.level_settings["is_night"]:
+			setup_night_bike_lights()
 	else:
 		$main_char_node/bike_character.hide()
 		$main_char_node/main_character.show()
@@ -62,6 +64,33 @@ func _ready():
 	set_process(true)
 	animate_distance_circle()
 
+
+func setup_night_bike_lights():
+	$main_char_node/bike_character/bike_lights.show()
+	blink_right_light()
+	blink_left_light()
+	
+func blink_right_light():
+	utils_custom.create_timer_2(0.3, self, "blink_right_light")
+	var light = $main_char_node/bike_character/bike_lights/right
+	light.visible = !light.visible
+
+func blink_left_light():
+	utils_custom.create_timer_2(0.4, self, "blink_left_light")
+	var light = $main_char_node/bike_character/bike_lights/left
+	light.visible = !light.visible
+
+func set_bike_lights_right():
+	var light_1 = $main_char_node/bike_character/bike_lights/right
+	var light_2 = $main_char_node/bike_character/bike_lights/left
+	light_1.modulate = Color(1,1,1,0.5)
+	light_2.modulate = Color(1,0,0,0.5)
+
+func set_bike_lights_left():
+	var light_1 = $main_char_node/bike_character/bike_lights/right
+	var light_2 = $main_char_node/bike_character/bike_lights/left
+	light_1.modulate = Color(1,0,0,0.5)
+	light_2.modulate = Color(1,1,1,0.5)
 
 func animate_distance_circle():
 	var circle_tween = Tween.new()
@@ -150,9 +179,11 @@ func set_animation_by_motion_direction():
 	elif motion.x < 0:
 		$main_char_node/main_character/AnimationPlayer.play("left")
 		$main_char_node/bike_character.play("left")
+		set_bike_lights_left()
 	elif motion.x > 0:
 		$main_char_node/main_character/AnimationPlayer.play("right")
 		$main_char_node/bike_character.play("right")
+		set_bike_lights_right()
 	elif motion.y < 0:
 		$main_char_node/main_character/AnimationPlayer.play("up")
 	elif motion.y > 0:

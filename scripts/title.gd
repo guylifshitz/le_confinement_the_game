@@ -15,11 +15,13 @@ func _ready():
 	# global.set_level_settings("groceries", "doliprane")
 	# global.set_level_settings("groceries", "hidden_pasta")
 	# global.set_level_settings("groceries", "full_cart_1")
-	global.set_level_settings("groceries", "full_cart_3")
+	# global.set_level_settings("groceries", "full_cart_3")
+	global.set_level_settings("groceries", "test")
 
 	# global.level_type = "sport"
 	# global.set_level_settings("sport", "near_home")
 	# global.set_level_settings("sport", "jogging_2")
+	# global.set_level_settings("sport", "test")
 	# global.set_level_settings("sport", "night_bike")
 
 	get_tree().change_scene("res://level_bastille.tscn")

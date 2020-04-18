@@ -31,7 +31,7 @@ func spawn():
 		is_contagious = false
 	elif enemy_type == "police_car":
 		node_to_clone = new_police_car_base
-		spawn_distribution = global.level_settings["enemies_per_path"]["motorbike"]
+		spawn_distribution = global.level_settings["enemies_per_path"]["police_car"]
 		is_contagious = false
 	else:
 		node_to_clone = new_enemy_base

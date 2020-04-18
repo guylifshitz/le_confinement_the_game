@@ -1,15 +1,12 @@
 extends Node2D
 
+export var is_flipped:bool
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	set_green()
-	pass # Replace with function body.
+	if is_flipped:
+		set_green()
+	else:
+		set_red()
 
 func set_green():
 	$"red-R".hide()

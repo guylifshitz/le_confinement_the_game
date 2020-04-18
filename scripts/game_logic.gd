@@ -24,16 +24,16 @@ var score_increment_speed = global.level_settings["score_increment_speed"]
 func _ready():
 	music.get_node("main_menu").stop()
 
+	if global.level_settings["is_night"]:
+		self.get_node("elements/scene/traffic_lights").show()
+		self.get_node("night").show()
+
+	if not global.level_settings["is_bike_ride"]:
+		self.get_node("sidewalk_limits").queue_free()	
+
 	if global.level_type == "sport":
 		self.get_node("interface/grandma").hide()
-		if not global.level_settings["is_bike_ride"]:
-			self.get_node("sidewalk_limits").queue_free()
-		if global.level_settings["is_night"]:
-			self.get_node("elements/scene/traffic_lights").show()
-			self.get_node("night").show()
-	
 	else:
-		self.get_node("sidewalk_limits").queue_free()
 		self.get_node("interface/sports_timer_label").hide()
 		player.items_needed = global.level_settings["items_needed"]
 		player.items_bonus = global.level_settings["items_bonus"]

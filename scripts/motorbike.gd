@@ -6,10 +6,12 @@ var base_scale = 0.5
 var remote_path_follow
 var remote_transform
 
-var MOVE_SPEED = global.level_settings["motorcycle"]["move_speed"]
+var MOVE_SPEED
 
 func _ready():
-	pass
+	var speed_lower_bound = global.level_settings["motorcycle"]["move_speed_lower"]
+	var speed_upper_bound = global.level_settings["motorcycle"]["move_speed_upper"]
+	MOVE_SPEED = rand_range(speed_lower_bound,speed_upper_bound) 
 	remote_path_follow.offset = randi() % 10000
 
 func _process(delta):

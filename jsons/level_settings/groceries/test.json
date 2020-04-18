@@ -4,16 +4,18 @@
     "english": "TEST"
   },
   "level_difficulty": 1,
-  "type": "sport",
-  "is_bike_ride": false,
-  "is_night": false,
-  "waypoint_positions": "bastille",
-  "win_icons": ["trophy", "medal"],
+  "type": "groceries",
+  "is_bike_ride": true,
+  "is_night": true,
+  "win_icons": ["smile_hearts", "smile", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
   "damage_multiplier": 0.8,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
+  "items_needed": ["drugs"],
+  "items_bonus": ["flower", "duck"],
+  "store_items": [{ "store": "pharmacy_repu", "has_items": ["drugs"] }],
   "player": {
     "walk_speed": 400,
     "run_speed": 700,
@@ -28,21 +30,12 @@
   "police_car": { "move_speed_lower": 200, "move_speed_upper": 300 },
   "attestation": {
     "visible_list": [
-      "attestation_market_2",
-      "attestation_opera",
-      "attestation_column",
-      "attestation_top",
-      "attestation_pharmacy"
     ],
     "duration": 8,
     "respawn_time": 5
   },
   "sanitizer": {
     "visible_list": [
-      "sanitizer_far_right_1",
-      "sanitizer_far_right_2",
-      "sanitizer_bastille",
-      "sanitizer_pharmacy"
     ],
     "healing_points": 100,
     "respawn_time": 5
@@ -52,11 +45,11 @@
     "pedestrians": {},
     "police": {},
     "motorbike": {
-      "canal_1": 5,
-      "canal_2": 5,
-      "vehicles_lower": 0,
-      "vehicles_upper": 0,
-      "market": 0
+      "canal_1": 3,
+      "canal_2": 3,
+      "vehicles_lower": 1,
+      "vehicles_upper": 1,
+      "market": 3
     },
     "police_car": {}
   },
