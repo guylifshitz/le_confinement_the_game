@@ -22,6 +22,7 @@ var score_decrement_exponent  = global.level_settings["score_decrement_exponent"
 var score_increment_speed = global.level_settings["score_increment_speed"]
 
 func _ready():
+
 	music.get_node("main_menu").stop()
 
 	if global.level_settings["is_night"]:

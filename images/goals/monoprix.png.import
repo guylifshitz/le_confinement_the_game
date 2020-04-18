@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/la-superette.png-c054a8bb74e5c7bfd56b6e4aba7dad73.stex"
+path="res://.import/monoprix.png-653373623b150621db89432a27df7439.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/goals/la-superette.png"
-dest_files=[ "res://.import/la-superette.png-c054a8bb74e5c7bfd56b6e4aba7dad73.stex" ]
+source_file="res://images/goals/monoprix.png"
+dest_files=[ "res://.import/monoprix.png-653373623b150621db89432a27df7439.stex" ]
 
 [params]
 

@@ -1,0 +1,82 @@
+{
+  "type": "groceries",
+  "level_name": { "french": "Doliprane", "english": "Tyleonl" },
+  "level_difficulty": 1,
+  "is_bike_ride": false,
+  "is_night": false,
+  "win_icons": ["smile_hearts", "heart"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 2,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "items_needed": ["toilet_paper"],
+  "items_bonus": ["flower", "duck"],
+  "change_item_location": {
+    "item": "toilet_paper",
+    "stores": ["carrefour", "monoprix", "la_suprette"],
+    "time_frequency": 5
+  },
+  "store_items": [
+    { "store": "pharmacy_1", "has_items": ["drugs"] },
+    { "store": "flower_market", "has_items": ["flower"] },
+    { "store": "duck", "has_items": ["duck"] }
+  ],
+  "player": {
+    "walk_speed": 200,
+    "run_speed": 500,
+    "stamina_drain_speed": 1
+  },
+  "pedestrians": {
+    "knows_player_percentage": 60,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 130 },
+  "attestation": {
+    "visible_list": [
+      "attestation_market_top_2",
+      "attestation_market_2",
+      "attestation_opera_2",
+      "attestation_pharmacy"
+    ],
+    "duration": 5,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": ["sanitizer_pharmacy"],
+    "healing_points": 50,
+    "respawn_time": 5
+  },
+  "spawn_seed": 3,
+  "enemies_per_path": {
+    "pedestrians": {
+      "spawn_seed": 2,
+      "middle_2": 1,
+      "top_square_1": 2,
+      "crowded_street": 2,
+      "crowded_street_above": 1,
+      "market_1": 0,
+      "bastille_1": 1,
+      "bastille_2": 0,
+      "bastille_3": 1,
+      "middle_1": 0,
+      "right_1": 0,
+      "right_2": 0
+    },
+    "police": {
+      "spawn_seed": 1,
+      "top_square": 0,
+      "market_full": 0,
+      "market_top": 1,
+      "market_bottom": 2,
+      "police_station_1": 0,
+      "police_station_2": 0,
+      "police_station_3": 0,
+      "boulangerie_bottom": 1
+    },
+    "motorbike": {},
+    "police_car": {}
+  },
+  "game_limits": ["block_right"],
+  "game_elements": ["block_boulangerie"]
+}

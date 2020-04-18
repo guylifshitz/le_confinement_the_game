@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/monop3-trans.png-3e7118ce47e971959e9a6667cbd63d76.stex"
+path="res://.import/la_suprette.png-0f873383c779d8e9c3967ae19bd93921.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/goals/monop3-trans.png"
-dest_files=[ "res://.import/monop3-trans.png-3e7118ce47e971959e9a6667cbd63d76.stex" ]
+source_file="res://images/goals/la_suprette.png"
+dest_files=[ "res://.import/la_suprette.png-0f873383c779d8e9c3967ae19bd93921.stex" ]
 
 [params]
 

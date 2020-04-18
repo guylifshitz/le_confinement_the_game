@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=2]
+[gd_scene load_steps=155 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -10,8 +10,8 @@
 [ext_resource path="res://prefab/tree.tscn" type="PackedScene" id=8]
 [ext_resource path="res://images/landmarks/carroussel.png" type="Texture" id=9]
 [ext_resource path="res://images/scenery/markets/market1.png" type="Texture" id=10]
-[ext_resource path="res://images/goals/monop3-trans.png" type="Texture" id=11]
-[ext_resource path="res://images/goals/la-superette.png" type="Texture" id=12]
+[ext_resource path="res://images/goals/monoprix.png" type="Texture" id=11]
+[ext_resource path="res://images/goals/la_suprette.png" type="Texture" id=12]
 [ext_resource path="res://images/goals/pharmacy.png" type="Texture" id=13]
 [ext_resource path="res://images/goals/home.png" type="Texture" id=14]
 [ext_resource path="res://scripts/store.gd" type="Script" id=15]
@@ -72,6 +72,7 @@
 [ext_resource path="res://sounds/pickup/SFX_Pickup_13.wav" type="AudioStream" id=70]
 [ext_resource path="res://sounds/pickup/Click_Mechanical_00.wav" type="AudioStream" id=71]
 [ext_resource path="res://sounds/bad/Blip_Select19.wav" type="AudioStream" id=72]
+[ext_resource path="res://scripts/store_changer.gd" type="Script" id=73]
 [ext_resource path="res://images/light/white_gradient.png" type="Texture" id=74]
 [ext_resource path="res://images/TEMP/wooden-door.png" type="Texture" id=75]
 [ext_resource path="res://traficlight.tscn" type="PackedScene" id=76]
@@ -1598,116 +1599,111 @@ position = Vector2( 536.374, -379.714 )
 rotation = -1.16415e-10
 
 [node name="monoprix" type="YSort" parent="elements/goals"]
-position = Vector2( -10.8793, 14.2672 )
+position = Vector2( 1348.6, -87.5205 )
 rotation = -1.16415e-10
 
-[node name="monoprix_node" type="YSort" parent="elements/goals/monoprix"]
-position = Vector2( 1362.89, -88.5613 )
+[node name="store_node" type="YSort" parent="elements/goals/monoprix"]
 script = ExtResource( 15 )
 
-[node name="monoprix" type="Sprite" parent="elements/goals/monoprix/monoprix_node"]
+[node name="monoprix" type="Sprite" parent="elements/goals/monoprix/store_node"]
 position = Vector2( 0.000488281, 0.40213 )
-scale = Vector2( 0.510342, 0.510342 )
+scale = Vector2( 0.253395, 0.253395 )
 texture = ExtResource( 11 )
 
-[node name="grocery" type="Area2D" parent="elements/goals/monoprix/monoprix_node"]
+[node name="grocery" type="Area2D" parent="elements/goals/monoprix/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/monoprix_node/grocery"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/monoprix/store_node/grocery"]
 visible = false
 position = Vector2( 0.000610352, 0.548546 )
 shape = SubResource( 9 )
 
 [node name="carrefour" type="YSort" parent="elements/goals"]
-position = Vector2( -922.77, -459.045 )
+position = Vector2( 2047, -344.499 )
 rotation = -1.16415e-10
 
-[node name="carrefour_node" type="YSort" parent="elements/goals/carrefour"]
-position = Vector2( 2964.45, 125.767 )
+[node name="store_node" type="YSort" parent="elements/goals/carrefour"]
 script = ExtResource( 15 )
 
-[node name="carrefour" type="Sprite" parent="elements/goals/carrefour/carrefour_node"]
+[node name="carrefour" type="Sprite" parent="elements/goals/carrefour/store_node"]
 scale = Vector2( 0.240174, 0.240174 )
 texture = ExtResource( 5 )
 
-[node name="grocery" type="Area2D" parent="elements/goals/carrefour/carrefour_node"]
+[node name="grocery" type="Area2D" parent="elements/goals/carrefour/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/carrefour/carrefour_node/grocery"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/carrefour/store_node/grocery"]
 shape = SubResource( 9 )
 
 [node name="la_suprette" type="YSort" parent="elements/goals"]
-position = Vector2( 515.465, -472.944 )
+position = Vector2( 1920.9, -566.062 )
 rotation = -1.16415e-10
 
-[node name="la_superette_node" type="YSort" parent="elements/goals/la_suprette"]
-position = Vector2( 1365.89, -86.5369 )
+[node name="store_node" type="YSort" parent="elements/goals/la_suprette"]
 script = ExtResource( 15 )
 
-[node name="la_superette" type="Sprite" parent="elements/goals/la_suprette/la_superette_node"]
+[node name="la_superette" type="Sprite" parent="elements/goals/la_suprette/store_node"]
 scale = Vector2( 0.312656, 0.312656 )
 texture = ExtResource( 12 )
 
-[node name="grocery" type="Area2D" parent="elements/goals/la_suprette/la_superette_node"]
+[node name="grocery" type="Area2D" parent="elements/goals/la_suprette/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/la_suprette/la_superette_node/grocery"]
-position = Vector2( 0.00170898, 1.46429 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/la_suprette/store_node/grocery"]
+position = Vector2( 0.00292968, 2.49377 )
 shape = SubResource( 9 )
 
 [node name="boulangerie" type="YSort" parent="elements/goals"]
+position = Vector2( 1094.92, -211.062 )
 rotation = -1.16415e-10
 
-[node name="boulangerie_node" type="YSort" parent="elements/goals/boulangerie"]
-position = Vector2( 1097.63, -224.052 )
+[node name="store_node" type="YSort" parent="elements/goals/boulangerie"]
 script = ExtResource( 15 )
 
-[node name="boulangerie" type="Sprite" parent="elements/goals/boulangerie/boulangerie_node"]
+[node name="boulangerie" type="Sprite" parent="elements/goals/boulangerie/store_node"]
 scale = Vector2( 0.510342, 0.510342 )
 texture = ExtResource( 18 )
 
-[node name="grocery" type="Area2D" parent="elements/goals/boulangerie/boulangerie_node"]
+[node name="grocery" type="Area2D" parent="elements/goals/boulangerie/store_node"]
 position = Vector2( -0.00231934, -2.02785 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/boulangerie/boulangerie_node/grocery"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/boulangerie/store_node/grocery"]
 visible = false
 position = Vector2( -1.08557, 0.0012207 )
 shape = SubResource( 9 )
 
 [node name="pharmacy_1" type="YSort" parent="elements/goals"]
-position = Vector2( 40.9028, -25.1202 )
+position = Vector2( 1062.29, 973.285 )
 rotation = -1.16415e-10
 
-[node name="pharma_1_node" type="Node2D" parent="elements/goals/pharmacy_1"]
-position = Vector2( 977.585, 1015.86 )
+[node name="store_node" type="Node2D" parent="elements/goals/pharmacy_1"]
 script = ExtResource( 15 )
 
-[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_1/pharma_1_node"]
+[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_1/store_node"]
 position = Vector2( 0.799316, -53.634 )
 scale = Vector2( 0.355818, 0.355818 )
 texture = ExtResource( 13 )
 
-[node name="area" type="Area2D" parent="elements/goals/pharmacy_1/pharma_1_node"]
+[node name="area" type="Area2D" parent="elements/goals/pharmacy_1/store_node"]
 position = Vector2( -0.00231934, -2.02785 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_1/pharma_1_node/area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_1/store_node/area"]
 position = Vector2( 18.2574, -17.9736 )
 shape = SubResource( 9 )
 
 [node name="pharmacy_2" type="YSort" parent="elements/goals"]
-position = Vector2( 1033.54, 483.771 )
+position = Vector2( 3060.08, 132.618 )
 rotation = -1.16415e-10
 
-[node name="pharma_2_node" type="Node2D" parent="elements/goals/pharmacy_2"]
-position = Vector2( 2030.16, -348.247 )
+[node name="store_node" type="Node2D" parent="elements/goals/pharmacy_2"]
 script = ExtResource( 15 )
 
-[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_2/pharma_2_node"]
+[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_2/store_node"]
 position = Vector2( 7.6377, -55.0718 )
 scale = Vector2( -0.312, 0.312 )
 texture = ExtResource( 13 )
 
-[node name="area" type="Area2D" parent="elements/goals/pharmacy_2/pharma_2_node"]
+[node name="area" type="Area2D" parent="elements/goals/pharmacy_2/store_node"]
 position = Vector2( -0.00231934, -2.02785 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_2/pharma_2_node/area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_2/store_node/area"]
 position = Vector2( -2.97142, -12.5003 )
 shape = SubResource( 9 )
 
@@ -1715,44 +1711,44 @@ shape = SubResource( 9 )
 position = Vector2( -4001.6, -806.495 )
 rotation = -1.16415e-10
 
-[node name="pharma_2_node" type="Node2D" parent="elements/goals/pharmacy_repu"]
+[node name="store_node" type="Node2D" parent="elements/goals/pharmacy_repu"]
 position = Vector2( 0.677002, 14.9901 )
 script = ExtResource( 15 )
 
-[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_repu/pharma_2_node"]
+[node name="pharmacy" type="Sprite" parent="elements/goals/pharmacy_repu/store_node"]
 position = Vector2( 7.6377, -55.0718 )
 scale = Vector2( -0.312, 0.312 )
 texture = ExtResource( 13 )
 
-[node name="area" type="Area2D" parent="elements/goals/pharmacy_repu/pharma_2_node"]
+[node name="area" type="Area2D" parent="elements/goals/pharmacy_repu/store_node"]
 position = Vector2( -0.00231934, -2.02785 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_repu/pharma_2_node/area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_repu/store_node/area"]
 position = Vector2( -4.5974, -12.9577 )
 shape = SubResource( 9 )
 
 [node name="flower_market" type="YSort" parent="elements/goals"]
+position = Vector2( 1150.07, 640.614 )
 rotation = -3.49246e-10
 
-[node name="flower_market" type="Sprite" parent="elements/goals/flower_market"]
-position = Vector2( 1126.88, 633.886 )
+[node name="store_node" type="Sprite" parent="elements/goals/flower_market"]
 rotation = -3.14044
 scale = Vector2( 0.622854, -0.63152 )
 texture = ExtResource( 35 )
 script = ExtResource( 15 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/flower_market/flower_market"]
+[node name="Area2D" type="Area2D" parent="elements/goals/flower_market/store_node"]
 position = Vector2( 0, -0.000244141 )
 rotation = 0.00226946
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/store_node/Area2D"]
 position = Vector2( 27.574, 111.29 )
 rotation = -0.523599
 shape = SubResource( 10 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="elements/goals/flower_market/flower_market"]
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/goals/flower_market/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/flower_market/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/store_node/StaticBody2D"]
 position = Vector2( -21.759, 73.9398 )
 rotation = -0.523599
 shape = SubResource( 11 )
@@ -1761,19 +1757,19 @@ shape = SubResource( 11 )
 position = Vector2( 2218.74, 1153.91 )
 scale = Vector2( 1.69515, 1.69515 )
 
-[node name="duck" type="AnimatedSprite" parent="elements/goals/duck"]
+[node name="store_node" type="AnimatedSprite" parent="elements/goals/duck"]
 position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/duck/duck"]
+[node name="Area2D" type="Area2D" parent="elements/goals/duck/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck/duck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck/store_node/Area2D"]
 position = Vector2( -9.56348, 9.25977 )
 scale = Vector2( 5.41958, 5.41958 )
 shape = SubResource( 25 )
@@ -1783,7 +1779,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1793,7 +1789,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 
@@ -1801,19 +1797,19 @@ playing = true
 position = Vector2( -2826.75, -1322.28 )
 scale = Vector2( 1.69515, 1.69515 )
 
-[node name="duck" type="AnimatedSprite" parent="elements/goals/duck_canal"]
+[node name="store_node" type="AnimatedSprite" parent="elements/goals/duck_canal"]
 position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal/duck"]
+[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal/duck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal/store_node/Area2D"]
 position = Vector2( -9.56348, 9.25977 )
 scale = Vector2( 5.41958, 5.41958 )
 shape = SubResource( 25 )
@@ -1823,7 +1819,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1833,7 +1829,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 4
 speed_scale = 0.5
 playing = true
 
@@ -1841,19 +1837,19 @@ playing = true
 position = Vector2( -3887.76, -1629.52 )
 scale = Vector2( 1.69515, 1.69515 )
 
-[node name="duck" type="AnimatedSprite" parent="elements/goals/duck_canal2"]
+[node name="store_node" type="AnimatedSprite" parent="elements/goals/duck_canal2"]
 position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal2/duck"]
+[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal2/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal2/duck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal2/store_node/Area2D"]
 position = Vector2( -9.56348, 9.25977 )
 scale = Vector2( 5.41958, 5.41958 )
 shape = SubResource( 25 )
@@ -1863,7 +1859,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 11
+frame = 1
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1872,19 +1868,18 @@ flip_h = true
 position = Vector2( -3312.55, -1332.12 )
 scale = Vector2( 1.69515, 1.69515 )
 
-[node name="duck" type="AnimatedSprite" parent="elements/goals/duck_canal3"]
+[node name="store_node" type="AnimatedSprite" parent="elements/goals/duck_canal3"]
 position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 10
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
 
-[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal3/duck"]
+[node name="Area2D" type="Area2D" parent="elements/goals/duck_canal3/store_node"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal3/duck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/duck_canal3/store_node/Area2D"]
 position = Vector2( -9.56348, 9.25977 )
 scale = Vector2( 5.41958, 5.41958 )
 shape = SubResource( 25 )
@@ -2838,6 +2833,7 @@ scale = Vector2( 0.280746, 0.280746 )
 texture = ExtResource( 68 )
 
 [node name="traffic_lights" type="YSort" parent="elements/scene"]
+visible = false
 position = Vector2( 1406.95, 734.082 )
 rotation = -3.14044
 scale = Vector2( 0.247002, -0.250438 )
@@ -3141,6 +3137,11 @@ position = Vector2( 649.109, -66.3689 )
 
 [node name="stamina_bar" parent="interface" instance=ExtResource( 50 )]
 position = Vector2( 649.367, -13.8514 )
+
+[node name="grocery_store_with_item" type="Node2D" parent="interface"]
+position = Vector2( 363.111, 67.8793 )
+scale = Vector2( 0.255614, 0.253165 )
+script = ExtResource( 73 )
 
 [node name="grandma" type="Node2D" parent="interface"]
 position = Vector2( 107.852, 104.354 )
@@ -4637,16 +4638,16 @@ texture = ExtResource( 74 )
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_pharmacy/Area2D" to="elements/pickups/sanitizers/sanitizer_pharmacy/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/key/Area2D" to="elements/pickups/key" method="_on_key_body_entered"]
 [connection signal="body_entered" from="elements/goals/waypoints/waypoint/Area2D" to="elements/goals/waypoints/waypoint" method="_on_waypoint_body_entered"]
-[connection signal="body_entered" from="elements/goals/monoprix/monoprix_node/grocery" to="elements/goals/monoprix/monoprix_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/carrefour/carrefour_node/grocery" to="elements/goals/carrefour/carrefour_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/la_suprette/la_superette_node/grocery" to="elements/goals/la_suprette/la_superette_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/boulangerie/boulangerie_node/grocery" to="elements/goals/boulangerie/boulangerie_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/pharmacy_1/pharma_1_node/area" to="elements/goals/pharmacy_1/pharma_1_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/pharmacy_2/pharma_2_node/area" to="elements/goals/pharmacy_2/pharma_2_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/pharmacy_repu/pharma_2_node/area" to="elements/goals/pharmacy_repu/pharma_2_node" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/flower_market/flower_market/Area2D" to="elements/goals/flower_market/flower_market" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/duck/duck/Area2D" to="elements/goals/duck/duck" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/duck_canal/duck/Area2D" to="elements/goals/duck_canal/duck" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/duck_canal2/duck/Area2D" to="elements/goals/duck_canal2/duck" method="_on_grocery_body_entered"]
-[connection signal="body_entered" from="elements/goals/duck_canal3/duck/Area2D" to="elements/goals/duck_canal3/duck" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/monoprix/store_node/grocery" to="elements/goals/monoprix/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/carrefour/store_node/grocery" to="elements/goals/carrefour/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/la_suprette/store_node/grocery" to="elements/goals/la_suprette/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/boulangerie/store_node/grocery" to="elements/goals/boulangerie/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/pharmacy_1/store_node/area" to="elements/goals/pharmacy_1/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/pharmacy_2/store_node/area" to="elements/goals/pharmacy_2/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/pharmacy_repu/store_node/area" to="elements/goals/pharmacy_repu/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/flower_market/store_node/Area2D" to="elements/goals/flower_market/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/duck/store_node/Area2D" to="elements/goals/duck/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/duck_canal/store_node/Area2D" to="elements/goals/duck_canal/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/duck_canal2/store_node/Area2D" to="elements/goals/duck_canal2/store_node" method="_on_grocery_body_entered"]
+[connection signal="body_entered" from="elements/goals/duck_canal3/store_node/Area2D" to="elements/goals/duck_canal3/store_node" method="_on_grocery_body_entered"]
 [connection signal="body_entered" from="elements/goals/home/Area2D" to="elements/goals/home/Area2D" method="_on_home_body_entered"]

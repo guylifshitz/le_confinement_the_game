@@ -56,5 +56,6 @@ func _on_grocery_body_entered(body):
 				store_visited = true
 				var x_store = store_x.instance()
 				x_store.position = Vector2(0, 0)
+				x_store.name = "X"
 				add_child(x_store)
 				empty_store_sound.play()
