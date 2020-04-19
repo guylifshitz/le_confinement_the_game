@@ -9,7 +9,8 @@ func _ready():
 	
 	# LEVEL SELECT 2
 	# global.level_type = "groceries"
-	# get_tree().change_scene("res://level_select_part_2.tscn")
+	global.level_type = "sport"
+	get_tree().change_scene("res://level_select_part_2.tscn")
 
 	# global.set_level_settings("groceries", "doliprane")
 	# global.set_level_settings("groceries", "hidden_pasta")
@@ -23,12 +24,12 @@ func _ready():
 	# global.set_level_settings("sport", "marathon_42k")
 	# global.set_level_settings("sport", "marathon_21k")
 	# global.set_level_settings("sport", "jogging_2")
-	global.set_level_settings("sport", "canal_1")
+	# global.set_level_settings("sport", "canal_1")
 	# global.set_level_settings("sport", "canal_2")
 	# global.set_level_settings("sport", "test")
 	# global.set_level_settings("sport", "night_bike")
 
-	get_tree().change_scene("res://level_bastille.tscn")
+	# get_tree().change_scene("res://level_bastille.tscn")
 	#$;	HTTPRequest.request("http://localhost:8082/TEST_settingss.json")
 	
 func _on_HTTPRequest_request_completed( result, response_code, headers, body ):

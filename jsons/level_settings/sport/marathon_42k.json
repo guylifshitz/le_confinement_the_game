@@ -1,9 +1,9 @@
 {
   "level_name": {
-    "french": "Le footing",
-    "english": "The jog"
+    "french": "Marathon 42K",
+    "english": "42K Marathon"
   },
-  "level_difficulty": 2,
+  "level_difficulty": 3,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
