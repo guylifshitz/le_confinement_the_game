@@ -1,0 +1,71 @@
+{
+  "level_name": {
+    "french": "Le footing",
+    "english": "The jog"
+  },
+  "level_difficulty": 1,
+  "type": "sport",
+  "is_bike_ride": false,
+  "is_night": false,
+  "waypoint_positions": "marathon_21k",
+  "waypoint_loops": {
+    "loop_count": 6
+  },
+  "course_length_in_km": "21.0",
+  "win_icons": ["trophy", "medal"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 0.9,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "player": {
+    "walk_speed": 400,
+    "run_speed": 1000,
+    "stamina_drain_speed": 2
+  },
+  "pedestrians": {
+    "knows_player_percentage": 30,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 150 },
+  "attestation": {
+    "visible_list": [],
+    "duration": 5,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": [],
+    "healing_points": 50,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "pedestrians": {
+      "top_square_1": 0,
+      "crowded_street": 0,
+      "crowded_street_above": 0,
+      "market_1": 0,
+      "bastille_1": 0,
+      "bastille_2": 0,
+      "middle_1": 0,
+      "middle_2": 0,
+      "right_1": 0,
+      "right_2": 0
+    },
+    "police": {
+      "top_square": 0,
+      "market_full": 0,
+      "market_top": 0,
+      "market_bottom": 0,
+      "police_station_1": 0,
+      "police_station_2": 0,
+      "police_station_3": 0,
+      "bastille_1": 0,
+      "bastille_2": 0
+    },
+    "motorbike": {},
+    "police_car": {}
+  },
+  "game_limits": ["block_right"],
+  "game_elements": []
+}

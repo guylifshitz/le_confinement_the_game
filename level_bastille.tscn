@@ -901,180 +901,180 @@ outline_size = 5
 outline_color = Color( 0.603922, 0.14902, 0.14902, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="DynamicFont" id=78]
+[sub_resource type="DynamicFont" id=42]
 size = 48
 outline_size = 5
 outline_color = Color( 0.14902, 0.603922, 0.356863, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="ShaderMaterial" id=42]
+[sub_resource type="ShaderMaterial" id=43]
 
-[sub_resource type="DynamicFont" id=43]
+[sub_resource type="DynamicFont" id=44]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 330.079, 116.745 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 6.12814, 56.529 )
 
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 1.65803, 95.0301 )
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 1.65803, 153.994 )
 
-[sub_resource type="NavigationPolygon" id=47]
+[sub_resource type="NavigationPolygon" id=48]
 vertices = PoolVector2Array( 1449.35, -1441.69, 4891.81, 662.369, 1382.01, 2120.22, -869.962, 330.214 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -869.962, 330.214, 1382.01, 2120.22, 4891.81, 662.369, 1449.35, -1441.69 ) ]
 
-[sub_resource type="Curve2D" id=48]
+[sub_resource type="Curve2D" id=49]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1279.12, -742.079, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1430.45, -670.501, 0, 0, 0, 0, 1714.27, -527.17, 0, 0, 0, 0, 1672.89, -663.606, 0, 0, 0, 0, 1468.07, -763.228, 0, 0, 0, 0, 1396.59, -786.494, 0, 0, 0, 0, 1279.12, -742.079 )
 }
 
-[sub_resource type="Curve2D" id=49]
+[sub_resource type="Curve2D" id=50]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1308.78, 23.0505, 0, 0, 0, 0, 614.555, 375.262, 0, 0, 0, 0, 1709.19, 1007.44, 0, 0, 0, 0, 1802.33, 1211.28, 0, 0, 0, 0, 2163.19, 1187.54, 0, 0, 0, 0, 2264.21, 473.976, 0, 0, 0, 0, 1308.78, 23.0505 )
 }
 
-[sub_resource type="Curve2D" id=50]
+[sub_resource type="Curve2D" id=51]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1733.69, -459.804, 0, 0, 0, 0, 1710.23, -377.034, 0, 0, 0, 0, 1414.08, -233.689, 0, 0, 0, 0, 1288.9, -266.36, 0, 0, 0, 0, 1201.17, -91.7913, 0, 0, 0, 0, 1068.98, -204.184, 0, 0, 0, 0, 1196.98, -113.141, 0, 0, 0, 0, 1303.77, -191.427, 0, 0, 0, 0, 1289.09, -263.06, 0, 0, 0, 0, 1582.93, -421.695, 0, 0, 0, 0, 1672.89, -460.105, 0, 0, 0, 0, 1715.36, -492.046, 0, 0, 0, 0, 1731.12, -505.864, 0, 0, 0, 0, 1748.74, -540.858, 0, 0, 0, 0, 1733.69, -459.804 )
 }
 
-[sub_resource type="Curve2D" id=51]
+[sub_resource type="Curve2D" id=52]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1700.22, -651.102, 0, 0, 0, 0, 1675.14, -604.49, 0, 0, 0, 0, 1381.92, -730.425, 0, 0, 0, 0, 1417.14, -770.882, 0, 0, 0, 0, 1504.85, -719.037, 0, 0, 0, 0, 927.979, -410.927, 0, 0, 0, 0, 850.792, -520.84, 0, 0, 0, 0, 1362.05, -784.588, 0, 0, 0, 0, 1700.22, -651.102 )
 }
 
-[sub_resource type="Curve2D" id=52]
+[sub_resource type="Curve2D" id=53]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 577.629, 453.997, 0, 0, 0, 0, 1159.85, 774.828, 0, 0, 0, 0, 1155.93, 815.663, 0, 0, 0, 0, 1320, 791.361, 0, 0, 0, 0, 1293.75, 719.054, 0, 0, 0, 0, 1139.98, 728.072, 0, 0, 0, 0, 574.419, 418.475, 0, 0, 0, 0, 577.629, 453.997 )
 }
 
-[sub_resource type="Curve2D" id=53]
+[sub_resource type="Curve2D" id=54]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2306.45, 970.703, 0, 0, 0, 0, 1989.06, 1020.17, 0, 0, 0, 0, 1917.41, 1191.65, 0, 0, 0, 0, 1646.36, 1130.23, 0, 0, 0, 0, 1612.66, 942.101, 0, 0, 0, 0, 1710.37, 805.276, 0, 0, 0, 0, 1921.32, 802.093, 0, 0, 0, 0, 2017.87, 916.644, 0, 0, 0, 0, 2223.79, 955.363, 0, 0, 0, 0, 2339.92, 821.457, 0, 0, 0, 0, 2133.89, 692.331, 0, 0, 0, 0, 2228.79, 629.011, 0, 0, 0, 0, 2523.33, 826.391, 0, 0, 0, 0, 2306.45, 970.703 )
 }
 
-[sub_resource type="Curve2D" id=54]
+[sub_resource type="Curve2D" id=55]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2066.47, 550.502, 0, 0, 0, 0, 1595.86, 788.954, 0, 0, 0, 0, 1668.26, 1021.96, 0, 0, 0, 0, 1950.61, 1151.84, 0, 0, 0, 0, 2066.47, 550.502 )
 }
 
-[sub_resource type="Curve2D" id=55]
+[sub_resource type="Curve2D" id=56]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2161.03, 1048.27, 0, 0, 0, 0, 2159.19, 825.26, 0, 0, 0, 0, 1667.9, 851.495, 0, 0, 0, 0, 1606.48, 1115.49, 0, 0, 0, 0, 2005.31, 1178.4, 0, 0, 0, 0, 2161.03, 1048.27 )
 }
 
-[sub_resource type="Curve2D" id=56]
+[sub_resource type="Curve2D" id=57]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1319.12, 8.34949, 0, 0, 0, 0, 1389.6, -29.5893, 0, 0, 0, 0, 2207.5, 407.002, 0, 0, 0, 0, 2109, 442.734, 0, 0, 0, 0, 1319.12, 8.34949 )
 }
 
-[sub_resource type="Curve2D" id=57]
+[sub_resource type="Curve2D" id=58]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2229.43, 515.051, 0, 0, 0, 0, 1364.28, 75.8862, 0, 0, 0, 0, 1405.53, 21.2133, 0, 0, 0, 0, 2246.5, 476.672, 0, 0, 0, 0, 2229.43, 515.051 )
 }
 
-[sub_resource type="Curve2D" id=58]
+[sub_resource type="Curve2D" id=59]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2047.35, 444.569, 0, 0, 0, 0, 1344.46, 68.1456, 0, 0, 0, 0, 1329.3, 77.6923, 0, 0, 0, 0, 2047.35, 444.569 )
 }
 
-[sub_resource type="Curve2D" id=59]
+[sub_resource type="Curve2D" id=60]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2124.5, -244.283, 0, 0, 0, 0, 2084.72, -210.413, 0, 0, 0, 0, 2819.02, 121.529, 0, 0, 0, 0, 2904.14, 216.357, 0, 0, 0, 0, 3075.13, 116.87, 0, 0, 0, 0, 2533.17, 478.648, 0, 0, 0, 0, 2408.28, 434.057, 0, 0, 0, 0, 2873.89, 117.101, 0, 0, 0, 0, 2124.5, -244.283 )
 }
 
-[sub_resource type="Curve2D" id=60]
+[sub_resource type="Curve2D" id=61]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2054.05, -309.013, 0, 0, 0, 0, 2913.25, 89.3418, 0, 0, 0, 0, 2740.25, 319.764, 0, 0, 0, 0, 2802.41, 94.9249, 0, 0, 0, 0, 2128.43, -198.897, 0, 0, 0, 0, 2192.96, -231.705, 0, 0, 0, 0, 2054.05, -309.013 )
 }
 
-[sub_resource type="Curve2D" id=61]
+[sub_resource type="Curve2D" id=62]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1094.75, -204.111, 0, 0, 0, 0, 963.153, -127.303, 0, 0, 0, 0, 1131.58, -26.3201, 0, 0, 0, 0, 1274.56, -94.0536, 0, 0, 0, 0, 840.127, -314.515, 0, 0, 0, 0, 692.342, -223.647, 0, 0, 0, 0, 921.284, -102.915, 0, 0, 0, 0, 1094.75, -204.111 )
 }
 
-[sub_resource type="Curve2D" id=62]
+[sub_resource type="Curve2D" id=63]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1275.55, -755.444, 0, 0, 0, 0, 794.261, -472.622, 0, 0, 0, 0, 876.136, -393.013, 0, 0, 0, 0, 1407.53, -813.777, 0, 0, 0, 0, 1416.83, -660.765, 0, 0, 0, 0, 1414.21, -804.026, 0, 0, 0, 0, 1868.58, -584.336, 0, 0, 0, 0, 1395.86, -327.794, 0, 0, 0, 0, 1240.5, -161.558, 0, 0, 0, 0, 1763.59, -418.59, 0, 0, 0, 0, 1722.43, -510.47, 0, 0, 0, 0, 1783.72, -612.079, 0, 0, 0, 0, 1669.33, -539.063, 0, 0, 0, 0, 1457.05, -669.945, 0, 0, 0, 0, 1381.18, -652.966, 0, 0, 0, 0, 1310.74, -741.721, 0, 0, 0, 0, 1275.55, -755.444 )
 }
 
-[sub_resource type="Curve2D" id=63]
+[sub_resource type="Curve2D" id=64]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 710.823, 321.288, 0, 0, 0, 0, 795.851, 379.961, 0, 0, 0, 0, 730.714, 327.773, 0, 0, 0, 0, 714.499, 340.42, 0, 0, 0, 0, 778.407, 402.524, 0, 0, 0, 0, 830.79, 381.531, 0, 0, 0, 0, 710.823, 321.288 )
 }
 
-[sub_resource type="Curve2D" id=64]
+[sub_resource type="Curve2D" id=65]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1179.42, 852.749, 0, 0, 0, 0, 1383.38, 756.709, 0, 0, 0, 0, 1447.65, 709.135, 0, 0, 0, 0, 1326.88, 646.478, 0, 0, 0, 0, 1291.21, 702.07, 0, 0, 0, 0, 1381.02, 770.399, 0, 0, 0, 0, 1217.52, 834.994, 0, 0, 0, 0, 1110.25, 770.71, 0, 0, 0, 0, 1056.27, 784.459, 0, 0, 0, 0, 1179.42, 852.749 )
 }
 
-[sub_resource type="Curve2D" id=65]
+[sub_resource type="Curve2D" id=66]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 695.6, 341.272, 0, 0, 0, 0, 551.969, 422.267, 0, 0, 0, 0, 1182.83, 770.949, 0, 0, 0, 0, 1095.52, 803.252, 0, 0, 0, 0, 479.781, 484.342, 0, 0, 0, 0, 714.668, 351.233, 0, 0, 0, 0, 1391.63, 743.335, 0, 0, 0, 0, 1178.15, 851.463, 0, 0, 0, 0, 861.095, 662.537, 0, 0, 0, 0, 1013.87, 499.689, 0, 0, 0, 0, 695.6, 341.272 )
 }
 
-[sub_resource type="Curve2D" id=66]
+[sub_resource type="Curve2D" id=67]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1525.43, 859.438, 0, 0, 0, 0, 1167.54, 1063.45, 0, 0, 0, 0, 1251.72, 1140.53, 0, 0, 0, 0, 1357.58, 1155.11, 0, 0, 0, 0, 1438.69, 1080.04, 0, 0, 0, 0, 1349.5, 1060.3, 0, 0, 0, 0, 1281.4, 1103.01, 0, 0, 0, 0, 1216.12, 1070.01, 0, 0, 0, 0, 1466.69, 836.72, 0, 0, 0, 0, 1525.43, 859.438 )
 }
 
-[sub_resource type="Curve2D" id=67]
+[sub_resource type="Curve2D" id=68]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1438.7, 1091.07, 0, 0, 0, 0, 1240.85, 1145.69, 0, 0, 0, 0, 1612.53, 957.83, 0, 0, 0, 0, 1838.21, 1159.7, 0, 0, 0, 0, 2082.38, 1039.61, 0, 0, 0, 0, 1857.32, 743.659, 0, 0, 0, 0, 1141.37, 991.448, 0, 0, 0, 0, 1309.03, 1178.68, 0, 0, 0, 0, 1158.75, 981.137, 0, 0, 0, 0, 1320.63, 1172.05, 0, 0, 0, 0, 1188.45, 954.643, 0, 0, 0, 0, 1091.44, 1070.89, 0, 0, 0, 0, 1309.03, 1178.68 )
 }
 
-[sub_resource type="Curve2D" id=68]
+[sub_resource type="Curve2D" id=69]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1424.19, 1084.47, 0, 0, 0, 0, 1336.56, 1162.48, 0, 0, 0, 0, 1115.98, 976.042, 0, 0, 0, 0, 1307.54, 1139.73, 0, 0, 0, 0, 1174.68, 964.949, 0, 0, 0, 0, 1143.66, 1094.35, 0, 0, 0, 0, 1424.19, 1084.47 )
 }
 
-[sub_resource type="Curve2D" id=69]
+[sub_resource type="Curve2D" id=70]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2211.18, 473.091, 0, 0, 0, 0, 1623.82, 883.181, 0, 0, 0, 0, 1314.08, 1036.4, 0, 0, 0, 0, 1285.52, 1215.29, 0, 0, 0, 0, 1320.3, 1045.85, 0, 0, 0, 0, 1627.89, 909.178, 0, 0, 0, 0, 1688.77, 1137.61, 0, 0, 0, 0, 1970.15, 1194.81, 0, 0, 0, 0, 2285.51, 915.041, 0, 0, 0, 0, 2112.78, 735.589, 0, 0, 0, 0, 2359.65, 502.862, 0, 0, 0, 0, 2326.69, 493.918 )
 }
 
-[sub_resource type="Curve2D" id=70]
+[sub_resource type="Curve2D" id=71]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1418.67, 757.189, 0, 0, 0, 0, 1532.21, 825.609, 0, 0, 0, 0, 1838.45, 868.594, 0, 0, 0, 0, 2112.67, 772.149, 0, 0, 0, 0, 2255.69, 941.077, 0, 0, 0, 0, 1882.2, 1210.98, 0, 0, 0, 0, 1418.67, 757.189 )
 }
 
-[sub_resource type="Curve2D" id=71]
+[sub_resource type="Curve2D" id=72]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1413.2, 100.133, 0, 0, 0, 0, 1104.68, -143.834, 0, 0, 0, 0, 1534.03, 33.5165, 0, 0, 0, 0, 1584, 71.2718, 0, 0, 0, 0, 1413.2, 100.133 )
 }
 
-[sub_resource type="Curve2D" id=72]
+[sub_resource type="Curve2D" id=73]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2948.97, 189.146, 0, 0, 0, 0, 1178.04, 1030.67, 0, 0, 0, 0, 1322.88, 1111.22, 0, 0, 0, 0, 1469.35, 1037.18, 0, 0, 0, 0, 1369.26, 991.611, 0, 0, 0, 0, 3018.94, 217.951, 0, 0, 0, 0, 2948.97, 189.146 )
 }
 
-[sub_resource type="Curve2D" id=73]
+[sub_resource type="Curve2D" id=74]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2427.39, 528.357, 0, 0, 0, 0, 1427.53, 40.316, 0, 0, 0, 0, 706.282, -309.865, 0, 0, 0, 0, 1437.31, -699.944, 0, 0, 0, 0, 1870.56, -497.46, 0, 0, 0, 0, 1045.74, -88.0266, 0, 0, 0, 0, 2355.93, 564.09, 0, 0, 0, 0, 2427.39, 528.357 )
 }
 
-[sub_resource type="Curve2D" id=74]
+[sub_resource type="Curve2D" id=75]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1275.81, 80.9984, 0, 0, 0, 0, 469.594, 477.859, 0, 0, 0, 0, 1355.72, 944.329, 0, 0, 0, 0, 1164.31, 1038.68, 0, 0, 0, 0, 1295.96, 1146.06, 0, 0, 0, 0, 1501.46, 1056.13, 0, 0, 0, 0, 1418.77, 1003, 0, 0, 0, 0, 1649.09, 901.327, 0, 0, 0, 0, 677.911, 367.284, 0, 0, 0, 0, 478.724, 487.571, 0, 0, 0, 0, 1436.21, 1013.01, 0, 0, 0, 0, 2407.02, 521.676, 0, 0, 0, 0, 1383.17, 22.2556, 0, 0, 0, 0, 1275.81, 80.9984 )
 }
 
-[sub_resource type="Curve2D" id=75]
+[sub_resource type="Curve2D" id=76]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 445.656, 167.569, 0, 0, 0, 0, -5605.18, -2766.49, 0, 0, 0, 0, -5870.67, -2506.13, 0, 0, 0, 0, -47.528, 320.39, 0, 0, 0, 0, 52.511, 312.892, 0, 0, 0, 0, 409.438, 505.041, 0, 0, 0, 0, 633.57, 360.367, 0, 0, 0, 0, 334.889, 209.102, 0, 0, 0, 0, 414.972, 183.003 )
 }
 
-[sub_resource type="Curve2D" id=76]
+[sub_resource type="Curve2D" id=77]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 320.62, 181.775, 0, 0, 0, 0, -4594.97, -2301.52, 0, 0, 0, 0, -4793.26, -2200.95, 0, 0, 0, 0, 466.445, 456.488, 0, 0, 0, 0, 654.708, 360.223, 0, 0, 0, 0, 319.463, 180.079, 0, 0, 0, 0, 318.493, 179.098, 0, 0, 0, 0, 320.62, 181.775 )
 }
 
-[sub_resource type="CanvasItemMaterial" id=77]
+[sub_resource type="CanvasItemMaterial" id=78]
 blend_mode = 1
 
 [node name="game" type="Node2D"]
@@ -1405,7 +1405,7 @@ position = Vector2( 0.00079958, 0.71449 )
 rotation = -3.49246e-10
 
 [node name="waypoints" type="YSort" parent="elements/goals"]
-position = Vector2( -0.000793457, -0.714478 )
+position = Vector2( 0.000343323, 0.299438 )
 rotation = 2.32831e-10
 
 [node name="waypoint" type="Node2D" parent="elements/goals/waypoints"]
@@ -1506,7 +1506,342 @@ position = Vector2( 802.322, -247.652 )
 [node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/near_home"]
 position = Vector2( 541.027, -379.921 )
 
+[node name="marathon_5k" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+
+[node name="start" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 831.191, -336.313 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 806.217, -210.015 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1250.58, -196.036 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1540.43, -339.84 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1831.22, -526.916 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1495.03, -694.522 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1177.13, -604.424 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 851.447, -450.44 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 806.217, -210.015 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1158.39, -54.7837 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1537.09, 121.161 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1890.3, 302.017 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 2247.03, 501.475 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 2027.75, 701.927 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 2105.37, 930.267 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1987.11, 1145.35 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1601.55, 1096.62 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1301.32, 892.156 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 961.106, 718.412 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 645.221, 545.009 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 707.985, 333.072 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="21" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1045.78, 147.643 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="22" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1160.55, -59.8999 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="23" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1251.22, -196.037 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="24" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1535.04, -334.145 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="25" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1832.74, -526.44 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="26" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1493.99, -692.094 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="27" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 1172.94, -604.581 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="28" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 851.446, -451.121 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="home" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_5k"]
+position = Vector2( 644.121, -438.142 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="marathon_21k" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+
+[node name="start" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 831.191, -336.313 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 806.217, -210.015 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="2" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1152.89, -53.7634 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="3" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1049.14, 163.327 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="4" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 706.322, 332.06 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="5" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 334.636, 168.205 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="6" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 0.0067749, 6.08507 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="7" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -355.693, -169.839 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="8" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -142.855, -378.952 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="9" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -111.147, -581.772 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="10" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -382.204, -875.308 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="11" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -785.547, -732.388 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="12" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -1188.42, -617.352 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="13" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -1630.39, -588.049 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -1248.17, -388.24 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -871.963, -209.099 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="16" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -581.483, -42.687 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="17" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( -182.743, 168.8 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="18" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 171.961, 348.363 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="19" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 570.273, 523.033 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="20" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 898.447, 676.264 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="21" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1296.19, 886.746 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="22" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1635.52, 1091.57 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="23" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 2074.57, 1137.2 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="24" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 2120.82, 911.465 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="25" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 2105.1, 689.435 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="26" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 2180.34, 459.802 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="27" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1865.12, 263.268 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="28" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1509.41, 79.6504 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="29" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1104.2, -107.966 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="30" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1434.01, -279.604 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="31" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1761.32, -444.236 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="32" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1603.59, -649.373 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="33" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 1180.13, -609.343 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="34" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 861.158, -449.283 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
+[node name="home" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/marathon_21k"]
+position = Vector2( 644.121, -438.142 )
+rotation = -2.32831e-10
+scale = Vector2( 1, 1 )
+
 [node name="bastille" type="Node2D" parent="elements/goals/waypoints/waypoint_positions"]
+visible = false
 
 [node name="1" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
 position = Vector2( 764.698, -285.568 )
@@ -1561,7 +1896,7 @@ position = Vector2( 1654.71, 830.597 )
 rotation = -1.16415e-10
 
 [node name="14" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
-position = Vector2( 2144.49, 971.335 )
+position = Vector2( 2143.49, 971.336 )
 rotation = -1.16415e-10
 
 [node name="15" type="Node2D" parent="elements/goals/waypoints/waypoint_positions/bastille"]
@@ -1768,7 +2103,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1785,7 +2120,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1795,7 +2130,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 
@@ -1808,7 +2143,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1825,7 +2160,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1835,7 +2170,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 9
 speed_scale = 0.5
 playing = true
 
@@ -1848,7 +2183,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 7
+frame = 8
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -1865,7 +2200,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 6
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -1879,7 +2214,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 5
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -3145,7 +3480,7 @@ margin_left = 392.819
 margin_top = 69.8839
 margin_right = 632.819
 margin_bottom = 113.884
-custom_fonts/normal_font = SubResource( 78 )
+custom_fonts/normal_font = SubResource( 42 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -3221,14 +3556,14 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="dropshadow" type="Sprite" parent="interface/attestation_slot_full"]
 modulate = Color( 1, 0.843137, 0, 1 )
-material = SubResource( 42 )
+material = SubResource( 43 )
 position = Vector2( 2.20874, 2.20874 )
 rotation = 1.16415e-10
 scale = Vector2( 1.30272, 1.30272 )
 texture = ExtResource( 17 )
 
 [node name="attestation_slot_full" type="Sprite" parent="interface/attestation_slot_full"]
-material = SubResource( 42 )
+material = SubResource( 43 )
 rotation = 1.16415e-10
 texture = ExtResource( 17 )
 
@@ -3249,7 +3584,7 @@ margin_top = 527.965
 margin_right = 1001.45
 margin_bottom = 555.965
 rect_scale = Vector2( 1.89364, 1.89364 )
-custom_fonts/normal_font = SubResource( 43 )
+custom_fonts/normal_font = SubResource( 44 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3461,30 +3796,42 @@ polygon = PoolVector2Array( 919.72, 21.961, 972.871, -0.126648, 1350.45, -157.03
 [node name="seine" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2055.59, 1451.63 )
 rotation = -0.555015
-shape = SubResource( 44 )
+shape = SubResource( 45 )
 
 [node name="seine-opera" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2600.15, 1035.8 )
 rotation = -0.555015
-shape = SubResource( 44 )
+shape = SubResource( 45 )
 
 [node name="small-road-key-locked" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1859.43, -366.296 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 45 )
+shape = SubResource( 46 )
 
 [node name="small-road_limit1" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 1790.11, -269.7 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 46 )
+shape = SubResource( 47 )
 
 [node name="small-road_limit2" type="CollisionShape2D" parent="game_limits"]
 position = Vector2( 2011.74, -434.1 )
 rotation = -0.555015
 scale = Vector2( 24.7701, 0.911202 )
-shape = SubResource( 46 )
+shape = SubResource( 47 )
+
+[node name="church_police" type="CollisionShape2D" parent="game_limits"]
+position = Vector2( -239.763, -851.963 )
+rotation = -0.523598
+scale = Vector2( 24.7701, 0.911202 )
+shape = SubResource( 47 )
+
+[node name="church_police2" type="CollisionShape2D" parent="game_limits"]
+position = Vector2( -455.556, -989.394 )
+rotation = -1.57079
+scale = Vector2( 24.7701, 0.911202 )
+shape = SubResource( 47 )
 
 [node name="block_canal_right" type="Node2D" parent="game_limits"]
 position = Vector2( -2436.59, -1654.45 )
@@ -3920,7 +4267,7 @@ scale = Vector2( 0.999992, 0.986271 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="enemy_paths"]
 visible = false
 position = Vector2( 3.59968, 3.35905 )
-navpoly = SubResource( 47 )
+navpoly = SubResource( 48 )
 
 [node name="spawn_pedestrians" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -3932,61 +4279,61 @@ enemy_type = "pedestrians"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -2.32831e-10
-curve = SubResource( 48 )
+curve = SubResource( 49 )
 
 [node name="bottom_square_and_column" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 49 )
+curve = SubResource( 50 )
 
 [node name="crowded_street" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 50 )
+curve = SubResource( 51 )
 
 [node name="crowded_street_above" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 51 )
+curve = SubResource( 52 )
 
 [node name="market_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 52 )
+curve = SubResource( 53 )
 
 [node name="bastille_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 53 )
+curve = SubResource( 54 )
 
 [node name="bastille_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 54 )
+curve = SubResource( 55 )
 
 [node name="bastille_3" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 55 )
+curve = SubResource( 56 )
 
 [node name="middle_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 56 )
+curve = SubResource( 57 )
 
 [node name="middle_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 57 )
+curve = SubResource( 58 )
 
 [node name="middle_3" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 rotation = -1.16415e-10
-curve = SubResource( 58 )
+curve = SubResource( 59 )
 
 [node name="right_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 59 )
+curve = SubResource( 60 )
 
 [node name="right_2" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
-curve = SubResource( 60 )
+curve = SubResource( 61 )
 
 [node name="boulangerie" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
-curve = SubResource( 61 )
+curve = SubResource( 62 )
 
 [node name="spawn_police" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -3998,50 +4345,50 @@ enemy_type = "police"
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 62 )
+curve = SubResource( 63 )
 
 [node name="top_square_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
 self_modulate = Color( 0.501961, 0.6, 1, 1 )
 rotation = -1.16415e-10
-curve = SubResource( 62 )
+curve = SubResource( 63 )
 
 [node name="market_top" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 63 )
+curve = SubResource( 64 )
 
 [node name="market_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 64 )
+curve = SubResource( 65 )
 
 [node name="market_full" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 65 )
+curve = SubResource( 66 )
 
 [node name="police_station_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 66 )
+curve = SubResource( 67 )
 
 [node name="police_station_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 67 )
+curve = SubResource( 68 )
 
 [node name="police_station_3" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 68 )
+curve = SubResource( 69 )
 
 [node name="bastille_1" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 69 )
+curve = SubResource( 70 )
 
 [node name="bastille_2" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
-curve = SubResource( 70 )
+curve = SubResource( 71 )
 
 [node name="boulangerie_bottom" type="Path2D" parent="enemy_paths/spawn_police"]
 visible = false
 position = Vector2( 537.481, 292.736 )
-curve = SubResource( 71 )
+curve = SubResource( 72 )
 
 [node name="spawn_motorbike" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -4054,24 +4401,24 @@ enemy_type = "motorbike"
 visible = false
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 72 )
+curve = SubResource( 73 )
 
 [node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 visible = false
-curve = SubResource( 73 )
+curve = SubResource( 74 )
 
 [node name="market" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 visible = false
-curve = SubResource( 74 )
+curve = SubResource( 75 )
 
 [node name="canal_1" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 position = Vector2( 113.637, 70.7671 )
 scale = Vector2( 0.820639, 0.859878 )
-curve = SubResource( 75 )
+curve = SubResource( 76 )
 
 [node name="canal_2" type="Path2D" parent="enemy_paths/spawn_motorbike"]
 position = Vector2( -5.76359, 10.8817 )
-curve = SubResource( 76 )
+curve = SubResource( 77 )
 
 [node name="spawn_police_car" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -4082,14 +4429,14 @@ enemy_type = "police_car"
 [node name="vehicles_lower" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -0.00115045
 scale = Vector2( 1.00001, 1.01392 )
-curve = SubResource( 72 )
+curve = SubResource( 73 )
 
 [node name="market" type="Path2D" parent="enemy_paths/spawn_police_car"]
 rotation = -2.32831e-10
-curve = SubResource( 74 )
+curve = SubResource( 75 )
 
 [node name="vehicles_upper" type="Path2D" parent="enemy_paths/spawn_police_car"]
-curve = SubResource( 73 )
+curve = SubResource( 74 )
 
 [node name="night" type="Node2D" parent="."]
 visible = false
@@ -4107,28 +4454,28 @@ rotation = -4.65661e-10
 
 [node name="path918" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 709.005, -182.026 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path926" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1340.1, -96.9813 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path939" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1411.15, 136.619 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path927" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1906.23, 403.195 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4136,7 +4483,7 @@ texture = ExtResource( 74 )
 
 [node name="path940" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2483.51, 838.647 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4144,7 +4491,7 @@ texture = ExtResource( 74 )
 
 [node name="path933" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2357.49, 224.101 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4152,7 +4499,7 @@ texture = ExtResource( 74 )
 
 [node name="path936" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2537.46, -161.199 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4160,7 +4507,7 @@ texture = ExtResource( 74 )
 
 [node name="path937" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2639.03, -421.254 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4168,7 +4515,7 @@ texture = ExtResource( 74 )
 
 [node name="path929" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1474.87, 618.118 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4176,7 +4523,7 @@ texture = ExtResource( 74 )
 
 [node name="path942" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.819608, 0.517647, 0.317647, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1766.27, 1016.29 )
 scale = Vector2( 0.551193, 0.551193 )
 z_index = 1
@@ -4184,7 +4531,7 @@ texture = ExtResource( 74 )
 
 [node name="path943" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1263.6, 1212.24 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4192,7 +4539,7 @@ texture = ExtResource( 74 )
 
 [node name="path947" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 588.299, 1082.45 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4200,7 +4547,7 @@ texture = ExtResource( 74 )
 
 [node name="path949" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1519.55, 1386.94 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4208,7 +4555,7 @@ texture = ExtResource( 74 )
 
 [node name="path930" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1192.74, 505.767 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4216,7 +4563,7 @@ texture = ExtResource( 74 )
 
 [node name="path946" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 284.71, 506.654 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4224,7 +4571,7 @@ texture = ExtResource( 74 )
 
 [node name="path953" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -153.241, -253.266 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4232,7 +4579,7 @@ texture = ExtResource( 74 )
 
 [node name="path958" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -464.128, -417.393 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4240,7 +4587,7 @@ texture = ExtResource( 74 )
 
 [node name="path959" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -1436.77, -406.431 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4248,7 +4595,7 @@ texture = ExtResource( 74 )
 
 [node name="path960" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -1523.77, -881.148 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4256,7 +4603,7 @@ texture = ExtResource( 74 )
 
 [node name="path961" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2303.64, -1306.95 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4264,7 +4611,7 @@ texture = ExtResource( 74 )
 
 [node name="path975" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3343.02, -1860.12 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4272,7 +4619,7 @@ texture = ExtResource( 74 )
 
 [node name="path979" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4119.69, -873.586 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4280,7 +4627,7 @@ texture = ExtResource( 74 )
 
 [node name="path980" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4423.35, -1747.14 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4288,7 +4635,7 @@ texture = ExtResource( 74 )
 
 [node name="path981" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3579.24, -1355.76 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4296,7 +4643,7 @@ texture = ExtResource( 74 )
 
 [node name="path986" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3543.94, -1038.7 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4304,7 +4651,7 @@ texture = ExtResource( 74 )
 
 [node name="path982" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4731.87, -1162.59 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4312,7 +4659,7 @@ texture = ExtResource( 74 )
 
 [node name="path962" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3138.12, -1222.49 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4320,7 +4667,7 @@ texture = ExtResource( 74 )
 
 [node name="path963" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2466.86, -920.557 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -4328,28 +4675,28 @@ texture = ExtResource( 74 )
 
 [node name="path921" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1105.06, -587.471 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path925" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1285.02, -434.268 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path952" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 443.541, -468.389 )
 scale = Vector2( 0.636649, 0.585266 )
 texture = ExtResource( 74 )
 
 [node name="path928" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1852.61, 148.32 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4357,7 +4704,7 @@ texture = ExtResource( 74 )
 
 [node name="path934" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2897.08, -22.1476 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4365,7 +4712,7 @@ texture = ExtResource( 74 )
 
 [node name="path935" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2088.58, -347.185 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4373,7 +4720,7 @@ texture = ExtResource( 74 )
 
 [node name="path951" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2240.87, -101.004 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4381,7 +4728,7 @@ texture = ExtResource( 74 )
 
 [node name="path938" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2799.03, 268.536 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4389,7 +4736,7 @@ texture = ExtResource( 74 )
 
 [node name="path941" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 2267.29, 569.261 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4397,7 +4744,7 @@ texture = ExtResource( 74 )
 
 [node name="path931" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 724.156, 126.066 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4405,7 +4752,7 @@ texture = ExtResource( 74 )
 
 [node name="path944" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 885.037, 372 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4413,7 +4760,7 @@ texture = ExtResource( 74 )
 
 [node name="path964" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -895.73, -611.033 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4421,7 +4768,7 @@ texture = ExtResource( 74 )
 
 [node name="path965" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -1147.68, -749.262 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4429,7 +4776,7 @@ texture = ExtResource( 74 )
 
 [node name="path968" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2036.07, -689.924 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4437,7 +4784,7 @@ texture = ExtResource( 74 )
 
 [node name="path969" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -1926.35, -1106.46 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4445,7 +4792,7 @@ texture = ExtResource( 74 )
 
 [node name="path970" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2812.62, -1068.58 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4453,7 +4800,7 @@ texture = ExtResource( 74 )
 
 [node name="path978" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2673.52, -1524.11 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4461,7 +4808,7 @@ texture = ExtResource( 74 )
 
 [node name="path971" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -2967.11, -1686.9 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4469,7 +4816,7 @@ texture = ExtResource( 74 )
 
 [node name="path972" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3761.04, -2046.17 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4477,7 +4824,7 @@ texture = ExtResource( 74 )
 
 [node name="path983" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4748.81, -1611.77 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4485,7 +4832,7 @@ texture = ExtResource( 74 )
 
 [node name="path984" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4233.15, -1261.8 )
 scale = Vector2( 0.612162, 0.612162 )
 z_index = 1
@@ -4493,7 +4840,7 @@ texture = ExtResource( 74 )
 
 [node name="path985" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3758.77, -935.591 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4501,7 +4848,7 @@ texture = ExtResource( 74 )
 
 [node name="path987" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4463.88, -1036.62 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4509,7 +4856,7 @@ texture = ExtResource( 74 )
 
 [node name="path988" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -5154.66, -1377.67 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4517,7 +4864,7 @@ texture = ExtResource( 74 )
 
 [node name="path976" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -3807.78, -1554.4 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4525,7 +4872,7 @@ texture = ExtResource( 74 )
 
 [node name="path974" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4180.69, -1779.56 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4533,7 +4880,7 @@ texture = ExtResource( 74 )
 
 [node name="path977" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -4216.74, -2261.67 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4541,7 +4888,7 @@ texture = ExtResource( 74 )
 
 [node name="path966" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -940.332, -187.805 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4549,7 +4896,7 @@ texture = ExtResource( 74 )
 
 [node name="path957" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 198.007, -73.554 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4557,7 +4904,7 @@ texture = ExtResource( 74 )
 
 [node name="path956" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -44.3255, 314.787 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4565,7 +4912,7 @@ texture = ExtResource( 74 )
 
 [node name="path945" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 704.694, 635.532 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4573,7 +4920,7 @@ texture = ExtResource( 74 )
 
 [node name="path954" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 531.669, 114.908 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4581,7 +4928,7 @@ texture = ExtResource( 74 )
 
 [node name="path955" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( -403.927, 127.364 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4589,7 +4936,7 @@ texture = ExtResource( 74 )
 
 [node name="path932" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1030.09, 850.836 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4597,7 +4944,7 @@ texture = ExtResource( 74 )
 
 [node name="path948" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 802.48, 1229.19 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4605,7 +4952,7 @@ texture = ExtResource( 74 )
 
 [node name="path950" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1811.48, 1489.15 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -4613,35 +4960,35 @@ texture = ExtResource( 74 )
 
 [node name="path923" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1584.14, -583.63 )
 scale = Vector2( 0.349383, 0.348027 )
 texture = ExtResource( 74 )
 
 [node name="path919" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 909.267, -357.195 )
 scale = Vector2( 0.419806, 0.419806 )
 texture = ExtResource( 74 )
 
 [node name="path922" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1149.4, -840.021 )
 scale = Vector2( 0.38098, 0.38098 )
 texture = ExtResource( 74 )
 
 [node name="path924" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 1618.24, -787.077 )
 scale = Vector2( 0.394746, 0.400668 )
 texture = ExtResource( 74 )
 
 [node name="path920" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.933333, 0.792157, 0.576471, 0.509804 )
-material = SubResource( 77 )
+material = SubResource( 78 )
 position = Vector2( 672.058, -629.217 )
 scale = Vector2( 0.489091, 0.489091 )
 texture = ExtResource( 74 )

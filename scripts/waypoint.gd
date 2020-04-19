@@ -16,6 +16,8 @@ func _ready():
 		waypoint_positions = get_parent().get_node(
 			"waypoint_positions/" + global.level_settings["waypoint_positions"]
 		)
+		setup_loops()
+		increment_waypoint()
 		increment_waypoint()
 		if "course_length_in_km" in global.level_settings:
 			get_length_of_course()
@@ -28,14 +30,30 @@ func _on_waypoint_body_entered(body):
 		increment_waypoint()
 
 
+func setup_loops():
+	var loop_count = global.level_settings["waypoint_loops"]["loop_count"]
+	var last_waypoint = waypoint_positions.get_children()[-1]
+	var last_waypoint_copy = last_waypoint.duplicate(true)
+	last_waypoint.queue_free()
+
+	var waypoint_positions_original_count = waypoint_positions.get_children().size()
+	for i in range(0, loop_count):
+		for child_idx in range(1, waypoint_positions_original_count):
+			print(child_idx)
+			var waypoint = waypoint_positions.get_child(child_idx)
+			waypoint_positions.add_child(waypoint.duplicate())
+	waypoint_positions.add_child(last_waypoint_copy)
+
+
 func get_length_of_course():
 	course_length = 0
 	for child_idx in range(1, waypoint_positions.get_children().size()):
 		course_length += waypoint_positions.get_child(child_idx).global_position.distance_to(
 			waypoint_positions.get_child(child_idx - 1).global_position
 		)
-	var course_length_in_km = global.level_settings["course_length_in_km"]
+	var course_length_in_km = float(global.level_settings["course_length_in_km"])
 	course_length_scale = course_length_in_km / course_length
+
 
 func increment_waypoint():
 	waypoint_number += 1
@@ -50,7 +68,7 @@ func increment_waypoint():
 		set_process(false)
 	else:
 		self.position = waypoint_positions.get_child(waypoint_number).position
-		get_node("counter").bbcode_text = "[center]" + str(waypoint_number + 1)
+		get_node("counter").bbcode_text = "[center]" + str(waypoint_number)
 
 
 func compute_distance():
