@@ -9,8 +9,8 @@ func _ready():
 	
 	# LEVEL SELECT 2
 	# global.level_type = "groceries"
-	global.level_type = "sport"
-	get_tree().change_scene("res://level_select_part_2.tscn")
+	# global.level_type = "sport"
+	# get_tree().change_scene("res://level_select_part_2.tscn")
 
 	# global.set_level_settings("groceries", "doliprane")
 	# global.set_level_settings("groceries", "hidden_pasta")

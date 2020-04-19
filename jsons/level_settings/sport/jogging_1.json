@@ -31,7 +31,7 @@
       "attestation_top",
       "attestation_pharmacy"
     ],
-    "duration": 5,
+    "duration": 8,
     "respawn_time": 5
   },
   "sanitizer": {

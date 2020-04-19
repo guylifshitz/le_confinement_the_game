@@ -3,7 +3,7 @@
     "french": "Marathon 5k",
     "english": "5k Marathon"
   },
-  "level_difficulty": 3,
+  "level_difficulty": 2,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
