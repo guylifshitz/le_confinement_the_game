@@ -12,7 +12,7 @@ onready var pickedup_sound = get_tree().get_root().get_node("game/audio/picked_u
 onready var empty_store_sound = get_tree().get_root().get_node("game/audio/empty_store")
 
 var store_has_items = []
-export var health = 1
+export var show_x_on_empty = true
 var store_visited = false
 
 
@@ -51,7 +51,7 @@ func _on_grocery_body_entered(body):
 
 					pickedup_sound.play()
 
-		if found_item == false:
+		if found_item == false and show_x_on_empty:
 			if store_visited == false:
 				store_visited = true
 				var x_store = store_x.instance()

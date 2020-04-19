@@ -84,5 +84,5 @@
     "police_car": {}
   },
   "game_limits": [],
-  "game_elements": []
+  "game_elements": ["block_canal"]
 }

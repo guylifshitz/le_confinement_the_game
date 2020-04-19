@@ -73,5 +73,5 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": []
+  "game_elements": ["block_canal"]
 }

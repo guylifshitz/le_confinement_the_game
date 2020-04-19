@@ -21,7 +21,8 @@
   },
   "pedestrians": {
     "knows_player_percentage": 0,
-    "move_speed": 100
+    "move_speed": 60,
+    "jogging_speed": 150
   },
   "police": { "move_speed": 150 },
   "motorcycle": { "move_speed_lower": 200, "move_speed_upper": 600 },

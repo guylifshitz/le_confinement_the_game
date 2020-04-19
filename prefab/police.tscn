@@ -175,6 +175,7 @@ position = Vector2( -10.7207, -477.556 )
 scale = Vector2( 24.2327, 24.2327 )
 frames = SubResource( 13 )
 animation = "no_mask"
+frame = 2
 playing = true
 
 [node name="audio" type="Node2D" parent="."]

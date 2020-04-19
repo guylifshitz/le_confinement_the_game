@@ -68,5 +68,5 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": ["block_boulangerie"]
+  "game_elements": ["block_boulangerie", "block_canal"]
 }

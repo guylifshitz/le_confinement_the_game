@@ -58,6 +58,11 @@ func _ready():
 	else:
 		conversation = conversations_adult[randi() % conversations_adult.size()]
 
+	print(remote_path_follow.get_parent().name)
+	if "jogging_speed" in global.level_settings["pedestrians"]:
+		if remote_path_follow.get_parent().name.find("jogger") != -1:
+			MOVE_SPEED = global.level_settings["pedestrians"]["jogging_speed"]
+
 
 func _process(delta):
 	if follows_player:

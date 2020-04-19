@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=2]
+[gd_scene load_steps=174 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -887,6 +887,9 @@ radius = 127.314
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 10, 13.2851 )
+
+[sub_resource type="RectangleShape2D" id=96]
+extents = Vector2( 209.9, 36.0984 )
 
 [sub_resource type="CircleShape2D" id=39]
 
@@ -2333,10 +2336,12 @@ position = Vector2( 1150.07, 640.614 )
 rotation = -3.49246e-10
 
 [node name="store_node" type="Sprite" parent="elements/goals/flower_market"]
+position = Vector2( 0.471436, 0.000549316 )
 rotation = -3.14044
 scale = Vector2( 0.622854, -0.63152 )
 texture = ExtResource( 35 )
 script = ExtResource( 15 )
+show_x_on_empty = false
 
 [node name="Area2D" type="Area2D" parent="elements/goals/flower_market/store_node"]
 position = Vector2( 0, -0.000244141 )
@@ -2363,10 +2368,11 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
+show_x_on_empty = false
 
 [node name="Area2D" type="Area2D" parent="elements/goals/duck/store_node"]
 
@@ -2380,7 +2386,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2390,7 +2396,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 
@@ -2403,10 +2409,11 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
+show_x_on_empty = false
 
 [node name="Area2D" type="Area2D" parent="elements/goals/duck_canal/store_node"]
 
@@ -2420,7 +2427,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2430,7 +2437,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 5
+frame = 9
 speed_scale = 0.5
 playing = true
 
@@ -2443,10 +2450,11 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 8
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
+show_x_on_empty = false
 
 [node name="Area2D" type="Area2D" parent="elements/goals/duck_canal2/store_node"]
 
@@ -2460,7 +2468,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2474,10 +2482,11 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 1
+frame = 5
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
+show_x_on_empty = false
 
 [node name="Area2D" type="Area2D" parent="elements/goals/duck_canal3/store_node"]
 
@@ -3616,28 +3625,47 @@ rotation = -0.503201
 scale = Vector2( 29.1886, 6.05039 )
 shape = SubResource( 38 )
 
-[node name="block_canal" type="Node2D" parent="elements/per_level_game_elements"]
-visible = false
+[node name="block_canal" type="YSort" parent="elements/per_level_game_elements"]
+position = Vector2( -32.3848, -12.3033 )
 
 [node name="police-car-flipped" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 31 )]
-position = Vector2( 363.978, 399.146 )
+position = Vector2( 305.451, 377.431 )
+rotation = -0.00115045
+scale = Vector2( 0.565005, 0.572865 )
+
+[node name="police-car-flipped4" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 31 )]
+position = Vector2( 199.341, 465.599 )
 rotation = -0.00115045
 scale = Vector2( 0.565005, 0.572865 )
 
 [node name="police-car-flipped2" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 31 )]
-position = Vector2( 584.87, 320.423 )
+position = Vector2( 501.302, 297.463 )
+rotation = -0.00115045
+scale = Vector2( 0.565005, 0.572865 )
+
+[node name="police-car-flipped3" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 31 )]
+position = Vector2( 638.68, 227.836 )
 rotation = -0.00115045
 scale = Vector2( 0.565005, 0.572865 )
 
 [node name="police-car" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 30 )]
-position = Vector2( 616.177, 283.682 )
+position = Vector2( 557.306, 261.968 )
 rotation = -0.00115045
 scale = Vector2( 0.564681, 0.564681 )
 
 [node name="police-car2" parent="elements/per_level_game_elements/block_canal" instance=ExtResource( 30 )]
-position = Vector2( 307.565, 447.024 )
+position = Vector2( 248.694, 425.31 )
 rotation = -0.00115045
 scale = Vector2( 0.564681, 0.564681 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elements/per_level_game_elements/block_canal"]
+position = Vector2( -50.4679, -24.5659 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/per_level_game_elements/block_canal/StaticBody2D"]
+position = Vector2( 456.792, 378.702 )
+rotation = -0.491328
+scale = Vector2( 1.62011, 0.870848 )
+shape = SubResource( 96 )
 
 [node name="door" type="Node2D" parent="elements"]
 position = Vector2( 1911.81, -350.441 )
@@ -4761,6 +4789,7 @@ polygon = PoolVector2Array( 70.6808, 361.87, 306.773, 244.702, -478.765, -166.45
 [node name="enemy_paths" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="enemy_paths"]
+visible = false
 position = Vector2( 3.59968, 3.35905 )
 navpoly = SubResource( 48 )
 
