@@ -1,6 +1,6 @@
 {
   "type": "groceries",
-  "level_name": { "french": "Doliprane", "english": "Tyleonl" },
+  "level_name": { "french": "PQ où\nest tu?", "english": "TP adventure" },
   "level_difficulty": 1,
   "is_bike_ride": false,
   "is_night": false,

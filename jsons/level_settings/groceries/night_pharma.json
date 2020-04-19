@@ -1,9 +1,9 @@
 {
   "level_name": {
-    "french": "TEST",
-    "english": "TEST"
+    "french": "Night pharma",
+    "english": "Night pharma"
   },
-  "level_difficulty": 1,
+  "level_difficulty": 2,
   "type": "groceries",
   "is_bike_ride": true,
   "is_night": true,

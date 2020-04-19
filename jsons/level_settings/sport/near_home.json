@@ -7,11 +7,11 @@
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
-  "waypoint_layout": "near_home",
+  "waypoint_positions": "near_home",
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
-  "damage_multiplier": 2,
+  "damage_multiplier": 0,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "player": {

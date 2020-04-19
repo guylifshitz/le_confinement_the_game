@@ -194,7 +194,6 @@ func play_bump_sound():
 	if should_play_bump_sound:
 		if get_slide_count() != 0:
 			for i in range(0, get_slide_count()):
-				print(get_slide_collision(i).collider.get_name())
 				var a = get_slide_collision(i).collider
 				if get_slide_collision(i).collider.get_name().find("Enemy") != -1:
 					if should_play_bump_sound:
@@ -205,7 +204,6 @@ func play_bump_sound():
 
 func check_for_vehicle_collisions():
 	for i in range(0, get_slide_count()):
-		print(get_slide_collision(i).collider.get_name())
 		var a = get_slide_collision(i).collider
 		if get_slide_collision(i).collider.get_name().find("vehicle") != -1:
 			# TOOD: add an animation here: Skull and bone?

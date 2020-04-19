@@ -1,15 +1,18 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=3]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/level_select_part_2.gd" type="Script" id=5]
+[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=6]
 [ext_resource path="res://prefab/level_select.tscn" type="PackedScene" id=7]
+[ext_resource path="res://images/menu/level-select-2/star-icon.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=10]
 [ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=11]
 [ext_resource path="res://images/interface/items/pasta.png" type="Texture" id=12]
+[ext_resource path="res://images/menu/level-select-2/moon.png" type="Texture" id=13]
 [ext_resource path="res://images/menu/level-select-2/buttons/blue_button06.png" type="Texture" id=14]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
 
@@ -123,7 +126,6 @@ __meta__ = {
 }
 
 [node name="groceries" type="Node2D" parent="."]
-visible = false
 
 [node name="level_help" type="Node2D" parent="groceries"]
 visible = false
@@ -203,7 +205,7 @@ __meta__ = {
 }
 
 [node name="daily_bread" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 325.239, 234.282 )
+position = Vector2( 200.71, 234.282 )
 
 [node name="baguette2" type="Sprite" parent="groceries/daily_bread"]
 position = Vector2( 8.10168, -15.6677 )
@@ -211,7 +213,7 @@ scale = Vector2( 0.244508, 0.244508 )
 texture = ExtResource( 17 )
 
 [node name="doliprane" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 524.442, 234.282 )
+position = Vector2( 399.913, 234.282 )
 
 [node name="drugs2" type="Sprite" parent="groceries/doliprane"]
 position = Vector2( 5.63623, -16.6433 )
@@ -219,15 +221,48 @@ scale = Vector2( 0.0760416, 0.0760416 )
 texture = ExtResource( 10 )
 
 [node name="hidden_pasta" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 734.805, 234.554 )
+position = Vector2( 610.276, 234.554 )
 
 [node name="pasta" type="Sprite" parent="groceries/hidden_pasta"]
 position = Vector2( 9.01709, -16.8113 )
 scale = Vector2( 0.206087, 0.204604 )
 texture = ExtResource( 12 )
 
+[node name="toilet_paper" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 198.04, 422.561 )
+
+[node name="toilletpaper" type="Sprite" parent="groceries/toilet_paper"]
+position = Vector2( 10.933, -12.399 )
+scale = Vector2( 0.330337, 0.330337 )
+texture = ExtResource( 6 )
+
+[node name="night_pharma" parent="groceries" instance=ExtResource( 7 )]
+position = Vector2( 398.703, 422.652 )
+
+[node name="star-icon" type="Sprite" parent="groceries/night_pharma"]
+position = Vector2( -38.3004, -17.0205 )
+rotation = -0.630308
+scale = Vector2( 0.0453991, 0.0453991 )
+texture = ExtResource( 8 )
+
+[node name="star-icon2" type="Sprite" parent="groceries/night_pharma"]
+position = Vector2( 65.5742, -5.07812 )
+scale = Vector2( 0.0561392, 0.0561392 )
+texture = ExtResource( 8 )
+
+[node name="star-icon3" type="Sprite" parent="groceries/night_pharma"]
+position = Vector2( 50.5615, -34.2432 )
+rotation = 0.480612
+scale = Vector2( 0.0418852, 0.0418852 )
+texture = ExtResource( 8 )
+
+[node name="moon" type="Sprite" parent="groceries/night_pharma"]
+position = Vector2( 9.87622, -16.5278 )
+scale = Vector2( 0.259379, 0.259379 )
+texture = ExtResource( 13 )
+
 [node name="full_cart_1" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 324.777, 418.804 )
+position = Vector2( 608.159, 420.097 )
 
 [node name="angryemoji6" type="Sprite" parent="groceries/full_cart_1"]
 position = Vector2( 5.18079, -16.2119 )
@@ -235,10 +270,10 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="full_cart_2" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 524.442, 418.804 )
+position = Vector2( 811.24, 235.066 )
 
 [node name="angryemoji5" type="Sprite" parent="groceries/full_cart_2"]
-position = Vector2( -10.6401, -16.2119 )
+position = Vector2( -9.84644, -16.2119 )
 scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
@@ -248,7 +283,7 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="full_cart_3" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 734.388, 418.804 )
+position = Vector2( 811.021, 418.804 )
 
 [node name="angryemoji" type="Sprite" parent="groceries/full_cart_3"]
 position = Vector2( -26.8183, -16.2119 )
@@ -266,6 +301,7 @@ scale = Vector2( 0.20256, 0.20256 )
 texture = ExtResource( 11 )
 
 [node name="sport" type="Node2D" parent="."]
+visible = false
 
 [node name="level_help" type="Node2D" parent="sport"]
 visible = false
