@@ -1,4 +1,4 @@
-extends  KinematicBody2D
+extends KinematicBody2D
 
 # parameters
 var MOVE_SPEED = global.level_settings["police"]["move_speed"]
@@ -26,7 +26,7 @@ func _ready():
 		$AnimatedSprite.play("no_mask")
 	else:
 		$AnimatedSprite.play("mask")
-	
+
 	navigation = remote_transform.get_parent().get_parent().get_parent().get_parent()
 
 
@@ -38,7 +38,7 @@ func _process(delta):
 		if simple_path.size() > 0:
 			move_along_path(MOVE_SPEED * delta)
 		else:
-			remote_path_follow.offset += MOVE_SPEED  * delta
+			remote_path_follow.offset += MOVE_SPEED * delta
 			self.global_position = remote_transform.global_position
 
 
@@ -50,16 +50,17 @@ func move_along_path(distance):
 		var distance_to_next = start_point.distance_to(simple_path[0])
 
 		if distance < distance_to_next and distance > 0.0:
-			global_position = start_point.linear_interpolate(simple_path[0], distance/distance_to_next)
+			global_position = start_point.linear_interpolate(
+				simple_path[0], distance / distance_to_next
+			)
 			break
 		elif simple_path.size() == 1 && distance >= distance_to_next:
 			global_position = simple_path[0]
-#			set_process(false)
+		#			set_process(false)
 
 		distance -= distance_to_next
 		start_point = simple_path[0]
 		simple_path.remove(0)
-
 
 
 func _on_police_body_entered(body):
@@ -72,7 +73,11 @@ func _on_police_body_entered(body):
 				$dialogbox_wants_attestation.hide()
 				$dialogbox_is_angry.hide()
 				return_to_path()
-		else:
+
+
+func _on_control_area_without_attest_body_entered(body):
+	if body.name == "player":
+		if not body.has_attestation:
 			$dialogbox_is_happy.hide()
 			$dialogbox_wants_attestation.hide()
 			$dialogbox_is_angry.show()
@@ -83,6 +88,7 @@ func _on_police_body_entered(body):
 			sound_lost.play()
 
 			utils_custom.create_timer_2(2, self, "kill_player")
+
 
 func set_wants_to_control():
 	wants_to_control = true
@@ -103,7 +109,7 @@ func _on_show_dialog_body_entered(body):
 			follows_player = true
 			if simple_path.size() == 0:
 				following_player_start_position = self.global_position
-			
+
 		else:
 			$dialogbox_is_happy.show()
 
@@ -114,6 +120,7 @@ func _on_show_dialog_body_exited(body):
 		$dialogbox_is_happy.hide()
 		if follows_player:
 			return_to_path()
+
 
 func return_to_path():
 	follows_player = false

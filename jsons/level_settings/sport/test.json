@@ -42,20 +42,6 @@
   "enemies_per_path": {
     "pedestrians": {
       "spawn_seed": 3,
-      "top_square_1": 2,
-      "crowded_street": 1,
-      "crowded_street_above": 1,
-      "market_1": 1,
-      "bastille_1": 2,
-      "bastille_2": 2,
-      "middle_1": 0,
-      "middle_2": 0,
-      "right_1": 0,
-      "right_2": 0,
-      "canal_1": 2,
-      "canal_jogger_1": 3,
-      "church_park": 1,
-      "park_1": 1
     },
     "police": {
       "top_square": 0,

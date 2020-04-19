@@ -10,7 +10,7 @@
   "win_icons": ["smile_hearts", "smile", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
-  "damage_multiplier": 0.8,
+  "damage_multiplier": 3  ,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "items_needed": ["drugs"],
@@ -41,16 +41,34 @@
   "spawn_seed": 2,
   "enemies_per_path": {
     "pedestrians": { "canal_1": 1, "canal_walk_2": 1, "canal_walk_3": 1 },
-    "police": {},
+    "police": { "path_to_market": 1 },
     "motorbike": {
-      "canal_1": 3,
-      "canal_2": 3,
+      "canal_1": 2,
+      "canal_2": 2,
+      "canal_upper": 6,
       "vehicles_lower": 1,
       "vehicles_upper": 1,
-      "market": 3
+      "market": 2,
+      "repu_1": 2,
+      "repu_2": 2,
+      "beaumarchais_1": 2
     },
-    "police_car": {}
+    "police_car": {
+      "canal_1": 1,
+      "canal_2": 1,
+      "canal_upper": 3,
+      "vehicles_lower": 1,
+      "vehicles_upper": 1,
+      "market": 1,
+      "repu_1": 1,
+      "repu_2": 0,
+      "beaumarchais_1": 1
+    }
   },
-  "game_limits": [],
+  "game_limits": [
+    "block_right",
+    "block_beaumarchais_cirque",
+    "block_beaumarchais_canal"
+  ],
   "game_elements": []
 }

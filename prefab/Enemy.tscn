@@ -146,7 +146,6 @@ position = Vector2( -0.813721, -22.927 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = SubResource( 7 )
 animation = "down"
-frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/boy-red-pants"]
@@ -159,7 +158,7 @@ position = Vector2( -0.813721, -23.1895 )
 scale = Vector2( 1.36749, 1.36749 )
 frames = ExtResource( 3 )
 animation = "down"
-frame = 1
+frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/girl-1"]
@@ -172,6 +171,7 @@ position = Vector2( -3.96664, -26.1391 )
 scale = Vector2( 1.72856, 1.72856 )
 frames = SubResource( 11 )
 animation = "down"
+frame = 1
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/man-bald2"]
@@ -185,6 +185,7 @@ position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
 frames = SubResource( 15 )
 animation = "down"
+frame = 1
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/woman"]
@@ -198,7 +199,6 @@ position = Vector2( -1.96664, -26.1391 )
 scale = Vector2( 1.32886, 1.72856 )
 frames = SubResource( 19 )
 animation = "down"
-frame = 2
 playing = true
 
 [node name="mask" type="Sprite" parent="characters/afro-boy"]

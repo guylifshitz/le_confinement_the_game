@@ -55,6 +55,7 @@ func _ready():
 
 func setup_per_level_game_limits():
 	var limits = get_node("game_limits_per_level")
+	limits.show()
 	for child in limits.get_children():
 		child.hide()
 

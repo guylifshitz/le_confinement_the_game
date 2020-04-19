@@ -41,7 +41,6 @@ func setup_loops():
 	var waypoint_positions_original_count = waypoint_positions.get_children().size()
 	for i in range(0, loop_count):
 		for child_idx in range(1, waypoint_positions_original_count):
-			print(child_idx)
 			var waypoint = waypoint_positions.get_child(child_idx)
 			waypoint_positions.add_child(waypoint.duplicate())
 	waypoint_positions.add_child(last_waypoint_copy)

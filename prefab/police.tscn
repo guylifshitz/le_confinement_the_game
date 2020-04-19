@@ -27,46 +27,46 @@ radius = 2488.66
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 34, 54 )
+region = Rect2( 0, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 0, 34, 54 )
+region = Rect2( 34, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 0, 34, 54 )
+region = Rect2( 68, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 0, 34, 54 )
+region = Rect2( 102, 216, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 8 )
-region = Rect2( 0, 216, 34, 54 )
+region = Rect2( 0, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 8 )
-region = Rect2( 34, 216, 34, 54 )
+region = Rect2( 34, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 8 )
-region = Rect2( 68, 216, 34, 54 )
+region = Rect2( 68, 0, 34, 54 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 8 )
-region = Rect2( 102, 216, 34, 54 )
+region = Rect2( 102, 0, 34, 54 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "no_mask",
+"name": "mask",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "mask",
+"name": "no_mask",
 "speed": 5.0
 } ]
 
@@ -145,13 +145,22 @@ position = Vector2( -41.0569, -55.9579 )
 scale = Vector2( 1.11864, 1.11864 )
 texture = ExtResource( 7 )
 
-[node name="control_area" type="Area2D" parent="."]
+[node name="control_area_with_attest" type="Area2D" parent="."]
 position = Vector2( 69.5556, -987.607 )
 scale = Vector2( 2.2067, 2.2067 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="control_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control_area_with_attest"]
 position = Vector2( -34.6397, 398.984 )
 scale = Vector2( 0.46152, 0.459232 )
+shape = SubResource( 3 )
+
+[node name="control_area_without_attest" type="Area2D" parent="."]
+position = Vector2( 69.5556, -987.607 )
+scale = Vector2( 2.2067, 2.2067 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control_area_without_attest"]
+position = Vector2( -34.6397, 398.984 )
+scale = Vector2( 0.240948, 0.239754 )
 shape = SubResource( 3 )
 
 [node name="show_dialog" type="Area2D" parent="."]
@@ -166,7 +175,6 @@ position = Vector2( -10.7207, -477.556 )
 scale = Vector2( 24.2327, 24.2327 )
 frames = SubResource( 13 )
 animation = "no_mask"
-frame = 1
 playing = true
 
 [node name="audio" type="Node2D" parent="."]
@@ -180,6 +188,7 @@ bus = "sound_effects"
 [node name="question_2" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource( 1 )
 bus = "sound_effects"
-[connection signal="body_entered" from="control_area" to="." method="_on_police_body_entered"]
+[connection signal="body_entered" from="control_area_with_attest" to="." method="_on_police_body_entered"]
+[connection signal="body_entered" from="control_area_without_attest" to="." method="_on_control_area_without_attest_body_entered"]
 [connection signal="body_entered" from="show_dialog" to="." method="_on_show_dialog_body_entered"]
 [connection signal="body_exited" from="show_dialog" to="." method="_on_show_dialog_body_exited"]

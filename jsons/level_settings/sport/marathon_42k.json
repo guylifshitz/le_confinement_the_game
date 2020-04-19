@@ -75,6 +75,6 @@
     "motorbike": {},
     "police_car": {}
   },
-  "game_limits": ["block_right", "block_canal_voltaire"],
+  "game_limits": ["block_right", "block_canal_voltaire", "block_beaumarchais_canal"],
   "game_elements": []
 }

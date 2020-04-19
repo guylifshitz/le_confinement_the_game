@@ -33,8 +33,6 @@ func load_level_settings_json(level_type, level_id):
 
 
 func set_level_settings(level_type_param, level_id_param):
-	#level_type = level_type_param
-	# levelid = str(levelid).pad_zeros(2)
-	# level_settings = game_settings[level_type_param][levelid]
+	level_type = level_type_param
 	level_id = level_id_param
 	load_level_settings_json(level_type_param, level_id)
