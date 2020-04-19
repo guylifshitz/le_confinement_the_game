@@ -1,9 +1,9 @@
 {
   "level_name": {
-    "french": "Le footing",
-    "english": "The jog"
+    "french": "Marathon 21k",
+    "english": "Marathon 42K"
   },
-  "level_difficulty": 1,
+  "level_difficulty": 2,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
@@ -11,7 +11,7 @@
   "waypoint_loops": {
     "loop_count": 6
   },
-  "course_length_in_km": "21.0",
+  "course_length_in_km": "42.0",
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
@@ -29,43 +29,52 @@
   },
   "police": { "move_speed": 150 },
   "attestation": {
-    "visible_list": [],
+    "visible_list": ["attestation_church", "attestation_opera_2"],
     "duration": 5,
     "respawn_time": 5
   },
   "sanitizer": {
-    "visible_list": [],
-    "healing_points": 50,
+    "visible_list": ["sanitizer_bastille"],
+    "healing_points": 100,
     "respawn_time": 5
   },
   "spawn_seed": 2,
   "enemies_per_path": {
     "pedestrians": {
-      "top_square_1": 0,
-      "crowded_street": 0,
-      "crowded_street_above": 0,
-      "market_1": 0,
-      "bastille_1": 0,
-      "bastille_2": 0,
+      "spawn_seed": 3,
+      "top_square_1": 2,
+      "crowded_street": 1,
+      "crowded_street_above": 1,
+      "market_1": 1,
+      "bastille_1": 2,
+      "bastille_2": 2,
       "middle_1": 0,
       "middle_2": 0,
       "right_1": 0,
-      "right_2": 0
+      "right_2": 0,
+      "canal_1": 2,
+      "canal_jogger_1": 3,
+      "church_park": 1,
+      "park_1": 1
     },
     "police": {
       "top_square": 0,
       "market_full": 0,
       "market_top": 0,
       "market_bottom": 0,
-      "police_station_1": 0,
+      "police_station_1": 1,
       "police_station_2": 0,
       "police_station_3": 0,
       "bastille_1": 0,
-      "bastille_2": 0
+      "bastille_2": 0,
+      "boulangerie_bottom": 1,
+      "canal_1": 1,
+      "canal_3": 1,
+      "church": 1
     },
     "motorbike": {},
     "police_car": {}
   },
-  "game_limits": ["block_right"],
+  "game_limits": ["block_right", "block_canal_voltaire"],
   "game_elements": []
 }

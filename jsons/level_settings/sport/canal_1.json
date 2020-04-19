@@ -1,0 +1,77 @@
+{
+  "level_name": {
+    "french": "Le canal\nà 19h #1",
+    "english": "The Canal After Work #1"
+  },
+  "level_difficulty": 2,
+  "type": "sport",
+  "is_bike_ride": false,
+  "is_night": false,
+  "waypoint_positions": "canal_1",
+  "win_icons": ["trophy", "medal"],
+  "starting_bonus_score": 1000,
+  "damage_decrement_exponent": 1,
+  "damage_multiplier": 1,
+  "score_decrement_exponent": 1,
+  "score_increment_speed": 40,
+  "player": {
+    "walk_speed": 400,
+    "run_speed": 1000,
+    "stamina_drain_speed": 2
+  },
+  "pedestrians": {
+    "knows_player_percentage": 0,
+    "move_speed": 100
+  },
+  "police": { "move_speed": 150 },
+  "motorcycle": { "move_speed_lower": 200, "move_speed_upper": 600 },
+  "police_car": { "move_speed_lower": 200, "move_speed_upper": 300 },
+  "attestation": {
+    "visible_list": [],
+    "duration": 5,
+    "respawn_time": 5
+  },
+  "sanitizer": {
+    "visible_list": [
+      "sanitizer_pharmacy",
+      "sanitizer_church",
+      "sanitizer_pharma_repu"
+    ],
+    "healing_points": 50,
+    "respawn_time": 5
+  },
+  "spawn_seed": 2,
+  "enemies_per_path": {
+    "pedestrians": {
+      "church_park": 3,
+      "park_1": 2,
+      "canal_1": 2,
+      "canal_walk_2": 2,
+      "canal_walk_3": 2,
+      "canal_jogger_1": 3,
+      "canal_jogger_2": 3,
+      "canal_jogger_3": 3,
+      "market_1": 2,
+      "bastille_1": 2,
+      "bastille_2": 2,
+      "middle_1": 1,
+      "middle_2": 1,
+      "top_square_1": 2,
+      "crowded_street": 5
+    },
+    "police": {
+      "canal_1": 1,
+      "canal_3": 1,
+      "church": 1,
+      "police_station_1": 1
+    },
+    "motorbike": { "canal_1": 1, "canal_2": 1 },
+    "police_car": {}
+  },
+  "game_limits": [
+    "block_right",
+    "block_republique_canal",
+    "block_voltaire_canal"
+  ],
+  "game_elements": []
+}

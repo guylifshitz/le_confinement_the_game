@@ -29,20 +29,18 @@
   "motorcycle": { "move_speed_lower": 200, "move_speed_upper": 600 },
   "police_car": { "move_speed_lower": 200, "move_speed_upper": 300 },
   "attestation": {
-    "visible_list": [
-    ],
+    "visible_list": [],
     "duration": 8,
     "respawn_time": 5
   },
   "sanitizer": {
-    "visible_list": [
-    ],
+    "visible_list": [],
     "healing_points": 100,
     "respawn_time": 5
   },
   "spawn_seed": 2,
   "enemies_per_path": {
-    "pedestrians": {},
+    "pedestrians": { "canal_1": 1, "canal_walk_2": 1, "canal_walk_3": 1 },
     "police": {},
     "motorbike": {
       "canal_1": 3,

@@ -26,7 +26,7 @@
     { "store": "duck", "has_items": ["duck"] }
   ],
   "player": {
-    "walk_speed": 200,
+    "walk_speed": 250,
     "jogging_speed": 450,
     "run_speed": 500,
     "stamina_drain_speed": 1

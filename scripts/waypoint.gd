@@ -31,6 +31,8 @@ func _on_waypoint_body_entered(body):
 
 
 func setup_loops():
+	if not "waypoint_loops" in  global.level_settings:
+		return 
 	var loop_count = global.level_settings["waypoint_loops"]["loop_count"]
 	var last_waypoint = waypoint_positions.get_children()[-1]
 	var last_waypoint_copy = last_waypoint.duplicate(true)
