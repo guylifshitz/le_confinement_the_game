@@ -3,7 +3,7 @@ extends Node2D
 var dialog_chunks = []
 var dialog_chunk = -1
 
-var TEXT_SCROLL_SPEED = 0.05
+var TEXT_SCROLL_SPEED = 0.01
 
 func _ready():
 	if not music.get_node("main_menu").playing:
@@ -20,14 +20,6 @@ func _ready():
 	# TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])
 	next_page()
 
-func setup_groceries():
-	var found_items_holder = get_node("dialog/icons/groceries")
-	for item_index in range(global.level_settings["items_needed"].size()):
-		var item = global.level_settings["items_needed"][item_index]
-		var holding_slot = found_items_holder.get_child(item_index)
-		var item_to_hold = load("res://prefab/holding_" + item + ".tscn")
-		holding_slot.add_child(item_to_hold.instance())
-	
 func next_page():
 		$audio/pop.play()
 
@@ -39,9 +31,7 @@ func next_page():
 			go_to_next_scene()
 		else:
 			$click_button.hide()
-			print("AA")
 			print(dialog_chunks)
-			print("BBB")
 			print(dialog_chunks[dialog_chunk])
 			$dialog/grandma_dialog.text = dialog_chunks[dialog_chunk]["text"]
 			$dialog/grandma_dialog.visible_characters = 1
@@ -59,22 +49,27 @@ func scroll_text():
 	show_page_icons()
 
 func show_page_icons():
-	for child in $dialog/icons/.get_children():
-		child.hide()
-
 	# TODO put this back with new image system
 	if 	$dialog/grandma_dialog.visible_characters >= $dialog/grandma_dialog.text.length():
 		print(dialog_chunks[dialog_chunk])
 		var images = dialog_chunks[dialog_chunk]["images"]
 		for idx in range(images.size()):
 			var image = images[idx]
-			show_image(image["path"], image["position"], image["size"])
+			show_image(image)
 
 		
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		text_clicked()
-
+	if Input.is_action_just_pressed("move_left"):
+		text_clicked()
+	if Input.is_action_just_pressed("move_right"):
+		text_clicked()
+	if Input.is_action_just_pressed("move_up"):
+		text_clicked()
+	if Input.is_action_just_pressed("move_down"):
+		text_clicked()
+										
 func text_clicked():
 	if $dialog/grandma_dialog.visible_characters < $dialog/grandma_dialog.text.length():
 		$dialog/grandma_dialog.visible_characters = $dialog/grandma_dialog.text.length()
@@ -89,15 +84,21 @@ func _on_back_button_down():
 	get_tree().change_scene("res://level_select_part_2.tscn")
 
 
-func show_image(image_path, image_location, image_size):
+func show_image(image):
+	var image_path = image["path"]
+	var image_position = image["position"]
+	var image_size = image["size"]
+	var color = Color(1,1,1,1)
+	if "color" in image:
+		color = Color(image["color"][0], image["color"][1],image["color"][2],image["color"][3])
+
 	var sprite = Sprite.new()
 	sprite.set_texture(load("res://images/"+image_path))
 	var iss = sprite.get_texture().get_size()
-	print(iss)
 	var tw = image_size[0]
 	var th = image_size[1]
 	var scale = Vector2(tw/iss.x, th/iss.y)
 	sprite.scale = scale
-	sprite.position = Vector2(image_location[0], image_location[1])
-	#get_node("main_char_node/end_level_icons").
+	sprite.position = Vector2(image_position[0], image_position[1])
+	sprite.modulate = color
 	get_node("dialog_icons").add_child(sprite)

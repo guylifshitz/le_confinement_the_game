@@ -54,31 +54,31 @@
   "game_elements": ["block_boulangerie"],
   "intro_text": {
     "english": [
-      { "text": "HEY!", "images": ["interface/flower.png"] },
-      { "text": "ONE!", "images": [] },
-      { "text": "TWO!", "images": [] },
-      { "text": "THRE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      {
+        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?\n\n Scarey times, I know.... ",
+        "images": []
+      },
+      {
+        "text": "\n But we need more baguette.\n\n\n The one we bought this morning is already rock hard.",
+        "images": [
+          {
+            "path": "interface/items/baguette.png",
+            "position": [400, 100],
+            "size": [60, 60]
+          }
+        ]
+      },
+      {
+        "text": "\n Luckily the boulangerie is just around the corner.",
+        "images": []
+      }
     ],
     "french": [
       {
         "text": "HEY!",
-        "images": [
-          {
-            "path": "interface/flower.png",
-            "position": [300, 400],
-            "size": [100, 100]
-          },
-          {
-            "path": "interface/flower.png",
-            "position": [500, 400],
-            "size": [200, 200]
-          }
-        ]
+        "images": []
       },
       { "text": "ONE!", "images": [] },
-      { "text": "TWO!", "images": [] },
-      { "text": "THRE!", "images": [] },
       { "text": "FOUR!", "images": [] }
     ]
   }

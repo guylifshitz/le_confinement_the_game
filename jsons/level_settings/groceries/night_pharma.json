@@ -10,7 +10,7 @@
   "win_icons": ["smile_hearts", "smile", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
-  "damage_multiplier": 3  ,
+  "damage_multiplier": 3,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "items_needed": ["drugs"],
@@ -41,7 +41,7 @@
   "spawn_seed": 2,
   "enemies_per_path": {
     "pedestrians": { "canal_1": 1, "canal_walk_2": 1, "canal_walk_3": 1 },
-    "police": { "path_to_market": 1, "canal_4":3 },
+    "police": { "path_to_market": 1, "canal_4": 3 },
     "motorbike": {
       "canal_1": 2,
       "canal_2": 2,
@@ -52,7 +52,7 @@
       "repu_1": 2,
       "repu_2": 2,
       "beaumarchais_1": 2,
-      "canal_beaumarchais":1
+      "canal_beaumarchais": 1
     },
     "police_car": {
       "canal_1": 1,
@@ -64,7 +64,7 @@
       "repu_1": 1,
       "repu_2": 0,
       "beaumarchais_1": 1,
-      "canal_beaumarchais":1
+      "canal_beaumarchais": 1
     }
   },
   "game_limits": [
@@ -72,5 +72,75 @@
     "block_beaumarchais_cirque",
     "block_beaumarchais_canal"
   ],
-  "game_elements": []
+  "game_elements": [],
+  "intro_text": {
+    "english": [
+      {
+        "text": " Oh no!!!\n\n With all this chaos, I forgot to refill my prescription.",
+        "images": []
+      },
+      {
+        "text": "\n Could you be a sweetie and go refill it for me.",
+        "images": [
+          {
+            "path": "interface/items/drugs.png",
+            "position": [410, 175],
+            "size": [60, 60]
+          }
+        ]
+      },
+      {
+        "text": " It is very late, the only pharmacy open is at Place de la République.\n\n\n You'll have to bike there.",
+        "images": [
+          {
+            "path": "menu/intro/bike.png",
+            "position": [410, 150],
+            "size": [70, 70]
+          }
+        ]
+      },
+      {
+        "text": "Careful, cars and motorbikes don't care at all about traffic lights these days.",
+        "images": [
+          {
+          "path": "vehicles/motorbike-down-colorful.png",
+            "position": [500, 200],
+            "size": [70, 70]
+          },
+          {
+            "path": "scenery/police-car.png",
+            "position": [350, 200],
+            "size": [105, 70]
+          }
+        ]
+      },
+      {
+        "text": "\n A police car almost ran me over last night when I was out for a walk!",
+        "images": []
+      },
+      {
+        "text": "\n Don't forget, you aren't allowed to bike on the sidewalk.",
+        "images": []
+      }
+    ],
+    "french": [
+      {
+        "text": "HEY!",
+        "images": [
+          {
+            "path": "interface/flower.png",
+            "position": [300, 400],
+            "size": [100, 100]
+          },
+          {
+            "path": "interface/flower.png",
+            "position": [500, 400],
+            "size": [200, 200]
+          }
+        ]
+      },
+      { "text": "ONE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ]
+  }
 }

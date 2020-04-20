@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
@@ -75,33 +75,6 @@ shadow_size = 33
 
 [sub_resource type="StyleBoxEmpty" id=17]
 
-[sub_resource type="DynamicFont" id=18]
-size = 45
-outline_size = 5
-outline_color = Color( 0.576471, 0.262745, 0.262745, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=19]
-size = 45
-outline_size = 5
-outline_color = Color( 0.737255, 0.607843, 0.172549, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=20]
-size = 45
-outline_size = 5
-outline_color = Color( 0.345098, 0.576471, 0.262745, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=21]
-draw_center = false
-shadow_color = Color( 0.439216, 0.439216, 0.439216, 1 )
-shadow_size = 33
-
-[sub_resource type="StyleBoxEmpty" id=22]
-
-[sub_resource type="StyleBoxEmpty" id=23]
-
 [sub_resource type="DynamicFont" id=24]
 size = 45
 outline_size = 5
@@ -120,6 +93,10 @@ shadow_color = Color( 0.415686, 0.415686, 0.415686, 1 )
 shadow_size = 33
 
 [sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=28]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource( 8 )
@@ -366,75 +343,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="difficulty" type="Node2D" parent="."]
-visible = false
-position = Vector2( 382.395, 14.9483 )
-scale = Vector2( 0.66941, 0.66941 )
-
-[node name="difficulty_text" type="RichTextLabel" parent="difficulty"]
-margin_left = 540.0
-margin_top = 24.0
-margin_right = 1087.0
-margin_bottom = 69.0
-custom_fonts/normal_font = ExtResource( 6 )
-text = "DIFFICULTY:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hard" type="RichTextLabel" parent="difficulty"]
-visible = false
-margin_left = 805.0
-margin_top = 24.0
-margin_right = 946.0
-margin_bottom = 69.0
-custom_fonts/normal_font = SubResource( 18 )
-bbcode_enabled = true
-bbcode_text = "[center]HARD"
-text = "HARD"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="medium" type="RichTextLabel" parent="difficulty"]
-visible = false
-margin_left = 805.0
-margin_top = 24.0
-margin_right = 946.0
-margin_bottom = 69.0
-custom_fonts/normal_font = SubResource( 19 )
-bbcode_enabled = true
-bbcode_text = "[center]MED."
-text = "MED."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="easy" type="RichTextLabel" parent="difficulty"]
-margin_left = 805.0
-margin_top = 24.0
-margin_right = 946.0
-margin_bottom = 69.0
-custom_fonts/normal_font = SubResource( 20 )
-bbcode_enabled = true
-bbcode_text = "[center]EASY"
-text = "EASY"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="difficulty_button" type="Button" parent="difficulty"]
-margin_left = 527.0
-margin_top = 5.0
-margin_right = 937.0
-margin_bottom = 86.0
-custom_styles/hover = SubResource( 21 )
-custom_styles/focus = SubResource( 22 )
-custom_styles/normal = SubResource( 23 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="language" type="Node2D" parent="."]
 position = Vector2( 333.173, 13.614 )
 scale = Vector2( 0.66941, 0.66941 )
@@ -485,12 +393,12 @@ margin_top = 3.58749
 margin_right = 989.972
 margin_bottom = 89.5875
 custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
 custom_styles/focus = SubResource( 22 )
-custom_styles/normal = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="buttons/groceries" to="." method="_on_groceries_button_down"]
 [connection signal="button_down" from="buttons/sport" to="." method="_on_sport_button_down"]
-[connection signal="button_down" from="difficulty/difficulty_button" to="." method="_on_difficulty_button_down"]
 [connection signal="button_down" from="language/language_button" to="." method="_on_language_button_down"]

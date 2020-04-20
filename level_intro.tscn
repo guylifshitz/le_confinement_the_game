@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=1]
 [ext_resource path="res://images/spritesheets/grandma-body-small.png" type="Texture" id=2]
@@ -10,14 +10,9 @@
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=9]
 [ext_resource path="res://images/menu/apartment-old.jpg" type="Texture" id=10]
 [ext_resource path="res://prefab/click_button.tscn" type="PackedScene" id=13]
-[ext_resource path="res://prefab/health-bar.tscn" type="PackedScene" id=14]
-[ext_resource path="res://prefab/distance-bar.tscn" type="PackedScene" id=17]
-[ext_resource path="res://images/interface/attestation.png" type="Texture" id=19]
-[ext_resource path="res://images/spritesheets/policeman.png" type="Texture" id=20]
 [ext_resource path="res://sounds/menu/pop.wav" type="AudioStream" id=21]
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=22]
 [ext_resource path="res://prefab/fullscreen_icon.tscn" type="PackedScene" id=23]
-[ext_resource path="res://images/interface/circle.png" type="Texture" id=24]
 
 [sub_resource type="Animation" id=1]
 resource_name = "head-movement"
@@ -52,6 +47,10 @@ font_data = ExtResource( 8 )
 [node name="menu" type="Node2D"]
 position = Vector2( 0, 0.947266 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [ 448.0 ]
+}
 
 [node name="apartment" type="Sprite" parent="."]
 position = Vector2( 476.83, 302.027 )
@@ -109,47 +108,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="icons" type="Node2D" parent="dialog"]
-position = Vector2( 280.4, 17.6656 )
-
-[node name="health_bar" parent="dialog/icons" instance=ExtResource( 14 )]
-position = Vector2( -55.9095, 6.21217 )
-
-[node name="distance_circle" type="Sprite" parent="dialog/icons"]
-modulate = Color( 0.784314, 0, 0, 1 )
-position = Vector2( 7.43066, 169.48 )
-scale = Vector2( 0.0775932, 0.0775932 )
-texture = ExtResource( 24 )
-
-[node name="distance_bar" parent="dialog/icons" instance=ExtResource( 17 )]
-position = Vector2( 40.4485, 21.6723 )
-
-[node name="groceries" type="Node2D" parent="dialog/icons"]
-position = Vector2( 76.402, 174.901 )
-scale = Vector2( 0.695001, 0.695001 )
-
-[node name="item_1" type="Node2D" parent="dialog/icons/groceries"]
-position = Vector2( 65.7108, 0.257996 )
-scale = Vector2( 2.5, 2.5 )
-
-[node name="item_2" type="Node2D" parent="dialog/icons/groceries"]
-position = Vector2( 5.42212, 0.903717 )
-scale = Vector2( 2.5, 2.5 )
-
-[node name="item_3" type="Node2D" parent="dialog/icons/groceries"]
-position = Vector2( 141.878, -1.80521 )
-scale = Vector2( 2.5, 2.5 )
-
-[node name="attestation" type="Sprite" parent="dialog/icons"]
-position = Vector2( 367.681, 118.286 )
-texture = ExtResource( 19 )
-
-[node name="policeman" type="Sprite" parent="dialog/icons"]
-position = Vector2( 393.206, 110.965 )
-scale = Vector2( 1.60179, 1.60179 )
-texture = ExtResource( 20 )
-vframes = 4
-hframes = 4
+[node name="Node2D" type="Node2D" parent="dialog"]
 
 [node name="scroll_faster" type="Button" parent="."]
 anchor_left = -0.00269775
@@ -164,6 +123,7 @@ custom_styles/focus = SubResource( 3 )
 action_mode = 0
 flat = true
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 

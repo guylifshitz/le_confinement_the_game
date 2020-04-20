@@ -11,13 +11,14 @@ func _ready():
 	# global.level_type = "groceries"
 	# global.level_type = "sport"
 	# get_tree().change_scene("res://level_select_part_2.tscn")
-
-	global.set_level_settings("groceries", "daily_bread")
-	# global.set_level_settings("groceries", "doliprane")
+	global.language = "english"
+	# global.set_level_settings("groceries", "daily_bread")
+	global.set_level_settings("groceries", "doliprane")
+	# global.set_level_settings("groceries", "toilet_paper")
+	# global.set_level_settings("groceries", "night_pharma")
 	# global.set_level_settings("groceries", "hidden_pasta")
 	# global.set_level_settings("groceries", "full_cart_1")
 	# global.set_level_settings("groceries", "full_cart_3")
-	# global.set_level_settings("groceries", "toilet_paper")
 	# global.set_level_settings("groceries", "test")
 
 	# global.set_level_settings("sport", "near_home")
@@ -31,7 +32,7 @@ func _ready():
 	# global.set_level_settings("sport", "night_bike")
 
 	# get_tree().change_scene("res://level_bastille.tscn")
-	get_tree().change_scene("res://level_intro.tscn")
+	# get_tree().change_scene("res://level_intro.tscn")
 	#$;	HTTPRequest.request("http://localhost:8082/TEST_settingss.json")
 	
 func _on_HTTPRequest_request_completed( result, response_code, headers, body ):

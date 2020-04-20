@@ -84,5 +84,41 @@
     "police_car": {}
   },
   "game_limits": [],
-  "game_elements": ["block_canal"]
+  "game_elements": ["block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+        "images": []
+      },
+      {
+        "text": "\n Scarey times, I know.... \n\n But we need more: ",
+        "images": [
+          {
+            "path": "interface/items/baguette.png",
+            "position": [340, 200],
+            "size": [60, 60]
+          },
+          {
+            "path": "interface/items/toilet_paper.png",
+            "position": [420, 200],
+            "size": [60, 60]
+          },
+          {
+            "path": "interface/items/drugs.png",
+            "position": [500, 200],
+            "size": [60, 60]
+          }
+        ]
+      }
+    ],
+    "french": [
+      {
+        "text": "HEY!",
+        "images": []
+      },
+      { "text": "ONE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ]
+  }
 }

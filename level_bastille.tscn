@@ -984,7 +984,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=60]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2047.35, 444.569, 0, 0, 0, 0, 1344.46, 68.1456, 0, 0, 0, 0, 1329.3, 77.6923, 0, 0, 0, 0, 2047.35, 444.569 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1344.46, 68.1456, 0, 0, 0, 0, 1574.33, 194.624, 0, 0, 0, 0, 1682.41, 176.458, 0, 0, 0, 0, 1851.35, 262.743, 0, 0, 0, 0, 1704.21, 377.185, 0, 0, 0, 0, 1542.54, 270.918, 0, 0, 0, 0, 1079.14, 523.415, 0, 0, 0, 0, 957.434, 458.928, 0, 0, 0, 0, 1428.82, 228.229, 0, 0, 0, 0, 1150.89, 88.3568, 0, 0, 0, 0, 1345.26, -28.8093, 0, 0, 0, 0, 1250.8, 28.4114, 0, 0, 0, 0, 1344.46, 68.1456 )
 }
 
 [sub_resource type="Curve2D" id=61]
@@ -1162,12 +1162,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -2944.71, -1507.58, 0, 0, 0, 0, -4003.46, -2049.29, 0, 0, 0, 0, -4363.63, -1872.11, 0, 0, 0, 0, -3579.38, -1490.44, 0, 0, 0, 0, -3389.12, -1474.46, 0, 0, 0, 0, -2328.93, -938.557, 0, 0, 0, 0, -2149.71, -776.188, 0, 0, 0, 0, -1711.92, -565.025, 0, 0, 0, 0, -1370.87, -734.832, 0, 0, 0, 0, -1787.21, -937.686, 0, 0, 0, 0, -2016.68, -955.114, 0, 0, 0, 0, -2661.51, -1284.79, 0, 0, 0, 0, -2693.46, -1370.48, 0, 0, 0, 0, -2944.71, -1507.58 )
 }
 
-[sub_resource type="Curve2D" id=97]
+[sub_resource type="Curve2D" id=96]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1372.01, 314.355, 0, 0, 0, 0, -1281.99, 372.702, 0, 0, 0, 0, -363.429, -185.767, 0, 0, 0, 0, -1114.49, -584.429, 0, 0, 0, 0, -1271.66, -594.533, 0, 0, 0, 0, -1515.5, -719.148, 0, 0, 0, 0, -1814.24, -609.913, 0, 0, 0, 0, -707.302, -47.5758, 0, 0, 0, 0, -1372.01, 314.355 )
 }
 
-[sub_resource type="CanvasItemMaterial" id=96]
+[sub_resource type="CanvasItemMaterial" id=97]
 blend_mode = 1
 
 [node name="game" type="Node2D"]
@@ -1441,6 +1441,23 @@ script = ExtResource( 62 )
 [node name="Area2D" type="Area2D" parent="elements/pickups/sanitizers/sanitizer_far_right_1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/sanitizers/sanitizer_far_right_1/Area2D"]
+position = Vector2( -26.8276, 7.93604 )
+scale = Vector2( 5.51799, 4.64155 )
+shape = SubResource( 5 )
+
+[node name="sanitizer_pharma_right" type="Node2D" parent="elements/pickups/sanitizers"]
+position = Vector2( 2996.06, 117.615 )
+rotation = -1.11035e-10
+scale = Vector2( 0.52423, 0.52423 )
+
+[node name="hand_sanitizer" type="Sprite" parent="elements/pickups/sanitizers/sanitizer_pharma_right"]
+position = Vector2( 0.00219727, 1.93408 )
+texture = ExtResource( 49 )
+script = ExtResource( 62 )
+
+[node name="Area2D" type="Area2D" parent="elements/pickups/sanitizers/sanitizer_pharma_right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elements/pickups/sanitizers/sanitizer_pharma_right/Area2D"]
 position = Vector2( -26.8276, 7.93604 )
 scale = Vector2( 5.51799, 4.64155 )
 shape = SubResource( 5 )
@@ -2373,7 +2390,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2391,7 +2408,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2401,7 +2418,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 
@@ -2414,7 +2431,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2432,7 +2449,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2442,7 +2459,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 4
+frame = 7
 speed_scale = 0.5
 playing = true
 
@@ -2455,7 +2472,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 3
+frame = 6
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2473,7 +2490,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 1
+frame = 4
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2487,6 +2504,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 3
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -4679,6 +4697,7 @@ stream = ExtResource( 54 )
 bus = "sound_effects"
 
 [node name="sidewalk_limits" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="top-square" type="CollisionPolygon2D" parent="sidewalk_limits"]
 position = Vector2( -0.261719, 1 )
@@ -4851,6 +4870,11 @@ visible = false
 rotation = -1.16415e-10
 curve = SubResource( 60 )
 
+[node name="middle_4" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
+position = Vector2( -262.488, -177.111 )
+rotation = -1.16415e-10
+curve = SubResource( 60 )
+
 [node name="right_1" type="Path2D" parent="enemy_paths/spawn_pedestrians"]
 visible = false
 curve = SubResource( 61 )
@@ -5000,7 +5024,7 @@ position = Vector2( -17.0823, 3.00116 )
 curve = SubResource( 95 )
 
 [node name="canal_beaumarchais" type="Path2D" parent="enemy_paths/spawn_motorbike"]
-curve = SubResource( 97 )
+curve = SubResource( 96 )
 
 [node name="spawn_police_car" type="Node2D" parent="enemy_paths"]
 visible = false
@@ -5044,7 +5068,7 @@ position = Vector2( -17.0823, 3.00116 )
 curve = SubResource( 95 )
 
 [node name="canal_beaumarchais" type="Path2D" parent="enemy_paths/spawn_police_car"]
-curve = SubResource( 97 )
+curve = SubResource( 96 )
 
 [node name="night" type="Node2D" parent="."]
 visible = false
@@ -5062,28 +5086,28 @@ rotation = -4.65661e-10
 
 [node name="path918" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 709.005, -182.026 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path926" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1340.1, -96.9813 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path939" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1411.15, 136.619 )
 scale = Vector2( 0.384018, 0.384018 )
 texture = ExtResource( 74 )
 
 [node name="path927" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1906.23, 403.195 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5091,7 +5115,7 @@ texture = ExtResource( 74 )
 
 [node name="path940" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2483.51, 838.647 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5099,7 +5123,7 @@ texture = ExtResource( 74 )
 
 [node name="path933" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2357.49, 224.101 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5107,7 +5131,7 @@ texture = ExtResource( 74 )
 
 [node name="path936" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2537.46, -161.199 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5115,7 +5139,7 @@ texture = ExtResource( 74 )
 
 [node name="path937" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2639.03, -421.254 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5123,7 +5147,7 @@ texture = ExtResource( 74 )
 
 [node name="path929" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1474.87, 618.118 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5131,7 +5155,7 @@ texture = ExtResource( 74 )
 
 [node name="path942" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.819608, 0.517647, 0.317647, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1766.27, 1016.29 )
 scale = Vector2( 0.551193, 0.551193 )
 z_index = 1
@@ -5139,7 +5163,7 @@ texture = ExtResource( 74 )
 
 [node name="path943" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1263.6, 1212.24 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5147,7 +5171,7 @@ texture = ExtResource( 74 )
 
 [node name="path947" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 588.299, 1082.45 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5155,7 +5179,7 @@ texture = ExtResource( 74 )
 
 [node name="path949" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1519.55, 1386.94 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5163,7 +5187,7 @@ texture = ExtResource( 74 )
 
 [node name="path930" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1192.74, 505.767 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5171,7 +5195,7 @@ texture = ExtResource( 74 )
 
 [node name="path946" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 284.71, 506.654 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5179,7 +5203,7 @@ texture = ExtResource( 74 )
 
 [node name="path953" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -153.241, -253.266 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5187,7 +5211,7 @@ texture = ExtResource( 74 )
 
 [node name="path958" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -464.128, -417.393 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5195,7 +5219,7 @@ texture = ExtResource( 74 )
 
 [node name="path959" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -1436.77, -406.431 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5203,7 +5227,7 @@ texture = ExtResource( 74 )
 
 [node name="path960" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -1523.77, -881.148 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5211,7 +5235,7 @@ texture = ExtResource( 74 )
 
 [node name="path961" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2303.64, -1306.95 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5219,7 +5243,7 @@ texture = ExtResource( 74 )
 
 [node name="path975" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3343.02, -1860.12 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5227,7 +5251,7 @@ texture = ExtResource( 74 )
 
 [node name="path979" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4119.69, -873.586 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5235,7 +5259,7 @@ texture = ExtResource( 74 )
 
 [node name="path980" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4423.35, -1747.14 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5243,7 +5267,7 @@ texture = ExtResource( 74 )
 
 [node name="path981" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3579.24, -1355.76 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5251,7 +5275,7 @@ texture = ExtResource( 74 )
 
 [node name="path986" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3543.94, -1038.7 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5259,7 +5283,7 @@ texture = ExtResource( 74 )
 
 [node name="path982" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4731.87, -1162.59 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5267,7 +5291,7 @@ texture = ExtResource( 74 )
 
 [node name="path962" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3138.12, -1222.49 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5275,7 +5299,7 @@ texture = ExtResource( 74 )
 
 [node name="path963" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2466.86, -920.557 )
 scale = Vector2( 0.384018, 0.384018 )
 z_index = 1
@@ -5283,28 +5307,28 @@ texture = ExtResource( 74 )
 
 [node name="path921" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1105.06, -587.471 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path925" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1285.02, -434.268 )
 scale = Vector2( 0.370649, 0.370649 )
 texture = ExtResource( 74 )
 
 [node name="path952" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 443.541, -468.389 )
 scale = Vector2( 0.636649, 0.585266 )
 texture = ExtResource( 74 )
 
 [node name="path928" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1852.61, 148.32 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5312,7 +5336,7 @@ texture = ExtResource( 74 )
 
 [node name="path934" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2897.08, -22.1476 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5320,7 +5344,7 @@ texture = ExtResource( 74 )
 
 [node name="path935" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2088.58, -347.185 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5328,7 +5352,7 @@ texture = ExtResource( 74 )
 
 [node name="path951" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2240.87, -101.004 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5336,7 +5360,7 @@ texture = ExtResource( 74 )
 
 [node name="path938" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2799.03, 268.536 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5344,7 +5368,7 @@ texture = ExtResource( 74 )
 
 [node name="path941" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 2267.29, 569.261 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5352,7 +5376,7 @@ texture = ExtResource( 74 )
 
 [node name="path931" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 724.156, 126.066 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5360,7 +5384,7 @@ texture = ExtResource( 74 )
 
 [node name="path944" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 885.037, 372 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5368,7 +5392,7 @@ texture = ExtResource( 74 )
 
 [node name="path964" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -895.73, -611.033 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5376,7 +5400,7 @@ texture = ExtResource( 74 )
 
 [node name="path965" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -1147.68, -749.262 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5384,7 +5408,7 @@ texture = ExtResource( 74 )
 
 [node name="path968" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2036.07, -689.924 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5392,7 +5416,7 @@ texture = ExtResource( 74 )
 
 [node name="path969" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -1926.35, -1106.46 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5400,7 +5424,7 @@ texture = ExtResource( 74 )
 
 [node name="path970" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2812.62, -1068.58 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5408,7 +5432,7 @@ texture = ExtResource( 74 )
 
 [node name="path978" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2673.52, -1524.11 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5416,7 +5440,7 @@ texture = ExtResource( 74 )
 
 [node name="path971" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -2967.11, -1686.9 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5424,7 +5448,7 @@ texture = ExtResource( 74 )
 
 [node name="path972" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3761.04, -2046.17 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5432,7 +5456,7 @@ texture = ExtResource( 74 )
 
 [node name="path983" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4748.81, -1611.77 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5440,7 +5464,7 @@ texture = ExtResource( 74 )
 
 [node name="path984" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4233.15, -1261.8 )
 scale = Vector2( 0.612162, 0.612162 )
 z_index = 1
@@ -5448,7 +5472,7 @@ texture = ExtResource( 74 )
 
 [node name="path985" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3758.77, -935.591 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5456,7 +5480,7 @@ texture = ExtResource( 74 )
 
 [node name="path987" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4463.88, -1036.62 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5464,7 +5488,7 @@ texture = ExtResource( 74 )
 
 [node name="path988" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -5154.66, -1377.67 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5472,7 +5496,7 @@ texture = ExtResource( 74 )
 
 [node name="path976" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -3807.78, -1554.4 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5480,7 +5504,7 @@ texture = ExtResource( 74 )
 
 [node name="path974" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4180.69, -1779.56 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5488,7 +5512,7 @@ texture = ExtResource( 74 )
 
 [node name="path977" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -4216.74, -2261.67 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5496,7 +5520,7 @@ texture = ExtResource( 74 )
 
 [node name="path966" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -940.332, -187.805 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5504,7 +5528,7 @@ texture = ExtResource( 74 )
 
 [node name="path957" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 198.007, -73.554 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5512,7 +5536,7 @@ texture = ExtResource( 74 )
 
 [node name="path956" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -44.3255, 314.787 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5520,7 +5544,7 @@ texture = ExtResource( 74 )
 
 [node name="path945" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 704.694, 635.532 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5528,7 +5552,7 @@ texture = ExtResource( 74 )
 
 [node name="path954" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 531.669, 114.908 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5536,7 +5560,7 @@ texture = ExtResource( 74 )
 
 [node name="path955" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( -403.927, 127.364 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5544,7 +5568,7 @@ texture = ExtResource( 74 )
 
 [node name="path932" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1030.09, 850.836 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5552,7 +5576,7 @@ texture = ExtResource( 74 )
 
 [node name="path948" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 802.48, 1229.19 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5560,7 +5584,7 @@ texture = ExtResource( 74 )
 
 [node name="path950" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1811.48, 1489.15 )
 scale = Vector2( 0.370649, 0.370649 )
 z_index = 1
@@ -5568,35 +5592,35 @@ texture = ExtResource( 74 )
 
 [node name="path923" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.647059, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1584.14, -583.63 )
 scale = Vector2( 0.349383, 0.348027 )
 texture = ExtResource( 74 )
 
 [node name="path919" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 909.267, -357.195 )
 scale = Vector2( 0.419806, 0.419806 )
 texture = ExtResource( 74 )
 
 [node name="path922" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.980392, 0.713726, 0.427451, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1149.4, -840.021 )
 scale = Vector2( 0.38098, 0.38098 )
 texture = ExtResource( 74 )
 
 [node name="path924" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.901961, 0.686275, 0.545098, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 1618.24, -787.077 )
 scale = Vector2( 0.394746, 0.400668 )
 texture = ExtResource( 74 )
 
 [node name="path920" type="Sprite" parent="night/street_lights"]
 modulate = Color( 0.933333, 0.792157, 0.576471, 0.509804 )
-material = SubResource( 96 )
+material = SubResource( 97 )
 position = Vector2( 672.058, -629.217 )
 scale = Vector2( 0.489091, 0.489091 )
 texture = ExtResource( 74 )
@@ -5614,6 +5638,7 @@ texture = ExtResource( 74 )
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_pharma_repu/Area2D" to="elements/pickups/sanitizers/sanitizer_pharma_repu/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_church/Area2D" to="elements/pickups/sanitizers/sanitizer_church/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_far_right_1/Area2D" to="elements/pickups/sanitizers/sanitizer_far_right_1/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
+[connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_pharma_right/Area2D" to="elements/pickups/sanitizers/sanitizer_pharma_right/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/water/Area2D" to="elements/pickups/sanitizers/water/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/market/Area2D" to="elements/pickups/sanitizers/market/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]
 [connection signal="body_entered" from="elements/pickups/sanitizers/sanitizer_far_right_2/Area2D" to="elements/pickups/sanitizers/sanitizer_far_right_2/hand_sanitizer" method="_on_hand_sanitizer_body_entered"]

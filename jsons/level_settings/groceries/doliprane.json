@@ -73,5 +73,27 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": ["block_boulangerie", "block_canal"]
+  "game_elements": ["block_boulangerie", "block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": " My head feels funny.\n\n Could you go get some Doliprane?",
+        "images": [
+          {
+            "path": "interface/items/drugs.png",
+            "position": [420, 200],
+            "size": [60, 60]
+          }
+        ]
+      }
+    ],
+    "french": [
+      {
+        "text": "HEY!",
+        "images": []
+      },
+      { "text": "ONE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ]
+  }
 }

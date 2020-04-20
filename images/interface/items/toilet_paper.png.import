@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toilletpaper.png-65e25a58bb15700a15fb883ae399201d.stex"
+path="res://.import/toilet_paper.png-41af9563cc148c27d09f4d636f254f29.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/interface/items/toilletpaper.png"
-dest_files=[ "res://.import/toilletpaper.png-65e25a58bb15700a15fb883ae399201d.stex" ]
+source_file="res://images/interface/items/toilet_paper.png"
+dest_files=[ "res://.import/toilet_paper.png-41af9563cc148c27d09f4d636f254f29.stex" ]
 
 [params]
 

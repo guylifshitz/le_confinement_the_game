@@ -69,28 +69,33 @@ func setup_night_bike_lights():
 	$main_char_node/bike_character/bike_lights.show()
 	blink_right_light()
 	blink_left_light()
-	
+
+
 func blink_right_light():
 	utils_custom.create_timer_2(0.3, self, "blink_right_light")
 	var light = $main_char_node/bike_character/bike_lights/right
-	light.visible = !light.visible
+	light.visible = ! light.visible
+
 
 func blink_left_light():
 	utils_custom.create_timer_2(0.4, self, "blink_left_light")
 	var light = $main_char_node/bike_character/bike_lights/left
-	light.visible = !light.visible
+	light.visible = ! light.visible
+
 
 func set_bike_lights_right():
 	var light_1 = $main_char_node/bike_character/bike_lights/right
 	var light_2 = $main_char_node/bike_character/bike_lights/left
-	light_1.modulate = Color(1,1,1,0.5)
-	light_2.modulate = Color(1,0,0,0.5)
+	light_1.modulate = Color(1, 1, 1, 0.5)
+	light_2.modulate = Color(1, 0, 0, 0.5)
+
 
 func set_bike_lights_left():
 	var light_1 = $main_char_node/bike_character/bike_lights/right
 	var light_2 = $main_char_node/bike_character/bike_lights/left
-	light_1.modulate = Color(1,0,0,0.5)
-	light_2.modulate = Color(1,1,1,0.5)
+	light_1.modulate = Color(1, 0, 0, 0.5)
+	light_2.modulate = Color(1, 1, 1, 0.5)
+
 
 func animate_distance_circle():
 	var circle_tween = Tween.new()
@@ -269,7 +274,7 @@ func acquired_attestation():
 		utils_custom.create_timer_2(1, self, "decrement_attestation_timer")
 
 	get_node("main_char_node/has_attestation").show()
-	get_node("main_char_node/has_attestation").modulate = Color(1,1,1,1)
+	get_node("main_char_node/has_attestation").modulate = Color(1, 1, 1, 1)
 	has_attestation = true
 
 	has_attestation_time = global.level_settings["attestation"]["duration"]
@@ -286,7 +291,12 @@ func decrement_attestation_timer():
 	var attestation_timer_label = get_node("/root/game/interface/attestation_timer/timer_label")
 	has_attestation_time = has_attestation_time - 1
 	attestation_timer_label.text = str(has_attestation_time)
-	get_node("main_char_node/has_attestation").modulate = Color(1,1,1,(has_attestation_time*2)/float(global.level_settings["attestation"]["duration"]))
+	get_node("main_char_node/has_attestation").modulate = Color(
+		1,
+		1,
+		1,
+		(has_attestation_time * 2) / float(global.level_settings["attestation"]["duration"])
+	)
 	if has_attestation_time <= 0:
 		has_attestation = false
 		get_node("main_char_node/has_attestation").hide()

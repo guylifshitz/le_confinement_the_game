@@ -15,8 +15,8 @@ func _ready():
 		$glass_text_box/caption_text_french.show()
 		dialog_chunks = [dialog_text_french]
 	else:
-		$glass_text_box/grandma_sick_text_english.show()
-		$glass_text_box/grandma_sick_text_french.hide()
+		$glass_text_box/caption_text_english.show()
+		$glass_text_box/caption_text_french.hide()
 		dialog_chunks = [dialog_text_english]
 
 	update_text()

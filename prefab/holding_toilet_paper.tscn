@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://images/interface/items/toilletpaper.png" type="Texture" id=1]
+[ext_resource path="res://images/interface/items/toilet_paper.png" type="Texture" id=1]
+
 
 [node name="toilet_paper" type="Node2D"]
 scale = Vector2( 0.129185, 0.129185 )

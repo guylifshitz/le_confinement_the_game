@@ -1,11 +1,15 @@
 {
   "english": [
     {
-      "text": "\n I'll remind you of the basics...",
+      "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
       "images": []
     },
     {
-      "text": "\n There are shortages, you may need to try many stores to find items.",
+      "text": "\n Scarey times, I know.... \n\n But we need more: ",
+      "images": []
+    },
+    {
+      "text": "\n There are shortages, you will need to try many stores to find each item.",
       "images": []
     },
     {
@@ -72,10 +76,6 @@
     },
     {
       "text": "\n  You can run for a short time using the shift key.",
-      "images": []
-    },
-    {
-      "text": "\n  You can also bring home some extra stuff that you happen to find.",
       "images": []
     },
     { "text": "\n  Good luck!", "images": [] }

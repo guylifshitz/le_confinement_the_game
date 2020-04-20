@@ -4,7 +4,6 @@ var language
 
 func _ready():
 	set_language()
-	show_right_difficulty()
 	if not music.get_node("main_menu").playing:
 		music.get_node("main_menu").play()
 
@@ -35,29 +34,6 @@ func _on_sport_button_down():
 	global.level_type = "sport"
 	utils_custom.create_timer_2(1, self, "play_sport")
 
-
-func show_right_difficulty():
-	$difficulty/easy.hide()
-	$difficulty/medium.hide()
-	$difficulty/hard.hide()
-	if global.level_difficulty == "easy":
-		$difficulty/easy.show()
-	elif global.level_difficulty == "medium":
-		$difficulty/medium.show()
-	else:
-		$difficulty/hard.show()
-
-
-func _on_difficulty_button_down():
-	$audio/pop.play()
-	if global.level_difficulty == "easy":
-		global.level_difficulty = "medium"
-	elif global.level_difficulty == "medium":
-		global.level_difficulty = "hard"
-		# global.level_difficulty = "easy"
-	else:
-		global.level_difficulty = "easy"
-	show_right_difficulty()
 
 func _on_language_button_down():
 	$audio/pop.play()

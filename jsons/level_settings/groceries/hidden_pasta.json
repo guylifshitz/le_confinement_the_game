@@ -79,5 +79,42 @@
     "police_car": {}
   },
   "game_limits": [],
-  "game_elements": ["block_canal"]
+  "game_elements": ["block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Its almost dinner time, but we're all out of food.\n\n And I'm soooooo hungry.",
+        "images": []
+      },
+      {
+        "text": "\n You're gonna have to find something easy to make.\n\n How about pasta?",
+        "images": [
+          {
+            "path": "interface/items/pasta.png",
+            "position": [550, 170],
+            "size": [80, 80]
+          }
+        ]
+      }
+    ],
+    "french": [
+      {
+        "text": "HEY!",
+        "images": [
+          {
+            "path": "interface/flower.png",
+            "position": [300, 400],
+            "size": [100, 100]
+          },
+          {
+            "path": "interface/flower.png",
+            "position": [500, 400],
+            "size": [200, 200]
+          }
+        ]
+      },
+      { "text": "ONE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ]
+  }
 }

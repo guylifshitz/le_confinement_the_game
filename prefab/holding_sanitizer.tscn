@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/interface/hand-sanitizer.png" type="Texture" id=1]
+
+[node name="saniitizer" type="Node2D"]
+
+[node name="hand-sanitizer" type="Sprite" parent="."]
+position = Vector2( 7.17789, -2.32742 )
+scale = Vector2( 0.219762, 0.219762 )
+texture = ExtResource( 1 )

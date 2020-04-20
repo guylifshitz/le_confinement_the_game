@@ -7,6 +7,7 @@ onready var holding_flower = load("res://prefab/holding_flower.tscn")
 onready var holding_duck = load("res://prefab/holding_duck.tscn")
 onready var holding_toilet_paper = load("res://prefab/holding_toilet_paper.tscn")
 onready var holding_pasta = load("res://prefab/holding_pasta.tscn")
+onready var holding_sanitizer = load("res://prefab/holding_sanitizer.tscn")
 
 onready var pickedup_sound = get_tree().get_root().get_node("game/audio/picked_up")
 onready var empty_store_sound = get_tree().get_root().get_node("game/audio/empty_store")
