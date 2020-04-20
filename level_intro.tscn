@@ -245,6 +245,8 @@ bus = "sound_effects"
 
 [node name="audio-icon" parent="icon_settings" instance=ExtResource( 22 )]
 scale = Vector2( 1, 1.00358 )
+
+[node name="dialog_icons" type="Node2D" parent="."]
 [connection signal="button_down" from="scroll_faster" to="." method="text_clicked"]
 [connection signal="button_down" from="skip_button/skip_dialog" to="." method="go_to_next_scene"]
 [connection signal="button_down" from="back_button/back_dialog" to="." method="_on_back_button_down"]

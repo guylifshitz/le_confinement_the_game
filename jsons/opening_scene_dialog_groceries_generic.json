@@ -1,0 +1,16 @@
+{
+  "english": [
+    { "text": "GENHEY!", "images": [] },
+    { "text": "GENONE!", "images": [] },
+    { "text": "GENTWO!", "images": [] },
+    { "text": "GENTHRE!", "images": [] },
+    { "text": "GENFOUR!", "images": [] }
+  ],
+  "french": [
+    { "text": "GENHEY!", "images": [] },
+    { "text": "GENONE!", "images": [] },
+    { "text": "GENTWO!", "images": [] },
+    { "text": "GENTHRE!", "images": [] },
+    { "text": "GENFOUR!", "images": [] }
+  ]
+}

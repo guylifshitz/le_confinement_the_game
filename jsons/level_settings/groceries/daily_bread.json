@@ -51,5 +51,35 @@
     "police_car": {}
   },
   "game_limits": ["block_boulangerie"],
-  "game_elements": ["block_boulangerie"]
+  "game_elements": ["block_boulangerie"],
+  "intro_text": {
+    "english": [
+      { "text": "HEY!", "images": ["interface/flower.png"] },
+      { "text": "ONE!", "images": [] },
+      { "text": "TWO!", "images": [] },
+      { "text": "THRE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ],
+    "french": [
+      {
+        "text": "HEY!",
+        "images": [
+          {
+            "path": "interface/flower.png",
+            "position": [300, 400],
+            "size": [100, 100]
+          },
+          {
+            "path": "interface/flower.png",
+            "position": [500, 400],
+            "size": [200, 200]
+          }
+        ]
+      },
+      { "text": "ONE!", "images": [] },
+      { "text": "TWO!", "images": [] },
+      { "text": "THRE!", "images": [] },
+      { "text": "FOUR!", "images": [] }
+    ]
+  }
 }
