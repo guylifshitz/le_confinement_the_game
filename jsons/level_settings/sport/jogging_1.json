@@ -3,7 +3,7 @@
     "french": "Le footing\n#1",
     "english": "The jog\n#1"
   },
-  "level_difficulty": 1,
+  "level_difficulty": 2,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
@@ -73,5 +73,18 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": ["block_canal"]
+  "game_elements": ["block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Time for a jog?",
+        "images": []
+      },
+      {
+        "text": "\n I know you can't go too far, but you can enjoy exploring our neighbourhood!",
+        "images": []
+      }
+    ],
+    "french": [{}]
+  }
 }

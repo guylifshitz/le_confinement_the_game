@@ -47,5 +47,31 @@
     "police_car": {}
   },
   "game_limits": ["block_boulangerie"],
-  "game_elements": []
+  "game_elements": [],
+  "game_elements": [],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Hey sweetie!!!\n\n It is so nice outside, and you have been inside all week.",
+        "images": []
+      },
+      {
+        "text": "\n You should probably get some fresh air!",
+        "images": []
+      },
+      {
+      "text": "\n You aren't allowed to go very far when doing exercise. You should stay close to home, just to be on the safe side.",
+      "images": []
+      },
+      {
+      "text": "\n Why not just run around the block a few times?",
+      "images": []
+      }
+    ],
+
+    "french": [
+      {
+      }
+    ]
+  }
 }

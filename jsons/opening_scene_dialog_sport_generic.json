@@ -1,0 +1,144 @@
+{
+  "english": [
+    { "text": "\n I'll remind you of the basics...", "images": [] },
+    {
+      "text": "\n You need to get some exercise to keep your body healthy.",
+      "images": []
+    },
+    {
+      "text": "\n How about you use those new running shoes I bought you?",
+      "images": [
+        {
+          "path": "menu/intro/running_shoe.png",
+          "position": [420, 180],
+          "size": [80, 80]
+        }
+      ]
+    },
+    {
+      "text": "\n You should go through the waypoints, and come back home.",
+      "images": [
+        {
+          "path": "goals/waypoints-small.png",
+          "position": [410, 180],
+          "size": [80, 80]
+        }
+      ]
+    },
+    {
+      "text": " Nothing will stop French bureaucracy, not even a global pandemic. \n\n You need to fill out a form to leave the house.",
+      "images": []
+    },
+    {
+      "text": " Unfortunately, we don't have paper to write the form on. \n\n You'll have to find \npaper outside.",
+      "images": [
+        {
+          "path": "interface/attestation.png",
+          "position": [640, 150],
+          "size": [65, 65]
+        }
+      ]
+    },
+    {
+      "text": " Avoid the police if you don't have the form! \n\n Remember, the form is only valid a short time.",
+      "images": [
+        {
+          "path": "menu/intro/police_man.png",
+          "position": [660, 130],
+          "size": [50, 90]
+        }
+      ]
+    },
+    {
+      "text": " Most importantly, don't forget!!! \n\n You need to keep your distance from the other people.",
+      "images": []
+    },
+    {
+      "text": "\n Otherwise you might become contagious and bring home the disease.",
+      "images": []
+    },
+    {
+      "text": "\n These bars will tell you how far you are from people.",
+      "images": [
+        {
+          "path": "interface/circle.png",
+          "position": [280, 190],
+          "size": [50, 50],
+          "color": [1, 0, 0, 1]
+        },
+        {
+          "path": "menu/intro/distance_bar.png",
+          "position": [480, 187],
+          "size": [270, 80]
+        }
+      ]
+    },
+    {
+      "text": "\n This bar will tell you how exposed you have been.",
+      "images": [
+        {
+          "path": "menu/intro/health_bar.png",
+          "position": [440, 180],
+          "size": [270, 65]
+        }
+      ]
+    },
+    {
+      "text": " Do you still remember how to jog? \n\n Just use the arrow keys, or click where you want to move.",
+      "images": []
+    },
+    {
+      "text": "\n  You can run faster for a short time using the shift key.",
+      "images": []
+    },
+    { "text": "\n  Good luck!", "images": [] }
+  ],
+  "french": [
+    {
+      "text": " Tu devrais faire du footing pour rester en forme !",
+      "images": []
+    },
+    {
+      "text": " Essaie ces jolies baskets que j'ai achetées pour toi. ",
+      "images": []
+    },
+    {
+      "text": " Passe à travers les étoiles et reviens à la maison.",
+      "images": []
+    },
+    {
+      "text": " Rien n'arrête la bureaucratie française !\n\n Il faut que tu remplisses une attestation avant de sortir de la maison.",
+      "images": []
+    },
+    {
+      "text": " Malheureusement, il n'y a plus de papier pour écrire l'attestation. \n\n Tu devras trouver du papier dehors.",
+      "images": []
+    },
+    {
+      "text": " Évite les flics si tu n'as pas d'attestation ! \n\n Attention, l'attestation n'est pas valable très longtemps.",
+      "images": []
+    },
+    {
+      "text": " Et surtout, n'oublie pas\n\n         !!! \n\n Tu dois rester à distance des autres gens.",
+      "images": []
+    },
+    {
+      "text": "\n Sinon tu pourrais devenir contagieuse et ramener le virus à la maison.",
+      "images": []
+    },
+    {
+      "text": "\n Cette barre te dit si tu es assez loin des gens",
+      "images": []
+    },
+    { "text": "\n Cette barre te dit si tu deviens contaminée.", "images": [] },
+    {
+      "text": " Tu sais toujours comment marcher ? Utilise les flèches ou clique là où tu veux aller",
+      "images": []
+    },
+    {
+      "text": "\n Tu peux courir un court moment en appuyant sur Shift.",
+      "images": []
+    },
+    { "text": "\n Bonne chance !", "images": [] }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "type": "groceries",
   "level_name": {
-    "french": "Le panier plein #1",
-    "english": "A full cart #1"
+    "french": "Le panier plein\n#1",
+    "english": "A full cart\n#1"
   },
   "level_difficulty": 2,
   "is_bike_ride": false,

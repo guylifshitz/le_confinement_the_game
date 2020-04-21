@@ -3,7 +3,7 @@
     "french": "Le canal",
     "english": "The Canal"
   },
-  "level_difficulty": 2,
+  "level_difficulty": 1,
   "type": "sport",
   "is_bike_ride": false,
   "is_night": false,
@@ -74,5 +74,31 @@
     "block_republique_canal",
     "block_voltaire_canal"
   ],
-  "game_elements": []
+  "game_elements": [],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Hey !!! \n\n Time for a jog?",
+        "images": []
+      },
+      {
+        "text": "\n The air is so clean these days!\n\n Almost no cars or motorbikes!",
+        "images": []
+      },
+      {
+        "text": "\n The fresh air of the canal will be great for you.",
+        "images": []
+      },
+      {
+        "text": "\n Just try to keep your distance from the other runners.",
+        "images": []
+      }
+    ],
+    "french": [
+      {
+        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+        "images": []
+      }
+    ]
+  }
 }

@@ -14,7 +14,7 @@ func _ready():
 	if global.level_type == "groceries":
 		dialog_chunks = dialog_chunks + utils_custom.load_json("res://jsons/opening_scene_dialog_groceries_generic.json")[global["language"]]
 	else:
-		dialog_chunks = dialog_chunks + utils_custom.load_json("res://jsons/opening_scene_dialog_groceries_sport.json")[global["language"]]
+		dialog_chunks = dialog_chunks + utils_custom.load_json("res://jsons/opening_scene_dialog_sport_generic.json")[global["language"]]
 
 	# dialog_chunks = dialog_chunks[global.language]
 	# TEXT_SCROLL_SPEED = float(dialog_settings["TEXT_SCROLL_SPEED"])

@@ -67,5 +67,33 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": ["block_canal"]
+  "game_elements": ["block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Hey sweetie!!!\n\n Weren't you going to run the Paris half-marathon before it was cancelled?",
+        "images": []
+      },
+      {
+        "text": "\n Well, you should keep your body in shape so you can run it again after \"le confinement\" is over.",
+        "images": []
+      },
+      {
+        "text": "\n Just run around the area a lot !",
+        "images": []
+      },
+      {
+        "text": " Here take this monitor, it will tell you how far and how long you have run in the top of your screen.",
+        "images": [
+          {
+            "path": "menu/intro/marathon.png",
+            "position": [430, 200],
+            "size": [150, 75]
+          }
+        ]
+      }
+    ],
+
+    "french": [{}]
+  }
 }

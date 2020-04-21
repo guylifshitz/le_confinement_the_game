@@ -68,5 +68,27 @@
     "police_car": {}
   },
   "game_limits": ["block_right"],
-  "game_elements": ["block_boulangerie", "block_canal"]
+  "game_elements": ["block_boulangerie", "block_canal"],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Time for a jog?",
+        "images": []
+      },
+      {
+        "text": "\n I know you can't go too far, but you can enjoy exploring our neighbourhood!",
+        "images": []
+      },
+      {
+        "text": "\n It is a particularly nice day. I bet there will be a lot of people out for a walk.",
+        "images": []
+      },
+      {
+        "text": "\n Please try to avoid them!",
+        "images": []
+      }
+    ],
+
+    "french": [{}]
+  }
 }

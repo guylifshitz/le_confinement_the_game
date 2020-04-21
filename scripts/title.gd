@@ -13,7 +13,7 @@ func _ready():
 	# get_tree().change_scene("res://level_select_part_2.tscn")
 	global.language = "english"
 	# global.set_level_settings("groceries", "daily_bread")
-	global.set_level_settings("groceries", "doliprane")
+	# global.set_level_settings("groceries", "doliprane")
 	# global.set_level_settings("groceries", "toilet_paper")
 	# global.set_level_settings("groceries", "night_pharma")
 	# global.set_level_settings("groceries", "hidden_pasta")

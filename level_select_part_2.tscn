@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://images/menu/level-select-2/star-icon.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Arial Unicode.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://images/interface/items/drugs.png" type="Texture" id=10]
-[ext_resource path="res://images/interface/angryemoji.png" type="Texture" id=11]
+[ext_resource path="res://images/interface/groceries.png" type="Texture" id=11]
 [ext_resource path="res://images/interface/items/pasta.png" type="Texture" id=12]
 [ext_resource path="res://images/menu/level-select-2/moon.png" type="Texture" id=13]
 [ext_resource path="res://images/menu/level-select-2/buttons/blue_button06.png" type="Texture" id=14]
@@ -18,7 +18,7 @@
 [ext_resource path="res://images/interface/items/duck.png" type="Texture" id=16]
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=18]
-
+[ext_resource path="res://images/menu/intro/running_shoe.png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -70,9 +70,9 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 100.869
+margin_left = 101.468
 margin_top = 37.5962
-margin_right = 582.869
+margin_right = 583.468
 margin_bottom = 354.596
 rect_scale = Vector2( 1.70336, 1.46336 )
 __meta__ = {
@@ -130,7 +130,6 @@ __meta__ = {
 }
 
 [node name="groceries" type="Node2D" parent="."]
-visible = false
 position = Vector2( -10.0535, 0 )
 
 [node name="level_help" type="Node2D" parent="groceries"]
@@ -219,7 +218,7 @@ scale = Vector2( 0.242295, 0.244508 )
 texture = ExtResource( 17 )
 
 [node name="doliprane" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 399.913, 234.282 )
+position = Vector2( 399.913, 234.993 )
 
 [node name="drugs2" type="Sprite" parent="groceries/doliprane"]
 position = Vector2( 5.63623, -16.6433 )
@@ -270,43 +269,45 @@ texture = ExtResource( 13 )
 [node name="full_cart_1" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 402.21, 417.68 )
 
-[node name="angryemoji6" type="Sprite" parent="groceries/full_cart_1"]
-position = Vector2( 5.18079, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries" type="Sprite" parent="groceries/full_cart_1"]
+position = Vector2( 6.47192, -12.374 )
+scale = Vector2( 0.101686, 0.101686 )
 texture = ExtResource( 11 )
 
 [node name="full_cart_2" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 608.675, 419.26 )
 
-[node name="angryemoji5" type="Sprite" parent="groceries/full_cart_2"]
-position = Vector2( -9.84644, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries2" type="Sprite" parent="groceries/full_cart_2"]
+position = Vector2( -23.6909, -13.9541 )
+scale = Vector2( 0.0934033, 0.0934033 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji4" type="Sprite" parent="groceries/full_cart_2"]
-position = Vector2( 30.5806, -16.8198 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries3" type="Sprite" parent="groceries/full_cart_2"]
+position = Vector2( -334.934, -250.691 )
+scale = Vector2( 0.0939443, 0.0939443 )
 texture = ExtResource( 11 )
+offset = Vector2( 4031.95, 2519.97 )
 
 [node name="full_cart_3" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 811.021, 419.771 )
+position = Vector2( 812.62, 420.37 )
 
-[node name="angryemoji" type="Sprite" parent="groceries/full_cart_3"]
-position = Vector2( -26.8183, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries2" type="Sprite" parent="groceries/full_cart_3"]
+position = Vector2( -36.6963, -14.4653 )
+scale = Vector2( 0.0855009, 0.0855009 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji2" type="Sprite" parent="groceries/full_cart_3"]
-position = Vector2( 13.981, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries3" type="Sprite" parent="groceries/full_cart_3"]
+position = Vector2( 12.9736, -14.4648 )
+scale = Vector2( 0.0855009, 0.0855009 )
 texture = ExtResource( 11 )
 
-[node name="angryemoji3" type="Sprite" parent="groceries/full_cart_3"]
-position = Vector2( 54.2017, -16.2119 )
-scale = Vector2( 0.20256, 0.20256 )
+[node name="groceries4" type="Sprite" parent="groceries/full_cart_3"]
+position = Vector2( 60.2637, -14.4648 )
+scale = Vector2( 0.0855009, 0.0855009 )
 texture = ExtResource( 11 )
 
 [node name="sport" type="Node2D" parent="."]
+visible = false
 
 [node name="level_help" type="Node2D" parent="sport"]
 visible = false
@@ -394,23 +395,28 @@ scale = Vector2( 0.129568, 0.129568 )
 texture = ExtResource( 15 )
 
 [node name="jogging_1" parent="sport" instance=ExtResource( 7 )]
-position = Vector2( 382.781, 235.982 )
+position = Vector2( 589.02, 235.982 )
 
-[node name="running-small3" type="Sprite" parent="sport/jogging_1"]
-position = Vector2( 5.44214, -13.8471 )
-scale = Vector2( 0.360418, 0.360418 )
-texture = ExtResource( 18 )
+[node name="running_shoe" type="Sprite" parent="sport/jogging_1"]
+position = Vector2( 10.6484, -17.6494 )
+scale = Vector2( 0.213718, 0.213718 )
+texture = ExtResource( 19 )
 
 [node name="jogging_2" parent="sport" instance=ExtResource( 7 )]
 position = Vector2( 590.878, 402.28 )
 
-[node name="running-small2" type="Sprite" parent="sport/jogging_2"]
-position = Vector2( 12.3488, -13.0253 )
-scale = Vector2( 0.360418, 0.360418 )
-texture = ExtResource( 18 )
+[node name="running_shoe4" type="Sprite" parent="sport/jogging_2"]
+position = Vector2( -16.7009, -14.7809 )
+scale = Vector2( 0.213718, 0.213718 )
+texture = ExtResource( 19 )
+
+[node name="running_shoe5" type="Sprite" parent="sport/jogging_2"]
+position = Vector2( 36.2683, -14.7809 )
+scale = Vector2( 0.213718, 0.213718 )
+texture = ExtResource( 19 )
 
 [node name="canal_1" parent="sport" instance=ExtResource( 7 )]
-position = Vector2( 588.611, 236.685 )
+position = Vector2( 389.983, 236.685 )
 
 [node name="duck" type="Sprite" parent="sport/canal_1"]
 position = Vector2( 7.04785, -13.2072 )
@@ -429,24 +435,39 @@ texture = ExtResource( 16 )
 position = Vector2( 788.636, 237.857 )
 
 [node name="running-small" type="Sprite" parent="sport/marathon_5k"]
-position = Vector2( 6.59082, -15.7218 )
-scale = Vector2( 0.360418, 0.360418 )
+position = Vector2( 6.59082, -15.1653 )
+scale = Vector2( 0.307783, 0.307783 )
 texture = ExtResource( 18 )
 
 [node name="marathon_21k" parent="sport" instance=ExtResource( 7 )]
-position = Vector2( 387.16, 401.714 )
+position = Vector2( 392.487, 401.714 )
 
 [node name="running-small2" type="Sprite" parent="sport/marathon_21k"]
-position = Vector2( 0.12439, -13.8669 )
-scale = Vector2( 0.360418, 0.360418 )
+position = Vector2( -19.6711, -13.8669 )
+scale = Vector2( 0.294376, 0.294376 )
+texture = ExtResource( 18 )
+
+[node name="running-small3" type="Sprite" parent="sport/marathon_21k"]
+position = Vector2( 43.486, -13.8669 )
+scale = Vector2( 0.283014, 0.283014 )
 texture = ExtResource( 18 )
 
 [node name="marathon_42k" parent="sport" instance=ExtResource( 7 )]
-position = Vector2( 790.805, 403.98 )
+position = Vector2( 790.289, 403.464 )
 
-[node name="running-small3" type="Sprite" parent="sport/marathon_42k"]
-position = Vector2( 4.42175, -13.7864 )
-scale = Vector2( 0.360418, 0.360418 )
+[node name="running-small6" type="Sprite" parent="sport/marathon_42k"]
+position = Vector2( 12.2004, -13.7864 )
+scale = Vector2( 0.204922, 0.204922 )
+texture = ExtResource( 18 )
+
+[node name="running-small7" type="Sprite" parent="sport/marathon_42k"]
+position = Vector2( -32.679, -13.4792 )
+scale = Vector2( 0.204922, 0.204922 )
+texture = ExtResource( 18 )
+
+[node name="running-small8" type="Sprite" parent="sport/marathon_42k"]
+position = Vector2( 57.627, -13.7864 )
+scale = Vector2( 0.204922, 0.204922 )
 texture = ExtResource( 18 )
 [connection signal="button_down" from="back/Button" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="groceries/level_help/Button" to="." method="_on_help_button_down"]

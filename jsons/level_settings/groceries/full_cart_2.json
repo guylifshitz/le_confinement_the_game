@@ -1,8 +1,8 @@
 {
   "type": "groceries",
   "level_name": {
-    "french": "Le panier plein #2",
-    "english": "A full cart #2"
+    "french": "Le panier plein\n#2",
+    "english": "A full cart\n#2"
   },
   "level_difficulty": 3,
   "is_bike_ride": false,
@@ -32,47 +32,42 @@
     "stamina_drain_speed": 1
   },
   "pedestrians": {
-    "knows_player_percentage": 30,
+    "knows_player_percentage": 20,
     "move_speed": 100
   },
-  "police": { "move_speed": 120 },
+  "police": { "move_speed": 130 },
   "attestation": {
     "visible_list": [
       "attestation_market_top",
       "attestation_market_2",
-      "attestation_column",
-      "attestation_top",
+      "attestation_opera",
       "attestation_pharmacy"
     ],
     "duration": 5,
     "respawn_time": 5
   },
   "sanitizer": {
-    "visible_list": [
-      "sanitizer_far_right_1",
-      "sanitizer_far_right_2",
-      "sanitizer_bastille"
-    ],
+    "visible_list": [],
     "healing_points": 50,
     "respawn_time": 5
   },
   "spawn_seed": 2,
   "enemies_per_path": {
     "pedestrians": {
-      "top_square_1": 1,
+      "top_square_1": 2,
       "crowded_street": 10,
-      "crowded_street_above": 4,
+      "crowded_street_above": 6,
       "market_1": 3,
       "bastille_1": 4,
       "bastille_2": 3,
       "bastille_3": 2,
       "middle_1": 2,
       "middle_2": 1,
-      "right_1": 3,
-      "right_2": 3
+      "right_1": 2,
+      "right_2": 2
     },
     "police": {
-      "top_square": 3,
+      "top_square": 4,
       "market_full": 1,
       "market_top": 1,
       "market_bottom": 1,

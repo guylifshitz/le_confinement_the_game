@@ -48,13 +48,14 @@
       "canal_jogger_1": 10,
       "canal_jogger_2": 5,
       "canal_jogger_3": 5,
+      "canal_jogger_4_backwards": 3,
       "market_1": 3,
       "bastille_1": 2,
       "bastille_2": 2,
       "middle_1": 1,
       "middle_2": 1,
       "top_square_1": 4,
-      "crowded_street": 5,
+      "crowded_street": 5
     },
     "police": {
       "canal_1": 1,
@@ -72,5 +73,35 @@
     "block_republique_canal",
     "block_voltaire_canal"
   ],
-  "game_elements": []
+  "game_elements": [],
+  "intro_text": {
+    "english": [
+      {
+        "text": "\n Hey !!! \n\n Time for a jog?",
+        "images": []
+      },
+      {
+        "text": "\n The authorities just banned jogging during the day.",
+        "images": []
+      },
+      {
+        "text": "\n If you want to run with the sun still out, you're gonna have to go at 19h.",
+        "images": []
+      },
+      {
+        "text": " Yikes! It looks like everyone else had the same idea...\n\n The canal is going to be very crowded. ",
+        "images": []
+      },
+      {
+        "text": " The fresh air of the canal will be great for you though.\n\n Just  do try to keep your distance.",
+        "images": []
+      }
+    ],
+    "french": [
+      {
+        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+        "images": []
+      }
+    ]
+  }
 }
