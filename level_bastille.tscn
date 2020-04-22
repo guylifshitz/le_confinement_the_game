@@ -23,7 +23,7 @@
 [ext_resource path="res://images/spritesheets/ducks.png" type="Texture" id=21]
 [ext_resource path="res://images/interface/glassPanel.png" type="Texture" id=22]
 [ext_resource path="res://images/spritesheets/grandma-head-small.png" type="Texture" id=23]
-[ext_resource path="res://images/landmarks/republique/statue-libery.png" type="Texture" id=24]
+[ext_resource path="res://images/landmarks/statue-republique.png" type="Texture" id=24]
 [ext_resource path="res://images/landmarks/church.png" type="Texture" id=25]
 [ext_resource path="res://images/landmarks/cirqus.png" type="Texture" id=26]
 [ext_resource path="res://images/interface/dialogbox.png" type="Texture" id=27]
@@ -1198,7 +1198,7 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="player" parent="elements" instance=ExtResource( 2 )]
 material = SubResource( 3 )
-position = Vector2( 532.744, -352.476 )
+position = Vector2( 539.317, -340.856 )
 rotation = -3.49246e-10
 
 [node name="pickups" type="YSort" parent="elements"]
@@ -2395,6 +2395,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2412,6 +2413,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2421,6 +2423,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -2433,6 +2436,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2450,6 +2454,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2459,6 +2464,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -2471,7 +2477,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 11
+frame = 1
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2489,7 +2495,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 9
+frame = 11
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2503,7 +2509,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 8
+frame = 10
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -3021,15 +3027,15 @@ rotation = -4.44089e-16
 [node name="republique_trees" type="YSort" parent="elements/scene/trees"]
 
 [node name="repu_tree" parent="elements/scene/trees/republique_trees" instance=ExtResource( 8 )]
-position = Vector2( -4298.54, -1384.55 )
+position = Vector2( -4314.54, -1384.55 )
 rotation = -4.44089e-16
 
 [node name="repu_tree5" parent="elements/scene/trees/republique_trees" instance=ExtResource( 8 )]
-position = Vector2( -4234.68, -1350.11 )
+position = Vector2( -4248.68, -1350.11 )
 rotation = -4.44089e-16
 
 [node name="repu_tree6" parent="elements/scene/trees/republique_trees" instance=ExtResource( 8 )]
-position = Vector2( -4163.26, -1326.73 )
+position = Vector2( -4187.57, -1319.73 )
 rotation = -4.44089e-16
 
 [node name="repu_tree2" parent="elements/scene/trees/republique_trees" instance=ExtResource( 8 )]
@@ -3618,8 +3624,8 @@ is_flipped = true
 [node name="republique" type="YSort" parent="elements/scene"]
 
 [node name="statue-libery" type="Sprite" parent="elements/scene/republique"]
-position = Vector2( -4136.08, -1291.89 )
-scale = Vector2( 0.168981, 0.168981 )
+position = Vector2( -4140.93, -1279.92 )
+scale = Vector2( 0.264655, 0.264655 )
 texture = ExtResource( 24 )
 
 [node name="church" type="Sprite" parent="elements/scene"]

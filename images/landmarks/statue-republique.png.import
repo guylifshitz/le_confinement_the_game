@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/statue-libery.png-5dcb0d74bcbed581613689c167d5902e.stex"
+path="res://.import/statue-republique.png-a041227f5a7446dd98bb4027ebfb1f37.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/landmarks/republique/statue-libery.png"
-dest_files=[ "res://.import/statue-libery.png-5dcb0d74bcbed581613689c167d5902e.stex" ]
+source_file="res://images/landmarks/statue-republique.png"
+dest_files=[ "res://.import/statue-republique.png-a041227f5a7446dd98bb4027ebfb1f37.stex" ]
 
 [params]
 
