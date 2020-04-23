@@ -89,6 +89,23 @@
       }
     ],
 
-    "french": [{}]
+    "french": [
+      {
+        "text": "\n C'est l'heure de ton footing ?",
+        "images": []
+      },
+      {
+        "text": "\n Tu ne peux pas aller très loin, mais profites-en pour explorer le quartier !",
+        "images": []
+      },
+      {
+        "text": "\n Il fait vraiment très beau. Beaucoup de gens se promènent.",
+        "images": []
+      },
+      {
+        "text": "\n Essaie de les éviter !",
+        "images": []
+      }
+    ]
   }
 }

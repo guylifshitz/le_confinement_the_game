@@ -108,7 +108,7 @@ func _process(delta):
 
 		if nearest_distance < nearest_distance_threshold:
 			var damage_intensity = (nearest_distance_threshold-nearest_distance) / nearest_distance_threshold + 0.2
-			damage -= pow(damage_intensity, damage_decrement_exponent) * damage_multiplier
+			damage -= pow(damage_intensity, damage_decrement_exponent) * damage_multiplier  * delta * 60
 			sprite_sprite.modulate = Color(1,1-damage_intensity,1-damage_intensity)
 			circle.modulate = Color(damage_intensity,0,0, max(damage_intensity, 0.15))
 		else:

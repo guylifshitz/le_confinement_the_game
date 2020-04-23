@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://prefab/audio-icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://images/interface/items/baguette.png" type="Texture" id=17]
 [ext_resource path="res://images/interface/running-small.png" type="Texture" id=18]
 [ext_resource path="res://images/menu/intro/running_shoe.png" type="Texture" id=19]
+[ext_resource path="res://images/menu/intro/bike.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -242,10 +243,10 @@ scale = Vector2( 0.330337, 0.330337 )
 texture = ExtResource( 6 )
 
 [node name="night_pharma" parent="groceries" instance=ExtResource( 7 )]
-position = Vector2( 204.84, 417.652 )
+position = Vector2( 205.24, 418.452 )
 
 [node name="star-icon" type="Sprite" parent="groceries/night_pharma"]
-position = Vector2( -38.3004, -17.0205 )
+position = Vector2( -39.5002, -31.8262 )
 rotation = -0.630308
 scale = Vector2( 0.0453991, 0.0453991 )
 texture = ExtResource( 8 )
@@ -265,6 +266,12 @@ texture = ExtResource( 8 )
 position = Vector2( 9.87622, -16.5278 )
 scale = Vector2( 0.259379, 0.259379 )
 texture = ExtResource( 13 )
+
+[node name="bike" type="Sprite" parent="groceries/night_pharma"]
+position = Vector2( -28.479, -19.442 )
+rotation = -0.269942
+scale = Vector2( -0.294421, 0.260811 )
+texture = ExtResource( 20 )
 
 [node name="full_cart_1" parent="groceries" instance=ExtResource( 7 )]
 position = Vector2( 402.21, 417.68 )

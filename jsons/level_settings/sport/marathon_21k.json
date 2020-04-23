@@ -92,7 +92,7 @@
         "images": []
       },
       {
-        "text": "\n Just run around the area a lot !",
+        "text": "\n Just run around the neighbourhood a lot !",
         "images": []
       },
       {
@@ -106,7 +106,29 @@
         ]
       }
     ],
-
-    "french": [{}]
+    "french": [
+      {
+        "text": "\n Ma petite !!!\n\n Tu ne devais pas courir le semi-marathon de Paris avant qu'il soit annulé ?",
+        "images": []
+      },
+      {
+        "text": "\n Tu devrais rester en forme pour courir à nouveau quand le confinement sera terminé.",
+        "images": []
+      },
+      {
+        "text": "\n Fais le tour du quartier, et pas qu'un peu !",
+        "images": []
+      },
+      {
+        "text": " Prends cet appareil, il te dira combien de temps et quelle distance tu as couru.",
+        "images": [
+          {
+            "path": "menu/intro/marathon.png",
+            "position": [430, 200],
+            "size": [150, 75]
+          }
+        ]
+      }
+    ]
   }
 }

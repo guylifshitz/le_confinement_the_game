@@ -85,6 +85,15 @@
         "images": []
       }
     ],
-    "french": [{}]
+    "french": [
+      {
+        "text": "\n C'est l'heure de ton footing ?",
+        "images": []
+      },
+      {
+        "text": "\n Tu ne peux pas aller très loin, mais profites-en pour explorer le quartier !",
+        "images": []
+      }
+    ]
   }
 }

@@ -96,7 +96,19 @@
     ],
     "french": [
       {
-        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+        "text": "\n Ma petite !!! \n\n C'est l'heure de ton footing ?",
+        "images": []
+      },
+      {
+        "text": "\n L'air est si pur ces jours-ci !\n\n Pas de voitures ni de motos !",
+        "images": []
+      },
+      {
+        "text": "\n Le bon air du canal te fera du bien.",
+        "images": []
+      },
+      {
+        "text": "\n Mais reste bien à distance des autres joggeur·se·s.",
         "images": []
       }
     ]

@@ -75,11 +75,23 @@
     ],
     "french": [
       {
-        "text": "HEY!",
+        "text": "\n Bonjour !!! \n\n Comment te sens-tu ma chère petite-fille ? \n\n Tout ça fait peur, je sais...",
         "images": []
       },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      {
+        "text": " Mais il nous faut une baguette. \n\n Celle de ce matin est déjà dure comme de la brique.",
+        "images": [
+          {
+            "path": "interface/items/baguette.png",
+            "position": [400, 100],
+            "size": [60, 60]
+          }
+        ]
+      },
+      {
+        "text": "\n Heureusement, la boulangerie est au coin de la rue.",
+        "images": []
+      }
     ]
   }
 }

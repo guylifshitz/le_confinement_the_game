@@ -8,8 +8,6 @@ export var dialog_text_french:String
 
 func _ready():
 
-	$girl.show()
-	
 	if global.language == "french":
 		$glass_text_box/caption_text_english.hide()
 		$glass_text_box/caption_text_french.show()

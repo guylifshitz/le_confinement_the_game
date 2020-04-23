@@ -99,7 +99,23 @@
     ],
     "french": [
       {
-        "text": "\n Hey !!! \n\n How are you feeling my sweet grand-daughter?",
+        "text": "\n Ma petite !!! \n\n C'est l'heure de ton footing ?",
+        "images": []
+      },
+      {
+        "text": "\n La préfecture vient d'interdire le footing pendant la journée.",
+        "images": []
+      },
+      {
+        "text": "\n Si tu veux courir en profitant du soleil, tu devras y aller à 19h.",
+        "images": []
+      },
+      {
+        "text": " Ohlala ! On dirait que tout le monde a eu la même idée...\n\n Il y aura foule au canal. ",
+        "images": []
+      },
+      {
+        "text": " Mais le bon air du canal te fera tellement de bien.\n\n Fais attention à garder tes distances.",
         "images": []
       }
     ]

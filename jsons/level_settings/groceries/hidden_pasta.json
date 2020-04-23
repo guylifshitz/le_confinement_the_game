@@ -99,22 +99,19 @@
     ],
     "french": [
       {
-        "text": "HEY!",
+        "text": " C'est bientôt l'heure du dîner, mais il n'y a plus rien à manger.\n\n J'ai très faim !!",
+        "images": []
+      },
+      {
+        "text": " Tu vas devoir trouver quelque chose de facile à préparer.\n\n Des pâtes ?",
         "images": [
           {
-            "path": "interface/flower.png",
-            "position": [300, 400],
-            "size": [100, 100]
-          },
-          {
-            "path": "interface/flower.png",
-            "position": [500, 400],
-            "size": [200, 200]
+            "path": "interface/items/pasta.png",
+            "position": [550, 170],
+            "size": [80, 80]
           }
         ]
-      },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      }
     ]
   }
 }

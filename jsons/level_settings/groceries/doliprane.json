@@ -48,8 +48,8 @@
       "spawn_seed": 2,
       "middle_2": 1,
       "top_square_1": 2,
-      "crowded_street": 2,
-      "crowded_street_above": 1,
+      "crowded_street": 3,
+      "crowded_street_above": 2,
       "market_1": 0,
       "bastille_1": 1,
       "bastille_2": 0,
@@ -89,11 +89,15 @@
     ],
     "french": [
       {
-        "text": "HEY!",
-        "images": []
-      },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+        "text": "J'ai la tête qui tourne.\n\n Tu pourrais aller chercher du Doliprane ?",
+        "images": [
+          {
+            "path": "interface/items/drugs.png",
+            "position": [420, 200],
+            "size": [60, 60]
+          }
+        ]
+      }
     ]
   }
 }

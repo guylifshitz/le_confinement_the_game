@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=2]
+[gd_scene load_steps=192 format=2]
 
 [ext_resource path="res://tilemaps/buildings_tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/player.tscn" type="PackedScene" id=2]
@@ -77,6 +77,8 @@
 [ext_resource path="res://images/TEMP/wooden-door.png" type="Texture" id=75]
 [ext_resource path="res://traficlight.tscn" type="PackedScene" id=76]
 [ext_resource path="res://images/TEMP/wooden-door-open.png" type="Texture" id=77]
+[ext_resource path="res://images/spritesheets/geese.png" type="Texture" id=78]
+[ext_resource path="res://swan.gd" type="Script" id=79]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 28.4749, 0, 34.289, 0, 64, 16.9409, 29.4051, 32, 1.49696, 15.3129 )
@@ -782,13 +784,13 @@ font_data = ExtResource( 33 )
 [sub_resource type="RectangleShape2D" id=8]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 61.4955, 51.3771 )
+extents = Vector2( 49.3306, 30.5444 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 97.7062, 52.5789 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 76.4868, 30.6547 )
+extents = Vector2( 44.3325, 30.6547 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 21 )
@@ -883,7 +885,83 @@ radius = 18.021
 height = 21.4161
 
 [sub_resource type="CircleShape2D" id=37]
-radius = 127.314
+radius = 98.3685
+
+[sub_resource type="Curve2D" id=112]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -3719.7, -1748.72, 0, 0, 0, 0, -4000.08, -1902.84, 0, 0, 0, 0, -4007.39, -1853.95, 0, 0, 0, 0, -3824.25, -1771.27, 0, 0, 0, 0, -3719.7, -1748.72 )
+}
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 78 )
+region = Rect2( 144, 144, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 78 )
+region = Rect2( 192, 144, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 78 )
+region = Rect2( 240, 144, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 78 )
+region = Rect2( 144, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 78 )
+region = Rect2( 192, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 78 )
+region = Rect2( 240, 48, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 78 )
+region = Rect2( 144, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 78 )
+region = Rect2( 192, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 78 )
+region = Rect2( 240, 96, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 78 )
+region = Rect2( 144, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 78 )
+region = Rect2( 192, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 78 )
+region = Rect2( 240, 0, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=111]
+animations = [ {
+"frames": [ SubResource( 99 ), SubResource( 100 ), SubResource( 101 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 102 ), SubResource( 103 ), SubResource( 104 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 10, 13.2851 )
@@ -1139,7 +1217,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=91]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 445.656, 167.569, 0, 0, 0, 0, -5635.31, -2744.57, 0, 0, 0, 0, -5870.67, -2506.13, 0, 0, 0, 0, -47.528, 320.39, 0, 0, 0, 0, 52.511, 312.892, 0, 0, 0, 0, 409.438, 505.041, 0, 0, 0, 0, 633.57, 360.367, 0, 0, 0, 0, 334.889, 209.102, 0, 0, 0, 0, 414.972, 183.003 )
+"points": PoolVector2Array( 0, 0, 0, 0, 445.656, 167.569, 0, 0, 0, 0, -5636.37, -2721.47, 0, 0, 0, 0, -5870.67, -2506.13, 0, 0, 0, 0, -47.528, 320.39, 0, 0, 0, 0, 52.511, 312.892, 0, 0, 0, 0, 409.438, 505.041, 0, 0, 0, 0, 633.57, 360.367, 0, 0, 0, 0, 334.889, 209.102, 0, 0, 0, 0, 414.972, 183.003 )
 }
 
 [sub_resource type="Curve2D" id=92]
@@ -1164,7 +1242,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=96]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2944.71, -1507.58, 0, 0, 0, 0, -4003.46, -2049.29, 0, 0, 0, 0, -4363.63, -1872.11, 0, 0, 0, 0, -3579.38, -1490.44, 0, 0, 0, 0, -3389.12, -1474.46, 0, 0, 0, 0, -2328.93, -938.557, 0, 0, 0, 0, -2149.71, -776.188, 0, 0, 0, 0, -1711.92, -565.025, 0, 0, 0, 0, -1378.52, -727.869, 0, 0, 0, 0, -1787.21, -937.686, 0, 0, 0, 0, -2016.68, -955.114, 0, 0, 0, 0, -2661.51, -1284.79, 0, 0, 0, 0, -2693.46, -1370.48, 0, 0, 0, 0, -2944.71, -1507.58 )
+"points": PoolVector2Array( 0, 0, 0, 0, -2944.71, -1507.58, 0, 0, 0, 0, -4026.47, -2041.59, 0, 0, 0, 0, -4363.63, -1872.11, 0, 0, 0, 0, -3578.3, -1501.45, 0, 0, 0, 0, -3389.12, -1474.46, 0, 0, 0, 0, -2328.93, -938.557, 0, 0, 0, 0, -2149.71, -776.188, 0, 0, 0, 0, -1711.92, -565.025, 0, 0, 0, 0, -1378.52, -727.869, 0, 0, 0, 0, -1787.21, -937.686, 0, 0, 0, 0, -2016.68, -955.114, 0, 0, 0, 0, -2661.51, -1284.79, 0, 0, 0, 0, -2693.46, -1370.48, 0, 0, 0, 0, -2944.71, -1507.58 )
 }
 
 [sub_resource type="Curve2D" id=97]
@@ -1198,7 +1276,7 @@ scale = Vector2( 0.999992, 0.986271 )
 
 [node name="player" parent="elements" instance=ExtResource( 2 )]
 material = SubResource( 3 )
-position = Vector2( 539.317, -340.856 )
+position = Vector2( 539.28, -353.262 )
 rotation = -3.49246e-10
 
 [node name="pickups" type="YSort" parent="elements"]
@@ -1619,9 +1697,8 @@ position = Vector2( 3.04785, -11.1082 )
 scale = Vector2( 0.679958, 0.679958 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/waypoints/waypoint/Area2D"]
-visible = false
-position = Vector2( 0.78772, 8.65704 )
-scale = Vector2( 8.71773, 8.71773 )
+position = Vector2( -8.57727, 18.1738 )
+scale = Vector2( 5.15478, 5.15478 )
 shape = SubResource( 8 )
 
 [node name="waypoint_positions" type="Node2D" parent="elements/goals/waypoints"]
@@ -2315,7 +2392,7 @@ texture = ExtResource( 13 )
 position = Vector2( -0.00231934, -2.02785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/pharmacy_1/store_node/area"]
-position = Vector2( 18.2583, -17.1891 )
+position = Vector2( 8.48157, -7.2538 )
 shape = SubResource( 9 )
 
 [node name="pharmacy_2" type="YSort" parent="elements/goals"]
@@ -2382,7 +2459,7 @@ shape = SubResource( 10 )
 [node name="StaticBody2D" type="StaticBody2D" parent="elements/goals/flower_market/store_node"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="elements/goals/flower_market/store_node/StaticBody2D"]
-position = Vector2( -0.11615, -16.3011 )
+position = Vector2( 0.53656, -28.14 )
 rotation = -0.523599
 shape = SubResource( 11 )
 
@@ -2395,7 +2472,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2413,7 +2490,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2423,7 +2500,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 
@@ -2436,7 +2513,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2454,7 +2531,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2464,7 +2541,7 @@ position = Vector2( -23.3932, -14.1633 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 2
+frame = 6
 speed_scale = 0.5
 playing = true
 
@@ -2477,7 +2554,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 1
+frame = 5
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -2495,7 +2572,7 @@ position = Vector2( -23.001, 19.1753 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 11
+frame = 3
 speed_scale = 0.5
 playing = true
 flip_h = true
@@ -2509,7 +2586,7 @@ position = Vector2( 0.000366211, 0.000152588 )
 rotation = 2.32831e-10
 frames = SubResource( 24 )
 animation = "duck"
-frame = 10
+frame = 2
 speed_scale = 0.5
 playing = true
 script = ExtResource( 15 )
@@ -3468,7 +3545,7 @@ offset = Vector2( 0, -85.366 )
 position = Vector2( 4.11304, -23.4973 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="elements/scene/carroussel/Area2D"]
-position = Vector2( 2.00244, 7.90906 )
+position = Vector2( 3.63696, 20.1714 )
 scale = Vector2( 1, 0.612 )
 shape = SubResource( 37 )
 
@@ -3632,6 +3709,36 @@ texture = ExtResource( 24 )
 position = Vector2( -199.486, -981.638 )
 scale = Vector2( -0.854688, 0.854688 )
 texture = ExtResource( 25 )
+
+[node name="swan_path" type="Path2D" parent="elements/scene"]
+visible = false
+position = Vector2( -17.9689, -8.31424 )
+curve = SubResource( 112 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="elements/scene/swan_path"]
+position = Vector2( -3952.69, -1829.26 )
+rotation = -2.63416
+offset = 428.586
+rotate = false
+script = ExtResource( 79 )
+
+[node name="swan_1" type="AnimatedSprite" parent="elements/scene/swan_path/PathFollow2D"]
+position = Vector2( -15.1782, 43.3267 )
+rotation = 2.63411
+scale = Vector2( 1.41242, 1.40618 )
+frames = SubResource( 111 )
+animation = "left"
+frame = 1
+playing = true
+
+[node name="swan_2" type="AnimatedSprite" parent="elements/scene/swan_path/PathFollow2D"]
+position = Vector2( -6.58203, 19.1194 )
+rotation = 2.63411
+scale = Vector2( 1.60108, 1.60108 )
+frames = SubResource( 111 )
+animation = "left"
+frame = 1
+playing = true
 
 [node name="per_level_game_elements" type="YSort" parent="elements"]
 position = Vector2( -7.00005, 0.00805664 )
@@ -4303,7 +4410,7 @@ position = Vector2( -1104.05, 210.493 )
 polygon = PoolVector2Array( 919.72, 21.961, 972.871, -0.126648, 1350.45, -157.038, 1408.65, -72.9145, 1038, 140.239 )
 
 [node name="block_beaumarchais_cirque" type="Node2D" parent="game_limits_per_level"]
-position = Vector2( -2536.06, -33.2546 )
+position = Vector2( -2265.15, 115.578 )
 rotation = -3.92699
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="game_limits_per_level/block_beaumarchais_cirque"]

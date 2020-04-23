@@ -10,7 +10,7 @@
   "win_icons": ["smile_hearts", "smile", "heart"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
-  "damage_multiplier": 3,
+  "damage_multiplier": 5,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "items_needed": ["drugs"],
@@ -103,7 +103,7 @@
         "text": "Careful, cars and motorbikes don't care at all about traffic lights these days.",
         "images": [
           {
-          "path": "vehicles/motorbike-down-colorful.png",
+            "path": "vehicles/motorbike-down-colorful.png",
             "position": [500, 200],
             "size": [70, 70]
           },
@@ -125,22 +125,52 @@
     ],
     "french": [
       {
-        "text": "HEY!",
+        "text": " Oh non !!!\n\n Avec toute cette pagaille, j'ai oublié de renouveler mon ordonnance.",
+        "images": []
+      },
+      {
+        "text": "\n Ma petite, tu pourrais aller la renouveler pour moi ?",
         "images": [
           {
-            "path": "interface/flower.png",
-            "position": [300, 400],
-            "size": [100, 100]
-          },
-          {
-            "path": "interface/flower.png",
-            "position": [500, 400],
-            "size": [200, 200]
+            "path": "interface/items/drugs.png",
+            "position": [410, 175],
+            "size": [60, 60]
           }
         ]
       },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      {
+        "text": " Il est très tard, la seule pharmacie encore ouverte est à République.\n\n Tu vas devoir prendre ton vélo.",
+        "images": [
+          {
+            "path": "menu/intro/bike.png",
+            "position": [660, 60],
+            "size": [90, 90]
+          }
+        ]
+      },
+      {
+        "text": " Attention, les voitures et les motos n'ont plus rien à faire du code de la route. ",
+        "images": [
+          {
+            "path": "vehicles/motorbike-down-colorful.png",
+            "position": [500, 200],
+            "size": [70, 70]
+          },
+          {
+            "path": "scenery/police-car.png",
+            "position": [350, 200],
+            "size": [105, 70]
+          }
+        ]
+      },
+      {
+        "text": "\n Hier soir pendant ma promenade, j'ai failli me faire écraser !",
+        "images": []
+      },
+      {
+        "text": "\n N'oublie pas, tu n'as pas le droit de faire du vélo sur le trottoir.",
+        "images": []
+      }
     ]
   }
 }

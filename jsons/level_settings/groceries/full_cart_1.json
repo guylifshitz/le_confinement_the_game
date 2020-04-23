@@ -1,7 +1,7 @@
 {
   "type": "groceries",
   "level_name": {
-    "french": "Le panier plein\n#1",
+    "french": "Le panier\n#1",
     "english": "A full cart\n#1"
   },
   "level_difficulty": 2,
@@ -114,11 +114,29 @@
     ],
     "french": [
       {
-        "text": "HEY!",
+        "text": "\n Comment te sens-tu ma petite-fille ?",
         "images": []
       },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      {
+        "text": " Tout ça fait peur, je sais... \n\n Il faut faire les courses:",
+        "images": [
+          {
+            "path": "interface/items/baguette.png",
+            "position": [340, 200],
+            "size": [60, 60]
+          },
+          {
+            "path": "interface/items/toilet_paper.png",
+            "position": [420, 200],
+            "size": [60, 60]
+          },
+          {
+            "path": "interface/items/drugs.png",
+            "position": [500, 200],
+            "size": [60, 60]
+          }
+        ]
+      }
     ]
   }
 }

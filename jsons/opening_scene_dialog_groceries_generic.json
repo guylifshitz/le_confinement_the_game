@@ -81,11 +81,7 @@
     { "text": "\n  Good luck!", "images": [] }
   ],
   "french": [
-    { "text": "\n Comment te sens-tu ma petite-fille ?", "images": [] },
-    {
-      "text": " Tout ça fait peur, je sais... \n\n Il faut faire les courses:",
-      "images": []
-    },
+    { "text": "\n Un petit rappel des règles...", "images": [] },
     {
       "text": "\n Les rayons sont vides, tu devras essayer plusieurs magasins pour en trouver.",
       "images": []

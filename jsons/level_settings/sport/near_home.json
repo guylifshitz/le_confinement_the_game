@@ -11,7 +11,7 @@
   "win_icons": ["trophy", "medal"],
   "starting_bonus_score": 1000,
   "damage_decrement_exponent": 1,
-  "damage_multiplier": 3,
+  "damage_multiplier": 1.5,
   "score_decrement_exponent": 1,
   "score_increment_speed": 40,
   "player": {
@@ -71,6 +71,20 @@
 
     "french": [
       {
+        "text": "\n Ma petite !!!\n\n Il fait si beau dehors et tu n'es pas sortie de la semaine.",
+        "images": []
+      },
+      {
+        "text": "\n Tu devrais prendre l'air !",
+        "images": []
+      },
+      {
+      "text": "\n Tu n'as pas le droit d'aller très loin pour faire ton footing. Reste près de chez nous, par précaution.",
+      "images": []
+      },
+      {
+      "text": "\n Fais quelques tours dans le quartier ?",
+      "images": []
       }
     ]
   }

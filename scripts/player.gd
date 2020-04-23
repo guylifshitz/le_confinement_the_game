@@ -57,6 +57,7 @@ func _ready():
 		$main_char_node/main_character.hide()
 		if global.level_settings["is_night"]:
 			setup_night_bike_lights()
+		$Camera2D.zoom = Vector2(1.4,1.4)
 	else:
 		$main_char_node/bike_character.hide()
 		$main_char_node/main_character.show()

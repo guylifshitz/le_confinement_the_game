@@ -55,7 +55,7 @@
       "canal_1": 2,
       "canal_jogger_1": 3,
       "church_park": 1,
-      "park_1": 1,
+      "park_1": 1
     },
     "police": {
       "top_square": 0,
@@ -75,7 +75,11 @@
     "motorbike": {},
     "police_car": {}
   },
-  "game_limits": ["block_right", "block_canal_voltaire", "block_beaumarchais_canal"],
+  "game_limits": [
+    "block_right",
+    "block_canal_voltaire",
+    "block_beaumarchais_canal"
+  ],
   "game_elements": [],
   "intro_text": {
     "english": [
@@ -88,7 +92,7 @@
         "images": []
       },
       {
-        "text": "\n Just run around the area a lot !",
+        "text": "\n Just run around the neighbourhood a lot !",
         "images": []
       },
       {
@@ -102,7 +106,29 @@
         ]
       }
     ],
-
-    "french": [{}]
+    "french": [
+      {
+        "text": "\n Ma petite !!!\n\n Tu ne devais pas courir le semi-marathon de Paris avant qu'il soit annulé ?",
+        "images": []
+      },
+      {
+        "text": "\n Tu devrais rester en forme pour courir à nouveau quand le confinement sera terminé.",
+        "images": []
+      },
+      {
+        "text": "\n Fais le tour du quartier, et pas qu'un peu !",
+        "images": []
+      },
+      {
+        "text": " Prends cet appareil, il te dira combien de temps et quelle distance tu as couru.",
+        "images": [
+          {
+            "path": "menu/intro/marathon.png",
+            "position": [430, 200],
+            "size": [150, 75]
+          }
+        ]
+      }
+    ]
   }
 }

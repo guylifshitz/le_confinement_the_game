@@ -117,22 +117,37 @@
     ],
     "french": [
       {
-        "text": "HEY!",
+        "text": " Oh non !!! \n\n Il n'y a plus de PQ !!!",
         "images": [
           {
-            "path": "interface/flower.png",
-            "position": [300, 400],
-            "size": [100, 100]
-          },
-          {
-            "path": "interface/flower.png",
-            "position": [500, 400],
-            "size": [200, 200]
+            "path": "interface/items/toilet_paper.png",
+            "position": [400, 190],
+            "size": [80, 80]
           }
         ]
       },
-      { "text": "ONE!", "images": [] },
-      { "text": "FOUR!", "images": [] }
+      {
+        "text": "\n Il va falloir bien chercher pour en trouver...",
+        "images": []
+      },
+      {
+        "text": " Heureusement je connais bien les commerçants. \n\n Ils t'indiqueront quel magasin a encore du PQ.",
+        "images": []
+      },
+      {
+        "text": "\n Regarde bien en haut à gauche.",
+        "images": []
+      },
+      {
+        "text": "\n Tant que tu y es, récupère d'autres objets.",
+        "images": [
+          {
+            "path": "interface/hand-sanitizer.png",
+            "position": [450, 180],
+            "size": [80, 80]
+          }
+        ]
+      }
     ]
   }
 }
