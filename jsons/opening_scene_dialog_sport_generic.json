@@ -95,20 +95,32 @@
   ],
   "french": [
     {
-      "text": "Un petit rappel des règles...",
+      "text": "\n Un petit rappel des règles...",
       "images": []
     },
     {
-      "text": " Tu devrais faire du footing pour rester en forme !",
+      "text": "\n Tu devrais faire du footing pour rester en forme !",
       "images": []
     },
     {
       "text": " Essaie ces jolies baskets que j'ai achetées pour toi. ",
-      "images": []
+      "images": [
+        {
+          "path": "menu/intro/running_shoe.png",
+          "position": [420, 180],
+          "size": [80, 80]
+        }
+      ]
     },
     {
       "text": " Passe à travers les étoiles et reviens à la maison.",
-      "images": []
+      "images": [
+        {
+          "path": "goals/waypoints-small.png",
+          "position": [410, 180],
+          "size": [80, 80]
+        }
+      ]
     },
     {
       "text": " Rien n'arrête la bureaucratie française !\n\n Il faut que tu remplisses une attestation avant de sortir de la maison.",
@@ -116,11 +128,23 @@
     },
     {
       "text": " Malheureusement, il n'y a plus de papier pour écrire l'attestation. \n\n Tu devras trouver du papier dehors.",
-      "images": []
+      "images": [
+        {
+          "path": "interface/attestation.png",
+          "position": [640, 150],
+          "size": [65, 65]
+        }
+      ]
     },
     {
       "text": " Évite les flics si tu n'as pas d'attestation ! \n\n Attention, l'attestation n'est pas valable très longtemps.",
-      "images": []
+      "images": [
+        {
+          "path": "menu/intro/police_man.png",
+          "position": [680, 110],
+          "size": [50, 90]
+        }
+      ]
     },
     {
       "text": " Et surtout, n'oublie pas\n\n         !!! \n\n Tu dois rester à distance des autres gens.",
@@ -131,10 +155,31 @@
       "images": []
     },
     {
-      "text": "\n Cette barre te dit si tu es assez loin des gens",
-      "images": []
+      "text": "\n Cette barre te dit si tu es assez loin des gens.",
+      "images": [
+        {
+          "path": "interface/circle.png",
+          "position": [280, 190],
+          "size": [50, 50],
+          "color": [1, 0, 0, 1]
+        },
+        {
+          "path": "menu/intro/distance_bar.png",
+          "position": [480, 187],
+          "size": [270, 80]
+        }
+      ]
     },
-    { "text": "\n Cette barre te dit si tu deviens contaminée.", "images": [] },
+    {
+      "text": "\n Cette barre te dit si tu deviens contaminée.",
+      "images": [
+        {
+          "path": "menu/intro/health_bar.png",
+          "position": [440, 180],
+          "size": [270, 65]
+        }
+      ]
+    },
     {
       "text": " Tu sais toujours comment marcher ? Utilise les flèches ou clique là où tu veux aller",
       "images": []
